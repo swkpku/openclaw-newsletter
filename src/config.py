@@ -1,0 +1,209 @@
+"""Central configuration for OpenClaw Newsletter."""
+
+import os
+from dataclasses import dataclass, field
+
+
+@dataclass
+class Config:
+    """Newsletter configuration loaded from environment variables."""
+
+    # Required
+    anthropic_api_key: str = ""
+    github_token: str = ""
+
+    # Optional social media keys
+    twitter_bearer_token: str = ""
+    reddit_client_id: str = ""
+    reddit_client_secret: str = ""
+    reddit_user_agent: str = "OpenClawNewsletter/1.0"
+    newsapi_key: str = ""
+    discord_bot_token: str = ""
+    moltbook_token: str = ""
+
+    # Optional video/events keys
+    youtube_api_key: str = ""
+    eventbrite_token: str = ""
+
+    # Claude model
+    claude_model: str = "claude-sonnet-4-20250514"
+
+    # HTTP settings
+    request_timeout: int = 30
+    max_retries: int = 3
+    retry_backoff_factor: float = 2.0
+
+    # State management
+    state_file: str = "state.json"
+    max_state_entries: int = 500
+
+    # Output
+    docs_dir: str = "docs"
+    templates_dir: str = "templates"
+    issues_dir: str = "docs/issues"
+
+    @classmethod
+    def from_env(cls) -> "Config":
+        return cls(
+            anthropic_api_key=os.environ.get("ANTHROPIC_API_KEY", ""),
+            github_token=os.environ.get("GITHUB_TOKEN", ""),
+            twitter_bearer_token=os.environ.get("TWITTER_BEARER_TOKEN", ""),
+            reddit_client_id=os.environ.get("REDDIT_CLIENT_ID", ""),
+            reddit_client_secret=os.environ.get("REDDIT_CLIENT_SECRET", ""),
+            newsapi_key=os.environ.get("NEWSAPI_KEY", ""),
+            discord_bot_token=os.environ.get("DISCORD_BOT_TOKEN", ""),
+            moltbook_token=os.environ.get("MOLTBOOK_TOKEN", ""),
+            youtube_api_key=os.environ.get("YOUTUBE_API_KEY", ""),
+            eventbrite_token=os.environ.get("EVENTBRITE_TOKEN", ""),
+        )
+
+
+# --- Source Registry ---
+
+GITHUB_OWNER = "openclaw"
+GITHUB_REPO = "openclaw"
+GITHUB_API_BASE = "https://api.github.com"
+GITHUB_GRAPHQL = "https://api.github.com/graphql"
+
+# ClawHub / Awesome Skills repos
+CLAWHUB_OWNER = "openclaw"
+CLAWHUB_REPO = "clawhub"
+AWESOME_SKILLS_REPOS = [
+    {"owner": "VoltAgent", "repo": "awesome-openclaw-skills"},
+    {"owner": "sundial-org", "repo": "awesome-openclaw-skills"},
+]
+
+# Package registries
+NPM_PACKAGE_URL = "https://registry.npmjs.org/openclaw"
+HOMEBREW_API_URL = "https://formulae.brew.sh/api/formula/openclaw-cli.json"
+DOCKER_HUB_URL = "https://hub.docker.com/v2/repositories/openclaw/openclaw"
+VSCODE_MARKETPLACE_URL = (
+    "https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery"
+)
+VSCODE_EXTENSION_NAME = "openclaw.openclaw-vscode"
+HUGGINGFACE_API_URL = "https://huggingface.co/api"
+DIGITALOCEAN_URL = "https://marketplace.digitalocean.com/apps/openclaw"
+
+# Official web sources
+OFFICIAL_BLOG_URL = "https://openclaw.ai/blog"
+OFFICIAL_BLOG_RSS = "https://openclaw.ai/blog/rss.xml"
+SHOWCASE_URL = "https://openclaw.ai/showcase"
+SHOUTOUTS_URL = "https://openclaw.ai/shoutouts"
+DOCS_URL = "https://docs.openclaw.ai"
+LEARNCLAW_URL = "https://learnclaw.ai/changelog"
+
+# Tech media
+HACKERNEWS_API_URL = "https://hn.algolia.com/api/v1/search"
+DEVTO_API_URL = "https://dev.to/api/articles"
+MEDIUM_RSS_URL = "https://medium.com/feed/tag/openclaw"
+LOBSTERS_RSS_URL = "https://lobste.rs/rss"
+CACM_RSS_URL = "https://cacm.acm.org/feed"
+SCIENTIFIC_AMERICAN_RSS = "https://www.scientificamerican.com/feed/"
+TLDR_URL = "https://tldr.tech"
+
+SUBSTACK_FEEDS = [
+    "https://simonwillison.substack.com/feed",
+    "https://thealgorithmicbridge.substack.com/feed",
+    "https://aitidbits.substack.com/feed",
+    "https://bensbites.beehiiv.com/feed",
+    "https://thesequence.substack.com/feed",
+    "https://importai.substack.com/feed",
+    "https://lastweekinai.substack.com/feed",
+    "https://theaiedge.substack.com/feed",
+]
+
+# Ecosystem platforms
+CLAW360_URL = "https://claw360.io"
+CLAWHUNT_SPACE_URL = "https://clawhunt.space"
+CLAWHUNT_SH_URL = "https://clawhunt.sh"
+ALTERNATIVETO_URL = "https://alternativeto.net/software/clawdbot"
+WIKIPEDIA_API_URL = "https://en.wikipedia.org/w/api.php"
+WIKIPEDIA_ARTICLE = "OpenClaw_(software)"
+PRODUCT_HUNT_URL = "https://www.producthunt.com/products/openclaw"
+STACKOVERFLOW_API_URL = "https://api.stackexchange.com/2.3"
+G2_LEARNING_URL = "https://learn.g2.com/feed"
+
+# Security & Research
+SECURITY_RSS_FEEDS = [
+    "https://www.crowdstrike.com/blog/feed",
+    "https://www.bitdefender.com/blog/api/rss/labs/",
+    "https://feeds.trendmicro.com/TrendMicroResearch",
+]
+ARXIV_API_URL = "https://export.arxiv.org/api/query"
+
+# Social media
+TWITTER_API_URL = "https://api.twitter.com/2"
+REDDIT_SUBREDDITS = ["LocalLLM", "artificial", "programming"]
+DISCORD_GUILD_ID = ""
+MOLTBOOK_API_URL = "https://moltbook.com/api/v1"
+
+# Video & Events
+YOUTUBE_API_URL = "https://www.googleapis.com/youtube/v3"
+EVENTBRITE_API_URL = "https://www.eventbriteapi.com/v3"
+
+# NewsAPI
+NEWSAPI_URL = "https://newsapi.org/v2/everything"
+NEWSAPI_DOMAINS = "techcrunch.com,venturebeat.com,wired.com,theverge.com,arstechnica.com"
+
+# Search keywords used across multiple collectors
+SEARCH_KEYWORDS = ["openclaw", "open claw", "claw ai assistant"]
+
+# Newsletter section definitions
+SECTIONS = [
+    {"id": "editorial", "title": "Editorial Intro", "emoji": ""},
+    {"id": "releases", "title": "Release Updates", "emoji": ""},
+    {"id": "skills", "title": "New Skills Spotlight", "emoji": ""},
+    {"id": "tips", "title": "Tips & Tricks", "emoji": ""},
+    {"id": "community", "title": "Community Spotlight", "emoji": ""},
+    {"id": "social", "title": "Social Buzz", "emoji": ""},
+    {"id": "ecosystem", "title": "Ecosystem Watch", "emoji": ""},
+    {"id": "events", "title": "Events & Meetups", "emoji": ""},
+    {"id": "press", "title": "In The Press", "emoji": ""},
+    {"id": "research", "title": "Research & Academia", "emoji": ""},
+    {"id": "security", "title": "Security Corner", "emoji": ""},
+    {"id": "resources", "title": "Useful Resources", "emoji": ""},
+]
+
+# Mapping: collector name -> newsletter section(s)
+COLLECTOR_SECTION_MAP = {
+    "github_releases": "releases",
+    "github_activity": "community",
+    "github_stats": "releases",
+    "github_sponsors": "community",
+    "clawhub_skills": "skills",
+    "awesome_skills": "skills",
+    "npm_registry": "releases",
+    "homebrew_stats": "releases",
+    "docker_hub": "releases",
+    "vscode_marketplace": "releases",
+    "huggingface": "ecosystem",
+    "digitalocean": "ecosystem",
+    "blog_feed": "resources",
+    "showcase": "community",
+    "docs_updates": "resources",
+    "learnclaw": "resources",
+    "hackernews": "press",
+    "devto": "press",
+    "medium": "press",
+    "lobsters": "press",
+    "academic_news": "research",
+    "substack": "press",
+    "tldr_news": "press",
+    "claw360": "ecosystem",
+    "clawhunt": "ecosystem",
+    "alternativeto": "ecosystem",
+    "wikipedia": "resources",
+    "product_hunt": "ecosystem",
+    "stackoverflow": "community",
+    "g2_learning": "resources",
+    "security_feeds": "security",
+    "arxiv_papers": "research",
+    "twitter": "social",
+    "reddit": "community",
+    "linkedin_news": "social",
+    "discord_feed": "community",
+    "moltbook": "social",
+    "youtube": "social",
+    "events": "events",
+    "tech_news": "press",
+}

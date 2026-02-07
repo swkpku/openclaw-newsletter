@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "openclaw-newsletter"
+version = "1.0.0"
+description = "Automated daily newsletter for the OpenClaw project"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.39.0",
+    "requests>=2.31.0",
+    "Jinja2>=3.1.0",
+    "feedparser>=6.0.0",
+    "beautifulsoup4>=4.12.0",
+    "praw>=7.7.0",
+    "google-api-python-client>=2.100.0",
+]

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Newsletter - {{ issue.date }}</title>
+  <link rel="stylesheet" href="/openclaw-newsletter/assets/style.css">
+</head>
+<body>
+  <div class="container">
+    {% include "partials/header.html" %}
+
+    {% if issue.active_sections %}
+    <div class="toc">
+      <h2>In This Issue</h2>
+      <ul>
+        {% for section in issue.active_sections %}
+        <li><a href="#{{ section.id }}">{{ section.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    {% for section in issue.active_sections %}
+    {% include "partials/section.html" %}
+    {% endfor %}
+    {% else %}
+    <div class="empty-state">
+      <h2>No new updates today</h2>
+      <p>Check back tomorrow for the latest OpenClaw news.</p>
+    </div>
+    {% endif %}
+
+    {% include "partials/footer.html" %}
+  </div>
+</body>
+</html>

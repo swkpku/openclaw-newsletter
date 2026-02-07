@@ -1,0 +1,99 @@
+"""AI writer that uses Claude to generate newsletter section content."""
+
+import logging
+from html import escape
+
+from src.config import Config
+from src.generator.prompts import SECTION_PROMPTS, SYSTEM_PROMPT
+from src.models.data_models import ContentItem
+
+logger = logging.getLogger(__name__)
+
+
+class AIWriter:
+    """Generates newsletter section HTML using the Claude API."""
+
+    def __init__(self, config: Config):
+        self.config = config
+        self.client = None
+        if config.anthropic_api_key:
+            try:
+                import anthropic
+
+                self.client = anthropic.Anthropic(api_key=config.anthropic_api_key)
+                logger.info("Anthropic client initialized")
+            except ImportError:
+                logger.warning("anthropic package not installed; AI generation disabled")
+
+    def is_available(self) -> bool:
+        """Return True if the Claude API client is configured."""
+        return self.client is not None
+
+    def generate_section(self, section_id: str, items: list[ContentItem]) -> str:
+        """Generate HTML content for a newsletter section using Claude.
+
+        Falls back to simple HTML list if the API is unavailable or the call fails.
+        """
+        if not items:
+            return ""
+
+        prompt_template = SECTION_PROMPTS.get(section_id)
+        if not prompt_template:
+            logger.warning("No prompt template for section '%s'; using fallback", section_id)
+            return self._fallback_html(items)
+
+        if not self.is_available():
+            logger.info("AI unavailable; generating fallback HTML for '%s'", section_id)
+            return self._fallback_html(items)
+
+        data_text = self._format_items(items)
+        user_prompt = prompt_template.format(data=data_text)
+
+        try:
+            response = self.client.messages.create(
+                model=self.config.claude_model,
+                max_tokens=1500,
+                system=SYSTEM_PROMPT,
+                messages=[{"role": "user", "content": user_prompt}],
+            )
+            content = response.content[0].text
+            logger.info("Generated AI content for section '%s' (%d chars)", section_id, len(content))
+            return content
+        except Exception:
+            logger.exception("Claude API call failed for section '%s'; using fallback", section_id)
+            return self._fallback_html(items)
+
+    def _format_items(self, items: list[ContentItem]) -> str:
+        """Format ContentItems as readable text for the AI prompt."""
+        parts: list[str] = []
+        for item in items:
+            lines = [f"- Title: {item.title}"]
+            if item.url:
+                lines.append(f"  URL: {item.url}")
+            if item.description:
+                lines.append(f"  Description: {item.description}")
+            if item.author:
+                lines.append(f"  Author: {item.author}")
+            if item.published_at:
+                lines.append(f"  Published: {item.published_at}")
+            if item.metadata:
+                for key, value in item.metadata.items():
+                    lines.append(f"  {key}: {value}")
+            parts.append("\n".join(lines))
+        return "\n\n".join(parts)
+
+    def _fallback_html(self, items: list[ContentItem]) -> str:
+        """Generate a simple HTML list when AI is unavailable."""
+        if not items:
+            return ""
+        html_parts = ["<ul>"]
+        for item in items:
+            title = escape(item.title)
+            if item.url:
+                link = f'<a href="{escape(item.url)}">{title}</a>'
+            else:
+                link = title
+            desc = f" &mdash; {escape(item.description)}" if item.description else ""
+            html_parts.append(f"  <li>{link}{desc}</li>")
+        html_parts.append("</ul>")
+        return "\n".join(html_parts)
