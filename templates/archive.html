@@ -12,7 +12,7 @@
     {% set date = None %}
     {% include "partials/header.html" %}
 
-    <h2 class="section-title">Newsletter Archive</h2>
+    <h2 class="archive-title">Newsletter Archive</h2>
 
     {% if issues %}
     <ul class="archive-list">
@@ -20,7 +20,7 @@
       <li>
         <a href="issues/{{ entry.filename }}">{{ entry.date }}</a>
         {% if entry.total_items %}
-        <div class="meta">{{ entry.total_items }} items across {{ entry.section_count }} sections</div>
+        <div class="meta">{{ entry.total_items }} items &middot; {{ entry.section_count }} sections</div>
         {% endif %}
       </li>
       {% endfor %}
