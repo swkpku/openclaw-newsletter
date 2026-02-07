@@ -6,14 +6,18 @@ SYSTEM_PROMPT = (
     "newsletter content in clean HTML. Readers have short attention spans — every "
     "sentence must earn its place. Use bullet points (ul/li) by default. Use bold "
     "(strong) for the key takeaway in each bullet. Use a tags for links. "
-    "Do not include html/head/body tags. No filler, no fluff, no preambles."
+    "Do not include html/head/body tags. No filler, no fluff, no preambles. "
+    "Items marked [TRENDING] or [HOT] have high community engagement — NEVER skip "
+    "these. Always include them and mention their traction."
 )
 
 SECTION_PROMPTS = {
     "top_stories": (
         "Write 3-5 bullet points summarizing the most important OpenClaw developments "
         "today. Each bullet: bold the headline, then one sentence of context with a link. "
-        "Skip anything minor. Only the things a busy developer must know. Data: {data}"
+        "Prioritize items with high engagement scores — these are resonating with the "
+        "community. Skip anything minor. Only the things a busy developer must know. "
+        "Data: {data}"
     ),
     "releases": (
         "List each release or version change as a single bullet point. Format: "
@@ -23,14 +27,17 @@ SECTION_PROMPTS = {
     ),
     "community": (
         "Pick the 3-5 most significant community items (PRs, issues, discussions, new "
-        "skills, notable social mentions). Each bullet: bold the contributor or topic, "
-        "one sentence on why it matters, with a link. Skip routine chatter. Data: {data}"
+        "skills, notable social mentions). Prioritize items marked [TRENDING] or [HOT] — "
+        "these have high likes, comments, or upvotes. Each bullet: bold the contributor "
+        "or topic, one sentence on why it matters, with a link. Mention engagement "
+        "(e.g. '89 points on HN') when notable. Skip routine chatter. Data: {data}"
     ),
     "news": (
         "Pick the 3-5 most noteworthy external items (press, blog posts, tutorials, "
-        "ecosystem launches, research). Each bullet: bold the source or title, one "
-        "sentence summary, with a link. Skip anything that isn't genuinely interesting. "
-        "Data: {data}"
+        "ecosystem launches, research). Prioritize items with high engagement — these "
+        "are getting real traction. Each bullet: bold the source or title, one sentence "
+        "summary, with a link. Mention traction when notable (e.g. '200+ upvotes'). "
+        "Skip anything that isn't genuinely interesting. Data: {data}"
     ),
     "security": (
         "List each security item as a bullet. Format: bold the severity or advisory name, "
