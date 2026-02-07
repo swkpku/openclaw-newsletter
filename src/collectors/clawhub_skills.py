@@ -1,6 +1,7 @@
 """Collector for new skills from the ClawHub repository."""
 
 import logging
+import re
 
 from src.collectors.base import BaseCollector
 from src.config import CLAWHUB_OWNER, CLAWHUB_REPO, GITHUB_API_BASE
@@ -8,6 +9,13 @@ from src.models.data_models import ContentItem
 from src.state.state_manager import StateManager
 
 logger = logging.getLogger(__name__)
+
+# Commit subjects that are housekeeping noise, not real skill updates
+_SKIP_PATTERN = re.compile(
+    r"^(Merge |chore[:(]|Update README|update README|"
+    r"fix lint|fix formatting|remove debug|new fix$)",
+    re.IGNORECASE,
+)
 
 
 class ClawHubSkillsCollector(BaseCollector):
@@ -37,16 +45,25 @@ class ClawHubSkillsCollector(BaseCollector):
 
             commit_data = commit.get("commit", {})
             message = commit_data.get("message", "")
+            title = message.split("\n", 1)[0]
+
+            # Skip housekeeping commits
+            if _SKIP_PATTERN.search(title):
+                continue
+
             author_name = commit_data.get("author", {}).get("name", "")
             commit_date = commit_data.get("author", {}).get("date", "")
+
+            # Use body (after first line) as description, not the full message
+            body = message.split("\n", 1)[1].strip() if "\n" in message else ""
 
             items.append(
                 ContentItem(
                     id=item_id,
                     source=self.name,
-                    title=message.split("\n", 1)[0],
+                    title=title,
                     url=commit.get("html_url", ""),
-                    description=message,
+                    description=body,
                     author=author_name,
                     published_at=commit_date,
                     content_type="clawhub_commit",

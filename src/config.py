@@ -2,6 +2,7 @@
 
 import os
 from dataclasses import dataclass, field
+from pathlib import Path
 
 
 @dataclass
@@ -44,6 +45,17 @@ class Config:
 
     @classmethod
     def from_env(cls) -> "Config":
+        # Load .env file if present (no dependency required)
+        env_path = Path(".env")
+        if env_path.exists():
+            for line in env_path.read_text().splitlines():
+                line = line.strip()
+                if not line or line.startswith("#") or "=" not in line:
+                    continue
+                key, _, value = line.partition("=")
+                value = value.strip().strip("'\"")
+                os.environ.setdefault(key.strip(), value)
+
         return cls(
             anthropic_api_key=os.environ.get("ANTHROPIC_API_KEY", ""),
             github_token=os.environ.get("GITHUB_TOKEN", ""),

@@ -59,8 +59,8 @@ class ContentAssembler:
             title = section_def["title"]
 
             if section_id == "editorial":
-                # Editorial summarizes everything but doesn't list items again
-                if not all_items:
+                # Editorial needs AI to summarize — skip in fallback mode
+                if not all_items or not self.ai_writer.is_available():
                     continue
                 content_html = self.ai_writer.generate_section(section_id, all_items)
                 section = NewsletterSection(

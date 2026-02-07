@@ -96,13 +96,37 @@ class AIWriter:
         text = re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL)
         # Strip HTML tags
         text = re.sub(r"<[^>]+>", "", text)
+        # Strip Greptile bot boilerplate
+        text = re.sub(
+            r"Greptile (?:Overview|Summary|Confidence Score)[^\n]*", "", text
+        )
+        text = re.sub(r"Context used:.*", "", text, flags=re.DOTALL)
+        # Strip markdown headings
+        text = re.sub(r"#{1,6}\s+", "", text)
+        # Strip markdown bold/italic
+        text = re.sub(r"\*{1,2}([^*]+)\*{1,2}", r"\1", text)
+        # Strip markdown links [text](url) -> text
+        text = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text)
+        # Strip markdown images ![alt](url)
+        text = re.sub(r"!\[[^\]]*\]\([^)]+\)", "", text)
+        # Strip markdown code fences (matched pairs)
+        text = re.sub(r"```[^`]*```", "", text, flags=re.DOTALL)
+        # Strip orphaned triple-backtick markers (from truncated fences)
+        text = text.replace("```", "")
+        # Strip inline code backticks
+        text = re.sub(r"`([^`]*)`", r"\1", text)
+        # Strip any remaining stray backticks
+        text = text.replace("`", "")
+        # Strip markdown horizontal rules
+        text = re.sub(r"^[-*_]{3,}\s*$", "", text, flags=re.MULTILINE)
+        # Strip markdown table rows
+        text = re.sub(r"^\|.*\|$", "", text, flags=re.MULTILINE)
         # Collapse whitespace
         text = re.sub(r"\s+", " ", text).strip()
-        # Take first paragraph / meaningful chunk
-        first_para = text.split("\n\n")[0].split("\r\n\r\n")[0]
-        if len(first_para) > MAX_DESCRIPTION_LENGTH:
-            first_para = first_para[:MAX_DESCRIPTION_LENGTH].rsplit(" ", 1)[0] + "..."
-        return first_para
+        # Take first meaningful chunk
+        if len(text) > MAX_DESCRIPTION_LENGTH:
+            text = text[:MAX_DESCRIPTION_LENGTH].rsplit(" ", 1)[0] + "..."
+        return text
 
     def _fallback_html(self, items: list[ContentItem]) -> str:
         """Generate a simple HTML list when AI is unavailable."""
@@ -116,7 +140,11 @@ class AIWriter:
             else:
                 link = title
             desc_clean = self._clean_description(item.description)
-            desc = f" &mdash; {escape(desc_clean)}" if desc_clean else ""
+            # Suppress description if it just repeats the title
+            if desc_clean and not item.title.startswith(desc_clean[:40]):
+                desc = f" &mdash; {escape(desc_clean)}"
+            else:
+                desc = ""
             html_parts.append(f"  <li>{link}{desc}</li>")
         html_parts.append("</ul>")
         return "\n".join(html_parts)

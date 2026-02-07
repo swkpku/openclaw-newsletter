@@ -4,25 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OpenClaw Newsletter</title>
-  <link rel="stylesheet" href="/openclaw-newsletter/assets/style.css">
+  <link rel="stylesheet" href="assets/style.css">
   {% if latest_issue %}
-  <meta http-equiv="refresh" content="0; url=/openclaw-newsletter/issues/{{ latest_issue }}">
+  <meta http-equiv="refresh" content="0; url=issues/{{ latest_issue }}">
   {% endif %}
 </head>
 <body>
   <div class="container">
+    {% set base_path = "" %}
     {% set date = None %}
     {% include "partials/header.html" %}
 
     {% if latest_issue %}
     <div class="empty-state">
-      <p>Redirecting to the <a href="/openclaw-newsletter/issues/{{ latest_issue }}">latest issue</a>...</p>
+      <p>Redirecting to the <a href="issues/{{ latest_issue }}">latest issue</a>...</p>
     </div>
     {% else %}
     <div class="empty-state">
       <h2>Welcome to the OpenClaw Newsletter</h2>
       <p>Daily automated updates from the OpenClaw ecosystem.</p>
-      <p>The first issue will be generated soon. Check back later or view the <a href="/openclaw-newsletter/archive.html">archive</a>.</p>
+      <p>The first issue will be generated soon. Check back later or view the <a href="archive.html">archive</a>.</p>
     </div>
     {% endif %}
 
