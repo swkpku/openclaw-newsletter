@@ -58,7 +58,7 @@ class ContentAssembler:
             section_id = section_def["id"]
             title = section_def["title"]
 
-            if section_id == "editorial":
+            if section_id == "top_stories":
                 # Editorial needs AI to summarize — skip in fallback mode
                 if not all_items or not self.ai_writer.is_available():
                     continue

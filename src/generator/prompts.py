@@ -2,65 +2,39 @@
 
 SYSTEM_PROMPT = (
     "You are a newsletter writer for the OpenClaw project, an open-source personal "
-    "AI assistant with 170k+ GitHub stars. Write engaging, concise newsletter content "
-    "in clean HTML format. Use h3 for sub-headings, p for paragraphs, ul/li for lists, "
-    "and a tags for links. Do not include html/head/body tags. Keep the tone professional "
-    "but approachable."
+    "AI assistant with 170k+ GitHub stars. Write extremely concise, scannable "
+    "newsletter content in clean HTML. Readers have short attention spans — every "
+    "sentence must earn its place. Use bullet points (ul/li) by default. Use bold "
+    "(strong) for the key takeaway in each bullet. Use a tags for links. "
+    "Do not include html/head/body tags. No filler, no fluff, no preambles."
 )
 
 SECTION_PROMPTS = {
-    "editorial": (
-        "Write a brief, engaging editorial intro (2-3 paragraphs) summarizing the top "
-        "stories in the OpenClaw ecosystem today. Highlight the most significant "
-        "developments. Data: {data}"
+    "top_stories": (
+        "Write 3-5 bullet points summarizing the most important OpenClaw developments "
+        "today. Each bullet: bold the headline, then one sentence of context with a link. "
+        "Skip anything minor. Only the things a busy developer must know. Data: {data}"
     ),
     "releases": (
-        "Summarize the latest OpenClaw release updates, version changes, and package "
-        "statistics. Include version numbers, key changelog highlights, and "
-        "download/install trends. Data: {data}"
-    ),
-    "skills": (
-        "Highlight newly published or trending OpenClaw skills from ClawHub and "
-        "awesome-skills lists. Describe what each skill does and why it's useful. "
+        "List each release or version change as a single bullet point. Format: "
+        "bold the version or package name, then one sentence on what changed, with a link. "
+        "Include download/install stats only if notable. No prose — just the facts. "
         "Data: {data}"
     ),
-    "tips": (
-        "Generate 2-3 practical tips and tricks for OpenClaw users based on recent "
-        "features and community discussions. Make them actionable with brief code "
-        "examples if relevant. Data: {data}"
-    ),
     "community": (
-        "Summarize community highlights including notable GitHub discussions, Reddit "
-        "threads, Discord conversations, and contributor spotlights. Data: {data}"
+        "Pick the 3-5 most significant community items (PRs, issues, discussions, new "
+        "skills, notable social mentions). Each bullet: bold the contributor or topic, "
+        "one sentence on why it matters, with a link. Skip routine chatter. Data: {data}"
     ),
-    "social": (
-        "Summarize notable social media mentions of OpenClaw from Twitter, LinkedIn, "
-        "YouTube, and Moltbook. Include key quotes or insights. Data: {data}"
-    ),
-    "ecosystem": (
-        "Report on the OpenClaw ecosystem including new services on Claw360, launches "
-        "on ClawHunt, marketplace updates, and competitor comparisons. Data: {data}"
-    ),
-    "events": (
-        "List upcoming events, meetups, hackathons, and conferences related to OpenClaw "
-        "or AI assistants. Include dates, locations, and registration links. Data: {data}"
-    ),
-    "press": (
-        "Summarize press coverage of OpenClaw from tech media including Hacker News "
-        "discussions, Dev.to articles, Medium posts, Substack newsletters, and news "
-        "outlets. Data: {data}"
-    ),
-    "research": (
-        "Summarize recent academic research and papers related to OpenClaw, AI "
-        "assistants, or relevant AI agent topics from ArXiv, CACM, and Scientific "
-        "American. Data: {data}"
+    "news": (
+        "Pick the 3-5 most noteworthy external items (press, blog posts, tutorials, "
+        "ecosystem launches, research). Each bullet: bold the source or title, one "
+        "sentence summary, with a link. Skip anything that isn't genuinely interesting. "
+        "Data: {data}"
     ),
     "security": (
-        "Report on security advisories, best practices, and security-related analysis "
-        "relevant to OpenClaw and AI assistants. Data: {data}"
-    ),
-    "resources": (
-        "Compile useful resources including new blog posts, documentation updates, "
-        "tutorials, and Wikipedia edits related to OpenClaw. Data: {data}"
+        "List each security item as a bullet. Format: bold the severity or advisory name, "
+        "one sentence on impact and action needed, with a link. If nothing security-related "
+        "today, return an empty string. Data: {data}"
     ),
 }
