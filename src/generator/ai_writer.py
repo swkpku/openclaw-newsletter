@@ -1,6 +1,7 @@
 """AI writer that uses Claude to generate newsletter section content."""
 
 import logging
+import re
 from html import escape
 
 from src.config import Config
@@ -8,6 +9,8 @@ from src.generator.prompts import SECTION_PROMPTS, SYSTEM_PROMPT
 from src.models.data_models import ContentItem
 
 logger = logging.getLogger(__name__)
+
+MAX_DESCRIPTION_LENGTH = 200
 
 
 class AIWriter:
@@ -71,7 +74,9 @@ class AIWriter:
             if item.url:
                 lines.append(f"  URL: {item.url}")
             if item.description:
-                lines.append(f"  Description: {item.description}")
+                desc = self._clean_description(item.description)
+                if desc:
+                    lines.append(f"  Description: {desc}")
             if item.author:
                 lines.append(f"  Author: {item.author}")
             if item.published_at:
@@ -81,6 +86,23 @@ class AIWriter:
                     lines.append(f"  {key}: {value}")
             parts.append("\n".join(lines))
         return "\n\n".join(parts)
+
+    @staticmethod
+    def _clean_description(text: str) -> str:
+        """Clean and truncate a description for display."""
+        if not text:
+            return ""
+        # Strip HTML comments
+        text = re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL)
+        # Strip HTML tags
+        text = re.sub(r"<[^>]+>", "", text)
+        # Collapse whitespace
+        text = re.sub(r"\s+", " ", text).strip()
+        # Take first paragraph / meaningful chunk
+        first_para = text.split("\n\n")[0].split("\r\n\r\n")[0]
+        if len(first_para) > MAX_DESCRIPTION_LENGTH:
+            first_para = first_para[:MAX_DESCRIPTION_LENGTH].rsplit(" ", 1)[0] + "..."
+        return first_para
 
     def _fallback_html(self, items: list[ContentItem]) -> str:
         """Generate a simple HTML list when AI is unavailable."""
@@ -93,7 +115,8 @@ class AIWriter:
                 link = f'<a href="{escape(item.url)}">{title}</a>'
             else:
                 link = title
-            desc = f" &mdash; {escape(item.description)}" if item.description else ""
+            desc_clean = self._clean_description(item.description)
+            desc = f" &mdash; {escape(desc_clean)}" if desc_clean else ""
             html_parts.append(f"  <li>{link}{desc}</li>")
         html_parts.append("</ul>")
         return "\n".join(html_parts)

@@ -45,7 +45,7 @@ class GitHubActivityCollector(BaseCollector):
                     source=self.name,
                     title=entry["title"],
                     url=entry.get("html_url", ""),
-                    description=entry.get("body", "") or "",
+                    description=(entry.get("body", "") or "")[:500],
                     author=entry.get("user", {}).get("login", ""),
                     published_at=entry.get("created_at", ""),
                     content_type=content_type,

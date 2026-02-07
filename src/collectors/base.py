@@ -42,11 +42,20 @@ class BaseCollector(ABC):
             logger.info(f"[{self.name}] Collected {len(items)} new items.")
             return CollectorResult(collector_name=self.name, items=items)
         except Exception as e:
-            logger.error(f"[{self.name}] Error: {e}", exc_info=True)
+            logger.warning(f"[{self.name}] Failed: {e}")
             return CollectorResult(collector_name=self.name, error=str(e))
 
+    @staticmethod
+    def _is_retryable(exc: requests.RequestException) -> bool:
+        """Return True if the error is transient and worth retrying."""
+        if isinstance(exc, (requests.ConnectionError, requests.Timeout)):
+            return True
+        if isinstance(exc, requests.HTTPError) and exc.response is not None:
+            return exc.response.status_code >= 500
+        return False
+
     def _get(self, url: str, **kwargs) -> requests.Response:
-        """HTTP GET with retry and timeout."""
+        """HTTP GET with retry and timeout. Only retries on 5xx/connection errors."""
         kwargs.setdefault("timeout", self.config.request_timeout)
         last_exc = None
         for attempt in range(self.config.max_retries):
@@ -56,17 +65,18 @@ class BaseCollector(ABC):
                 return resp
             except requests.RequestException as e:
                 last_exc = e
-                if attempt < self.config.max_retries - 1:
-                    wait = self.config.retry_backoff_factor ** attempt
-                    logger.warning(
-                        f"[{self.name}] Retry {attempt + 1}/{self.config.max_retries} "
-                        f"for {url} in {wait}s: {e}"
-                    )
-                    time.sleep(wait)
+                if not self._is_retryable(e) or attempt >= self.config.max_retries - 1:
+                    break
+                wait = self.config.retry_backoff_factor ** attempt
+                logger.warning(
+                    f"[{self.name}] Retry {attempt + 1}/{self.config.max_retries} "
+                    f"for {url} in {wait}s: {e}"
+                )
+                time.sleep(wait)
         raise last_exc  # type: ignore[misc]
 
     def _post(self, url: str, **kwargs) -> requests.Response:
-        """HTTP POST with retry and timeout."""
+        """HTTP POST with retry and timeout. Only retries on 5xx/connection errors."""
         kwargs.setdefault("timeout", self.config.request_timeout)
         last_exc = None
         for attempt in range(self.config.max_retries):
@@ -76,13 +86,14 @@ class BaseCollector(ABC):
                 return resp
             except requests.RequestException as e:
                 last_exc = e
-                if attempt < self.config.max_retries - 1:
-                    wait = self.config.retry_backoff_factor ** attempt
-                    logger.warning(
-                        f"[{self.name}] Retry {attempt + 1}/{self.config.max_retries} "
-                        f"for {url} in {wait}s: {e}"
-                    )
-                    time.sleep(wait)
+                if not self._is_retryable(e) or attempt >= self.config.max_retries - 1:
+                    break
+                wait = self.config.retry_backoff_factor ** attempt
+                logger.warning(
+                    f"[{self.name}] Retry {attempt + 1}/{self.config.max_retries} "
+                    f"for {url} in {wait}s: {e}"
+                )
+                time.sleep(wait)
         raise last_exc  # type: ignore[misc]
 
     def _graphql(self, query: str, variables: dict | None = None) -> dict:

@@ -58,25 +58,32 @@ class ContentAssembler:
             section_id = section_def["id"]
             title = section_def["title"]
 
-            # Editorial gets ALL items as context to write a summary intro
             if section_id == "editorial":
-                items = all_items
+                # Editorial summarizes everything but doesn't list items again
+                if not all_items:
+                    continue
+                content_html = self.ai_writer.generate_section(section_id, all_items)
+                section = NewsletterSection(
+                    id=section_id,
+                    title=title,
+                    content_html=content_html,
+                    items=[],  # Don't count editorial items to avoid duplication
+                )
             else:
                 items = section_items.get(section_id, [])
+                if not items:
+                    logger.debug("Skipping section '%s' — no items", section_id)
+                    continue
+                content_html = self.ai_writer.generate_section(section_id, items)
+                section = NewsletterSection(
+                    id=section_id,
+                    title=title,
+                    content_html=content_html,
+                    items=items,
+                )
 
-            if not items:
-                logger.debug("Skipping section '%s' — no items", section_id)
-                continue
-
-            content_html = self.ai_writer.generate_section(section_id, items)
-            section = NewsletterSection(
-                id=section_id,
-                title=title,
-                content_html=content_html,
-                items=items,
-            )
             sections.append(section)
-            logger.info("Built section '%s' with %d items", section_id, len(items))
+            logger.info("Built section '%s' with %d items", section_id, len(section.items))
 
         # 3. Return the complete issue
         issue = NewsletterIssue(date=issue_date, sections=sections)
