@@ -66,11 +66,45 @@ class AIWriter:
             logger.exception("Claude API call failed for section '%s'; using fallback", section_id)
             return self._fallback_html(items)
 
+    @staticmethod
+    def _engagement_score(item: ContentItem) -> int:
+        """Compute a unified engagement score from varied metadata keys."""
+        m = item.metadata
+        if not m:
+            return 0
+        score = 0
+        # Social interactions (likes, retweets, shares, upvotes)
+        score += m.get("like_count", 0)
+        score += m.get("likes", 0)
+        score += m.get("retweet_count", 0) * 2
+        score += m.get("quote_count", 0)
+        score += m.get("shares", 0)
+        score += m.get("upvotes", 0)
+        # Discussion signals (comments, replies, answers)
+        score += m.get("reply_count", 0)
+        score += m.get("num_comments", 0) * 2
+        score += m.get("comments", 0) * 2
+        score += m.get("answer_count", 0) * 2
+        # Aggregated scores (Reddit score, HN points, SO score)
+        score += m.get("score", 0)
+        score += m.get("points", 0)
+        return score
+
     def _format_items(self, items: list[ContentItem]) -> str:
-        """Format ContentItems as readable text for the AI prompt."""
+        """Format ContentItems ranked by engagement for the AI prompt."""
+        # Sort by engagement so the AI sees trending content first
+        ranked = sorted(items, key=self._engagement_score, reverse=True)
+
         parts: list[str] = []
-        for item in items:
-            lines = [f"- Title: {item.title}"]
+        for item in ranked:
+            eng = self._engagement_score(item)
+            label = ""
+            if eng >= 100:
+                label = " [TRENDING]"
+            elif eng >= 30:
+                label = " [HOT]"
+
+            lines = [f"- Title: {item.title}{label}"]
             if item.url:
                 lines.append(f"  URL: {item.url}")
             if item.description:
@@ -81,6 +115,8 @@ class AIWriter:
                 lines.append(f"  Author: {item.author}")
             if item.published_at:
                 lines.append(f"  Published: {item.published_at}")
+            if eng > 0:
+                lines.append(f"  Engagement: {eng}")
             if item.metadata:
                 for key, value in item.metadata.items():
                     lines.append(f"  {key}: {value}")
