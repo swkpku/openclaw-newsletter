@@ -29,11 +29,7 @@
         
         <li><a href="#editorial">Editorial Intro</a></li>
         
-        <li><a href="#releases">Release Updates</a></li>
-        
         <li><a href="#community">Community Spotlight</a></li>
-        
-        <li><a href="#ecosystem">Ecosystem Watch</a></li>
         
         <li><a href="#press">In The Press</a></li>
         
@@ -45,148 +41,85 @@
     <section class="section" id="editorial">
   <h2 class="section-title">Editorial Intro</h2>
   <div class="section-content">
-    <h3>OpenClaw Community Drives Forward with 172K+ Stars</h3>
+    <h3>Critical Security Issues and System Improvements Drive Latest Development Wave</h3>
 
-<p>The OpenClaw ecosystem continues its remarkable growth this week, reaching <strong>172,050 GitHub stars</strong> and attracting 79 dedicated sponsors who are fueling the development of this open-source personal AI assistant. With nearly 28,000 forks and 444 active contributors, the project demonstrates the vibrant community commitment to privacy-focused AI tooling that runs entirely on your own infrastructure.</p>
+<p>The OpenClaw community is addressing some significant security vulnerabilities while rolling out key reliability improvements this week. Most notably, <a href="https://github.com/openclaw/openclaw/issues/10993">critical security flaws have been identified</a> where sub-agents can bypass execution approval mechanisms, potentially allowing unauthorized file operations and command execution. This represents a serious security concern that the team is actively working to resolve.</p>
 
-<p>While the community celebrates these milestones, developers are actively addressing critical stability issues that impact daily usage. Key focus areas include resolving authentication failures across Google and Anthropic providers, fixing memory leaks from orphaned completion processes, and improving error handling for malformed tool calls. The team has also been working on platform-specific challenges, from Feishu/Lark integration issues to systemd service installation problems on Ubuntu systems, showing their dedication to supporting users across diverse deployment scenarios.</p>
+<p>On the stability front, several important fixes are making their way through the pipeline. The <a href="https://github.com/openclaw/openclaw/pull/10989">/stop command functionality has been enhanced</a> to properly terminate long-running tasks that were previously unresponsive to interruption attempts. Additionally, <a href="https://github.com/openclaw/openclaw/pull/9049">improvements to subagent error handling</a> should eliminate those frustrating infinite loops that left users without feedback when background processes failed.</p>
 
-<p>Exciting developments are also on the horizon, with <a href="https://github.com/openclaw/openclaw/pull/10857">new StepFun provider support</a> being added with full CLI onboarding, and community discussions around programmatic session management features that would enable more sophisticated agent workflows. As one recent article highlighted the real costs of "free" AI assistants, OpenClaw's self-hosted approach continues to resonate with users seeking transparency and control over their AI infrastructure.</p>
-  </div>
-</section>
-    
-    <section class="section" id="releases">
-  <h2 class="section-title">Release Updates</h2>
-  <div class="section-content">
-    <h3>OpenClaw Repository Update - February 2026</h3>
-
-<p>The OpenClaw project continues to demonstrate impressive community growth and engagement. As of February 7th, 2026, our open-source personal AI assistant has reached several notable milestones that reflect the vibrant ecosystem surrounding the project.</p>
-
-<h3>Community Growth Highlights</h3>
-
-<p>Our GitHub repository has crossed the <strong>172,000 stars</strong> threshold, representing a significant vote of confidence from the developer community. This stellar growth is accompanied by:</p>
-
-<ul>
-  <li><strong>27,838 forks</strong> - indicating active development and customization by the community</li>
-  <li><strong>444 contributors</strong> - showcasing the collaborative spirit driving OpenClaw forward</li>
-  <li><strong>928 subscribers</strong> - staying updated on project developments</li>
-</ul>
-
-<h3>Development Activity</h3>
-
-<p>The project maintains an active development cycle with <strong>4,124 open issues</strong>, demonstrating both user engagement and the team's commitment to addressing community feedback. This healthy issue count reflects:</p>
-
-<ul>
-  <li>Feature requests from an engaged user base</li>
-  <li>Bug reports helping improve stability</li>
-  <li>Enhancement suggestions driving innovation</li>
-</ul>
-
-<h3>What This Means for Users</h3>
-
-<p>These statistics underscore OpenClaw's position as a leading open-source AI assistant platform. The growing contributor base ensures continuous improvement, while the expanding community provides robust support and shared knowledge.</p>
-
-<p>To get started with OpenClaw or contribute to the project, visit our <a href="https://github.com/openclaw/openclaw">GitHub repository</a> and join our thriving community of developers and users.</p>
+<p>Meanwhile, exciting new features continue to emerge, including <a href="https://github.com/openclaw/openclaw/pull/7480">CoreMemories - a hierarchical memory system</a> that promises to give OpenClaw agents better context retention through a local-first, file-backed approach. The authentication system is also getting smarter with <a href="https://github.com/openclaw/openclaw/pull/8602">automatic OAuth token refresh for Anthropic credentials</a>, reducing friction for users leveraging Claude Code integrations. These developments showcase the project's continued evolution toward more robust, user-friendly AI assistance.</p>
   </div>
 </section>
     
     <section class="section" id="community">
   <h2 class="section-title">Community Spotlight</h2>
   <div class="section-content">
-    <h3>🚀 Community Highlights</h3>
+    <h3>Community Highlights</h3>
 
-<p>The OpenClaw community continues to thrive with active contributions and discussions across our platforms. Here's what's been happening this week:</p>
+<p>The OpenClaw community has been incredibly active this week, with numerous contributions addressing critical bugs, security vulnerabilities, and feature enhancements. Here's what's been happening across GitHub discussions and pull requests:</p>
 
-<h3>🔧 Notable GitHub Activity</h3>
+<h3>Security & Critical Fixes</h3>
 
-<p>Our contributors have been hard at work addressing key issues and adding new features:</p>
+<p>Security researcher <strong>jisi724</strong> identified a critical vulnerability where sub-agents created via sessions_spawn can bypass exec approval mechanisms when executing commands. This security issue affects both regular commands and safeBins operations, highlighting the importance of community security audits.</p>
 
-<ul>
-<li><strong>Audio Support Enhancement:</strong> <a href="https://github.com/openclaw/openclaw/pull/10982">succ985</a> fixed audio file handling by adding .caf extension support, improving media attachment classification across the app</li>
-<li><strong>New Provider Integration:</strong> <a href="https://github.com/openclaw/openclaw/pull/10857">hengm3467</a> added StepFun provider with full CLI onboarding support, enabling users to configure Step 3.5 Flash model via <code>openclaw onboard --auth-choice stepfun-api-key</code></li>
-<li><strong>Critical Bug Fixes:</strong> The community identified and is actively addressing several important issues including session corruption during tool execution, orphaned completion processes causing memory pressure, and authentication failures with various providers</li>
-</ul>
+<p>Meanwhile, <strong>liuy</strong> tackled a user experience issue by implementing immediate termination for long-running tasks via the <a href="https://github.com/openclaw/openclaw/pull/10989">/stop command</a>. This fix resolves situations where users couldn't interrupt lengthy operations like large codebase analysis or image processing.</p>
 
-<h3>🐛 Community-Reported Issues</h3>
+<h3>Agent System Improvements</h3>
 
-<p>Our users continue to provide valuable feedback, helping us identify and resolve critical issues:</p>
+<p>Several contributors focused on enhancing OpenClaw's agent capabilities:</p>
 
 <ul>
-<li><strong>Integration Issues:</strong> Multiple reports of Feishu/Lark integration problems and Google provider authentication failures are being investigated</li>
-<li><strong>User Experience:</strong> Issues with drag-and-drop image uploads in the web UI and internal logs leaking into Telegram chats have been flagged for improvement</li>
-<li><strong>System Stability:</strong> Memory pressure from orphaned processes and session corruption during tool execution are priority fixes</li>
+<li><strong>wony2</strong> improved session management by ensuring <a href="https://github.com/openclaw/openclaw/pull/10998">session_status displays</a> read per-session thinking/reasoning levels instead of falling back to agent defaults</li>
+<li><strong>maxtongwang</strong> addressed stuck loop scenarios with <a href="https://github.com/openclaw/openclaw/pull/9049">subagent failure handling</a> and added automatic OAuth token refresh for Anthropic credentials</li>
+<li><strong>anotb</strong> fixed a cache-ttl pruning issue that occurred on first load after gateway restarts</li>
 </ul>
 
-<h3>💝 Growing Sponsor Support</h3>
+<h3>UI/UX Enhancements</h3>
 
-<p>We're thrilled to announce that OpenClaw now has <a href="https://github.com/sponsors/openclaw">79 sponsors</a> supporting the project! Recent sponsors include <strong>romainhuet</strong>, <strong>nealerickson</strong>, <strong>davemorin</strong>, and <strong>vpulim</strong>, among others. This growing support helps us maintain and improve OpenClaw for the entire community.</p>
+<p>The Control UI received attention from <strong>Annaxiebot</strong>, who both identified and fixed an issue where the "Toggle assistant thinking/working output" button wasn't properly hiding tool call blocks. They also added a <a href="https://github.com/openclaw/openclaw/pull/10991">configurable instance name feature</a> for the Control UI title, helping users running multiple OpenClaw instances.</p>
 
-<h3>🎯 Feature Requests</h3>
+<h3>Major Feature Development</h3>
 
-<p>The community is actively discussing new capabilities, including programmatic session management for agents and improved error handling for rate limits and API failures. These discussions help shape our roadmap and ensure we're building features that matter most to our users.</p>
+<p><strong>Itslouisbaby</strong> continues work on the ambitious <a href="https://github.com/openclaw/openclaw/pull/7480">CoreMemories hierarchical memory system</a>, which has generated 25 comments from community members. This local-first, file-backed memory system promises to revolutionize how OpenClaw handles chat history and context management.</p>
 
-<p>Thanks to everyone contributing code, reporting issues, and supporting the project. Your involvement makes OpenClaw better for everyone! 🙏</p>
-  </div>
-</section>
-    
-    <section class="section" id="ecosystem">
-  <h2 class="section-title">Ecosystem Watch</h2>
-  <div class="section-content">
-    <h3>🚀 OpenClaw Expands Cloud Presence with DigitalOcean Launch</h3>
+<p>Network infrastructure also saw improvements from <strong>chicagobuss</strong>, who added support for ZeroTier, WireGuard, and generic overlay network bind modes, expanding OpenClaw's deployment flexibility.</p>
 
-<p>We're excited to announce that OpenClaw is now officially available on the <a href="https://marketplace.digitalocean.com/apps/openclaw">DigitalOcean Marketplace</a>! This integration makes it easier than ever to deploy your own personal AI assistant with just a few clicks. Users can now spin up OpenClaw on a DigitalOcean Droplet® server, maintaining complete control over their data while leveraging the power of cloud infrastructure.</p>
+<h3>Provider & Model Updates</h3>
 
-<p>This launch represents a significant milestone in making self-hosted AI accessible to a broader audience, eliminating the complexity typically associated with deploying personal AI assistants.</p>
+<p><strong>jatinb92</strong> addressed a model catalog mismatch in the Google Gemini provider, ensuring OpenClaw supports the latest gemini-2.5-flash-lite model that's available through Gemini CLI.</p>
 
-<h3>📊 Competitive Landscape Analysis</h3>
+<h3>Bug Reports & Community Feedback</h3>
 
-<p>As the AI assistant market continues to evolve rapidly, OpenClaw maintains its unique position as a privacy-first, self-hosted solution. Here's how we stack up against the current landscape:</p>
+<p>The community actively reported several important issues:</p>
 
 <ul>
-    <li><strong>Privacy Leaders:</strong> OpenClaw joins <a href="https://alternativeto.net/software/jan-ai/about/">Jan.ai</a> and <a href="https://alternativeto.net/software/secret-llama/about/">Secret Llama</a> in the fully offline/self-hosted category, offering users complete data sovereignty</li>
-    <li><strong>Enterprise Focus:</strong> While solutions like <a href="https://alternativeto.net/software/anything-llm/about/">AnythingLLM</a> target multi-user deployments, OpenClaw focuses on personal AI that scales with individual needs</li>
-    <li><strong>Platform Integration:</strong> Unlike cloud-dependent solutions such as <a href="https://alternativeto.net/software/chatgpt/about/">ChatGPT</a>, <a href="https://alternativeto.net/software/claude/about/">Claude</a>, and <a href="https://alternativeto.net/software/bing-chat/about/">Microsoft Copilot</a>, OpenClaw operates entirely on your infrastructure</li>
+<li>Browser automation reliability concerns from <strong>normanlove222</strong> regarding CDP timeouts</li>
+<li>Channel-specific issues including Feishu token problems and Slack command registration</li>
+<li>Model provider edge cases with qwen-portal and kimi-code models</li>
 </ul>
 
-<h3>🔧 Ecosystem Growth & Developer Tools</h3>
-
-<p>The open-source AI ecosystem continues to flourish with innovative client solutions like <a href="https://alternativeto.net/software/alpaca-ollama-client/about/">Alpaca</a> and <a href="https://alternativeto.net/software/ollama-app/about/">Ollama App</a> making local AI more accessible. OpenClaw's integration with these tools ensures seamless compatibility across the broader ecosystem.</p>
-
-<p>Mobile accessibility is also expanding, with solutions like <a href="https://alternativeto.net/software/pocketpal/about/">PocketPal</a> bringing language models directly to smartphones, complementing OpenClaw's cross-platform capabilities.</p>
-
-<h3>🎯 What's Next for OpenClaw</h3>
-
-<p>With our DigitalOcean marketplace presence established, we're focusing on expanding integrations with other major cloud providers and enhancing our one-click deployment experience. The goal remains unchanged: making personal AI as simple to deploy as it is powerful to use.</p>
-
-<p>Stay tuned for upcoming announcements about Claw360 service expansions and new ClawHunt product launches as we continue building the most comprehensive personal AI ecosystem.</p>
+<p>This week's activity demonstrates the OpenClaw community's commitment to security, reliability, and user experience. The diversity of contributions—from critical security fixes to UI improvements—shows how collaborative development strengthens the project for all users.</p>
   </div>
 </section>
     
     <section class="section" id="press">
   <h2 class="section-title">In The Press</h2>
   <div class="section-content">
-    <h3>OpenClaw Makes Headlines: The $3,600 "Free" AI Assistant Story</h3>
+    <h3>Recent Press Coverage: OpenClaw in the Spotlight</h3>
 
-<p>OpenClaw has been making waves in tech media this week, with a particularly eye-catching story from Medium that's got the community talking. The article "<a href="https://gdsks.medium.com/someone-spent-3-600-in-one-month-on-a-free-ai-assistant-openclaw-i-dug-into-why-95208af9a3c3?source=rss------openclaw-5" target="_blank">Someone Spent $3,600 in One Month on a 'Free' AI Assistant | OpenClaw. I Dug Into Why</a>" by GDSKS dives deep into the unexpected costs that can pile up when running your own AI assistant.</p>
+<p>The OpenClaw project continues to generate significant attention across tech media platforms, with developers and industry observers closely following our progress and contributing valuable insights to the community.</p>
 
-<h3>The Reality Behind "Free" Open Source AI</h3>
+<h3>Developer Deep Dives</h3>
 
-<p>The investigation reveals a sobering reality: while OpenClaw itself is free and open-source, the infrastructure costs can quickly spiral out of control. The most striking example? An $18.75 overnight bill generated simply by asking "is it daytime yet?" This highlights the importance of understanding the true cost of running AI workloads, especially for users new to self-hosting AI assistants.</p>
+<p>On Medium, developer <strong>Arsalan Shah</strong> published a detailed technical analysis titled <a href="https://medium.com/@iarsalanshah/your-openclaw-agent-is-blind-to-x-com-heres-the-fix-e721b194b86a?source=rss------openclaw-5">"Your OpenClaw Agent Is Blind to X.com Here's the Fix"</a> that addresses a critical integration challenge many users have encountered. The article explores how OpenClaw agents are currently experiencing limitations when interacting with X.com (formerly Twitter), and provides practical solutions for developers looking to enhance their agents' social media capabilities.</p>
 
-<h3>Community Response and Discussion</h3>
+<p>Shah's piece highlights both the power and current limitations of OpenClaw agents, demonstrating the kind of real-world problem-solving that makes our open-source community so valuable. The article has sparked discussions about improving OpenClaw's web scraping and API integration capabilities.</p>
 
-<p>The article has sparked important conversations across developer communities about:</p>
+<h3>Community Engagement</h3>
 
-<ul>
-  <li>Cost optimization strategies for self-hosted AI assistants</li>
-  <li>The need for better cost monitoring and alerts in OpenClaw deployments</li>
-  <li>Transparency around infrastructure requirements and potential expenses</li>
-  <li>Best practices for running OpenClaw efficiently without breaking the bank</li>
-</ul>
+<p>This coverage reflects the growing ecosystem of developers who are not only using OpenClaw but actively contributing to solving its challenges. The fact that community members are publishing detailed technical solutions shows the maturity and engagement of our 170k+ GitHub community.</p>
 
-<p>This coverage underscores both the growing interest in OpenClaw and the critical need for better education around deployment costs. It's a reminder that while our 170k+ GitHub stars reflect genuine excitement about open-source AI, we must continue improving documentation and tooling to help users avoid unexpected expenses.</p>
-
-<p>Have you experienced similar cost surprises with your OpenClaw deployment? We'd love to hear your optimization tips and lessons learned in our community discussions.</p>
+<p>We encourage all users experiencing similar integration challenges to check out Shah's solution and contribute their own findings to help make OpenClaw even more robust for everyone.</p>
   </div>
 </section>
     
