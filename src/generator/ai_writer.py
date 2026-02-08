@@ -69,7 +69,13 @@ class AIWriter:
 
     @staticmethod
     def _fix_truncated_html(html: str) -> str:
-        """Close any unclosed HTML tags left by truncated AI output."""
+        """Clean up AI output: convert stray Markdown to HTML, close unclosed tags."""
+        # Convert leftover Markdown bold **text** to <strong>text</strong>
+        html = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", html)
+        # Convert leftover Markdown links [text](url) to <a href="url">text</a>
+        html = re.sub(r"\[([^\]]+)\]\((https?://[^)]+)\)", r'<a href="\2">\1</a>', html)
+
+        # Close any unclosed HTML tags left by truncated AI output
         closable = ["strong", "a", "li", "ul"]
         for tag in closable:
             open_count = len(re.findall(rf"<{tag}[\s>]", html))

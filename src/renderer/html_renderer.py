@@ -2,6 +2,7 @@
 
 import logging
 import os
+import re
 from datetime import datetime
 
 from jinja2 import Environment, FileSystemLoader
@@ -31,10 +32,41 @@ class HTMLRenderer:
         except (ValueError, TypeError):
             return iso_date
 
+    @staticmethod
+    def _make_og_description(issue: "NewsletterIssue") -> str:
+        """Extract first ~155 chars of top_stories content, HTML-stripped."""
+        for section in issue.sections:
+            if section.id == "top_stories" and section.content_html:
+                text = re.sub(r"<[^>]+>", "", section.content_html)
+                text = " ".join(text.split())
+                if len(text) > 155:
+                    return text[:152] + "..."
+                return text
+        return "Daily updates from the OpenClaw ecosystem"
+
+    def _common_vars(self) -> dict:
+        """Template variables shared across all pages."""
+        return {
+            "buttondown_username": self.config.buttondown_username,
+            "site_url": self.config.site_url,
+        }
+
     def render_issue(self, issue: NewsletterIssue) -> str:
         """Render a newsletter issue to HTML and save to docs/issues/."""
         template = self.env.get_template("newsletter.html")
-        html = template.render(issue=issue, date=self._format_date(issue.date))
+
+        og_title = f"OpenClaw Newsletter - {issue.date}"
+        og_description = self._make_og_description(issue)
+        og_url = f"{self.config.site_url}/issues/{issue.date}.html" if self.config.site_url else ""
+
+        html = template.render(
+            issue=issue,
+            date=self._format_date(issue.date),
+            og_title=og_title,
+            og_description=og_description,
+            og_url=og_url,
+            **self._common_vars(),
+        )
 
         os.makedirs(self.config.issues_dir, exist_ok=True)
         filename = f"{issue.date}.html"
@@ -49,7 +81,13 @@ class HTMLRenderer:
     def render_index(self, latest_issue_filename: str | None) -> None:
         """Render the index page with redirect to latest issue."""
         template = self.env.get_template("index.html")
-        html = template.render(latest_issue=latest_issue_filename)
+        html = template.render(
+            latest_issue=latest_issue_filename,
+            og_title="OpenClaw Newsletter",
+            og_description="Daily updates from the OpenClaw ecosystem",
+            og_url=self.config.site_url or "",
+            **self._common_vars(),
+        )
 
         filepath = os.path.join(self.config.docs_dir, "index.html")
         with open(filepath, "w") as f:

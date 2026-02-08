@@ -3,6 +3,7 @@
 import logging
 import os
 import re
+from datetime import datetime
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -25,7 +26,15 @@ class ArchiveBuilder:
         """Scan docs/issues/ and render the archive page."""
         issues = self._scan_issues()
         template = self.env.get_template("archive.html")
-        html = template.render(issues=issues)
+        html = template.render(
+            issues=issues,
+            buttondown_username=self.config.buttondown_username,
+            site_url=self.config.site_url,
+            hide_header_subscribe=True,
+            og_title="OpenClaw Newsletter - Archive",
+            og_description="Browse past issues of the OpenClaw Newsletter",
+            og_url=f"{self.config.site_url}/archive.html" if self.config.site_url else "",
+        )
 
         filepath = os.path.join(self.config.docs_dir, "archive.html")
         with open(filepath, "w") as f:
@@ -50,10 +59,12 @@ class ArchiveBuilder:
             # Count sections by scanning the HTML for section IDs
             filepath = os.path.join(issues_dir, filename)
             section_count, total_items = self._count_sections(filepath)
+            display_date = self._format_date(date_str)
             entries.append(
                 {
                     "filename": filename,
                     "date": date_str,
+                    "display_date": display_date,
                     "section_count": section_count,
                     "total_items": total_items,
                 }
@@ -70,6 +81,15 @@ class ArchiveBuilder:
             return section_count, 0
         except Exception:
             return 0, 0
+
+    @staticmethod
+    def _format_date(iso_date: str) -> str:
+        """Convert '2026-02-07' to 'February 7, 2026'."""
+        try:
+            dt = datetime.strptime(iso_date, "%Y-%m-%d")
+            return dt.strftime("%B %-d, %Y")
+        except (ValueError, TypeError):
+            return iso_date
 
     def get_latest_issue(self) -> str | None:
         """Return the filename of the most recent issue, or None."""

@@ -16,4 +16,7 @@
     <a href="{{ base_path }}archive.html">Archive</a>
     <a href="https://github.com/openclaw/openclaw">GitHub</a>
   </nav>
+  {% if not hide_header_subscribe %}
+  {% include "partials/subscribe.html" %}
+  {% endif %}
 </header>

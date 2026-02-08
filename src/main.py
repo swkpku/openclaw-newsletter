@@ -48,6 +48,7 @@ from src.collectors.tech_news import TechNewsCollector
 from src.generator.content_assembler import ContentAssembler
 from src.renderer.html_renderer import HTMLRenderer
 from src.renderer.archive_builder import ArchiveBuilder
+from src.renderer.rss_builder import RSSBuilder
 from src.state.state_manager import StateManager
 
 logging.basicConfig(
@@ -156,6 +157,9 @@ def main() -> None:
 
     archive = ArchiveBuilder(config)
     archive.build()
+
+    rss = RSSBuilder(config)
+    rss.build()
 
     latest = archive.get_latest_issue()
     renderer.render_index(latest)

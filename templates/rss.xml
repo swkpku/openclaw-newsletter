@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenClaw Newsletter</title>
+    {% if site_url %}<link>{{ site_url }}</link>{% endif %}
+    <description>Daily updates from the OpenClaw ecosystem</description>
+    <language>en-us</language>
+    {% if site_url %}<atom:link href="{{ site_url }}/rss.xml" rel="self" type="application/rss+xml"/>{% endif %}
+    {% for issue in issues %}
+    <item>
+      <title>OpenClaw Newsletter - {{ issue.date }}</title>
+      <link>{% if site_url %}{{ site_url }}/issues/{{ issue.filename }}{% else %}issues/{{ issue.filename }}{% endif %}</link>
+      <guid isPermaLink="true">{% if site_url %}{{ site_url }}/issues/{{ issue.filename }}{% else %}issues/{{ issue.filename }}{% endif %}</guid>
+      <pubDate>{{ issue.pub_date }}</pubDate>
+      <description>OpenClaw Newsletter for {{ issue.date }}</description>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>

@@ -1,0 +1,17 @@
+<!-- Open Graph -->
+<meta property="og:type" content="{{ og_type | default('website') }}">
+<meta property="og:title" content="{{ og_title | default('OpenClaw Newsletter') }}">
+<meta property="og:description" content="{{ og_description | default('Daily updates from the OpenClaw ecosystem') }}">
+{%- if site_url %}
+<meta property="og:url" content="{{ og_url | default(site_url) }}">
+{%- endif %}
+{%- if og_image %}
+<meta property="og:image" content="{{ og_image }}">
+{%- endif %}
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ og_title | default('OpenClaw Newsletter') }}">
+<meta name="twitter:description" content="{{ og_description | default('Daily updates from the OpenClaw ecosystem') }}">
+{%- if og_image %}
+<meta name="twitter:image" content="{{ og_image }}">
+{%- endif %}

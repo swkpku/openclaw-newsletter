@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OpenClaw Newsletter - Archive</title>
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="OpenClaw Newsletter" href="rss.xml">
+  {% include "partials/meta.html" %}
 </head>
 <body>
   <div class="container">
@@ -12,25 +14,36 @@
     {% set date = None %}
     {% include "partials/header.html" %}
 
-    <h2 class="archive-title">Newsletter Archive</h2>
-
-    {% if issues %}
-    <ul class="archive-list">
-      {% for entry in issues %}
-      <li>
-        <a href="issues/{{ entry.filename }}">{{ entry.date }}</a>
-        {% if entry.total_items %}
-        <div class="meta">{{ entry.total_items }} items &middot; {{ entry.section_count }} sections</div>
-        {% endif %}
-      </li>
-      {% endfor %}
-    </ul>
-    {% else %}
-    <div class="empty-state">
-      <h2>No issues yet</h2>
-      <p>The first newsletter issue will appear here after generation.</p>
+    <div class="archive-gate">
+      <h2>Never miss an issue</h2>
+      <p>Get OpenClaw updates delivered to your inbox.</p>
+      {% include "partials/subscribe.html" %}
+      <label class="archive-reveal" for="show-archive">Browse archive &rarr;</label>
     </div>
-    {% endif %}
+
+    <input type="checkbox" id="show-archive" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      <h2 class="archive-title">Newsletter Archive</h2>
+
+      {% if issues %}
+      <ul class="archive-list">
+        {% for entry in issues %}
+        <li>
+          <a href="issues/{{ entry.filename }}">{{ entry.display_date }}</a>
+          {% if entry.total_items %}
+          <div class="meta">{{ entry.total_items }} items &middot; {{ entry.section_count }} sections</div>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <div class="empty-state">
+        <h2>No issues yet</h2>
+        <p>The first newsletter issue will appear here after generation.</p>
+      </div>
+      {% endif %}
+    </div>
 
     {% include "partials/footer.html" %}
   </div>

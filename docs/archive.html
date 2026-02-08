@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OpenClaw Newsletter - Archive</title>
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="OpenClaw Newsletter" href="rss.xml">
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenClaw Newsletter - Archive">
+<meta property="og:description" content="Browse past issues of the OpenClaw Newsletter">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenClaw Newsletter - Archive">
+<meta name="twitter:description" content="Browse past issues of the OpenClaw Newsletter">
 </head>
 <body>
   <div class="container">
@@ -26,39 +35,65 @@
     <a href="archive.html">Archive</a>
     <a href="https://github.com/openclaw/openclaw">GitHub</a>
   </nav>
+  
 </header>
 
-    <h2 class="archive-title">Newsletter Archive</h2>
+    <div class="archive-gate">
+      <h2>Never miss an issue</h2>
+      <p>Get OpenClaw updates delivered to your inbox.</p>
+      <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+      <label class="archive-reveal" for="show-archive">Browse archive &rarr;</label>
+    </div>
 
-    
-    <ul class="archive-list">
+    <input type="checkbox" id="show-archive" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      <h2 class="archive-title">Newsletter Archive</h2>
+
       
-      <li>
-        <a href="issues/2026-02-08.html">2026-02-08</a>
+      <ul class="archive-list">
         
-      </li>
-      
-      <li>
-        <a href="issues/2026-02-07.html">2026-02-07</a>
+        <li>
+          <a href="issues/2026-02-08.html">February 8, 2026</a>
+          
+        </li>
         
-      </li>
-      
-      <li>
-        <a href="issues/2026-02-06.html">2026-02-06</a>
+        <li>
+          <a href="issues/2026-02-07.html">February 7, 2026</a>
+          
+        </li>
         
-      </li>
+        <li>
+          <a href="issues/2026-02-06.html">February 6, 2026</a>
+          
+        </li>
+        
+      </ul>
       
-    </ul>
-    
+    </div>
 
     <footer class="footer">
   <div class="footer-divider"></div>
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
   <p>
     Generated with AI by the
     <a href="https://github.com/openclaw/openclaw">OpenClaw</a> Newsletter Bot
   </p>
   <div class="footer-links">
     <a href="archive.html">Archive</a>
+    <a href="rss.xml">RSS</a>
     <a href="https://github.com/openclaw/openclaw">Star on GitHub</a>
   </div>
 </footer>

@@ -38,6 +38,10 @@ class Config:
     state_file: str = "state.json"
     max_state_entries: int = 500
 
+    # Site
+    buttondown_username: str = "openclaw-newsletter"
+    site_url: str = ""
+
     # Output
     docs_dir: str = "docs"
     templates_dir: str = "templates"
