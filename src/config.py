@@ -40,6 +40,7 @@ class Config:
 
     # Site
     buttondown_username: str = "openclaw-newsletter"
+    buttondown_api_key: str = ""
     site_url: str = ""
 
     # Output
@@ -71,6 +72,7 @@ class Config:
             moltbook_token=os.environ.get("MOLTBOOK_TOKEN", ""),
             youtube_api_key=os.environ.get("YOUTUBE_API_KEY", ""),
             eventbrite_token=os.environ.get("EVENTBRITE_TOKEN", ""),
+            buttondown_api_key=os.environ.get("BUTTONDOWN_API_KEY", ""),
         )
 
 

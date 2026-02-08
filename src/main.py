@@ -49,6 +49,7 @@ from src.generator.content_assembler import ContentAssembler
 from src.renderer.html_renderer import HTMLRenderer
 from src.renderer.archive_builder import ArchiveBuilder
 from src.renderer.rss_builder import RSSBuilder
+from src.renderer.email_sender import EmailSender
 from src.state.state_manager import StateManager
 
 logging.basicConfig(
@@ -164,7 +165,14 @@ def main() -> None:
     latest = archive.get_latest_issue()
     renderer.render_index(latest)
 
-    # 7. Save state - mark all collected items as covered
+    # 7. Send email via Buttondown
+    sender = EmailSender(config)
+    if sender.is_available():
+        sender.send(issue, issue_filename)
+    else:
+        logger.info("Email sending skipped (no BUTTONDOWN_API_KEY)")
+
+    # 8. Save state - mark all collected items as covered
     for result in results:
         state.mark_items_covered([item.id for item in result.items])
     state.save()
