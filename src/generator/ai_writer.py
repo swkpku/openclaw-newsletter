@@ -55,16 +55,28 @@ class AIWriter:
         try:
             response = self.client.messages.create(
                 model=self.config.claude_model,
-                max_tokens=1500,
+                max_tokens=2500,
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": user_prompt}],
             )
             content = response.content[0].text
+            content = self._fix_truncated_html(content)
             logger.info("Generated AI content for section '%s' (%d chars)", section_id, len(content))
             return content
         except Exception:
             logger.exception("Claude API call failed for section '%s'; using fallback", section_id)
             return self._fallback_html(items)
+
+    @staticmethod
+    def _fix_truncated_html(html: str) -> str:
+        """Close any unclosed HTML tags left by truncated AI output."""
+        closable = ["strong", "a", "li", "ul"]
+        for tag in closable:
+            open_count = len(re.findall(rf"<{tag}[\s>]", html))
+            close_count = len(re.findall(rf"</{tag}>", html))
+            for _ in range(open_count - close_count):
+                html += f"</{tag}>"
+        return html
 
     @staticmethod
     def _engagement_score(item: ContentItem) -> int:

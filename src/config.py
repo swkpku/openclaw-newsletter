@@ -163,6 +163,7 @@ SEARCH_KEYWORDS = ["openclaw", "open claw", "claw ai assistant"]
 # Newsletter section definitions — focused, scannable daily briefing
 SECTIONS = [
     {"id": "top_stories", "title": "Top Stories"},
+    {"id": "trending_x", "title": "Trending on X"},
     {"id": "releases", "title": "Releases"},
     {"id": "community", "title": "Community"},
     {"id": "news", "title": "News"},
@@ -188,7 +189,7 @@ COLLECTOR_SECTION_MAP = {
     "stackoverflow": "community",
     "reddit": "community",
     "discord_feed": "community",
-    "twitter": "community",
+    "twitter": "trending_x",
     "linkedin_news": "community",
     "moltbook": "community",
     "youtube": "community",

@@ -2,6 +2,7 @@
 
 import logging
 import os
+from datetime import datetime
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -21,10 +22,19 @@ class HTMLRenderer:
             autoescape=False,
         )
 
+    @staticmethod
+    def _format_date(iso_date: str) -> str:
+        """Convert ISO date like '2026-02-07' to 'Friday, February 7, 2026'."""
+        try:
+            dt = datetime.strptime(iso_date, "%Y-%m-%d")
+            return dt.strftime("%A, %B %-d, %Y")
+        except (ValueError, TypeError):
+            return iso_date
+
     def render_issue(self, issue: NewsletterIssue) -> str:
         """Render a newsletter issue to HTML and save to docs/issues/."""
         template = self.env.get_template("newsletter.html")
-        html = template.render(issue=issue, date=issue.date)
+        html = template.render(issue=issue, date=self._format_date(issue.date))
 
         os.makedirs(self.config.issues_dir, exist_ok=True)
         filename = f"{issue.date}.html"

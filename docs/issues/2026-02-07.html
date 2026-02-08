@@ -19,7 +19,9 @@
       </div>
     </div>
   </div>
-  <p class="date">2026-02-07</p>
+  
+  <p class="date">Saturday, February 7, 2026</p>
+  
   <nav class="nav">
     <a href="../index.html">Latest</a>
     <a href="../archive.html">Archive</a>
@@ -32,99 +34,114 @@
       <h2>In This Issue</h2>
       <ul>
         
-        <li><a href="#editorial">Editorial Intro</a></li>
+        <li><a href="#top_stories">Top Stories</a></li>
         
-        <li><a href="#community">Community Spotlight</a></li>
+        <li><a href="#trending_x">Trending on X</a></li>
         
-        <li><a href="#press">In The Press</a></li>
+        <li><a href="#releases">Releases</a></li>
+        
+        <li><a href="#community">Community</a></li>
+        
+        <li><a href="#news">News</a></li>
+        
+        <li><a href="#security">Security</a></li>
         
       </ul>
     </div>
     
 
     
-    <section class="section" id="editorial">
-  <h2 class="section-title">Editorial Intro</h2>
+    <section class="section" id="top_stories">
+  <h2 class="section-title">Top Stories</h2>
   <div class="section-content">
-    <h3>Critical Security Issues and System Improvements Drive Latest Development Wave</h3>
+    <ul>
+<li><strong>OpenClaw rebrand creates massive community buzz</strong> — The project's third name change (from Moltbot) generates 666 points on <a href="https://openclaw.ai/blog/introducing-openclaw">Hacker News</a> with fierce debate about AI safety.</li>
 
-<p>The OpenClaw community is addressing some significant security vulnerabilities while rolling out key reliability improvements this week. Most notably, <a href="https://github.com/openclaw/openclaw/issues/10993">critical security flaws have been identified</a> where sub-agents can bypass execution approval mechanisms, potentially allowing unauthorized file operations and command execution. This represents a serious security concern that the team is actively working to resolve.</p>
+<li><strong>Security partnership with VirusTotal launches</strong> — ClawHub now <a href="https://twitter.com/i/web/status/2020296007930831260">auto-scans every skill for malware</a>, addressing the discovery of 341 malicious skills in the marketplace.</li>
 
-<p>On the stability front, several important fixes are making their way through the pipeline. The <a href="https://github.com/openclaw/openclaw/pull/10989">/stop command functionality has been enhanced</a> to properly terminate long-running tasks that were previously unresponsive to interruption attempts. Additionally, <a href="https://github.com/openclaw/openclaw/pull/9049">improvements to subagent error handling</a> should eliminate those frustrating infinite loops that left users without feedback when background processes failed.</p>
+<li><strong>Apple Intelligence comparison goes viral</strong> — Developer analysis arguing <a href="https://www.jakequist.com/thoughts/openclaw-is-what-apple-intelligence-should-have-been">OpenClaw surpasses Apple's AI</a> hits 513 points and sparks heated discussion about agent capabilities.</li>
 
-<p>Meanwhile, exciting new features continue to emerge, including <a href="https://github.com/openclaw/openclaw/pull/7480">CoreMemories - a hierarchical memory system</a> that promises to give OpenClaw agents better context retention through a local-first, file-backed approach. The authentication system is also getting smarter with <a href="https://github.com/openclaw/openclaw/pull/8602">automatic OAuth token refresh for Anthropic credentials</a>, reducing friction for users leveraging Claude Code integrations. These developments showcase the project's continued evolution toward more robust, user-friendly AI assistance.</p>
+<li><strong>Nanobot emerges as lightweight alternative</strong> — New competitor project gains <a href="https://github.com/HKUDS/nanobot">244 points on HN</a> positioning itself as a minimal OpenClaw alternative.</li>
+
+<li><strong>Critical security warnings multiply</strong> — Multiple <a href="https://cacm.acm.org/blogcacm/openclaw-a-k-a-moltbot-is-everywhere-all-at-once-and-a-disaster-waiting-to-happen/">high-profile security assessments</a> warn against OpenClaw's full system access model, with calls to "stop using" it gaining traction.</li>
+</ul>
+  </div>
+</section>
+    
+    <section class="section" id="trending_x">
+  <h2 class="section-title">Trending on X</h2>
+  <div class="section-content">
+    <ul>
+  <li><strong>[TRENDING] OpenClaw × VirusTotal Security Partnership</strong>: OpenClaw announces automatic malware scanning for all ClawHub skills with AI Code Insight detecting threats like reverse shells and crypto miners. <strong>810 total engagements</strong> (405 retweets) - <a href="https://twitter.com/i/web/status/2020296007930831260">view tweet</a></li>
+
+  <li><strong>[HOT] $25 Phone Hardware Access</strong>: User successfully installs OpenClaw on a budget smartphone with full hardware permissions, demonstrating the platform's accessibility. <strong>58 total engagements</strong> (29 retweets) - <a href="https://twitter.com/i/web/status/2020295925495918638">view tweet</a></li>
+
+  <li><strong>[HOT] Unusual Whales Weekend Bot Building</strong>: Financial data provider promotes building OpenClaw agents over the weekend with real-time market data integration. <strong>38 total engagements</strong> (19 retweets) - <a href="https://twitter.com/i/web/status/2020295982160990711">view tweet</a></li>
+
+  <li><strong>Greg Isenberg's "Vibe Marketing" Take</strong>: Entrepreneur suggests developers should focus on marketing their OpenClaw projects rather than just coding them. <strong>8 total engagements</strong> (4 retweets) - <a href="https://twitter.com/i/web/status/2020295980004843891">view tweet</a></li>
+</ul>
+  </div>
+</section>
+    
+    <section class="section" id="releases">
+  <h2 class="section-title">Releases</h2>
+  <div class="section-content">
+    <ul>
+  <li><strong>openclaw 2026.2.6</strong> adds support for Anthropic Opus 4.6 and OpenAI Codex gpt-5.3-codex with forward-compat fallbacks, plus xAI (Grok) provider support. <a href="https://github.com/openclaw/openclaw/releases/tag/v2026.2.6">Release notes</a></li>
+  
+  <li><strong>openclaw 2026.2.3</strong> removes final @ts-nocheck from Telegram bot handlers, achieving zero TypeScript ignores in src/telegram/. <a href="https://github.com/openclaw/openclaw/releases/tag/v2026.2.3">Release notes</a></li>
+  
+  <li><strong>npm package 2026.2.6-3</strong> published with <strong>1M+ weekly downloads</strong> for WhatsApp gateway CLI with Pi RPC agent. <a href="https://www.npmjs.com/package/openclaw">View on npm</a></li>
+  
+  <li><strong>Homebrew formula 2026.2.6-3</strong> available with 787 installs in 30 days. <a href="https://formulae.brew.sh/formula/openclaw-cli">Install via brew</a></li>
+</ul>
+
+<p><strong>Repository milestone:</strong> 173,961 stars (+growth), 28,374 forks, 448 contributors</p>
   </div>
 </section>
     
     <section class="section" id="community">
-  <h2 class="section-title">Community Spotlight</h2>
+  <h2 class="section-title">Community</h2>
   <div class="section-content">
-    <h3>Community Highlights</h3>
+    <ul>
+<li><strong>@akoscz pluggable secrets manager</strong> — New <a href="https://github.com/openclaw/openclaw/pull/11539">$secret{NAME} syntax</a> lets users keep credentials in external stores instead of plaintext config files, addressing critical security gaps</li>
 
-<p>The OpenClaw community has been incredibly active this week, with numerous contributions addressing critical bugs, security vulnerabilities, and feature enhancements. Here's what's been happening across GitHub discussions and pull requests:</p>
+<li><strong>@joshyorko critical security warning</strong> — <a href="https://github.com/openclaw/openclaw/issues/7139">Default config provides zero isolation</a> with unrestricted filesystem access and plaintext credentials stored in JSON</li>
 
-<h3>Security & Critical Fixes</h3>
+<li><strong>@akoscz sessions scrub command</strong> — New <a href="https://github.com/openclaw/openclaw/pull/11544">CLI tool scans and redacts</a> leaked secrets from historical session transcripts after config.get exposure</li>
 
-<p>Security researcher <strong>jisi724</strong> identified a critical vulnerability where sub-agents created via sessions_spawn can bypass exec approval mechanisms when executing commands. This security issue affects both regular commands and safeBins operations, highlighting the importance of community security audits.</p>
+<li><strong>@coygeek workspace plugin security</strong> — <a href="https://github.com/openclaw/openclaw/pull/11035">Disables auto-execution</a> of non-bundled plugins by default, requiring explicit user consent</li>
 
-<p>Meanwhile, <strong>liuy</strong> tackled a user experience issue by implementing immediate termination for long-running tasks via the <a href="https://github.com/openclaw/openclaw/pull/10989">/stop command</a>. This fix resolves situations where users couldn't interrupt lengthy operations like large codebase analysis or image processing.</p>
-
-<h3>Agent System Improvements</h3>
-
-<p>Several contributors focused on enhancing OpenClaw's agent capabilities:</p>
-
-<ul>
-<li><strong>wony2</strong> improved session management by ensuring <a href="https://github.com/openclaw/openclaw/pull/10998">session_status displays</a> read per-session thinking/reasoning levels instead of falling back to agent defaults</li>
-<li><strong>maxtongwang</strong> addressed stuck loop scenarios with <a href="https://github.com/openclaw/openclaw/pull/9049">subagent failure handling</a> and added automatic OAuth token refresh for Anthropic credentials</li>
-<li><strong>anotb</strong> fixed a cache-ttl pruning issue that occurred on first load after gateway restarts</li>
+<li><strong>@dhc02 extensible search providers</strong> — <a href="https://github.com/openclaw/openclaw/pull/11444">Plugin system support</a> for custom search providers (Kagi, SerpAPI, Tavily) without core code changes</li>
 </ul>
-
-<h3>UI/UX Enhancements</h3>
-
-<p>The Control UI received attention from <strong>Annaxiebot</strong>, who both identified and fixed an issue where the "Toggle assistant thinking/working output" button wasn't properly hiding tool call blocks. They also added a <a href="https://github.com/openclaw/openclaw/pull/10991">configurable instance name feature</a> for the Control UI title, helping users running multiple OpenClaw instances.</p>
-
-<h3>Major Feature Development</h3>
-
-<p><strong>Itslouisbaby</strong> continues work on the ambitious <a href="https://github.com/openclaw/openclaw/pull/7480">CoreMemories hierarchical memory system</a>, which has generated 25 comments from community members. This local-first, file-backed memory system promises to revolutionize how OpenClaw handles chat history and context management.</p>
-
-<p>Network infrastructure also saw improvements from <strong>chicagobuss</strong>, who added support for ZeroTier, WireGuard, and generic overlay network bind modes, expanding OpenClaw's deployment flexibility.</p>
-
-<h3>Provider & Model Updates</h3>
-
-<p><strong>jatinb92</strong> addressed a model catalog mismatch in the Google Gemini provider, ensuring OpenClaw supports the latest gemini-2.5-flash-lite model that's available through Gemini CLI.</p>
-
-<h3>Bug Reports & Community Feedback</h3>
-
-<p>The community actively reported several important issues:</p>
-
-<ul>
-<li>Browser automation reliability concerns from <strong>normanlove222</strong> regarding CDP timeouts</li>
-<li>Channel-specific issues including Feishu token problems and Slack command registration</li>
-<li>Model provider edge cases with qwen-portal and kimi-code models</li>
-</ul>
-
-<p>This week's activity demonstrates the OpenClaw community's commitment to security, reliability, and user experience. The diversity of contributions—from critical security fixes to UI improvements—shows how collaborative development strengthens the project for all users.</p>
   </div>
 </section>
     
-    <section class="section" id="press">
-  <h2 class="section-title">In The Press</h2>
+    <section class="section" id="news">
+  <h2 class="section-title">News</h2>
   <div class="section-content">
-    <h3>Recent Press Coverage: OpenClaw in the Spotlight</h3>
+    <ul>
+<li><strong>OpenClaw Blog</strong>: Official announcement of the Moltbot rebrand to OpenClaw <a href="https://openclaw.ai/blog/introducing-openclaw">666 points, 381 comments</a> — community hype is real</li>
 
-<p>The OpenClaw project continues to generate significant attention across tech media platforms, with developers and industry observers closely following our progress and contributing valuable insights to the community.</p>
+<li><strong>Apple Intelligence Comparison</strong>: Jake Quist argues OpenClaw delivers what Apple's AI promised but failed to execute <a href="https://www.jakequist.com/thoughts/openclaw-is-what-apple-intelligence-should-have-been">513 points, 411 comments</a> — strong engagement</li>
 
-<h3>Developer Deep Dives</h3>
+<li><strong>Bull Case Analysis</strong>: Brandon Wang's investment thesis on OpenClaw's potential dominance <a href="https://brandon.wang/2026/clawdbot">295 points, 477 comments</a> — sparking intense debate</li>
 
-<p>On Medium, developer <strong>Arsalan Shah</strong> published a detailed technical analysis titled <a href="https://medium.com/@iarsalanshah/your-openclaw-agent-is-blind-to-x-com-heres-the-fix-e721b194b86a?source=rss------openclaw-5">"Your OpenClaw Agent Is Blind to X.com Here's the Fix"</a> that addresses a critical integration challenge many users have encountered. The article explores how OpenClaw agents are currently experiencing limitations when interacting with X.com (formerly Twitter), and provides practical solutions for developers looking to enhance their agents' social media capabilities.</p>
+<li><strong>Nanobot Alternative</strong>: New ultra-lightweight competitor emerges on GitHub <a href="https://github.com/HKUDS/nanobot">244 points, 123 comments</a> — gaining traction as OpenClaw lite</li>
 
-<p>Shah's piece highlights both the power and current limitations of OpenClaw agents, demonstrating the kind of real-world problem-solving that makes our open-source community so valuable. The article has sparked discussions about improving OpenClaw's web scraping and API integration capabilities.</p>
-
-<h3>Community Engagement</h3>
-
-<p>This coverage reflects the growing ecosystem of developers who are not only using OpenClaw but actively contributing to solving its challenges. The fact that community members are publishing detailed technical solutions shows the maturity and engagement of our 170k+ GitHub community.</p>
-
-<p>We encourage all users experiencing similar integration challenges to check out Shah's solution and contribute their own findings to help make OpenClaw even more robust for everyone.</p>
+<li><strong>Security Nightmare Warning</strong>: ACM article warns about cascade failures with full system access <a href="https://cacm.acm.org/blogcacm/openclaw-a-k-a-moltbot-is-everywhere-all-at-once-and-a-disaster-waiting-to-happen/">110 points, 68 comments</a> — security community taking notice</li>
+</ul>
+  </div>
+</section>
+    
+    <section class="section" id="security">
+  <h2 class="section-title">Security</h2>
+  <div class="section-content">
+    <ul>
+<li><strong>CrowdStrike Security Advisory</strong>: Security teams must understand OpenClaw's attack vectors and implement proper monitoring controls. <a href="https://www.crowdstrike.com/en-us/blog/what-security-teams-need-to-know-about-openclaw-ai-super-agent/">Read guidance</a></li>
+<li><strong>Agentic Tool Chain Attacks</strong>: AI agents face new threat vectors through compromised tool chains that require enhanced security measures. <a href="https://www.crowdstrike.com/en-us/blog/how-agentic-tool-chain-attacks-threaten-ai-agent-security/">Learn mitigation</a></li>
+<li><strong>Malicious Skill Trap Warning</strong>: Hundreds of malicious OpenClaw skills are disguising themselves as legitimate ones, making manual review unrealistic. <a href="https://www.bitdefender.com/en-us/blog/labs/helpful-skills-or-hidden-payloads-bitdefender-labs-dives-deep-into-the-openclaw-malicious-skill-trap">See Bitdefender analysis</a></li>
+</ul>
   </div>
 </section>
     

@@ -17,6 +17,14 @@ SECTION_PROMPTS = {
         "today. Each bullet: bold the headline, then one sentence of context with a link. "
         "Prioritize items with high engagement scores — these are resonating with the "
         "community. Skip anything minor. Only the things a busy developer must know. "
+        "These items also appear in dedicated sections below — keep each bullet to ONE "
+        "sentence, do not repeat details that will be covered in those sections. "
+        "Data: {data}"
+    ),
+    "trending_x": (
+        "Pick 3-5 notable tweets about OpenClaw. For each tweet: bold the author name "
+        "or topic, summarize in one sentence, mention engagement stats (likes, retweets) "
+        "when available, and link to the tweet. Skip low-engagement or routine tweets. "
         "Data: {data}"
     ),
     "releases": (

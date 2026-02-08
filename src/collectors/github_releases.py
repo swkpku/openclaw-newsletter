@@ -1,6 +1,7 @@
 """Collector for OpenClaw GitHub releases."""
 
 import logging
+from datetime import datetime, timedelta, timezone
 
 from src.collectors.base import BaseCollector
 from src.config import GITHUB_API_BASE, GITHUB_OWNER, GITHUB_REPO
@@ -21,11 +22,24 @@ class GitHubReleasesCollector(BaseCollector):
         if self.config.github_token:
             headers["Authorization"] = f"token {self.config.github_token}"
 
-        resp = self._get(url, headers=headers)
+        resp = self._get(url, headers=headers, params={"per_page": 15})
         releases = resp.json()
+
+        # Only include releases from the last 3 days
+        cutoff = datetime.now(timezone.utc) - timedelta(days=3)
 
         items: list[ContentItem] = []
         for rel in releases:
+            # Skip releases older than 3 days
+            published = rel.get("published_at", "")
+            if published:
+                try:
+                    pub_dt = datetime.fromisoformat(published.replace("Z", "+00:00"))
+                    if pub_dt < cutoff:
+                        continue
+                except ValueError:
+                    pass
+
             item_id = f"release:{rel['tag_name']}"
             if state.is_covered(item_id):
                 continue
