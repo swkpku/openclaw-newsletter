@@ -73,6 +73,7 @@ class Config:
             youtube_api_key=os.environ.get("YOUTUBE_API_KEY", ""),
             eventbrite_token=os.environ.get("EVENTBRITE_TOKEN", ""),
             buttondown_api_key=os.environ.get("BUTTONDOWN_API_KEY", ""),
+            site_url=os.environ.get("SITE_URL", ""),
         )
 
 

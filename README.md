@@ -119,6 +119,8 @@ The generated newsletter will be written to `docs/index.html`.
 |-----|----------|-------------|
 | `ANTHROPIC_API_KEY` | Yes | Powers AI-generated summaries via Claude |
 | `GITHUB_TOKEN` | Auto | Auto-provided in GitHub Actions; increases rate limits locally |
+| `BUTTONDOWN_API_KEY` | No | Buttondown API token for email delivery to subscribers |
+| `SITE_URL` | No | Base URL for OG tags and RSS links (e.g. `https://swkpku.github.io/openclaw-newsletter`) |
 | `TWITTER_BEARER_TOKEN` | No | Twitter/X API v2 bearer token |
 | `REDDIT_CLIENT_ID` | No | Reddit API client ID |
 | `REDDIT_CLIENT_SECRET` | No | Reddit API client secret |
