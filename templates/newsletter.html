@@ -24,10 +24,37 @@
     </div>
     {% endif %}
 
+    {# Show first section as free teaser #}
+    {% if issue.active_sections %}
+    {% set ns = namespace(first=true) %}
     {% for section in issue.active_sections %}
+    {% if ns.first %}
     {% include "partials/section.html" %}
+    {% set ns.first = false %}
+    {% endif %}
     {% endfor %}
+    {% endif %}
 
+    {# Gate remaining sections behind subscribe #}
+    <div class="archive-gate">
+      <h2>Read the full issue</h2>
+      <p>Subscribe to get every section delivered to your inbox.</p>
+      {% include "partials/subscribe.html" %}
+      <label class="archive-reveal" for="show-full">Continue reading &rarr;</label>
+    </div>
+
+    <input type="checkbox" id="show-full" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      {% set ns = namespace(first=true) %}
+      {% for section in issue.active_sections %}
+      {% if ns.first %}
+      {% set ns.first = false %}
+      {% else %}
+      {% include "partials/section.html" %}
+      {% endif %}
+      {% endfor %}
+    </div>
 
     {% include "partials/footer.html" %}
   </div>
