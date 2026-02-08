@@ -36,6 +36,7 @@ jobs:
           MOLTBOOK_TOKEN: ${{ secrets.MOLTBOOK_TOKEN }}
           EVENTBRITE_TOKEN: ${{ secrets.EVENTBRITE_TOKEN }}
           BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+          SITE_URL: ${{ vars.SITE_URL }}
         run: python -m src.main
 
       - name: Commit and push changes

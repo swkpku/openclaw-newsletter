@@ -26,6 +26,7 @@ class ArchiveBuilder:
         """Scan docs/issues/ and render the archive page."""
         issues = self._scan_issues()
         template = self.env.get_template("archive.html")
+        og_image = f"{self.config.site_url}/assets/og-image.png" if self.config.site_url else ""
         html = template.render(
             issues=issues,
             buttondown_username=self.config.buttondown_username,
@@ -34,6 +35,7 @@ class ArchiveBuilder:
             og_title="OpenClaw Newsletter - Archive",
             og_description="Browse past issues of the OpenClaw Newsletter",
             og_url=f"{self.config.site_url}/archive.html" if self.config.site_url else "",
+            og_image=og_image,
         )
 
         filepath = os.path.join(self.config.docs_dir, "archive.html")
@@ -73,12 +75,13 @@ class ArchiveBuilder:
         return entries
 
     def _count_sections(self, filepath: str) -> tuple[int, int]:
-        """Count sections in an issue HTML file."""
+        """Count sections and list items in an issue HTML file."""
         try:
             with open(filepath, "r") as f:
                 content = f.read()
             section_count = content.count('class="section"')
-            return section_count, 0
+            total_items = content.count("<li>")
+            return section_count, total_items
         except Exception:
             return 0, 0
 

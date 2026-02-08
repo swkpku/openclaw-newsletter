@@ -46,9 +46,11 @@ class HTMLRenderer:
 
     def _common_vars(self) -> dict:
         """Template variables shared across all pages."""
+        og_image = f"{self.config.site_url}/assets/og-image.png" if self.config.site_url else ""
         return {
             "buttondown_username": self.config.buttondown_username,
             "site_url": self.config.site_url,
+            "og_image": og_image,
         }
 
     def render_issue(self, issue: NewsletterIssue) -> str:
