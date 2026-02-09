@@ -38,6 +38,7 @@ class HTMLRenderer:
         for section in issue.sections:
             if section.id == "top_stories" and section.content_html:
                 text = re.sub(r"<[^>]+>", "", section.content_html)
+                text = re.sub(r"\[TRENDING:\s*\d+\s*engagement\]", "", text)
                 text = " ".join(text.split())
                 if len(text) > 155:
                     return text[:152] + "..."
@@ -46,7 +47,7 @@ class HTMLRenderer:
 
     def _common_vars(self) -> dict:
         """Template variables shared across all pages."""
-        og_image = f"{self.config.site_url}/assets/og-image.png" if self.config.site_url else ""
+        og_image = f"{self.config.site_url}/assets/og-image.svg" if self.config.site_url else ""
         return {
             "buttondown_username": self.config.buttondown_username,
             "site_url": self.config.site_url,

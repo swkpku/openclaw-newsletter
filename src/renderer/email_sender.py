@@ -2,7 +2,10 @@
 
 import logging
 import os
+from datetime import datetime
+
 import requests
+from jinja2 import Environment, FileSystemLoader
 
 from src.config import Config
 from src.models.data_models import NewsletterIssue
@@ -17,9 +20,31 @@ class EmailSender:
 
     def __init__(self, config: Config):
         self.config = config
+        self.env = Environment(
+            loader=FileSystemLoader(config.templates_dir),
+            autoescape=False,
+        )
 
     def is_available(self) -> bool:
         return bool(self.config.buttondown_api_key)
+
+    @staticmethod
+    def _format_date(iso_date: str) -> str:
+        """Convert ISO date like '2026-02-07' to 'Friday, February 7, 2026'."""
+        try:
+            dt = datetime.strptime(iso_date, "%Y-%m-%d")
+            return dt.strftime("%A, %B %-d, %Y")
+        except (ValueError, TypeError):
+            return iso_date
+
+    def _render_email_html(self, issue: NewsletterIssue) -> str:
+        """Render the email-specific template with inlined styles."""
+        template = self.env.get_template("email.html")
+        return template.render(
+            issue=issue,
+            date=self._format_date(issue.date),
+            site_url=self.config.site_url,
+        )
 
     def send(self, issue: NewsletterIssue, issue_filename: str) -> bool:
         """Send the newsletter issue as an email to all subscribers.
@@ -35,14 +60,7 @@ class EmailSender:
             logger.warning("BUTTONDOWN_API_KEY not set; skipping email send")
             return False
 
-        # Read the rendered HTML file
-        filepath = os.path.join(self.config.issues_dir, issue_filename)
-        try:
-            with open(filepath) as f:
-                html_body = f.read()
-        except FileNotFoundError:
-            logger.error("Issue file not found: %s", filepath)
-            return False
+        html_body = self._render_email_html(issue)
 
         subject = f"OpenClaw Newsletter - {issue.date}"
 

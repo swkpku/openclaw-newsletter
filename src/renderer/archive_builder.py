@@ -26,7 +26,7 @@ class ArchiveBuilder:
         """Scan docs/issues/ and render the archive page."""
         issues = self._scan_issues()
         template = self.env.get_template("archive.html")
-        og_image = f"{self.config.site_url}/assets/og-image.png" if self.config.site_url else ""
+        og_image = f"{self.config.site_url}/assets/og-image.svg" if self.config.site_url else ""
         html = template.render(
             issues=issues,
             buttondown_username=self.config.buttondown_username,

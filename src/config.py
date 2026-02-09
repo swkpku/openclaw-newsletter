@@ -1,8 +1,11 @@
 """Central configuration for OpenClaw Newsletter."""
 
+import logging
 import os
 from dataclasses import dataclass, field
 from pathlib import Path
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -61,7 +64,7 @@ class Config:
                 value = value.strip().strip("'\"")
                 os.environ.setdefault(key.strip(), value)
 
-        return cls(
+        instance = cls(
             anthropic_api_key=os.environ.get("ANTHROPIC_API_KEY", ""),
             github_token=os.environ.get("GITHUB_TOKEN", ""),
             twitter_bearer_token=os.environ.get("TWITTER_BEARER_TOKEN", ""),
@@ -75,6 +78,12 @@ class Config:
             buttondown_api_key=os.environ.get("BUTTONDOWN_API_KEY", ""),
             site_url=os.environ.get("SITE_URL", ""),
         )
+        if not instance.site_url:
+            logger.warning(
+                "SITE_URL is empty — RSS links and OG tags will be broken. "
+                "Set SITE_URL in your environment or .env file."
+            )
+        return instance
 
 
 # --- Source Registry ---
