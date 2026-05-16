@@ -130,6 +130,16 @@ The generated newsletter will be written to `docs/index.html`.
 | `YOUTUBE_API_KEY` | No | YouTube Data API v3 key |
 | `EVENTBRITE_TOKEN` | No | Eventbrite API token |
 
+## Optional X/Twitter Follow-Up
+
+The built-in `TwitterCollector` gathers newsletter input when `TWITTER_BEARER_TOKEN` is available. For post-publish work, OpenClaw agents can use [TweetClaw](https://github.com/Xquik-dev/tweetclaw) as a separate OpenClaw plugin to search tweets, search tweet replies, monitor issue URLs, post approved newsletter updates, and track replies with the Xquik API.
+
+```bash
+openclaw plugins install @xquik/tweetclaw
+```
+
+Use the [ClawHub listing](https://clawhub.ai/plugins/@xquik/tweetclaw) for plugin browsing. Use the npm package `@xquik/tweetclaw` as the install source.
+
 Copy `.env.example` to `.env` and fill in your keys.
 
 ## Architecture
