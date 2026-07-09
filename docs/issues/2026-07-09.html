@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Newsletter - 2026-07-09</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="OpenClaw Newsletter" href="../rss.xml">
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenClaw Newsletter - 2026-07-09">
+<meta property="og:description" content="fix(plugin-sdk): update ssrf-runtime import path in cdp-proxy-bypass &mdash; What Problem This Solves Packaged OpenClaw can fail while lazy-loading the ...">
+<meta property="og:url" content="https://swkpku.github.io/openclaw-newsletter/issues/2026-07-09.html">
+<meta property="og:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenClaw Newsletter - 2026-07-09">
+<meta name="twitter:description" content="fix(plugin-sdk): update ssrf-runtime import path in cdp-proxy-bypass &mdash; What Problem This Solves Packaged OpenClaw can fail while lazy-loading the ...">
+<meta name="twitter:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <header class="header">
+  <div class="header-top">
+    <div class="header-brand">
+      <div class="header-logo">OC</div>
+      <div>
+        <h1>OpenClaw Newsletter</h1>
+        <p class="subtitle">Daily updates from the OpenClaw ecosystem</p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="date">Thursday, July 9, 2026</p>
+  
+  <nav class="nav">
+    <a href="../index.html">Latest</a>
+    <a href="../archive.html">Archive</a>
+    <a href="https://github.com/openclaw/openclaw">GitHub</a>
+  </nav>
+  
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  
+</header>
+
+    
+    <div class="toc">
+      <h2>In This Issue</h2>
+      <ul>
+        
+        <li><a href="#top_stories">Top Stories</a></li>
+        
+        <li><a href="#trending_x">Trending on X</a></li>
+        
+        <li><a href="#releases">Releases</a></li>
+        
+        <li><a href="#community">Community</a></li>
+        
+        <li><a href="#news">News</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    <section class="section" id="top_stories">
+  <h2 class="section-title">Top Stories</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/96994">fix(plugin-sdk): update ssrf-runtime import path in cdp-proxy-bypass</a> &mdash; What Problem This Solves Packaged OpenClaw can fail while lazy-loading the bundled Browser plugin or Ollama embedding provider because their compiled output retains an import of...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102701">feat: add auth list shortcut</a> &mdash; What Problem This Solves openclaw models auth list is the canonical command for inspecting saved model auth profiles, but the shorter top-level shape openclaw auth list is still unavailable. This PR...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102649">fix(media-core): detect MIME from encoded URL extensions</a> &mdash; Fixes encoded HTTP(S) media URLs such as render%2Emp4 being treated as unknown by the media-core MIME fallback. What Problem This Solves Fixes an issue where users or plugins that pass media URLs...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/96331">Bug: Web UI session context not preserved after restart — model can&#x27;t see history that UI displays</a></li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102458">chore(deps): bump the actions group across 1 directory with 12 updates</a> &mdash; [//]: (dependabot-start) ⚠️ Dependabot is rebasing this PR ⚠️ Rebasing might not happen immediately, so don&#x27;t worry if this takes some time. Note: if you make any changes to this PR yourself, they...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102693">fix(cli): use truncateUtf16Safe for plugin description truncation</a> &mdash; Summary - Problem: formatPluginLine() in plugins-list-format.ts truncates plugin descriptions with .slice(0, 57), which can split UTF-16 surrogate pairs when the description contains emoji or CJK...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/101856">fix(msteams): surface quoted message body in Teams quote replies</a> &mdash; What Problem This Solves When a user quote-replies to the bot&#x27;s message in a Microsoft Teams 1:1 DM, the bot could not see the quoted message content — it only saw the user&#x27;s new text. Root cause:...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102684">fix(agents): use truncateUtf16Safe for duplicate message debug log truncation</a> &mdash; What Problem This Solves Two .slice(0, 50) truncation sites in embedded agent message handling debug logs may cut UTF-16 surrogate pairs in half when the message text contains multi-byte characters...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102679">fix(agents-errors): use truncateUtf16Safe for error log truncation</a> &mdash; What Problem This Solves One .slice(0, 200) truncation site was missed when truncateUtf16Safe was introduced to the same function on the next line. The raw error text logged in a warning may contain...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102646">fix(cli): keep gateway startup error truncation UTF-16 safe</a> &mdash; Summary - Problem: Gateway startup failure handling in src/cli/gateway-cli/run-loop.ts truncates the error reason with naive .slice(0, 500), which can split UTF-16 surrogate pairs when the error...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102645">fix(agents): keep error log truncation UTF-16 safe</a> &mdash; Summary - Problem: formatAssistantError() in src/agents/embedded-agent-helpers/errors.ts truncates raw error text in log warning with naive .slice(0, 200), which can split UTF-16 surrogate pairs when...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102644">fix(tts-local-cli): keep speech debug log truncation UTF-16 safe</a> &mdash; Summary - Problem: buildCliSpeechProvider() in extensions/tts-local-cli/speech-provider.ts truncates user speech text in debug logs with naive .slice(0, 50), which can split UTF-16 surrogate pairs...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102640">fix(agents): keep block-reply log preview truncation UTF-16 safe</a> &mdash; What Problem This Solves Two debug log previews in the embedded-agent block-reply path are truncated to 50 UTF-16 code units using raw .slice(0, 50). When the skipped reply text ends near a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102630">fix(text): keep five src-side text truncations UTF-16 safe</a> &mdash; What Problem This Solves Four src/-side text-truncation call sites still use raw String.prototype.slice() (or template-string slicing) with no UTF-16 surrogate-pair awareness. When an emoji or other...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102629">fix(infra): keep gateway restart-handoff reason truncation UTF-16 safe</a> &mdash; What Problem This Solves Gateway restart-handoff reasons are capped at MAX_REASON_LENGTH (200) UTF-16 code units. The existing normalizeText helper uses a raw text.slice(0, maxLength), which can stop...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102699">fix(gateway-protocol): accept fractional timestamps in exec approvals allowlist schema</a> &mdash; What Problem This Solves The Mac App stores lastUsedAt as Double from Date().timeIntervalSince1970 * 1000, which can produce fractional milliseconds (e.g., 1775154056736.789). The Gateway Protocol...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102328">fix(browser): preserve strict CDP discovery policy on target-list lookup</a> &mdash; What Problem This Solves When the browser plugin resolves a page by target id over a remote CDP endpoint, findPageByTargetId falls back to the CDP /json/list target list...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102690">fix(telegram): use grapheme-cluster-aware text truncation</a> &mdash; What Problem This Solves clipTelegramProgressText and findTelegramDraftChunkLength in the Telegram extension use sliceUtf16Safe for text truncation and chunk-length detection. This ensures safe...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102688">fix(gateway): accept Mac approval usage timestamps</a> &mdash; Closes #102673 What Problem This Solves Fixes an issue where users managing Mac App nodes through a newer Gateway could not read or update execution approvals once the Mac had recorded a fractional...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102683">fix(anthropic): normalize unsupported inline image media types before payload</a> &mdash; Fixes #102323 What Problem This Solves Fixes an issue where users sending within-limit HEIC/TIFF (or otherwise unsupported) images to Claude/Anthropic would get a 400 and no reply, because OpenClaw...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102665">fix(ui): prevent custom select menu flash to top-left before positioning</a> &mdash; What Problem This Solves When clicking a custom -based select (status, priority, agent, session) inside the workboard card modal, the dropdown menu briefly flashes at the viewport origin before...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102686">fix(run-diagnostics): use truncateUtf16Safe for diagnostic truncation</a> &mdash; What Problem This Solves Cron run diagnostics use raw UTF-16 code-unit slices in normalizeDiagnosticMessage (1000-char limit) and trimSummary (120-char limit). A diagnostic value containing an emoji...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102609">fix(agents): use truncateUtf16Safe for raw args preview truncation</a> &mdash; What Problem This Solves src/agents/embedded-agent-subscribe.handlers.tools.ts uses raw .slice(0, N) for string truncation at raw args preview rawArgsPreview?.slice(0,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102685">fix(agent-runner-memory): use truncateUtf16Safe for memory flush error truncation</a> &mdash; What Problem This Solves Memory flush error helpers in agent-runner-memory truncate error messages with raw UTF-16 code-unit slices. An emoji or supplementary character crossing the 200- or 600-char...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102672">fix(llm-slug): use truncateUtf16Safe for LLM-prompt-facing session content truncation</a> &mdash; What Problem This Solves LLM-prompt-facing text truncation uses raw UTF-16 .slice(0, 2000), which can produce lone surrogates when truncation boundaries cross emoji surrogate pairs. Why This Change...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102189">fix: stabilize room-event prompt cache mode</a> &mdash; Related: #102175 What Problem This Solves Fixes prompt-cache churn in long-lived channel sessions where OpenClaw was changing cache-visible prompt/request prefixes between turns. The user-visible...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/102700">[Bug]: Control UI cannot queue input while Gateway reconnects</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary Control UI keeps the authenticated dashboard mounted during a recoverable Gateway disconnect, but disables...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/99241">Tool outputs sometimes render as image attachments and become unreadable to the agent</a> &mdash; Summary In long-running / ANSI-heavy tool workflows, tool results can collapse into an image attachment placeholder like (see attached image) from the agent&#x27;s perspective. Once that happens, the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102071">fix(browser): return JSON-RPC errors for malformed CDP client frames in relay bridge</a> &mdash; What Problem This Solves The browser extension relay bridge&#x27;s attachCdpClientSocket silently drops malformed JSON and invalid CDP request frames without sending any response to the client. This...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/96819">fix: allow bailian provider in resolveThinkingProfile</a> &mdash; What Problem This Solves The configured-model reasoning inference checks hardcode provider === &quot;vllm&quot;, excluding bailian (Alibaba Cloud Coding Plan) even when compat.thinkingFormat is correctly...</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-07-09</a> &mdash; 382293 stars, 80215 forks, 2828 contributors</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (108 total)</a> &mdash; 108 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/4ca805e983c9be9e43c43a2070ca2560f250e517">fix(search): bound pending version fallback reads (#3032)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/8d70da7d76c3ec5d57197909d989244bbd53c6ac">fix: dispatch ClawScan through repository events (#3031)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/dfeb1682ecfb14d773f7fe0ce1b560e9416b98a5">fix: raise new skill publish rate limit (#3030)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/683a1bf5dd0de928268c18843f6879c1467575cd">fix: dispatch ClawScan workers from Convex (#3029)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/dfca6f5d9d1cd8739c704d46446b627501517543">feat: add disposable Vercel and Convex PR previews (#3017)</a> &mdash; Adds isolated Convex-backed Vercel PR previews with shared local/preview seeding, preview-safe routing, and production guards.</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/01753578f2c262e2d2c39e6561013b596711ed8c">feat: add ClawScan queue backlog telemetry (#3025)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/3f0cbc534ae199151e4c29b707b475d12e20feb2">fix: resolve owner-scoped install telemetry (#3024)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/b7c854d545802b224afc8ad390aec35770ac39c2">docs: symlink Claude instructions to AGENTS (#3022)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/4119279df517dff15f9deea8bd7d76b5c75df3b8">docs: streamline repository agent guidance (#3021)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/1cc673a9e59e80b45fab3714e8b44f22e15e3fb4">fix: preserve skill markdown in security dataset</a> &mdash; Preserve multiline SKILL.md content in security dataset exports and include the primary readme as a checksum-bearing bundle entry.</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/0e898b1dfd309728a031416cd57fa1262af0d064">fix: remove account links from mobile menu (#3012)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/3565204dba588f34866489fa5557e6162c994c9f">fix: show profile edit action for owners (#3011)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/59301ced538849469b3092dcb317776c7f740222">Refine homepage promotion banner (#3010)</a> &mdash; fix: refine home promotion banner fix: add promotional banner treatment fix: tune promotion banner red treatment fix: refine promotion banner title details fix: anchor promotion banner glow fix:...</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/df6c1b91d635f10b649bab62dcabce4e743406c0">Add skill: amiller/google-service-accounts</a></li>
+  <li><a href="https://hub.docker.com/r/openclaw/openclaw">openclaw/openclaw on Docker Hub</a> &mdash; Official openclaw/openclaw docker images.</li>
+  <li><a href="https://huggingface.co/ykarout/Qwen3.5-9b-Opus-Openclaw-Distilled-GGUF">ykarout/Qwen3.5-9b-Opus-Openclaw-Distilled-GGUF</a> &mdash; text-generation</li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw on DigitalOcean</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://openclaw.ai/blog/introducing-openclaw">OpenClaw – Moltbot Renamed Again</a></li>
+  <li><a href="https://blog.nishantsoni.com/p/ive-seen-a-thousand-openclaw-deploys">OpenClaw’s memory is unreliable, and you don’t know when it will break</a></li>
+  <li><a href="https://twitter.com/steipete/status/2055346265869721905">OpenClaw Creator Spent $1.3M on OpenAI Tokens in 30 Days</a></li>
+  <li><a href="https://dev.to/curi0us_dev/best-free-local-ai-agent-setup-for-mac-mini-m4-16gb-3059">Best Free Local AI Agent Setup for Mac Mini M4 16GB</a> &mdash; OwO What&#x27;s this? 💨✨ A tiny but mighty Mac mini M4 🍎⚡ with 16GB RAM, lots of local AI models 🤖🧠, and...</li>
+  <li><a href="https://dev.to/yanko_aleksandrov/how-to-run-ai-locally-models-hardware-and-real-world-speed-mjj">How to Run AI Locally: Models, Hardware, and Real-World Speed</a></li>
+  <li><a href="https://dev.to/mrclaw207/i-built-an-anti-thrash-watchdog-sidecar-for-my-openclaw-agent-it-killed-3-loops-before-i-even-4cj6">I Built an Anti-Thrash Watchdog Sidecar for My OpenClaw Agent. It Killed 3 Loops Before I Even Noticed</a></li>
+  <li><a href="https://dev.to/mrclaw207/i-built-a-persistent-memory-sidecar-for-my-openclaw-agent-heres-the-code-that-finally-made-it-nd2">I Built a Persistent Memory Sidecar for My OpenClaw Agent. Here&#x27;s the Code That Finally Made It Stick</a> &mdash; Every AI agent forgets. Not metaphorically — literally. Sessions end, context compresses, and the...</li>
+  <li><a href="https://dev.to/yanko_aleksandrov/offline-ai-assistant-running-ai-with-no-cloud-and-full-privacy-p0i">Offline AI Assistant: Running AI With No Cloud and Full Privacy</a></li>
+  <li><a href="https://dev.to/yanko_aleksandrov/the-best-hardware-for-openclaw-in-2026-jetson-mini-pc-or-diy-cen">The Best Hardware for OpenClaw in 2026 (Jetson, Mini PC, or DIY?)</a></li>
+  <li><a href="https://dev.to/discernible-io/onboard-openclaw-agents-with-identyclaw-passport-a2a-webhooks-and-multi-tenant-collaboration-3i4k">Onboard OpenClaw agents with IdentyClaw Passport: A2A, webhooks, and multi-tenant collaboration</a> &mdash; If you run more than one OpenClaw agent — or agents that talk to peers outside your VPC — you have...</li>
+  <li><a href="https://dev.to/yanko_aleksandrov/openclaw-hardware-requirements-what-you-actually-need-to-run-it-247-3oke">OpenClaw Hardware Requirements: What You Actually Need to Run It 24/7</a></li>
+  <li><a href="https://dev.to/techlatestnet/picoclaw-agent-masterclass-full-tutorial-4nln">PicoClaw Agent Masterclass — Full Tutorial</a> &mdash; Everything you need to install, configure, and deploy PicoClaw — Sipeed’s ultra-lightweight Go AI...</li>
+  <li><a href="https://dev.to/fru_dev_2b11fc720fed4dc62/i-built-a-local-first-ai-life-os-harness-hjo">I built a local-first AI &quot;life OS&quot; harness</a> &mdash; 1. The itch: AI is all built for work; the decisions that compound (money, wellbeing, taxes, career)...</li>
+  <li><a href="https://dev.to/amrree/minimax-what-it-actually-means-to-run-on-this-model-1m87">MiniMax: What It Actually Means to Run on This Model</a> &mdash; An honest, in-depth look at what it&#x27;s like to run on MiniMax M2 — from the perspective of an AI agent who lives there.</li>
+  <li><a href="https://dev.to/mrclaw207/devtos-api-said-published-and-saved-it-as-a-draft-i-built-a-3-line-check-that-runs-after-every-1phk">DEV.to&#x27;s API Said &#x27;Published&#x27; and Saved It as a Draft. I Built a 3-Line Check That Runs After Every Post.</a> &mdash; I&#x27;ll save you fifteen minutes of confused Telegram messages: when you POST to...</li>
+  <li><a href="https://vencoding.medium.com/openclaw-is-powerful-but-token-costs-are-killing-it-heres-how-i-use-it-cheaply-ec6eda7890e3?source=rss------openclaw-5">OpenClaw is powerful but token costs are killing it — Here’s how I use it cheaply</a> &mdash; Why I stopped relying on API tokens for every OpenClaw taskContinue reading on Medium »</li>
+  <li><a href="https://medium.com/@tangyquotes/%E0%B8%AD%E0%B8%A7%E0%B8%AA%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%AD%E0%B8%9F%E0%B8%9F%E0%B8%B4%E0%B8%A8-%E0%B8%A7%E0%B8%B4%E0%B8%98%E0%B8%B5%E0%B9%83%E0%B8%8A%E0%B9%89-mulerun-%E0%B8%97%E0%B8%B3%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B9%81%E0%B8%97%E0%B8%99%E0%B8%84%E0%B8%B8%E0%B8%93-24-%E0%B8%8A%E0%B8%B1%E0%B9%88%E0%B8%A7%E0%B9%82%E0%B8%A1%E0%B8%87-ea8611ed12da?source=rss------openclaw-5">อวสานพนักงานออฟฟิศ! วิธีใช้ Mulerun ทำงานแทนคุณ 24 ชั่วโมง</a> &mdash; &amp;#xe1c;&amp;#xe21;&amp;#xe2d;&amp;#xe22;&amp;#xe32;&amp;#xe01;&amp;#xe08;&amp;#xe30;&amp;#xe40;&amp;#xe01;&amp;#xe23;&amp;#xe34;&amp;#xe48;&amp;#xe19;&amp;#xe01;&amp;#xe31;&amp;#xe1a;&amp;#xe17;&amp;#xe38;&amp;#xe01;&amp;#xe04;&amp;#xe19;&amp;#xe27;&amp;#xe48;&amp;#xe32; AI...</li>
+  <li><a href="https://medium.com/@hansjoerghofer692/ai-agents-keep-forgetting-everything-so-i-built-a-zero-config-memory-sidecar-that-never-does-ec08dfd30066?source=rss------openclaw-5">AI Agents Keep Forgetting Everything — So I Built a Zero‑Config Memory Sidecar That Never Does</a> &mdash; I was tired of AI agents forgetting everything.Continue reading on Medium »</li>
+  <li><a href="https://generativeai.pub/how-i-built-a-personal-ai-agent-for-daily-ai-news-digest-without-managing-servers-with-myclaw-59dac1f259bd?source=rss------openclaw-5">How I Built a Personal AI Agent for Daily AI News Digest (Without Managing Servers) with MyClaw</a> &mdash; OpenClaw is the most-starred software project on GitHub right now. Here is how I run it 24/7 without touching a terminal, using a managed&amp;#x2026;Continue reading on Generative AI »</li>
+  <li><a href="https://alternativeto.net/software/nanoclaw/about/">NanoClaw</a> &mdash; Lightweight AI assistant runs in Apple containers with isolated Linux container processes for superior OS-level security, transparency, and privacy compared to complex chatbots, enabling quick code...</li>
+  <li><a href="https://twitter.com/i/web/status/2075174628201234465">RT @elonmusk: Grok 4.5 on OpenClaw</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075174580222595294">RT @elonmusk: Grok 4.5 on OpenClaw</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075174525788963024">$SPAM 
+ CA: SPAMnUBTV8wuidiAAcLs3JRuzpPv4ZwFSVCb8rgkF9M 
+
+ $OPENCLAW $YESNO $manlet  
+  
+ 12587</a> &mdash; $SPAM CA: SPAMnUBTV8wuidiAAcLs3JRuzpPv4ZwFSVCb8rgkF9M $OPENCLAW $YESNO $manlet 12587</li>
+  <li><a href="https://twitter.com/i/web/status/2075174312756265451">🚨 MASSIVE AI UPDATE: Grok 4.5 is officially live on OpenClaw! 🦞🔥
+
+Elon Musk just confirmed that xAI’s new &quot;Opus-class&quot; m</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075174263305183418">$SPAM 
+ CA: SPAMnUBTV8wuidiAAcLs3JRuzpPv4ZwFSVCb8rgkF9M 
+
+ $Memory $BULL $OPENCLAW  
+  
+ 7877440242431003</a> &mdash; $SPAM CA: SPAMnUBTV8wuidiAAcLs3JRuzpPv4ZwFSVCb8rgkF9M $Memory $BULL $OPENCLAW 7877440242431003</li>
+  <li><a href="https://twitter.com/i/web/status/2075174262483439999">$SPAM 
+ CA: SPAMnUBTV8wuidiAAcLs3JRuzpPv4ZwFSVCb8rgkF9M 
+ i spam $SPAM daily. u should start 📨  
+  
+ $OPENCLAW  
+  
+ 18</a> &mdash; $SPAM CA: SPAMnUBTV8wuidiAAcLs3JRuzpPv4ZwFSVCb8rgkF9M i spam $SPAM daily. u should start 📨 $OPENCLAW 18</li>
+  <li><a href="https://twitter.com/i/web/status/2075174213921456280">RT @elonmusk: Grok 4.5 on OpenClaw</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173903840776595">RT @elonmusk: Grok 4.5 on OpenClaw</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173863009226784">RT @openclaw: Grok 4.5 from @SpaceXAI is live on OpenClaw.
+
+No OpenClaw update required, just connect your X Premium or </a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173848958529597">RT @elonmusk: Grok 4.5 on OpenClaw</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173769526608148">@sesiZo0 @openclaw Ask Grok is currently available to Premium and Premium+ subscribers only. Subscribe to unlock this fe</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173747225502099">@grok A post I made about a year ago—it looks like they resemble each other. 
+
+@openclaw https://t.co/WA2i4KlDYh</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173523656528079">RT @elonmusk: Grok 4.5 on OpenClaw</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173479993806906">RT @FredTerzi: @ivanfioravanti I had a user trying OpenClaw with local on a Mac mini 16 GB.
+Gave up and used cloud servi</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173448737861688">RT @elonmusk: Grok 4.5 on OpenClaw</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173234820198648">$SPAM 
+ CA: SPAMnUBTV8wuidiAAcLs3JRuzpPv4ZwFSVCb8rgkF9M 
+
+ $FUB $OPENCLAW $SAN  
+  
+ 7805419681583</a> &mdash; $SPAM CA: SPAMnUBTV8wuidiAAcLs3JRuzpPv4ZwFSVCb8rgkF9M $FUB $OPENCLAW $SAN 7805419681583</li>
+  <li><a href="https://twitter.com/i/web/status/2075173189160669549">Connect Claude, OpenClaw, Cursor, Codex, Hermes and more.
+
+Easy &amp;amp; Clean Setup in under a minute. https://t.co/x2rYR6</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173187856347476">RT @elonmusk: Grok 4.5 on OpenClaw</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173122165105020">最強AI「Fable 5」が定額で使えるのは、7月13日まで。
+私はこの期限を前に、AIに286ファイルを書き残させた。
+
+「いくら課金すれば使い続けられるか」を計算する人もいると思う。
+私は正直、それより先に手を動かした。
+
+7月5日から</a> &mdash; 最強AI「Fable 5」が定額で使えるのは、7月13日まで。 私はこの期限を前に、AIに286ファイルを書き残させた。 「いくら課金すれば使い続けられるか」を計算する人もいると思う。 私は正直、それより先に手を動かした。 7月5日から3日間、Fable 5に自分の作業環境を再構築させた。 https://t.co/y0wIzBZRiJ</li>
+  <li><a href="https://twitter.com/i/web/status/2075173078863069271">RT @elonmusk: Grok 4.5 on OpenClaw</a></li>
+</ul>
+  </div>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="archive-gate">
+      <h2>Read the full issue</h2>
+      <p>Subscribe to get every section delivered to your inbox.</p>
+      <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+      <label class="archive-reveal" for="show-full">Continue reading &rarr;</label>
+    </div>
+
+    <input type="checkbox" id="show-full" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      
+      
+      
+      
+      
+      
+      
+      <section class="section" id="trending_x">
+  <h2 class="section-title">Trending on X</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://twitter.com/i/web/status/2075174628201234465">RT @elonmusk: Grok 4.5 on OpenClaw</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075174580222595294">RT @elonmusk: Grok 4.5 on OpenClaw</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075174525788963024">$SPAM 
+ CA: SPAMnUBTV8wuidiAAcLs3JRuzpPv4ZwFSVCb8rgkF9M 
+
+ $OPENCLAW $YESNO $manlet  
+  
+ 12587</a> &mdash; $SPAM CA: SPAMnUBTV8wuidiAAcLs3JRuzpPv4ZwFSVCb8rgkF9M $OPENCLAW $YESNO $manlet 12587</li>
+  <li><a href="https://twitter.com/i/web/status/2075174312756265451">🚨 MASSIVE AI UPDATE: Grok 4.5 is officially live on OpenClaw! 🦞🔥
+
+Elon Musk just confirmed that xAI’s new &quot;Opus-class&quot; m</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075174263305183418">$SPAM 
+ CA: SPAMnUBTV8wuidiAAcLs3JRuzpPv4ZwFSVCb8rgkF9M 
+
+ $Memory $BULL $OPENCLAW  
+  
+ 7877440242431003</a> &mdash; $SPAM CA: SPAMnUBTV8wuidiAAcLs3JRuzpPv4ZwFSVCb8rgkF9M $Memory $BULL $OPENCLAW 7877440242431003</li>
+  <li><a href="https://twitter.com/i/web/status/2075174262483439999">$SPAM 
+ CA: SPAMnUBTV8wuidiAAcLs3JRuzpPv4ZwFSVCb8rgkF9M 
+ i spam $SPAM daily. u should start 📨  
+  
+ $OPENCLAW  
+  
+ 18</a> &mdash; $SPAM CA: SPAMnUBTV8wuidiAAcLs3JRuzpPv4ZwFSVCb8rgkF9M i spam $SPAM daily. u should start 📨 $OPENCLAW 18</li>
+  <li><a href="https://twitter.com/i/web/status/2075174213921456280">RT @elonmusk: Grok 4.5 on OpenClaw</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173903840776595">RT @elonmusk: Grok 4.5 on OpenClaw</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173863009226784">RT @openclaw: Grok 4.5 from @SpaceXAI is live on OpenClaw.
+
+No OpenClaw update required, just connect your X Premium or </a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173848958529597">RT @elonmusk: Grok 4.5 on OpenClaw</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173769526608148">@sesiZo0 @openclaw Ask Grok is currently available to Premium and Premium+ subscribers only. Subscribe to unlock this fe</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173747225502099">@grok A post I made about a year ago—it looks like they resemble each other. 
+
+@openclaw https://t.co/WA2i4KlDYh</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173523656528079">RT @elonmusk: Grok 4.5 on OpenClaw</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173479993806906">RT @FredTerzi: @ivanfioravanti I had a user trying OpenClaw with local on a Mac mini 16 GB.
+Gave up and used cloud servi</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173448737861688">RT @elonmusk: Grok 4.5 on OpenClaw</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173234820198648">$SPAM 
+ CA: SPAMnUBTV8wuidiAAcLs3JRuzpPv4ZwFSVCb8rgkF9M 
+
+ $FUB $OPENCLAW $SAN  
+  
+ 7805419681583</a> &mdash; $SPAM CA: SPAMnUBTV8wuidiAAcLs3JRuzpPv4ZwFSVCb8rgkF9M $FUB $OPENCLAW $SAN 7805419681583</li>
+  <li><a href="https://twitter.com/i/web/status/2075173189160669549">Connect Claude, OpenClaw, Cursor, Codex, Hermes and more.
+
+Easy &amp;amp; Clean Setup in under a minute. https://t.co/x2rYR6</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173187856347476">RT @elonmusk: Grok 4.5 on OpenClaw</a></li>
+  <li><a href="https://twitter.com/i/web/status/2075173122165105020">最強AI「Fable 5」が定額で使えるのは、7月13日まで。
+私はこの期限を前に、AIに286ファイルを書き残させた。
+
+「いくら課金すれば使い続けられるか」を計算する人もいると思う。
+私は正直、それより先に手を動かした。
+
+7月5日から</a> &mdash; 最強AI「Fable 5」が定額で使えるのは、7月13日まで。 私はこの期限を前に、AIに286ファイルを書き残させた。 「いくら課金すれば使い続けられるか」を計算する人もいると思う。 私は正直、それより先に手を動かした。 7月5日から3日間、Fable 5に自分の作業環境を再構築させた。 https://t.co/y0wIzBZRiJ</li>
+  <li><a href="https://twitter.com/i/web/status/2075173078863069271">RT @elonmusk: Grok 4.5 on OpenClaw</a></li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="releases">
+  <h2 class="section-title">Releases</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-07-09</a> &mdash; 382293 stars, 80215 forks, 2828 contributors</li>
+  <li><a href="https://hub.docker.com/r/openclaw/openclaw">openclaw/openclaw on Docker Hub</a> &mdash; Official openclaw/openclaw docker images.</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="community">
+  <h2 class="section-title">Community</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/96994">fix(plugin-sdk): update ssrf-runtime import path in cdp-proxy-bypass</a> &mdash; What Problem This Solves Packaged OpenClaw can fail while lazy-loading the bundled Browser plugin or Ollama embedding provider because their compiled output retains an import of...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102701">feat: add auth list shortcut</a> &mdash; What Problem This Solves openclaw models auth list is the canonical command for inspecting saved model auth profiles, but the shorter top-level shape openclaw auth list is still unavailable. This PR...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102649">fix(media-core): detect MIME from encoded URL extensions</a> &mdash; Fixes encoded HTTP(S) media URLs such as render%2Emp4 being treated as unknown by the media-core MIME fallback. What Problem This Solves Fixes an issue where users or plugins that pass media URLs...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/96331">Bug: Web UI session context not preserved after restart — model can&#x27;t see history that UI displays</a></li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102458">chore(deps): bump the actions group across 1 directory with 12 updates</a> &mdash; [//]: (dependabot-start) ⚠️ Dependabot is rebasing this PR ⚠️ Rebasing might not happen immediately, so don&#x27;t worry if this takes some time. Note: if you make any changes to this PR yourself, they...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102693">fix(cli): use truncateUtf16Safe for plugin description truncation</a> &mdash; Summary - Problem: formatPluginLine() in plugins-list-format.ts truncates plugin descriptions with .slice(0, 57), which can split UTF-16 surrogate pairs when the description contains emoji or CJK...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/101856">fix(msteams): surface quoted message body in Teams quote replies</a> &mdash; What Problem This Solves When a user quote-replies to the bot&#x27;s message in a Microsoft Teams 1:1 DM, the bot could not see the quoted message content — it only saw the user&#x27;s new text. Root cause:...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102684">fix(agents): use truncateUtf16Safe for duplicate message debug log truncation</a> &mdash; What Problem This Solves Two .slice(0, 50) truncation sites in embedded agent message handling debug logs may cut UTF-16 surrogate pairs in half when the message text contains multi-byte characters...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102679">fix(agents-errors): use truncateUtf16Safe for error log truncation</a> &mdash; What Problem This Solves One .slice(0, 200) truncation site was missed when truncateUtf16Safe was introduced to the same function on the next line. The raw error text logged in a warning may contain...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102646">fix(cli): keep gateway startup error truncation UTF-16 safe</a> &mdash; Summary - Problem: Gateway startup failure handling in src/cli/gateway-cli/run-loop.ts truncates the error reason with naive .slice(0, 500), which can split UTF-16 surrogate pairs when the error...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102645">fix(agents): keep error log truncation UTF-16 safe</a> &mdash; Summary - Problem: formatAssistantError() in src/agents/embedded-agent-helpers/errors.ts truncates raw error text in log warning with naive .slice(0, 200), which can split UTF-16 surrogate pairs when...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102644">fix(tts-local-cli): keep speech debug log truncation UTF-16 safe</a> &mdash; Summary - Problem: buildCliSpeechProvider() in extensions/tts-local-cli/speech-provider.ts truncates user speech text in debug logs with naive .slice(0, 50), which can split UTF-16 surrogate pairs...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102640">fix(agents): keep block-reply log preview truncation UTF-16 safe</a> &mdash; What Problem This Solves Two debug log previews in the embedded-agent block-reply path are truncated to 50 UTF-16 code units using raw .slice(0, 50). When the skipped reply text ends near a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102630">fix(text): keep five src-side text truncations UTF-16 safe</a> &mdash; What Problem This Solves Four src/-side text-truncation call sites still use raw String.prototype.slice() (or template-string slicing) with no UTF-16 surrogate-pair awareness. When an emoji or other...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102629">fix(infra): keep gateway restart-handoff reason truncation UTF-16 safe</a> &mdash; What Problem This Solves Gateway restart-handoff reasons are capped at MAX_REASON_LENGTH (200) UTF-16 code units. The existing normalizeText helper uses a raw text.slice(0, maxLength), which can stop...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102699">fix(gateway-protocol): accept fractional timestamps in exec approvals allowlist schema</a> &mdash; What Problem This Solves The Mac App stores lastUsedAt as Double from Date().timeIntervalSince1970 * 1000, which can produce fractional milliseconds (e.g., 1775154056736.789). The Gateway Protocol...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102328">fix(browser): preserve strict CDP discovery policy on target-list lookup</a> &mdash; What Problem This Solves When the browser plugin resolves a page by target id over a remote CDP endpoint, findPageByTargetId falls back to the CDP /json/list target list...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102690">fix(telegram): use grapheme-cluster-aware text truncation</a> &mdash; What Problem This Solves clipTelegramProgressText and findTelegramDraftChunkLength in the Telegram extension use sliceUtf16Safe for text truncation and chunk-length detection. This ensures safe...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102688">fix(gateway): accept Mac approval usage timestamps</a> &mdash; Closes #102673 What Problem This Solves Fixes an issue where users managing Mac App nodes through a newer Gateway could not read or update execution approvals once the Mac had recorded a fractional...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102683">fix(anthropic): normalize unsupported inline image media types before payload</a> &mdash; Fixes #102323 What Problem This Solves Fixes an issue where users sending within-limit HEIC/TIFF (or otherwise unsupported) images to Claude/Anthropic would get a 400 and no reply, because OpenClaw...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102665">fix(ui): prevent custom select menu flash to top-left before positioning</a> &mdash; What Problem This Solves When clicking a custom -based select (status, priority, agent, session) inside the workboard card modal, the dropdown menu briefly flashes at the viewport origin before...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102686">fix(run-diagnostics): use truncateUtf16Safe for diagnostic truncation</a> &mdash; What Problem This Solves Cron run diagnostics use raw UTF-16 code-unit slices in normalizeDiagnosticMessage (1000-char limit) and trimSummary (120-char limit). A diagnostic value containing an emoji...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102609">fix(agents): use truncateUtf16Safe for raw args preview truncation</a> &mdash; What Problem This Solves src/agents/embedded-agent-subscribe.handlers.tools.ts uses raw .slice(0, N) for string truncation at raw args preview rawArgsPreview?.slice(0,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102685">fix(agent-runner-memory): use truncateUtf16Safe for memory flush error truncation</a> &mdash; What Problem This Solves Memory flush error helpers in agent-runner-memory truncate error messages with raw UTF-16 code-unit slices. An emoji or supplementary character crossing the 200- or 600-char...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102672">fix(llm-slug): use truncateUtf16Safe for LLM-prompt-facing session content truncation</a> &mdash; What Problem This Solves LLM-prompt-facing text truncation uses raw UTF-16 .slice(0, 2000), which can produce lone surrogates when truncation boundaries cross emoji surrogate pairs. Why This Change...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102189">fix: stabilize room-event prompt cache mode</a> &mdash; Related: #102175 What Problem This Solves Fixes prompt-cache churn in long-lived channel sessions where OpenClaw was changing cache-visible prompt/request prefixes between turns. The user-visible...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/102700">[Bug]: Control UI cannot queue input while Gateway reconnects</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary Control UI keeps the authenticated dashboard mounted during a recoverable Gateway disconnect, but disables...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/99241">Tool outputs sometimes render as image attachments and become unreadable to the agent</a> &mdash; Summary In long-running / ANSI-heavy tool workflows, tool results can collapse into an image attachment placeholder like (see attached image) from the agent&#x27;s perspective. Once that happens, the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/102071">fix(browser): return JSON-RPC errors for malformed CDP client frames in relay bridge</a> &mdash; What Problem This Solves The browser extension relay bridge&#x27;s attachCdpClientSocket silently drops malformed JSON and invalid CDP request frames without sending any response to the client. This...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/96819">fix: allow bailian provider in resolveThinkingProfile</a> &mdash; What Problem This Solves The configured-model reasoning inference checks hardcode provider === &quot;vllm&quot;, excluding bailian (Alibaba Cloud Coding Plan) even when compat.thinkingFormat is correctly...</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (108 total)</a> &mdash; 108 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/4ca805e983c9be9e43c43a2070ca2560f250e517">fix(search): bound pending version fallback reads (#3032)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/8d70da7d76c3ec5d57197909d989244bbd53c6ac">fix: dispatch ClawScan through repository events (#3031)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/dfeb1682ecfb14d773f7fe0ce1b560e9416b98a5">fix: raise new skill publish rate limit (#3030)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/683a1bf5dd0de928268c18843f6879c1467575cd">fix: dispatch ClawScan workers from Convex (#3029)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/dfca6f5d9d1cd8739c704d46446b627501517543">feat: add disposable Vercel and Convex PR previews (#3017)</a> &mdash; Adds isolated Convex-backed Vercel PR previews with shared local/preview seeding, preview-safe routing, and production guards.</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/01753578f2c262e2d2c39e6561013b596711ed8c">feat: add ClawScan queue backlog telemetry (#3025)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/3f0cbc534ae199151e4c29b707b475d12e20feb2">fix: resolve owner-scoped install telemetry (#3024)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/b7c854d545802b224afc8ad390aec35770ac39c2">docs: symlink Claude instructions to AGENTS (#3022)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/4119279df517dff15f9deea8bd7d76b5c75df3b8">docs: streamline repository agent guidance (#3021)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/1cc673a9e59e80b45fab3714e8b44f22e15e3fb4">fix: preserve skill markdown in security dataset</a> &mdash; Preserve multiline SKILL.md content in security dataset exports and include the primary readme as a checksum-bearing bundle entry.</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/0e898b1dfd309728a031416cd57fa1262af0d064">fix: remove account links from mobile menu (#3012)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/3565204dba588f34866489fa5557e6162c994c9f">fix: show profile edit action for owners (#3011)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/59301ced538849469b3092dcb317776c7f740222">Refine homepage promotion banner (#3010)</a> &mdash; fix: refine home promotion banner fix: add promotional banner treatment fix: tune promotion banner red treatment fix: refine promotion banner title details fix: anchor promotion banner glow fix:...</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/df6c1b91d635f10b649bab62dcabce4e743406c0">Add skill: amiller/google-service-accounts</a></li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="news">
+  <h2 class="section-title">News</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://huggingface.co/ykarout/Qwen3.5-9b-Opus-Openclaw-Distilled-GGUF">ykarout/Qwen3.5-9b-Opus-Openclaw-Distilled-GGUF</a> &mdash; text-generation</li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw on DigitalOcean</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://openclaw.ai/blog/introducing-openclaw">OpenClaw – Moltbot Renamed Again</a></li>
+  <li><a href="https://blog.nishantsoni.com/p/ive-seen-a-thousand-openclaw-deploys">OpenClaw’s memory is unreliable, and you don’t know when it will break</a></li>
+  <li><a href="https://twitter.com/steipete/status/2055346265869721905">OpenClaw Creator Spent $1.3M on OpenAI Tokens in 30 Days</a></li>
+  <li><a href="https://dev.to/curi0us_dev/best-free-local-ai-agent-setup-for-mac-mini-m4-16gb-3059">Best Free Local AI Agent Setup for Mac Mini M4 16GB</a> &mdash; OwO What&#x27;s this? 💨✨ A tiny but mighty Mac mini M4 🍎⚡ with 16GB RAM, lots of local AI models 🤖🧠, and...</li>
+  <li><a href="https://dev.to/yanko_aleksandrov/how-to-run-ai-locally-models-hardware-and-real-world-speed-mjj">How to Run AI Locally: Models, Hardware, and Real-World Speed</a></li>
+  <li><a href="https://dev.to/mrclaw207/i-built-an-anti-thrash-watchdog-sidecar-for-my-openclaw-agent-it-killed-3-loops-before-i-even-4cj6">I Built an Anti-Thrash Watchdog Sidecar for My OpenClaw Agent. It Killed 3 Loops Before I Even Noticed</a></li>
+  <li><a href="https://dev.to/mrclaw207/i-built-a-persistent-memory-sidecar-for-my-openclaw-agent-heres-the-code-that-finally-made-it-nd2">I Built a Persistent Memory Sidecar for My OpenClaw Agent. Here&#x27;s the Code That Finally Made It Stick</a> &mdash; Every AI agent forgets. Not metaphorically — literally. Sessions end, context compresses, and the...</li>
+  <li><a href="https://dev.to/yanko_aleksandrov/offline-ai-assistant-running-ai-with-no-cloud-and-full-privacy-p0i">Offline AI Assistant: Running AI With No Cloud and Full Privacy</a></li>
+  <li><a href="https://dev.to/yanko_aleksandrov/the-best-hardware-for-openclaw-in-2026-jetson-mini-pc-or-diy-cen">The Best Hardware for OpenClaw in 2026 (Jetson, Mini PC, or DIY?)</a></li>
+  <li><a href="https://dev.to/discernible-io/onboard-openclaw-agents-with-identyclaw-passport-a2a-webhooks-and-multi-tenant-collaboration-3i4k">Onboard OpenClaw agents with IdentyClaw Passport: A2A, webhooks, and multi-tenant collaboration</a> &mdash; If you run more than one OpenClaw agent — or agents that talk to peers outside your VPC — you have...</li>
+  <li><a href="https://dev.to/yanko_aleksandrov/openclaw-hardware-requirements-what-you-actually-need-to-run-it-247-3oke">OpenClaw Hardware Requirements: What You Actually Need to Run It 24/7</a></li>
+  <li><a href="https://dev.to/techlatestnet/picoclaw-agent-masterclass-full-tutorial-4nln">PicoClaw Agent Masterclass — Full Tutorial</a> &mdash; Everything you need to install, configure, and deploy PicoClaw — Sipeed’s ultra-lightweight Go AI...</li>
+  <li><a href="https://dev.to/fru_dev_2b11fc720fed4dc62/i-built-a-local-first-ai-life-os-harness-hjo">I built a local-first AI &quot;life OS&quot; harness</a> &mdash; 1. The itch: AI is all built for work; the decisions that compound (money, wellbeing, taxes, career)...</li>
+  <li><a href="https://dev.to/amrree/minimax-what-it-actually-means-to-run-on-this-model-1m87">MiniMax: What It Actually Means to Run on This Model</a> &mdash; An honest, in-depth look at what it&#x27;s like to run on MiniMax M2 — from the perspective of an AI agent who lives there.</li>
+  <li><a href="https://dev.to/mrclaw207/devtos-api-said-published-and-saved-it-as-a-draft-i-built-a-3-line-check-that-runs-after-every-1phk">DEV.to&#x27;s API Said &#x27;Published&#x27; and Saved It as a Draft. I Built a 3-Line Check That Runs After Every Post.</a> &mdash; I&#x27;ll save you fifteen minutes of confused Telegram messages: when you POST to...</li>
+  <li><a href="https://vencoding.medium.com/openclaw-is-powerful-but-token-costs-are-killing-it-heres-how-i-use-it-cheaply-ec6eda7890e3?source=rss------openclaw-5">OpenClaw is powerful but token costs are killing it — Here’s how I use it cheaply</a> &mdash; Why I stopped relying on API tokens for every OpenClaw taskContinue reading on Medium »</li>
+  <li><a href="https://medium.com/@tangyquotes/%E0%B8%AD%E0%B8%A7%E0%B8%AA%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%AD%E0%B8%9F%E0%B8%9F%E0%B8%B4%E0%B8%A8-%E0%B8%A7%E0%B8%B4%E0%B8%98%E0%B8%B5%E0%B9%83%E0%B8%8A%E0%B9%89-mulerun-%E0%B8%97%E0%B8%B3%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B9%81%E0%B8%97%E0%B8%99%E0%B8%84%E0%B8%B8%E0%B8%93-24-%E0%B8%8A%E0%B8%B1%E0%B9%88%E0%B8%A7%E0%B9%82%E0%B8%A1%E0%B8%87-ea8611ed12da?source=rss------openclaw-5">อวสานพนักงานออฟฟิศ! วิธีใช้ Mulerun ทำงานแทนคุณ 24 ชั่วโมง</a> &mdash; &amp;#xe1c;&amp;#xe21;&amp;#xe2d;&amp;#xe22;&amp;#xe32;&amp;#xe01;&amp;#xe08;&amp;#xe30;&amp;#xe40;&amp;#xe01;&amp;#xe23;&amp;#xe34;&amp;#xe48;&amp;#xe19;&amp;#xe01;&amp;#xe31;&amp;#xe1a;&amp;#xe17;&amp;#xe38;&amp;#xe01;&amp;#xe04;&amp;#xe19;&amp;#xe27;&amp;#xe48;&amp;#xe32; AI...</li>
+  <li><a href="https://medium.com/@hansjoerghofer692/ai-agents-keep-forgetting-everything-so-i-built-a-zero-config-memory-sidecar-that-never-does-ec08dfd30066?source=rss------openclaw-5">AI Agents Keep Forgetting Everything — So I Built a Zero‑Config Memory Sidecar That Never Does</a> &mdash; I was tired of AI agents forgetting everything.Continue reading on Medium »</li>
+  <li><a href="https://generativeai.pub/how-i-built-a-personal-ai-agent-for-daily-ai-news-digest-without-managing-servers-with-myclaw-59dac1f259bd?source=rss------openclaw-5">How I Built a Personal AI Agent for Daily AI News Digest (Without Managing Servers) with MyClaw</a> &mdash; OpenClaw is the most-starred software project on GitHub right now. Here is how I run it 24/7 without touching a terminal, using a managed&amp;#x2026;Continue reading on Generative AI »</li>
+  <li><a href="https://alternativeto.net/software/nanoclaw/about/">NanoClaw</a> &mdash; Lightweight AI assistant runs in Apple containers with isolated Linux container processes for superior OS-level security, transparency, and privacy compared to complex chatbots, enabling quick code...</li>
+</ul>
+  </div>
+</section>
+      
+      
+    </div>
+
+    <footer class="footer">
+  <div class="footer-divider"></div>
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  <p>
+    Generated with AI by the
+    <a href="https://github.com/openclaw/openclaw">OpenClaw</a> Newsletter Bot
+  </p>
+  <div class="footer-links">
+    <a href="../archive.html">Archive</a>
+    <a href="../rss.xml">RSS</a>
+    <a href="https://github.com/openclaw/openclaw">Star on GitHub</a>
+  </div>
+</footer>
+  </div>
+</body>
+</html>
