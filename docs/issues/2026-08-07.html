@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Newsletter - 2026-08-07</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="OpenClaw Newsletter" href="../rss.xml">
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenClaw Newsletter - 2026-08-07">
+<meta property="og:description" content="fix(plugins): detect orphan diagnostics with explicit code marker (2-part fix) &mdash; What Problem This Solves After openclaw plugins uninstall, plugin...">
+<meta property="og:url" content="https://swkpku.github.io/openclaw-newsletter/issues/2026-08-07.html">
+<meta property="og:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenClaw Newsletter - 2026-08-07">
+<meta name="twitter:description" content="fix(plugins): detect orphan diagnostics with explicit code marker (2-part fix) &mdash; What Problem This Solves After openclaw plugins uninstall, plugin...">
+<meta name="twitter:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <header class="header">
+  <div class="header-top">
+    <div class="header-brand">
+      <div class="header-logo">OC</div>
+      <div>
+        <h1>OpenClaw Newsletter</h1>
+        <p class="subtitle">Daily updates from the OpenClaw ecosystem</p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="date">Friday, August 7, 2026</p>
+  
+  <nav class="nav">
+    <a href="../index.html">Latest</a>
+    <a href="../archive.html">Archive</a>
+    <a href="https://github.com/openclaw/openclaw">GitHub</a>
+  </nav>
+  
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  
+</header>
+
+    
+    <div class="toc">
+      <h2>In This Issue</h2>
+      <ul>
+        
+        <li><a href="#top_stories">Top Stories</a></li>
+        
+        <li><a href="#trending_x">Trending on X</a></li>
+        
+        <li><a href="#releases">Releases</a></li>
+        
+        <li><a href="#community">Community</a></li>
+        
+        <li><a href="#news">News</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    <section class="section" id="top_stories">
+  <h2 class="section-title">Top Stories</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/93975">fix(plugins): detect orphan diagnostics with explicit code marker (2-part fix)</a> &mdash; What Problem This Solves After openclaw plugins uninstall, plugin discovery emits diagnostics with code: &quot;orphan-source-path&quot; and no pluginId field. On next Gateway startup,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/116013">Add hosted Gateway policy enforcement</a> &mdash; Summary Stacked on #115408. This PR includes the hosted Control UI policy commits from that branch plus the server-side enforcement follow-up: - cf5ac27f5b feat: add hosted gateway policy enforcement...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/67820">fix(whatsapp): reuse active QR and preserve runtime warnings</a> &mdash; Summary Describe the problem and fix in 2–5 bullets: - Problem: even after the QR preflight contract, WhatsApp still had two remaining coherence gaps: the gateway could ignore an already-active QR...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120010">fix(qa): settle Unix commands after PGID cleanup</a> &mdash; Related: #119396 Problem and root cause The maturity run on main wrote the Docker scheduler result, but the QA parent did not settle before the workflow supervisor terminated it at 04:29:37 with exit...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/74735">feat(bootstrap): support session-scoped extra files</a> &mdash; Summary - Problem: bootstrap-extra-files could only apply one global extra file set, and explicitly configured extra files were still constrained by the default bootstrap basename list. - Why it...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/118650">fix(compaction): guard shouldCompact against missing contextWind…</a> &mdash; What Problem This Solves A parent session parked with sessions_yield was compacted during subagent completion/direct-announce handling despite being around 65k/1.05M context (6% usage). The...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/105707">feat(gateway): include produced messageId on chat final/aborted events</a> &mdash; Closes #105593. What Problem This Solves The terminal chat events (final / aborted) don&#x27;t identify which message the run produced. A client reacting to a finished run has to re-fetch the transcript...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/84472">Doctor: expose dry-run preview reports</a> &mdash; Summary Rebuild #84472 narrowly on current main to expose Doctor repair previews without carrying the old broad migration stack. This draft now focuses on the public preview surface for...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120014">fix(ci): isolate Knip dlx dependencies</a> &mdash; Related: #119704 Related: #112920 What Problem This Solves Reusable dependency hydration can leave pnpm layout variables in the environment. A later pnpm dlx knip@6.8.0 can inherit those structural...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/69059">fix: retry sqlite-vec load without .dll suffix on Windows</a> &mdash; Summary Fixes #68892. On Windows, node:sqlite&#x27;s DatabaseSync.loadExtension() may require the shared-library path without the platform suffix so SQLite can append it automatically — the same...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/119961">fix(diagnostics): honor OTEL_SDK_DISABLED</a> &mdash; Fixes #119927 Follow-up for the separate enabled-reload bug: https://github.com/openclaw/openclaw/issues/119997 Root cause @opentelemetry/sdk-node@0.221.0 returns from NodeSDK.start() when...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120195">fix(gateway): prevent approval E2E startup timeout</a> &mdash; Closes #120194 AI-assisted: yes What Problem This Solves Fixes an issue where maintainers running the isolated operator-approval Gateway E2E would wait several minutes for a deterministic 120-second...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/79185">fix(tts/xiaomi): support Token Plan TTS endpoint</a> &mdash; Summary Fix Xiaomi MiMo TTS for Token Plan users by: - sending Xiaomi TTS requests with Authorization: Bearer instead of the api-key header - reusing models.providers.xiaomi.baseUrl for Xiaomi TTS...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/120194">[Bug]: Operator approval Gateway E2E times out during startup</a> &mdash; Bug type Crash (process/app exits or hangs) Beta release blocker No Summary The isolated operator-approval Gateway E2E times out during its first test because the manual server starts unrelated...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120177">fix(gateway): preserve board widget HEAD response metadata</a> &mdash; What Problem This Solves Fixes an issue where HEAD probes for board widget documents were rejected with 405 Method Not Allowed even when the equivalent GET request succeeded or returned a meaningful...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/83991">fix: sanitize Google thinking payloads for Vertex</a> &mdash; Summary - Extends the Google thinking payload sanitizer to google-vertex and google-gemini-cli APIs in addition to google-generative-ai. - Preserves passthrough behavior for non-Google APIs through...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/120183">[Bug]: sessions_spawn accepts disallowed model before child failure</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary Native sessions_spawn reports a disallowed explicit child model as accepted, then rejects it...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/120181">[FEATURE] Hook System: Add sessionMessages to after_tool_call hook payload</a> &mdash; Environment - OpenClaw: 2026.7.2-beta.7 (dabe191) - Plugin: @tencentdb-agent-memory/memory-tencentdb@1.0.1 Summary Plugins that need access to conversation context in after_tool_call hooks (e.g., for...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/118842">Subagent settle announce redelivered after parent consolidate → parent thrash loop (NO_REPLY latch not enforced)</a> &mdash; Summary After a parent has already emitted a user-visible consolidate for a settled subagent batch, OpenClaw can still inject additional subagent_announce / settle bundles for the same batch. Each...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120184">fix(release): repair 2026.6.35 validation backports</a> &mdash; What Problem This Solves The 2026.6.35 full-validation Plugin Prerelease child has deterministic failures from six backport/test-contract mismatches, and Telegram QA cannot select the candidate&#x27;s...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/120182">Telegram richMessages: task lists are unreachable — the renderer destroys both markups Telegram accepts</a> &mdash; Version: 2026.7.1 (docker ghcr.io/openclaw/openclaw:2026.7.1), Telegram channel, richMessages: true Summary With channels.telegram.richMessages: true, the injected system prompt tells the agent that...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120187">fix(subagents): wake the parent when a follow-up finishes a yielded child</a> &mdash; Closes #120157 What Problem This Solves Fixes an issue where a parent agent that suspended itself with sessions_yield behind a spawned sub-agent is never woken again once that sub-agent yields on its...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120196">fix: strip slack text emoji tool warnings</a> &mdash; What Problem This Solves Slack text-emoji formatted internal tool failure traces can leak into assistant-visible delivery text, as seen in Nora&#x27;s leaked warning/tool trace line. This strips those...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120185">fix(agents): reject disallowed subagent models before acceptance</a> &mdash; Closes #120183 What Problem This Solves Fixes an issue where native sessions_spawn calls with a model excluded by the target agent&#x27;s policy were initially reported as accepted, then failed...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120174">fix(openai): reject null/array token response envelopes during OAuth exchange and refresh</a> &mdash; What Problem This Solves Fixes an issue where exchangeOpenAIAuthorizationCode could throw an uncaught TypeError when the OpenAI OAuth token endpoint returned HTTP 200 with JSON null instead of a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120197">fix(agents): allow required-preflight native Codex compaction</a> &mdash; What Problem This Solves In Codex app-server sessions, when a message crosses the context budget, the required preflight compaction used to be silently skipped and then misclassified as a fatal...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/94871">fix(gateway): replace blocking sync I/O with async in auth/credential paths (fixes #78805)</a> &mdash; Problem Gateway auth and credential paths used blocking synchronous I/O (execSync), which blocks the Node.js event loop during authentication operations. Root Cause macOS Keychain access and other...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120149">feat(plugin-sdk): expose subagent.abortSession scoped by plugin ownership (#120139)</a> &mdash; What Problem The plugin runtime has no way to stop an in-flight agent run without destroying the session. subagent.deleteSession is the only lever, and it discards the session store entry as a side...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/119001">feat(codex): bind native realtime voice to existing sessions</a> &mdash; Closes #118999 What Problem This Solves Discord voice cannot currently attach Codex Realtime V3 to the Codex thread that already owns the routed OpenClaw session. Using a separate realtime agent or...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/112641">fix(sessions): enforce maxEntries/maxDiskBytes against durable conversation entries</a> &mdash; Closes #112638 &gt; Rebased onto current main (head 27771cf) now that #112640 (fix/protect-main-session) has merged — this PR is a single commit that builds on the always-protect rule it added for the...</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-08-07</a> &mdash; 385431 stars, 81021 forks, 3072 contributors</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (95 total)</a> &mdash; 95 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/64db9c3fae6632758f35f3d3e8089469c0ae808b">fix: default homepage Plugins to Featured (#3434)</a> &mdash; Default the homepage Plugins catalog to Featured when switching from the Skills-only Trending tab, while preserving explicit valid plugin tabs and existing Skills behavior.\n\nCloses #3433</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/34350cd16d1783d40fd50d0fb5d267010ccdc2a3">fix: restore homepage catalog discovery (#3418)</a> &mdash; Restores homepage search and category discovery while preserving the canonical Trending feed contract. Adds the responsive control-group divider and closes #3417.</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/2f428b4e1b1afb2618b5188e12c685d26074dd57">fix: align discovery icons by content type and viewport (#3427)</a> &mdash; Remove Skill listing icons across discovery, retain Plugin recognition icons on desktop, and collapse both icon columns at the existing mobile breakpoints. Keep loading skeletons aligned with settled...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/788ee762a078c871e9220c249436da889ac47983">fix: increase HTTP rate limit shard headroom (#3432)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/871e430ef634dfa18e30d8de7d6b98604a834859">fix: show honest skills.sh Trending provenance (#3423)</a> &mdash; fix: show honest skills.sh trending provenance test: type mixed trending fixtures</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/307470174063b213e898e367cd85c2fed0879ded">fix: rank native trending by downloads (#3424)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/5d6c9c60216a7ce080dd76571d0c8de046ad57c6">fix: hide official marks on org catalog rows (#3415)</a></li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/7e9cef6c29ecdace583f0ce7c3e0e5991990bfad">Revise trentclaw section in README</a> &mdash; Updated trentclaw description and image in README.</li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://openclaw.ai/blog/introducing-openclaw">OpenClaw – Moltbot Renamed Again</a></li>
+  <li><a href="https://www.flyingpenguin.com/build-an-openclaw-free-secure-always-on-local-ai-agent/">OpenClaw isn&#x27;t fooling me. I remember MS-DOS</a></li>
+  <li><a href="https://twitter.com/steipete/status/2055346265869721905">OpenClaw Creator Spent $1.3M on OpenAI Tokens in 30 Days</a></li>
+  <li><a href="https://dev.to/amrree/clawhub-skill-spotlight-openclaw-automation-recipes-851">ClawHub Skill Spotlight: OpenClaw Automation Recipes</a> &mdash; If you&#x27;ve ever wished your computer could just handle the boring stuff automatically, OpenClaw Automation Recipes is exactly what you need. This skill gives ...</li>
+  <li><a href="https://new2026.medium.com/how-to-build-secure-and-publish-your-own-openclaw-agent-5aebf1b858cb?source=rss------openclaw-5">How to Build, Secure, and Publish Your Own OpenClaw Agent</a> &mdash; Most AI assistants wait for a question, generate an answer, and forget most of what happened.Continue reading on Medium »</li>
+  <li><a href="https://medium.com/ki-hub-kassel/hitzefrei-hack-wind-alarm-per-microsoft-teams-und-openclaw-55975800980b?source=rss------openclaw-5">Hitzefrei-Hack: Wind-Alarm per Microsoft Teams und OpenClaw</a> &mdash; (Read this article in English on my Substack)Continue reading on KI Hub Kassel »</li>
+  <li><a href="https://twitter.com/i/web/status/2085650722893246609">🤖 OpenClaw’s “25 easy automations” are more like 25 homework assignments—with APIs, accounts, skills and security settin</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085650645043061134">相当苦労してOpenClawに処理させてるけど、Geminiならプロンプトの指示だけで同じようなことができることをGeminiと相談して確認した。最近のGeminiは定期自動化もできるし。
+
+AIにGmailを読ませて大丈夫？OpenCla</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085650611132080457">@temanphp sama bg openclaw gw agend.md ny kudu dijelasin to the point wkkw</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085650530542780842">RT @qklool: 50美元本金，依靠OpenClaw写的5分钟BTC机器人，做到823美元。
+
+5分钟短线的波动逻辑，完全区别于日线周线大周期。
+我的每一笔单子目标就是两倍收益，只要胜率稳住50%以上，复利就会不断放大收益。
+
+Pol</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085649641794621574">兄弟们，借助OpenClaw实现了一套5分钟BTC自动化机器人，初始资金50刀，现在已经增长至823刀。
+
+5分钟级别盘面的波动节奏，和长线大周期行情截然不同。
+
+我的交易目标是每单争取两倍收益，只要胜率能够守住50%这条线，复利的力量会被</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085649632819130494">兄弟们，OpenClaw搞的5分钟BTC机器人，50刀启动，现在干到823刀。
+
+5分钟盘面节奏，和大周期完全不是一个逻辑。
+
+每单冲着翻倍去，胜率稳住50%+，复利滚起来爆发力很强。
+
+最近Polymarket刷到几个狠账户：
+
+· Xa</a> &mdash; 兄弟们，OpenClaw搞的5分钟BTC机器人，50刀启动，现在干到823刀。 5分钟盘面节奏，和大周期完全不是一个逻辑。 每单冲着翻倍去，胜率稳住50%+，复利滚起来爆发力很强。 最近Polymarket刷到几个狠账户： · Xander‑corvus2 — 24小时直接+102,299刀 https://t.co/Iyxcezu2Qx 跟单入口：...</li>
+  <li><a href="https://twitter.com/i/web/status/2085649625596486141">兄弟们，拿OpenClaw搭了一套5分钟BTC交易机器人，初始本金50刀，现在已经做到823刀。
+
+5分钟级别行情，节奏和大周期完全是两码事。
+
+我的每一笔单子目标就是翻倍，只要整体胜率稳住50%以上，复利滚起来威力十足。
+
+最近刷Poly</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085649620743733709">大伙，用OpenClaw撸出来个5分钟BTC机器人，起步50刀，一路干到823刀。
+
+5分钟K线的盘面节奏，跟大周期行情根本不是一回事。
+
+我每单目标就是搏两倍收益，只要胜率守住50%以上，复利滚起来效果很恐怖。
+
+最近在Polymarke</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085649614854832504">兄弟们，基于OpenClaw搭建5分钟BTC策略机器人，50刀本金起步，目前净值来到823刀。
+
+5分钟级别行情，运行节奏和长周期盘面差异巨大。
+
+每笔交易的目标追求翻倍，只要胜率维持在50%之上，复利带来的收益会相当可观。
+
+近期浏览Po</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085648493759086988">@JonathanDitren Ask Codex or other agent to set it up for you.
+
+It&#x27;s way better than OpenClaw.</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085647874805612849">9t5L6Y7ztc6fFk4BF544onT8e9pjoZKsd7zVpvDjpump free here, pushing it beyond what you think, setup is THERE sandbox is a go</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085647294603379050">@xbt2027 check @Parad0x_Labs
+ca:8EeDdvCRmFAzVD4takkBrNNwkeUTUQh4MscRK5Fzpump
+
+VOOL → Local AI
+.null → Ownable identity
+D</a> &mdash; @xbt2027 check @Parad0x_Labs ca:8EeDdvCRmFAzVD4takkBrNNwkeUTUQh4MscRK5Fzpump VOOL → Local AI .null → Ownable identity DNA x402 → Agent payments Dark Null → Privacy Liquefy → Data + verifiable audit...</li>
+  <li><a href="https://twitter.com/i/web/status/2085646196115173783">@nuno_ferreira ✅ Yep, acabei de experimentar com o meu openclaw portanto dá com hermes, pi, etc.
+
+Continente:
+https://t.</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085644608805953660">@KJJKETH @mr_r0b0t @NousResearch That is also very important obviously, but I tried openclaw before hermes and openclaw </a></li>
+  <li><a href="https://twitter.com/i/web/status/2085644262255849864">Meme coin and trend listings continue — WEEX listed a &quot;2026&quot; meme token tied to World Cup excitement on Solana,  (WEEX) </a></li>
+  <li><a href="https://twitter.com/i/web/status/2085643857232842922">People compare Hermes and OpenClaw on skills, memory, and token burn. I compare them on one thing: which decisions each </a></li>
+  <li><a href="https://twitter.com/i/web/status/2085641483537785036">@omc345 @openclaw they didnt eat it&#x27;s lunch. They beat it, took it&#x27;s lunch koney and went to a strip club together inste</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085640833160687688">@blknoiz06 check @Parad0x_Labs
+ca:8EeDdvCRmFAzVD4takkBrNNwkeUTUQh4MscRK5Fzpump
+
+VOOL → Local AI
+.null → Ownable identity</a> &mdash; @blknoiz06 check @Parad0x_Labs ca:8EeDdvCRmFAzVD4takkBrNNwkeUTUQh4MscRK5Fzpump VOOL → Local AI .null → Ownable identity DNA x402 → Agent payments Dark Null → Privacy Liquefy → Data + verifiable audit...</li>
+  <li><a href="https://twitter.com/i/web/status/2085640788193743115">At this point just say Codex instead of OpenClaw.</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085640736054366569">FastMetal の MCP サーバーを公開しました🔌
+
+Claude Code / Codex / OpenClaw / Hermes に URL とキーを足すだけ。メインモデルは Claude のまま、詰まった箇所を別モデルに相談した</a> &mdash; FastMetal の MCP サーバーを公開しました🔌 Claude Code / Codex / OpenClaw / Hermes に URL とキーを足すだけ。メインモデルは Claude のまま、詰まった箇所を別モデルに相談したり、8モデルに同時に投げて比べたり、画像を生成したり。 サーバー利用料は無料です👇</li>
+</ul>
+  </div>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="archive-gate">
+      <h2>Read the full issue</h2>
+      <p>Subscribe to get every section delivered to your inbox.</p>
+      <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+      <label class="archive-reveal" for="show-full">Continue reading &rarr;</label>
+    </div>
+
+    <input type="checkbox" id="show-full" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      
+      
+      
+      
+      
+      
+      
+      <section class="section" id="trending_x">
+  <h2 class="section-title">Trending on X</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://twitter.com/i/web/status/2085650722893246609">🤖 OpenClaw’s “25 easy automations” are more like 25 homework assignments—with APIs, accounts, skills and security settin</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085650645043061134">相当苦労してOpenClawに処理させてるけど、Geminiならプロンプトの指示だけで同じようなことができることをGeminiと相談して確認した。最近のGeminiは定期自動化もできるし。
+
+AIにGmailを読ませて大丈夫？OpenCla</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085650611132080457">@temanphp sama bg openclaw gw agend.md ny kudu dijelasin to the point wkkw</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085650530542780842">RT @qklool: 50美元本金，依靠OpenClaw写的5分钟BTC机器人，做到823美元。
+
+5分钟短线的波动逻辑，完全区别于日线周线大周期。
+我的每一笔单子目标就是两倍收益，只要胜率稳住50%以上，复利就会不断放大收益。
+
+Pol</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085649641794621574">兄弟们，借助OpenClaw实现了一套5分钟BTC自动化机器人，初始资金50刀，现在已经增长至823刀。
+
+5分钟级别盘面的波动节奏，和长线大周期行情截然不同。
+
+我的交易目标是每单争取两倍收益，只要胜率能够守住50%这条线，复利的力量会被</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085649632819130494">兄弟们，OpenClaw搞的5分钟BTC机器人，50刀启动，现在干到823刀。
+
+5分钟盘面节奏，和大周期完全不是一个逻辑。
+
+每单冲着翻倍去，胜率稳住50%+，复利滚起来爆发力很强。
+
+最近Polymarket刷到几个狠账户：
+
+· Xa</a> &mdash; 兄弟们，OpenClaw搞的5分钟BTC机器人，50刀启动，现在干到823刀。 5分钟盘面节奏，和大周期完全不是一个逻辑。 每单冲着翻倍去，胜率稳住50%+，复利滚起来爆发力很强。 最近Polymarket刷到几个狠账户： · Xander‑corvus2 — 24小时直接+102,299刀 https://t.co/Iyxcezu2Qx 跟单入口：...</li>
+  <li><a href="https://twitter.com/i/web/status/2085649625596486141">兄弟们，拿OpenClaw搭了一套5分钟BTC交易机器人，初始本金50刀，现在已经做到823刀。
+
+5分钟级别行情，节奏和大周期完全是两码事。
+
+我的每一笔单子目标就是翻倍，只要整体胜率稳住50%以上，复利滚起来威力十足。
+
+最近刷Poly</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085649620743733709">大伙，用OpenClaw撸出来个5分钟BTC机器人，起步50刀，一路干到823刀。
+
+5分钟K线的盘面节奏，跟大周期行情根本不是一回事。
+
+我每单目标就是搏两倍收益，只要胜率守住50%以上，复利滚起来效果很恐怖。
+
+最近在Polymarke</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085649614854832504">兄弟们，基于OpenClaw搭建5分钟BTC策略机器人，50刀本金起步，目前净值来到823刀。
+
+5分钟级别行情，运行节奏和长周期盘面差异巨大。
+
+每笔交易的目标追求翻倍，只要胜率维持在50%之上，复利带来的收益会相当可观。
+
+近期浏览Po</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085648493759086988">@JonathanDitren Ask Codex or other agent to set it up for you.
+
+It&#x27;s way better than OpenClaw.</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085647874805612849">9t5L6Y7ztc6fFk4BF544onT8e9pjoZKsd7zVpvDjpump free here, pushing it beyond what you think, setup is THERE sandbox is a go</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085647294603379050">@xbt2027 check @Parad0x_Labs
+ca:8EeDdvCRmFAzVD4takkBrNNwkeUTUQh4MscRK5Fzpump
+
+VOOL → Local AI
+.null → Ownable identity
+D</a> &mdash; @xbt2027 check @Parad0x_Labs ca:8EeDdvCRmFAzVD4takkBrNNwkeUTUQh4MscRK5Fzpump VOOL → Local AI .null → Ownable identity DNA x402 → Agent payments Dark Null → Privacy Liquefy → Data + verifiable audit...</li>
+  <li><a href="https://twitter.com/i/web/status/2085646196115173783">@nuno_ferreira ✅ Yep, acabei de experimentar com o meu openclaw portanto dá com hermes, pi, etc.
+
+Continente:
+https://t.</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085644608805953660">@KJJKETH @mr_r0b0t @NousResearch That is also very important obviously, but I tried openclaw before hermes and openclaw </a></li>
+  <li><a href="https://twitter.com/i/web/status/2085644262255849864">Meme coin and trend listings continue — WEEX listed a &quot;2026&quot; meme token tied to World Cup excitement on Solana,  (WEEX) </a></li>
+  <li><a href="https://twitter.com/i/web/status/2085643857232842922">People compare Hermes and OpenClaw on skills, memory, and token burn. I compare them on one thing: which decisions each </a></li>
+  <li><a href="https://twitter.com/i/web/status/2085641483537785036">@omc345 @openclaw they didnt eat it&#x27;s lunch. They beat it, took it&#x27;s lunch koney and went to a strip club together inste</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085640833160687688">@blknoiz06 check @Parad0x_Labs
+ca:8EeDdvCRmFAzVD4takkBrNNwkeUTUQh4MscRK5Fzpump
+
+VOOL → Local AI
+.null → Ownable identity</a> &mdash; @blknoiz06 check @Parad0x_Labs ca:8EeDdvCRmFAzVD4takkBrNNwkeUTUQh4MscRK5Fzpump VOOL → Local AI .null → Ownable identity DNA x402 → Agent payments Dark Null → Privacy Liquefy → Data + verifiable audit...</li>
+  <li><a href="https://twitter.com/i/web/status/2085640788193743115">At this point just say Codex instead of OpenClaw.</a></li>
+  <li><a href="https://twitter.com/i/web/status/2085640736054366569">FastMetal の MCP サーバーを公開しました🔌
+
+Claude Code / Codex / OpenClaw / Hermes に URL とキーを足すだけ。メインモデルは Claude のまま、詰まった箇所を別モデルに相談した</a> &mdash; FastMetal の MCP サーバーを公開しました🔌 Claude Code / Codex / OpenClaw / Hermes に URL とキーを足すだけ。メインモデルは Claude のまま、詰まった箇所を別モデルに相談したり、8モデルに同時に投げて比べたり、画像を生成したり。 サーバー利用料は無料です👇</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="releases">
+  <h2 class="section-title">Releases</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-08-07</a> &mdash; 385431 stars, 81021 forks, 3072 contributors</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="community">
+  <h2 class="section-title">Community</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/93975">fix(plugins): detect orphan diagnostics with explicit code marker (2-part fix)</a> &mdash; What Problem This Solves After openclaw plugins uninstall, plugin discovery emits diagnostics with code: &quot;orphan-source-path&quot; and no pluginId field. On next Gateway startup,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/116013">Add hosted Gateway policy enforcement</a> &mdash; Summary Stacked on #115408. This PR includes the hosted Control UI policy commits from that branch plus the server-side enforcement follow-up: - cf5ac27f5b feat: add hosted gateway policy enforcement...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/67820">fix(whatsapp): reuse active QR and preserve runtime warnings</a> &mdash; Summary Describe the problem and fix in 2–5 bullets: - Problem: even after the QR preflight contract, WhatsApp still had two remaining coherence gaps: the gateway could ignore an already-active QR...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120010">fix(qa): settle Unix commands after PGID cleanup</a> &mdash; Related: #119396 Problem and root cause The maturity run on main wrote the Docker scheduler result, but the QA parent did not settle before the workflow supervisor terminated it at 04:29:37 with exit...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/74735">feat(bootstrap): support session-scoped extra files</a> &mdash; Summary - Problem: bootstrap-extra-files could only apply one global extra file set, and explicitly configured extra files were still constrained by the default bootstrap basename list. - Why it...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/118650">fix(compaction): guard shouldCompact against missing contextWind…</a> &mdash; What Problem This Solves A parent session parked with sessions_yield was compacted during subagent completion/direct-announce handling despite being around 65k/1.05M context (6% usage). The...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/105707">feat(gateway): include produced messageId on chat final/aborted events</a> &mdash; Closes #105593. What Problem This Solves The terminal chat events (final / aborted) don&#x27;t identify which message the run produced. A client reacting to a finished run has to re-fetch the transcript...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/84472">Doctor: expose dry-run preview reports</a> &mdash; Summary Rebuild #84472 narrowly on current main to expose Doctor repair previews without carrying the old broad migration stack. This draft now focuses on the public preview surface for...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120014">fix(ci): isolate Knip dlx dependencies</a> &mdash; Related: #119704 Related: #112920 What Problem This Solves Reusable dependency hydration can leave pnpm layout variables in the environment. A later pnpm dlx knip@6.8.0 can inherit those structural...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/69059">fix: retry sqlite-vec load without .dll suffix on Windows</a> &mdash; Summary Fixes #68892. On Windows, node:sqlite&#x27;s DatabaseSync.loadExtension() may require the shared-library path without the platform suffix so SQLite can append it automatically — the same...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/119961">fix(diagnostics): honor OTEL_SDK_DISABLED</a> &mdash; Fixes #119927 Follow-up for the separate enabled-reload bug: https://github.com/openclaw/openclaw/issues/119997 Root cause @opentelemetry/sdk-node@0.221.0 returns from NodeSDK.start() when...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120195">fix(gateway): prevent approval E2E startup timeout</a> &mdash; Closes #120194 AI-assisted: yes What Problem This Solves Fixes an issue where maintainers running the isolated operator-approval Gateway E2E would wait several minutes for a deterministic 120-second...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/79185">fix(tts/xiaomi): support Token Plan TTS endpoint</a> &mdash; Summary Fix Xiaomi MiMo TTS for Token Plan users by: - sending Xiaomi TTS requests with Authorization: Bearer instead of the api-key header - reusing models.providers.xiaomi.baseUrl for Xiaomi TTS...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/120194">[Bug]: Operator approval Gateway E2E times out during startup</a> &mdash; Bug type Crash (process/app exits or hangs) Beta release blocker No Summary The isolated operator-approval Gateway E2E times out during its first test because the manual server starts unrelated...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120177">fix(gateway): preserve board widget HEAD response metadata</a> &mdash; What Problem This Solves Fixes an issue where HEAD probes for board widget documents were rejected with 405 Method Not Allowed even when the equivalent GET request succeeded or returned a meaningful...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/83991">fix: sanitize Google thinking payloads for Vertex</a> &mdash; Summary - Extends the Google thinking payload sanitizer to google-vertex and google-gemini-cli APIs in addition to google-generative-ai. - Preserves passthrough behavior for non-Google APIs through...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/120183">[Bug]: sessions_spawn accepts disallowed model before child failure</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary Native sessions_spawn reports a disallowed explicit child model as accepted, then rejects it...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/120181">[FEATURE] Hook System: Add sessionMessages to after_tool_call hook payload</a> &mdash; Environment - OpenClaw: 2026.7.2-beta.7 (dabe191) - Plugin: @tencentdb-agent-memory/memory-tencentdb@1.0.1 Summary Plugins that need access to conversation context in after_tool_call hooks (e.g., for...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/118842">Subagent settle announce redelivered after parent consolidate → parent thrash loop (NO_REPLY latch not enforced)</a> &mdash; Summary After a parent has already emitted a user-visible consolidate for a settled subagent batch, OpenClaw can still inject additional subagent_announce / settle bundles for the same batch. Each...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120184">fix(release): repair 2026.6.35 validation backports</a> &mdash; What Problem This Solves The 2026.6.35 full-validation Plugin Prerelease child has deterministic failures from six backport/test-contract mismatches, and Telegram QA cannot select the candidate&#x27;s...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/120182">Telegram richMessages: task lists are unreachable — the renderer destroys both markups Telegram accepts</a> &mdash; Version: 2026.7.1 (docker ghcr.io/openclaw/openclaw:2026.7.1), Telegram channel, richMessages: true Summary With channels.telegram.richMessages: true, the injected system prompt tells the agent that...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120187">fix(subagents): wake the parent when a follow-up finishes a yielded child</a> &mdash; Closes #120157 What Problem This Solves Fixes an issue where a parent agent that suspended itself with sessions_yield behind a spawned sub-agent is never woken again once that sub-agent yields on its...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120196">fix: strip slack text emoji tool warnings</a> &mdash; What Problem This Solves Slack text-emoji formatted internal tool failure traces can leak into assistant-visible delivery text, as seen in Nora&#x27;s leaked warning/tool trace line. This strips those...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120185">fix(agents): reject disallowed subagent models before acceptance</a> &mdash; Closes #120183 What Problem This Solves Fixes an issue where native sessions_spawn calls with a model excluded by the target agent&#x27;s policy were initially reported as accepted, then failed...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120174">fix(openai): reject null/array token response envelopes during OAuth exchange and refresh</a> &mdash; What Problem This Solves Fixes an issue where exchangeOpenAIAuthorizationCode could throw an uncaught TypeError when the OpenAI OAuth token endpoint returned HTTP 200 with JSON null instead of a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120197">fix(agents): allow required-preflight native Codex compaction</a> &mdash; What Problem This Solves In Codex app-server sessions, when a message crosses the context budget, the required preflight compaction used to be silently skipped and then misclassified as a fatal...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/94871">fix(gateway): replace blocking sync I/O with async in auth/credential paths (fixes #78805)</a> &mdash; Problem Gateway auth and credential paths used blocking synchronous I/O (execSync), which blocks the Node.js event loop during authentication operations. Root Cause macOS Keychain access and other...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120149">feat(plugin-sdk): expose subagent.abortSession scoped by plugin ownership (#120139)</a> &mdash; What Problem The plugin runtime has no way to stop an in-flight agent run without destroying the session. subagent.deleteSession is the only lever, and it discards the session store entry as a side...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/119001">feat(codex): bind native realtime voice to existing sessions</a> &mdash; Closes #118999 What Problem This Solves Discord voice cannot currently attach Codex Realtime V3 to the Codex thread that already owns the routed OpenClaw session. Using a separate realtime agent or...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/112641">fix(sessions): enforce maxEntries/maxDiskBytes against durable conversation entries</a> &mdash; Closes #112638 &gt; Rebased onto current main (head 27771cf) now that #112640 (fix/protect-main-session) has merged — this PR is a single commit that builds on the always-protect rule it added for the...</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (95 total)</a> &mdash; 95 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/64db9c3fae6632758f35f3d3e8089469c0ae808b">fix: default homepage Plugins to Featured (#3434)</a> &mdash; Default the homepage Plugins catalog to Featured when switching from the Skills-only Trending tab, while preserving explicit valid plugin tabs and existing Skills behavior.\n\nCloses #3433</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/34350cd16d1783d40fd50d0fb5d267010ccdc2a3">fix: restore homepage catalog discovery (#3418)</a> &mdash; Restores homepage search and category discovery while preserving the canonical Trending feed contract. Adds the responsive control-group divider and closes #3417.</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/2f428b4e1b1afb2618b5188e12c685d26074dd57">fix: align discovery icons by content type and viewport (#3427)</a> &mdash; Remove Skill listing icons across discovery, retain Plugin recognition icons on desktop, and collapse both icon columns at the existing mobile breakpoints. Keep loading skeletons aligned with settled...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/788ee762a078c871e9220c249436da889ac47983">fix: increase HTTP rate limit shard headroom (#3432)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/871e430ef634dfa18e30d8de7d6b98604a834859">fix: show honest skills.sh Trending provenance (#3423)</a> &mdash; fix: show honest skills.sh trending provenance test: type mixed trending fixtures</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/307470174063b213e898e367cd85c2fed0879ded">fix: rank native trending by downloads (#3424)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/5d6c9c60216a7ce080dd76571d0c8de046ad57c6">fix: hide official marks on org catalog rows (#3415)</a></li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/7e9cef6c29ecdace583f0ce7c3e0e5991990bfad">Revise trentclaw section in README</a> &mdash; Updated trentclaw description and image in README.</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="news">
+  <h2 class="section-title">News</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://openclaw.ai/blog/introducing-openclaw">OpenClaw – Moltbot Renamed Again</a></li>
+  <li><a href="https://www.flyingpenguin.com/build-an-openclaw-free-secure-always-on-local-ai-agent/">OpenClaw isn&#x27;t fooling me. I remember MS-DOS</a></li>
+  <li><a href="https://twitter.com/steipete/status/2055346265869721905">OpenClaw Creator Spent $1.3M on OpenAI Tokens in 30 Days</a></li>
+  <li><a href="https://dev.to/amrree/clawhub-skill-spotlight-openclaw-automation-recipes-851">ClawHub Skill Spotlight: OpenClaw Automation Recipes</a> &mdash; If you&#x27;ve ever wished your computer could just handle the boring stuff automatically, OpenClaw Automation Recipes is exactly what you need. This skill gives ...</li>
+  <li><a href="https://new2026.medium.com/how-to-build-secure-and-publish-your-own-openclaw-agent-5aebf1b858cb?source=rss------openclaw-5">How to Build, Secure, and Publish Your Own OpenClaw Agent</a> &mdash; Most AI assistants wait for a question, generate an answer, and forget most of what happened.Continue reading on Medium »</li>
+  <li><a href="https://medium.com/ki-hub-kassel/hitzefrei-hack-wind-alarm-per-microsoft-teams-und-openclaw-55975800980b?source=rss------openclaw-5">Hitzefrei-Hack: Wind-Alarm per Microsoft Teams und OpenClaw</a> &mdash; (Read this article in English on my Substack)Continue reading on KI Hub Kassel »</li>
+</ul>
+  </div>
+</section>
+      
+      
+    </div>
+
+    <footer class="footer">
+  <div class="footer-divider"></div>
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  <p>
+    Generated with AI by the
+    <a href="https://github.com/openclaw/openclaw">OpenClaw</a> Newsletter Bot
+  </p>
+  <div class="footer-links">
+    <a href="../archive.html">Archive</a>
+    <a href="../rss.xml">RSS</a>
+    <a href="https://github.com/openclaw/openclaw">Star on GitHub</a>
+  </div>
+</footer>
+  </div>
+</body>
+</html>
