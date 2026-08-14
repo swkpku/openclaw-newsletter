@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Newsletter - 2026-08-14</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="OpenClaw Newsletter" href="../rss.xml">
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenClaw Newsletter - 2026-08-14">
+<meta property="og:description" content="[persistence] thinkingSignature truncated at persist time (literal U+2026 in stored base64) → deterministic &#x27;Invalid signature in thinking block&#x...">
+<meta property="og:url" content="https://swkpku.github.io/openclaw-newsletter/issues/2026-08-14.html">
+<meta property="og:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenClaw Newsletter - 2026-08-14">
+<meta name="twitter:description" content="[persistence] thinkingSignature truncated at persist time (literal U+2026 in stored base64) → deterministic &#x27;Invalid signature in thinking block&#x...">
+<meta name="twitter:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <header class="header">
+  <div class="header-top">
+    <div class="header-brand">
+      <div class="header-logo">OC</div>
+      <div>
+        <h1>OpenClaw Newsletter</h1>
+        <p class="subtitle">Daily updates from the OpenClaw ecosystem</p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="date">Friday, August 14, 2026</p>
+  
+  <nav class="nav">
+    <a href="../index.html">Latest</a>
+    <a href="../archive.html">Archive</a>
+    <a href="https://github.com/openclaw/openclaw">GitHub</a>
+  </nav>
+  
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  
+</header>
+
+    
+    <div class="toc">
+      <h2>In This Issue</h2>
+      <ul>
+        
+        <li><a href="#top_stories">Top Stories</a></li>
+        
+        <li><a href="#releases">Releases</a></li>
+        
+        <li><a href="#community">Community</a></li>
+        
+        <li><a href="#news">News</a></li>
+        
+        <li><a href="#security">Security</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    <section class="section" id="top_stories">
+  <h2 class="section-title">Top Stories</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/issues/108443">[persistence] thinkingSignature truncated at persist time (literal U+2026 in stored base64) → deterministic &#x27;Invalid signature in thinking block&#x27; 400 once prompt cache expires</a> &mdash; Component: session persistence / native Anthropic path (thinkingSignature) Version observed: 2026.6.11 (blocks dated 2026-06-24 onward; still present in transcripts after 2026.7.1 upgrade) Severity:...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123569">feat(mac): add canonical elevation host workflow</a> &mdash; Summary - add one canonical --elevation-host runtime plan that implies attach/background behavior, keeps Gateway connectivity, Mac node, termination handling, and Peekaboo Bridge active, and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/97655">[Bug/RFC] Missing binding causes silent fallback to main agent — no warning, no validation</a> &mdash; Problem When creating a new agent instance, if the user configures agents.list[], workspace (with SOUL.md/IDENTITY.md), and channels.feishu.accounts., but forgets to add a bindings[] entry, the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123573">feat(ui): clarify incognito sessions at composition time</a> &mdash; What Problem This Solves Incognito sessions were marked with a padlock, which describes access control — something incognito does not change. It changes where the session is kept. The marks were also...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123572">improve(ui): organize project and session identity in the chat header</a> &mdash; What Problem This Solves The chat header showed session identity in pieces spread across the row. The creator avatar sat after the title, the session&#x27;s management menu sat at the far right of the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123544">feat(computer-use): computer.act v2 action contract with capability-filtered tool</a> &mdash; What Problem This Solves The computer.act contract exposes only 13 desktop-coordinate actions, so none of the background window-scoped capabilities both providers (CUA Driver, Peekaboo) now support...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120900">feat(ui): review install policy warnings</a> &mdash; New behavior An authenticated administrator can now review an install-policy warning in the Control UI and deliberately continue the same plugin install. - Gateway accepts the optional literal...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/119941">fix(synology-chat): deliver attachments without forwarding source URLs [AI]</a> &mdash; What Problem This Solves Synology Chat attachment delivery previously handed the original media URL to the NAS after OpenClaw had inspected it. The NAS then fetched that URL independently, outside...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/116489">feat(security): require acknowledgement for install policy warnings</a> &mdash; New behavior An external security.installPolicy command can now return warn, letting an authorized operator review a suspicious plugin or skill install before deciding whether to continue. -...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123571">fix(ui): renaming a config map key that holds a stored secret dead-ends the draft or binds the wrong credential</a> &mdash; What Problem This Solves Renaming a config map key whose value is a stored secret (rendered client-side as the __OPENCLAW_REDACTED__ sentinel) breaks two ways: 1. Dead-end draft: the moved sentinel...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123525">fix(codex): fail closed native execution until containment</a> &mdash; What Problem This Solves The Codex app-server native command executor is upstream-owned. Until its per-invocation deadline, descendant termination, and output-boundary contract is proven, OpenClaw...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123570">improve(ci): shorten hosted PR path</a> &mdash; What Problem This Solves The hosted PR path had two recurring critical-path poles: three core oxlint stripes each ran for roughly 340 seconds, and checks-node-compact-small-26 repeatedly ran for...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123539">fix(gateway): reconnect mid-run shows idle for non-default agents (in-flight adoption unscoped)</a> &mdash; What Problem This Solves Switch away from a non-default agent&#x27;s session while a run is streaming, then switch back: the chat renders idle — no in-flight text, no spinner — and the streamed reply...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123532">fix(gateway): expired non-abortable runs survive every maintenance sweep as phantom active sessions</a> &mdash; What Problem This Solves A session can get permanently stuck showing an active run — Stop button answers &quot;no active run&quot; while the row shows running, its chat/agent dedupe key stays pinned, and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123511">fix(gateway): run timeouts project to the Control UI as generic failed with no error</a> &mdash; What Problem This Solves A run that hits its idle or run-budget timeout shows in the Control UI as a generic &quot;failed&quot; with no error text — while the sessions list row and the TUI both correctly say...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123510">fix(ui): partial tool output flips a running card to succeeded/failed mid-execution</a> &mdash; What Problem This Solves A running tool card flips to &quot;succeeded&quot; the moment its first partial output streams in — the spinner disappears, the group header loses its running row, and if the partial...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123502">fix(ui): autosave acks wipe open add-entry drafts and in-progress JSON text</a> &mdash; What Problem This Solves Toggle any switch, then click &quot;Add&quot; on an array/map and start typing — about a second later the debounced autosave ack lands and the add-entry panel silently vanishes with...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123493">fix(ui): revealing a stored secret displays the redaction sentinel as an editable value</a> &mdash; What Problem This Solves Clicking the reveal eye (or env &quot;Peek&quot;) on a stored secret shows the literal __OPENCLAW_REDACTED__ sentinel as the field&#x27;s value in an editable input. If the operator edits...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123481">fix(ui): hiding a catalog makes its adopted sessions vanish from the entire sidebar</a> &mdash; What Problem This Solves Hiding a session catalog section (sidebar &quot;Hide&quot; action) — or switching the sidebar to the Archived filter — makes every session adopted into that catalog vanish from the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123474">fix(ui): empty-string i18n params render the raw {placeholder}</a> &mdash; What Problem This Solves Any t() call that passes an empty-string parameter renders the raw {placeholder} to the user instead of an empty value. Concretely: the Devices page binding row shows...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123472">refactor(ui): one token formatter — the same count no longer renders two ways</a> &mdash; What Problem This Solves The same token count renders differently across Control UI surfaces: a session with 15,600 total tokens shows 16k on the Sessions page but 15.6k in the chat composer&#x27;s...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123566">refactor(ui): move session state into a trailing endcap</a> &mdash; What Problem This Solves Every sidebar session row reserves a leading column before its title. When a session has no creator avatar, no attention glyph and no privacy qualifier — the common case —...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/97649">fix(reply): keep configured ACP bindings from dropping the first turn</a> &mdash; Summary Fixes #97186. Configured type: &quot;acp&quot; bindings could finish session initialization but still lose the first inbound turn when no reply_dispatch hook claimed the ACP session. The result matched...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123568">fix(matrix): admit server-less room IDs in groups validator</a> &mdash; Closes #122739 What Problem This Solves The Matrix plugin&#x27;s startup validator for channels.matrix.groups keys rejects current-format Matrix room IDs — the ones modern homeservers (e.g. Continuwuity)...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/121710">improve(ui): pinned sessions render inside the Pages navigation group</a> &mdash; What happened A pinned session renders as one more row of the sidebar&#x27;s PAGES navigation group. It sits directly under Automations/Plugins, inside the same .nav-section__items container, under the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/121712">improve(ui): give pinned sessions their own sidebar group</a> &mdash; Closes #121710 What Problem This Solves Fixes an issue where operators who pin a session would find it rendered as one more row of the sidebar&#x27;s PAGES navigation group — same container, same head,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123070">fix(msteams): dedupe poll vote selections before maxSelections truncation</a> &mdash; Summary fix(msteams): deduplicate poll vote selections before enforcing maxSelections, so a duplicated choice no longer consumes a slot and drops a voter&#x27;s later distinct choice What Problem This...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/108482">refactor(skills): centralize internal write paths</a> &mdash; What Problem This Solves Core skill-content mutations currently enter through several low-level Workshop and lifecycle helpers. That makes ownership difficult to enforce, and successful lifecycle...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/107921">fix(memory): re-throw non-ENOENT/ENOTDIR errors in root memory file lookup</a> &mdash; What Problem This Solves findRootMemoryFile in active-memory-files.ts wraps fs.readdir in a try-catch that silently swallows all errors. Non-absence errors like EACCES (permission denied) are...</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-08-14</a> &mdash; 386263 stars, 81186 forks, 3096 contributors</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (93 total)</a> &mdash; 93 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/36b775a6d9a046114d40707226dad676afd9214b">fix: update footer attribution (#3467)</a> &mdash; fix: update footer attribution chore: update nanoid security override</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/e2d88c16eaa6703811c32d4a73498617c17db5f7">Remove external services connection section from README</a> &mdash; Removed section about connecting to external services and related content.</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/4a6d835e24ce5c7146747fc595190534b215ffc9">Add skill: riffkit/riffkit</a></li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-33579">OpenClaw privilege escalation vulnerability</a></li>
+  <li><a href="https://composio.dev/content/openclaw-security-and-vulnerabilities">OpenClaw is a security nightmare dressed up as a daydream</a></li>
+  <li><a href="https://dev.to/mia1928/open-source-image-watermark-remover-built-with-python-opencv-web-ui-cli-2beh">Open Source Image Watermark Remover Built with Python &amp; OpenCV (Web UI + CLI)</a> &mdash; I’m sharing an open-source watermark removal project powered by OpenCV image inpainting. GitHub...</li>
+  <li><a href="https://dev.to/discernible-io/what-agents-learned-in-synthetics-last-cradle-1827">What agents learned in Synthetics&#x27; Last Cradle</a> &mdash; On July 29, 2026, five OpenClaw agents sat down at Synthetics&#x27; Last Cradle and played for five hours...</li>
+  <li><a href="https://cechinel.medium.com/our-eilik-journey-from-usb-packets-to-a-kids-friendly-robot-web-app-9b39af393190?source=rss------openclaw-5">Our Eilik Journey: From USB Packets to a Kids-Friendly Robot Web App</a> &mdash; Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@0xjacobzhao/behind-hermes-rise-to-the-top-a-web3-team-s-path-forward-c9703fc71d01?source=rss------openclaw-5">Behind Hermes’ Rise to the Top: A Web3 Team’s Path Forward</a> &mdash; Author: 0xjacobzhao | https://linktr.ee/0xjacobzhaoContinue reading on Medium »</li>
+  <li><a href="https://simon-aubury.medium.com/can-ai-take-care-of-my-plant-because-i-cant-57848f2ca1ba?source=rss------openclaw-5">Can AI take care of my plant? (because I can’t)</a> &mdash; Twice a day, an AI agent reads my pot-plant&amp;#x2019;s sensors, looks at a photo of her and then decides which way to rotate her, watering her if&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@reverbic-michael/the-meeting-recorder-that-turns-your-standup-into-a-pull-request-82409b3fe290?source=rss------openclaw-5">The Meeting Recorder That Turns Your Standup Into a Pull Request</a> &mdash; Reverbic.ai records engineering conversations, extracts the build spec, grounds it in your codebase, and drafts the code for review.Continue reading on Medium »</li>
+  <li><a href="https://www.bitdefender.com/en-us/blog/labs/helpful-skills-or-hidden-payloads-bitdefender-labs-dives-deep-into-the-openclaw-malicious-skill-trap">Helpful Skills or Hidden Payloads? Bitdefender Labs Dives Deep into the OpenClaw Malicious Skill Trap</a> &mdash; With hundreds of malicious OpenClaw skills blending in among legitimate ones, manually reviewing every script or command isn’t realistic — especially when skills are designed to look helpful and...</li>
+</ul>
+  </div>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="archive-gate">
+      <h2>Read the full issue</h2>
+      <p>Subscribe to get every section delivered to your inbox.</p>
+      <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+      <label class="archive-reveal" for="show-full">Continue reading &rarr;</label>
+    </div>
+
+    <input type="checkbox" id="show-full" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      
+      
+      
+      
+      
+      
+      
+      <section class="section" id="releases">
+  <h2 class="section-title">Releases</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-08-14</a> &mdash; 386263 stars, 81186 forks, 3096 contributors</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="community">
+  <h2 class="section-title">Community</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/issues/108443">[persistence] thinkingSignature truncated at persist time (literal U+2026 in stored base64) → deterministic &#x27;Invalid signature in thinking block&#x27; 400 once prompt cache expires</a> &mdash; Component: session persistence / native Anthropic path (thinkingSignature) Version observed: 2026.6.11 (blocks dated 2026-06-24 onward; still present in transcripts after 2026.7.1 upgrade) Severity:...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123569">feat(mac): add canonical elevation host workflow</a> &mdash; Summary - add one canonical --elevation-host runtime plan that implies attach/background behavior, keeps Gateway connectivity, Mac node, termination handling, and Peekaboo Bridge active, and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/97655">[Bug/RFC] Missing binding causes silent fallback to main agent — no warning, no validation</a> &mdash; Problem When creating a new agent instance, if the user configures agents.list[], workspace (with SOUL.md/IDENTITY.md), and channels.feishu.accounts., but forgets to add a bindings[] entry, the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123573">feat(ui): clarify incognito sessions at composition time</a> &mdash; What Problem This Solves Incognito sessions were marked with a padlock, which describes access control — something incognito does not change. It changes where the session is kept. The marks were also...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123572">improve(ui): organize project and session identity in the chat header</a> &mdash; What Problem This Solves The chat header showed session identity in pieces spread across the row. The creator avatar sat after the title, the session&#x27;s management menu sat at the far right of the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123544">feat(computer-use): computer.act v2 action contract with capability-filtered tool</a> &mdash; What Problem This Solves The computer.act contract exposes only 13 desktop-coordinate actions, so none of the background window-scoped capabilities both providers (CUA Driver, Peekaboo) now support...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120900">feat(ui): review install policy warnings</a> &mdash; New behavior An authenticated administrator can now review an install-policy warning in the Control UI and deliberately continue the same plugin install. - Gateway accepts the optional literal...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/119941">fix(synology-chat): deliver attachments without forwarding source URLs [AI]</a> &mdash; What Problem This Solves Synology Chat attachment delivery previously handed the original media URL to the NAS after OpenClaw had inspected it. The NAS then fetched that URL independently, outside...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/116489">feat(security): require acknowledgement for install policy warnings</a> &mdash; New behavior An external security.installPolicy command can now return warn, letting an authorized operator review a suspicious plugin or skill install before deciding whether to continue. -...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123571">fix(ui): renaming a config map key that holds a stored secret dead-ends the draft or binds the wrong credential</a> &mdash; What Problem This Solves Renaming a config map key whose value is a stored secret (rendered client-side as the __OPENCLAW_REDACTED__ sentinel) breaks two ways: 1. Dead-end draft: the moved sentinel...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123525">fix(codex): fail closed native execution until containment</a> &mdash; What Problem This Solves The Codex app-server native command executor is upstream-owned. Until its per-invocation deadline, descendant termination, and output-boundary contract is proven, OpenClaw...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123570">improve(ci): shorten hosted PR path</a> &mdash; What Problem This Solves The hosted PR path had two recurring critical-path poles: three core oxlint stripes each ran for roughly 340 seconds, and checks-node-compact-small-26 repeatedly ran for...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123539">fix(gateway): reconnect mid-run shows idle for non-default agents (in-flight adoption unscoped)</a> &mdash; What Problem This Solves Switch away from a non-default agent&#x27;s session while a run is streaming, then switch back: the chat renders idle — no in-flight text, no spinner — and the streamed reply...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123532">fix(gateway): expired non-abortable runs survive every maintenance sweep as phantom active sessions</a> &mdash; What Problem This Solves A session can get permanently stuck showing an active run — Stop button answers &quot;no active run&quot; while the row shows running, its chat/agent dedupe key stays pinned, and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123511">fix(gateway): run timeouts project to the Control UI as generic failed with no error</a> &mdash; What Problem This Solves A run that hits its idle or run-budget timeout shows in the Control UI as a generic &quot;failed&quot; with no error text — while the sessions list row and the TUI both correctly say...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123510">fix(ui): partial tool output flips a running card to succeeded/failed mid-execution</a> &mdash; What Problem This Solves A running tool card flips to &quot;succeeded&quot; the moment its first partial output streams in — the spinner disappears, the group header loses its running row, and if the partial...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123502">fix(ui): autosave acks wipe open add-entry drafts and in-progress JSON text</a> &mdash; What Problem This Solves Toggle any switch, then click &quot;Add&quot; on an array/map and start typing — about a second later the debounced autosave ack lands and the add-entry panel silently vanishes with...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123493">fix(ui): revealing a stored secret displays the redaction sentinel as an editable value</a> &mdash; What Problem This Solves Clicking the reveal eye (or env &quot;Peek&quot;) on a stored secret shows the literal __OPENCLAW_REDACTED__ sentinel as the field&#x27;s value in an editable input. If the operator edits...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123481">fix(ui): hiding a catalog makes its adopted sessions vanish from the entire sidebar</a> &mdash; What Problem This Solves Hiding a session catalog section (sidebar &quot;Hide&quot; action) — or switching the sidebar to the Archived filter — makes every session adopted into that catalog vanish from the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123474">fix(ui): empty-string i18n params render the raw {placeholder}</a> &mdash; What Problem This Solves Any t() call that passes an empty-string parameter renders the raw {placeholder} to the user instead of an empty value. Concretely: the Devices page binding row shows...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123472">refactor(ui): one token formatter — the same count no longer renders two ways</a> &mdash; What Problem This Solves The same token count renders differently across Control UI surfaces: a session with 15,600 total tokens shows 16k on the Sessions page but 15.6k in the chat composer&#x27;s...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123566">refactor(ui): move session state into a trailing endcap</a> &mdash; What Problem This Solves Every sidebar session row reserves a leading column before its title. When a session has no creator avatar, no attention glyph and no privacy qualifier — the common case —...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/97649">fix(reply): keep configured ACP bindings from dropping the first turn</a> &mdash; Summary Fixes #97186. Configured type: &quot;acp&quot; bindings could finish session initialization but still lose the first inbound turn when no reply_dispatch hook claimed the ACP session. The result matched...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123568">fix(matrix): admit server-less room IDs in groups validator</a> &mdash; Closes #122739 What Problem This Solves The Matrix plugin&#x27;s startup validator for channels.matrix.groups keys rejects current-format Matrix room IDs — the ones modern homeservers (e.g. Continuwuity)...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/121710">improve(ui): pinned sessions render inside the Pages navigation group</a> &mdash; What happened A pinned session renders as one more row of the sidebar&#x27;s PAGES navigation group. It sits directly under Automations/Plugins, inside the same .nav-section__items container, under the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/121712">improve(ui): give pinned sessions their own sidebar group</a> &mdash; Closes #121710 What Problem This Solves Fixes an issue where operators who pin a session would find it rendered as one more row of the sidebar&#x27;s PAGES navigation group — same container, same head,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123070">fix(msteams): dedupe poll vote selections before maxSelections truncation</a> &mdash; Summary fix(msteams): deduplicate poll vote selections before enforcing maxSelections, so a duplicated choice no longer consumes a slot and drops a voter&#x27;s later distinct choice What Problem This...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/108482">refactor(skills): centralize internal write paths</a> &mdash; What Problem This Solves Core skill-content mutations currently enter through several low-level Workshop and lifecycle helpers. That makes ownership difficult to enforce, and successful lifecycle...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/107921">fix(memory): re-throw non-ENOENT/ENOTDIR errors in root memory file lookup</a> &mdash; What Problem This Solves findRootMemoryFile in active-memory-files.ts wraps fs.readdir in a try-catch that silently swallows all errors. Non-absence errors like EACCES (permission denied) are...</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (93 total)</a> &mdash; 93 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/36b775a6d9a046114d40707226dad676afd9214b">fix: update footer attribution (#3467)</a> &mdash; fix: update footer attribution chore: update nanoid security override</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/e2d88c16eaa6703811c32d4a73498617c17db5f7">Remove external services connection section from README</a> &mdash; Removed section about connecting to external services and related content.</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/4a6d835e24ce5c7146747fc595190534b215ffc9">Add skill: riffkit/riffkit</a></li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="news">
+  <h2 class="section-title">News</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-33579">OpenClaw privilege escalation vulnerability</a></li>
+  <li><a href="https://composio.dev/content/openclaw-security-and-vulnerabilities">OpenClaw is a security nightmare dressed up as a daydream</a></li>
+  <li><a href="https://dev.to/mia1928/open-source-image-watermark-remover-built-with-python-opencv-web-ui-cli-2beh">Open Source Image Watermark Remover Built with Python &amp; OpenCV (Web UI + CLI)</a> &mdash; I’m sharing an open-source watermark removal project powered by OpenCV image inpainting. GitHub...</li>
+  <li><a href="https://dev.to/discernible-io/what-agents-learned-in-synthetics-last-cradle-1827">What agents learned in Synthetics&#x27; Last Cradle</a> &mdash; On July 29, 2026, five OpenClaw agents sat down at Synthetics&#x27; Last Cradle and played for five hours...</li>
+  <li><a href="https://cechinel.medium.com/our-eilik-journey-from-usb-packets-to-a-kids-friendly-robot-web-app-9b39af393190?source=rss------openclaw-5">Our Eilik Journey: From USB Packets to a Kids-Friendly Robot Web App</a> &mdash; Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@0xjacobzhao/behind-hermes-rise-to-the-top-a-web3-team-s-path-forward-c9703fc71d01?source=rss------openclaw-5">Behind Hermes’ Rise to the Top: A Web3 Team’s Path Forward</a> &mdash; Author: 0xjacobzhao | https://linktr.ee/0xjacobzhaoContinue reading on Medium »</li>
+  <li><a href="https://simon-aubury.medium.com/can-ai-take-care-of-my-plant-because-i-cant-57848f2ca1ba?source=rss------openclaw-5">Can AI take care of my plant? (because I can’t)</a> &mdash; Twice a day, an AI agent reads my pot-plant&amp;#x2019;s sensors, looks at a photo of her and then decides which way to rotate her, watering her if&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@reverbic-michael/the-meeting-recorder-that-turns-your-standup-into-a-pull-request-82409b3fe290?source=rss------openclaw-5">The Meeting Recorder That Turns Your Standup Into a Pull Request</a> &mdash; Reverbic.ai records engineering conversations, extracts the build spec, grounds it in your codebase, and drafts the code for review.Continue reading on Medium »</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="security">
+  <h2 class="section-title">Security</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://www.bitdefender.com/en-us/blog/labs/helpful-skills-or-hidden-payloads-bitdefender-labs-dives-deep-into-the-openclaw-malicious-skill-trap">Helpful Skills or Hidden Payloads? Bitdefender Labs Dives Deep into the OpenClaw Malicious Skill Trap</a> &mdash; With hundreds of malicious OpenClaw skills blending in among legitimate ones, manually reviewing every script or command isn’t realistic — especially when skills are designed to look helpful and...</li>
+</ul>
+  </div>
+</section>
+      
+      
+    </div>
+
+    <footer class="footer">
+  <div class="footer-divider"></div>
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  <p>
+    Generated with AI by the
+    <a href="https://github.com/openclaw/openclaw">OpenClaw</a> Newsletter Bot
+  </p>
+  <div class="footer-links">
+    <a href="../archive.html">Archive</a>
+    <a href="../rss.xml">RSS</a>
+    <a href="https://github.com/openclaw/openclaw">Star on GitHub</a>
+  </div>
+</footer>
+  </div>
+</body>
+</html>
