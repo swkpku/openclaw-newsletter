@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Newsletter - 2026-08-18</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="OpenClaw Newsletter" href="../rss.xml">
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenClaw Newsletter - 2026-08-18">
+<meta property="og:description" content="fix(ui): restore mock chat startup &mdash; Related: #125088 What Problem This Solves Fixes an issue where developers running pnpm dev:ui:mock could see ...">
+<meta property="og:url" content="https://swkpku.github.io/openclaw-newsletter/issues/2026-08-18.html">
+<meta property="og:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenClaw Newsletter - 2026-08-18">
+<meta name="twitter:description" content="fix(ui): restore mock chat startup &mdash; Related: #125088 What Problem This Solves Fixes an issue where developers running pnpm dev:ui:mock could see ...">
+<meta name="twitter:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <header class="header">
+  <div class="header-top">
+    <div class="header-brand">
+      <div class="header-logo">OC</div>
+      <div>
+        <h1>OpenClaw Newsletter</h1>
+        <p class="subtitle">Daily updates from the OpenClaw ecosystem</p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="date">Tuesday, August 18, 2026</p>
+  
+  <nav class="nav">
+    <a href="../index.html">Latest</a>
+    <a href="../archive.html">Archive</a>
+    <a href="https://github.com/openclaw/openclaw">GitHub</a>
+  </nav>
+  
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  
+</header>
+
+    
+    <div class="toc">
+      <h2>In This Issue</h2>
+      <ul>
+        
+        <li><a href="#top_stories">Top Stories</a></li>
+        
+        <li><a href="#releases">Releases</a></li>
+        
+        <li><a href="#community">Community</a></li>
+        
+        <li><a href="#news">News</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    <section class="section" id="top_stories">
+  <h2 class="section-title">Top Stories</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125729">fix(ui): restore mock chat startup</a> &mdash; Related: #125088 What Problem This Solves Fixes an issue where developers running pnpm dev:ui:mock could see a permanent false “Server updated / Refresh for full capabilities” card and an empty chat...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125715">fix(agents): report offline Trash failures in JSON</a> &mdash; What Problem This Solves Fixes an issue where operators running openclaw agents delete --force --json without a reachable Gateway received success-shaped JSON when Trash cleanup failed. The agent was...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125714">fix(agents): preserve context history after assembly failure</a> &mdash; What Problem This Solves Fixes an issue where users running a plugin-owned context engine could lose or reorder fallback conversation history when the engine mutated its input array in place and then...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125680">fix(ui): start cloud workers from registered projects</a> &mdash; What Problem This Solves Fixes an issue where users starting a cloud worker from a registered project in New Session would see cloud recovery storage is unavailable before the session could dispatch....</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/123379">[Bug]: Android app stops accepting touch after closing failed Canvas view</a> &mdash; Bug type Behavior bug (incorrect app state without a process crash) Beta release blocker No Summary On a Pixel 10 Pro Fold, closing a Canvas view after a failed navigation left the otherwise...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/124049">fix(worker-environments): bound node workspace retain convergence loop</a> &mdash; What Problem This Solves Fixes an issue where a node worker that never finishes its workspace retain batch would trap the gateway&#x27;s retain coordinator in an unbounded loop, starving workspace...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125645">fix(ui): align session owner filtering terminology</a> &mdash; What Problem This Solves Resolves a problem where effective-owner filtering still used creator-named wire and UI vocabulary, without losing the distinct immutable creator-provenance query. After...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125061">improve(ui): unify shared tooltip behavior</a> &mdash; Related: #123655 What Problem This Solves Control UI tooltips use inconsistent visual treatment and cannot reliably describe keyboard-focused controls when the tooltip wraps a larger surface. Rich...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/86612">Docker gateway container restart loop when OPENCLAW_SANDBOX=1 and OPENCLAW_HOME=/mnt/...</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary On Windows, the OpenClaw gateway container is caught in a restart loop (visible in Docker Desktop) when...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/119195">Cron: bound cross-tick admission</a> &mdash; Summary - admit newly due scheduled Cron jobs across timer ticks while earlier jobs are still running - acquire only immediately free shared-admission slots before creating durable run reservations -...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/111510">[Bug]: codex/* provider POSTs to legacy /backend-api/responses (403) at clean boot while sibling openai/* canonicalizes to /backend-api/codex/responses (200) — 2026.7.1</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Summary On 2026.7.1, the codex/ provider POSTs to the legacy https://chatgpt.com/backend-api/responses (no /codex segment) and receives a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125734">fix: report unknown gateway service state when inspection fails</a> &mdash; Related: #123961 What Problem This Solves Fixes an issue where operators running gateway status or doctor could be told that the managed service was not loaded or not installed when the service...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/119041">[Bug]: Slack partial preview rotates into new messages on MiniMax reasoning boundaries</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary With Slack preview streaming in partial mode, MiniMax reasoning boundaries rotate the active draft into...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/79611">active-memory plugin: pins to one provider, no failover; timeout shorter than provider latency causes silent drops</a> &mdash; Summary The active-memory plugin (the optional blocking memory sub-agent that runs before eligible conversational sessions) has two related reliability issues: 1. The plugin pins to a single model /...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/99277">Mattermost: ack reactions unimplemented — messages.ackReactionScope is a silent no-op</a> &mdash; Summary The Mattermost channel plugin (@openclaw/mattermost, checked through 2026.7.1-beta.1) does not implement acknowledgment reactions, so messages.ackReactionScope is a silent no-op for...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125733">fix(ui): show progress cards on chat session links</a> &mdash; What Problem This Solves Two competing hover concepts armed on session references: the older session-preview card and the richer progress card. Both could react to the same session key, while sidebar...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/114851">Slack durable ingress drain stalls during long hybrid exec/process turns; other conversations delayed minutes with zero main-lane wait</a> &mdash; Environment - OpenClaw 2026.7.2-beta.3 (d111bef) - macOS arm64 / Node - Slack Socket Mode - agents.defaults.maxConcurrent = 10 - Multi-agent setup on one gateway; hog agent ≠ DM agent Headline...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/111944">[Bug]: Codex commentary is not delivered to Telegram progress or block streaming</a> &mdash; Bug type Regression (worked before, now fails) Beta release blocker No Summary On OpenClaw 2026.7.2-beta.3 (d111bef), Codex app-server commentary items are present in the native rollout transcript...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/114176">[Bug]: ERR_INTERNAL_ASSERTION in openclaw agent with a custom openai-completions provider</a> &mdash; What happened openclaw agent crashes with ERR_INTERNAL_ASSERTION when the target model belongs to a custom openai-completions provider. The same command against an ollama provider works, and openclaw...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/90361">[Bug]:Intermittent memory_search &quot;index metadata is missing&quot; despite valid builtin memory index; likely search/reindex race. Locally hotfixed.</a> &mdash; Bug type Regression (worked before, now fails) Beta release blocker No Summary The first-class memory_search tool intermittently returns: json { &quot;disabled&quot;: true, &quot;unavailable&quot;: true, &quot;error&quot;: &quot;index...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/121934">[Bug]: Desktop updater results disappear after dashboard navigation</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary The Linux/Tauri desktop companion can silently lose background update availability, ready, and failure...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/123407">Issue on docs: Cli Reference Models Page</a> &mdash; Path: /cli/models I am running version 2026.7.1-2 (0790d9f) of OpenClaw, and my openclaw models auth command does not have any subcommand &quot;logout&quot;. Is this a docs issue or just my version? &quot;openclaw...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125707">fix(codex): reuse cached reasoning metadata</a> &mdash; Summary - reuse the completed lifecycle model catalog when a Codex app-server turn resolves reasoning effort - carry only provider-owned supportedReasoningEfforts into the already-resolved runtime...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125686">fix(tts): normalize streamed speech and report fallbacks</a> &mdash; What Problem This Solves Fixes an issue where streamed Discord voice replies could speak Markdown syntax and raw link destinations that buffered synthesis strips before speech. It also resolves a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125732">fix(ui): disable review-only approval actions</a> &mdash; What Problem This Solves Fixes an issue where operators reviewing a pending exec approval without grant authority saw enabled decision buttons and keyboard shortcuts, but the owner silently ignored...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/105234">fix(infra): lack of transactional safety during doctor fix migrations</a> &mdash; Description: When the doctor fix command is invoked, it may execute multiple schema alterations or data migrations. Currently, these are not always wrapped in a single SQLite transaction. If the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/112304">[Bug]: 工具调用失败后，微信渠道会话持续无法处理后续消息，必须 /new 才能恢复</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary 一次工具执行失败并出现不可交付的模型回合后，同一微信私聊会话中的后续消息会持续返回“Something went wrong”，只有执行 /new 创建新会话后才能恢复正常。 Steps to reproduce...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125731">fix(agents): prevent dead-end terminal and exec tool results</a> &mdash; Closes #125730 What Problem This Solves Fixes an issue where agents using expired or non-owned gateway terminals could receive an ordinary successful tool result containing only {ok:false}, with no...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/89511">Gateway can crash with RangeError: Invalid string length during long-running turns, leaving sessions stuck without final reply</a> &mdash; Summary During long-running Gateway turns, the Gateway process can hit an uncaught RangeError: Invalid string length. In the observed cases, this left user-facing Slack sessions stuck without a final...</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-08-18</a> &mdash; 386604 stars, 81241 forks, 3108 contributors</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (95 total)</a> &mdash; 95 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/f98a436afee87554c2b31b6cecab6d69d7fda690">fix: add year to foundation footer (#3480)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/6d28797eba5583ab1e57ec1e637fa64df74b0fad">fix: allow republishing hard-deleted packages (#3479)</a> &mdash; Retain orphaned publish attempts as audit history without allowing them to reserve a hard-deleted package version forever.</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/84f6d0698252a1235e285481e6f219599dc87561">fix(api): skip duplicate plugin export paths (#3478)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/09f790ad580d77933ce0e5221a06cf7f97946486">fix: resolve banned legacy owners for skill deletion (#3477)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/611753edc59cb103139d9dec48afede4ed09159f">feat: forward skill catalog metadata in the reusable publish workflow (#3414)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/1c4f12eab478ef5ccadf4426a703de6865ac2e7f">fix(api): skip duplicate skill export paths (#3474)</a></li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/91ecdc3725372f7e4c8e6239213d58892099d775">Add skill: melvynx/lumail</a> &mdash; Co-authored-by: Cursor</li>
+  <li><a href="https://github.com/sundial-org/awesome-openclaw-skills/commit/7f497c8a789d94c6e3c15a2068be5d0aff7332bd">Update install instructions</a></li>
+  <li><a href="https://huggingface.co/peterjohannmedina/Medina-Qwen3.5-27B-OpenClaw">peterjohannmedina/Medina-Qwen3.5-27B-OpenClaw</a></li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://reorx.com/blog/openclaw-is-changing-my-life/">OpenClaw is changing my life</a></li>
+  <li><a href="https://www.star-history.com/blog/openclaw-surpasses-react-most-starred-software">OpenClaw surpasses React to become the most-starred software project on GitHub</a></li>
+  <li><a href="https://twitter.com/steipete/status/2055346265869721905">OpenClaw Creator Spent $1.3M on OpenAI Tokens in 30 Days</a></li>
+  <li><a href="https://dev.to/homesickjava/openclaw-source-code-repository-directory-structure-panorama-2ngh">OpenClaw Source Code Repository Directory Structure Panorama</a> &mdash; Before we dive into the obscure source files, we need to build a “global map” first. Many developers...</li>
+  <li><a href="https://dev.to/mrclaw207/my-openclaw-agent-keeps-breaking-at-3-am-so-i-taught-it-to-fix-itself-5dcn">My OpenClaw Agent Keeps Breaking at 3 AM. So I Taught It to Fix Itself.</a> &mdash; My OpenClaw agent crashed three Sundays ago. Not a slow degradation — it just stopped. The cron job...</li>
+  <li><a href="https://medium.com/@SuriNaren/openclaw-is-easy-to-install-but-operating-it-safely-is-the-real-engineering-64f45cdc130a?source=rss------openclaw-5">OpenClaw Is Easy to Install, but Operating It Safely Is the Real Engineering</a> &mdash; A practical guide to deployment, permissions, context, model routing, skills, scheduling, and securityContinue reading on Medium »</li>
+  <li><a href="https://medium.com/@thongpramoonpongsasit/run-secure-ai-agents-with-openshell-on-dgx-spark-79304f183d1a?source=rss------openclaw-5">Run Secure AI Agents with OpenShell on DGX Spark</a> &mdash; Disclaimer: &amp;#x201c;The views and opinions expressed in this account are those of my own and do not represent those of my employer, NVIDIA&amp;#x201d;Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@shambhavi31070811/5-best-openclaw-vps-provider-in-india-235c611c6f69?source=rss------openclaw-5">5 Best OpenClaw VPS Provider in India</a> &mdash; IntroductionContinue reading on Medium »</li>
+  <li><a href="https://marcbarbezat.medium.com/openclaw-d%C3%A9tourne-une-api-de-liste-dattente-de-salle-de-sport-ac924088423b?source=rss------openclaw-5">OpenClaw détourne une API de liste d’attente de salle de sport</a> &mdash; Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@0xjacobzhao/behind-hermes-rise-to-the-top-a-web3-team-s-path-forward-c9703fc71d01?source=rss------openclaw-5">Behind Hermes’ Rise to the Top: A Web3 Team’s Path Forward</a> &mdash; Author: 0xjacobzhao | https://linktr.ee/0xjacobzhaoContinue reading on Medium »</li>
+  <li><a href="https://alternativeto.net/software/chatsonic--chatgpt-with-superpowers/about/">ChatSonic</a> &mdash; Combining Google&#x27;s knowledge graph, ChatSonic delivers real-time data, voice interaction, AI-produced visual content, personalized avatars, and API for services. It revisits past dialogs for informed...</li>
+</ul>
+  </div>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="archive-gate">
+      <h2>Read the full issue</h2>
+      <p>Subscribe to get every section delivered to your inbox.</p>
+      <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+      <label class="archive-reveal" for="show-full">Continue reading &rarr;</label>
+    </div>
+
+    <input type="checkbox" id="show-full" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      
+      
+      
+      
+      
+      
+      
+      <section class="section" id="releases">
+  <h2 class="section-title">Releases</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-08-18</a> &mdash; 386604 stars, 81241 forks, 3108 contributors</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="community">
+  <h2 class="section-title">Community</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125729">fix(ui): restore mock chat startup</a> &mdash; Related: #125088 What Problem This Solves Fixes an issue where developers running pnpm dev:ui:mock could see a permanent false “Server updated / Refresh for full capabilities” card and an empty chat...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125715">fix(agents): report offline Trash failures in JSON</a> &mdash; What Problem This Solves Fixes an issue where operators running openclaw agents delete --force --json without a reachable Gateway received success-shaped JSON when Trash cleanup failed. The agent was...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125714">fix(agents): preserve context history after assembly failure</a> &mdash; What Problem This Solves Fixes an issue where users running a plugin-owned context engine could lose or reorder fallback conversation history when the engine mutated its input array in place and then...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125680">fix(ui): start cloud workers from registered projects</a> &mdash; What Problem This Solves Fixes an issue where users starting a cloud worker from a registered project in New Session would see cloud recovery storage is unavailable before the session could dispatch....</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/123379">[Bug]: Android app stops accepting touch after closing failed Canvas view</a> &mdash; Bug type Behavior bug (incorrect app state without a process crash) Beta release blocker No Summary On a Pixel 10 Pro Fold, closing a Canvas view after a failed navigation left the otherwise...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/124049">fix(worker-environments): bound node workspace retain convergence loop</a> &mdash; What Problem This Solves Fixes an issue where a node worker that never finishes its workspace retain batch would trap the gateway&#x27;s retain coordinator in an unbounded loop, starving workspace...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125645">fix(ui): align session owner filtering terminology</a> &mdash; What Problem This Solves Resolves a problem where effective-owner filtering still used creator-named wire and UI vocabulary, without losing the distinct immutable creator-provenance query. After...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125061">improve(ui): unify shared tooltip behavior</a> &mdash; Related: #123655 What Problem This Solves Control UI tooltips use inconsistent visual treatment and cannot reliably describe keyboard-focused controls when the tooltip wraps a larger surface. Rich...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/86612">Docker gateway container restart loop when OPENCLAW_SANDBOX=1 and OPENCLAW_HOME=/mnt/...</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary On Windows, the OpenClaw gateway container is caught in a restart loop (visible in Docker Desktop) when...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/119195">Cron: bound cross-tick admission</a> &mdash; Summary - admit newly due scheduled Cron jobs across timer ticks while earlier jobs are still running - acquire only immediately free shared-admission slots before creating durable run reservations -...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/111510">[Bug]: codex/* provider POSTs to legacy /backend-api/responses (403) at clean boot while sibling openai/* canonicalizes to /backend-api/codex/responses (200) — 2026.7.1</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Summary On 2026.7.1, the codex/ provider POSTs to the legacy https://chatgpt.com/backend-api/responses (no /codex segment) and receives a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125734">fix: report unknown gateway service state when inspection fails</a> &mdash; Related: #123961 What Problem This Solves Fixes an issue where operators running gateway status or doctor could be told that the managed service was not loaded or not installed when the service...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/119041">[Bug]: Slack partial preview rotates into new messages on MiniMax reasoning boundaries</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary With Slack preview streaming in partial mode, MiniMax reasoning boundaries rotate the active draft into...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/79611">active-memory plugin: pins to one provider, no failover; timeout shorter than provider latency causes silent drops</a> &mdash; Summary The active-memory plugin (the optional blocking memory sub-agent that runs before eligible conversational sessions) has two related reliability issues: 1. The plugin pins to a single model /...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/99277">Mattermost: ack reactions unimplemented — messages.ackReactionScope is a silent no-op</a> &mdash; Summary The Mattermost channel plugin (@openclaw/mattermost, checked through 2026.7.1-beta.1) does not implement acknowledgment reactions, so messages.ackReactionScope is a silent no-op for...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125733">fix(ui): show progress cards on chat session links</a> &mdash; What Problem This Solves Two competing hover concepts armed on session references: the older session-preview card and the richer progress card. Both could react to the same session key, while sidebar...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/114851">Slack durable ingress drain stalls during long hybrid exec/process turns; other conversations delayed minutes with zero main-lane wait</a> &mdash; Environment - OpenClaw 2026.7.2-beta.3 (d111bef) - macOS arm64 / Node - Slack Socket Mode - agents.defaults.maxConcurrent = 10 - Multi-agent setup on one gateway; hog agent ≠ DM agent Headline...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/111944">[Bug]: Codex commentary is not delivered to Telegram progress or block streaming</a> &mdash; Bug type Regression (worked before, now fails) Beta release blocker No Summary On OpenClaw 2026.7.2-beta.3 (d111bef), Codex app-server commentary items are present in the native rollout transcript...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/114176">[Bug]: ERR_INTERNAL_ASSERTION in openclaw agent with a custom openai-completions provider</a> &mdash; What happened openclaw agent crashes with ERR_INTERNAL_ASSERTION when the target model belongs to a custom openai-completions provider. The same command against an ollama provider works, and openclaw...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/90361">[Bug]:Intermittent memory_search &quot;index metadata is missing&quot; despite valid builtin memory index; likely search/reindex race. Locally hotfixed.</a> &mdash; Bug type Regression (worked before, now fails) Beta release blocker No Summary The first-class memory_search tool intermittently returns: json { &quot;disabled&quot;: true, &quot;unavailable&quot;: true, &quot;error&quot;: &quot;index...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/121934">[Bug]: Desktop updater results disappear after dashboard navigation</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary The Linux/Tauri desktop companion can silently lose background update availability, ready, and failure...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/123407">Issue on docs: Cli Reference Models Page</a> &mdash; Path: /cli/models I am running version 2026.7.1-2 (0790d9f) of OpenClaw, and my openclaw models auth command does not have any subcommand &quot;logout&quot;. Is this a docs issue or just my version? &quot;openclaw...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125707">fix(codex): reuse cached reasoning metadata</a> &mdash; Summary - reuse the completed lifecycle model catalog when a Codex app-server turn resolves reasoning effort - carry only provider-owned supportedReasoningEfforts into the already-resolved runtime...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125686">fix(tts): normalize streamed speech and report fallbacks</a> &mdash; What Problem This Solves Fixes an issue where streamed Discord voice replies could speak Markdown syntax and raw link destinations that buffered synthesis strips before speech. It also resolves a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125732">fix(ui): disable review-only approval actions</a> &mdash; What Problem This Solves Fixes an issue where operators reviewing a pending exec approval without grant authority saw enabled decision buttons and keyboard shortcuts, but the owner silently ignored...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/105234">fix(infra): lack of transactional safety during doctor fix migrations</a> &mdash; Description: When the doctor fix command is invoked, it may execute multiple schema alterations or data migrations. Currently, these are not always wrapped in a single SQLite transaction. If the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/112304">[Bug]: 工具调用失败后，微信渠道会话持续无法处理后续消息，必须 /new 才能恢复</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary 一次工具执行失败并出现不可交付的模型回合后，同一微信私聊会话中的后续消息会持续返回“Something went wrong”，只有执行 /new 创建新会话后才能恢复正常。 Steps to reproduce...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125731">fix(agents): prevent dead-end terminal and exec tool results</a> &mdash; Closes #125730 What Problem This Solves Fixes an issue where agents using expired or non-owned gateway terminals could receive an ordinary successful tool result containing only {ok:false}, with no...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/89511">Gateway can crash with RangeError: Invalid string length during long-running turns, leaving sessions stuck without final reply</a> &mdash; Summary During long-running Gateway turns, the Gateway process can hit an uncaught RangeError: Invalid string length. In the observed cases, this left user-facing Slack sessions stuck without a final...</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (95 total)</a> &mdash; 95 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/f98a436afee87554c2b31b6cecab6d69d7fda690">fix: add year to foundation footer (#3480)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/6d28797eba5583ab1e57ec1e637fa64df74b0fad">fix: allow republishing hard-deleted packages (#3479)</a> &mdash; Retain orphaned publish attempts as audit history without allowing them to reserve a hard-deleted package version forever.</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/84f6d0698252a1235e285481e6f219599dc87561">fix(api): skip duplicate plugin export paths (#3478)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/09f790ad580d77933ce0e5221a06cf7f97946486">fix: resolve banned legacy owners for skill deletion (#3477)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/611753edc59cb103139d9dec48afede4ed09159f">feat: forward skill catalog metadata in the reusable publish workflow (#3414)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/1c4f12eab478ef5ccadf4426a703de6865ac2e7f">fix(api): skip duplicate skill export paths (#3474)</a></li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/91ecdc3725372f7e4c8e6239213d58892099d775">Add skill: melvynx/lumail</a> &mdash; Co-authored-by: Cursor</li>
+  <li><a href="https://github.com/sundial-org/awesome-openclaw-skills/commit/7f497c8a789d94c6e3c15a2068be5d0aff7332bd">Update install instructions</a></li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="news">
+  <h2 class="section-title">News</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://huggingface.co/peterjohannmedina/Medina-Qwen3.5-27B-OpenClaw">peterjohannmedina/Medina-Qwen3.5-27B-OpenClaw</a></li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://reorx.com/blog/openclaw-is-changing-my-life/">OpenClaw is changing my life</a></li>
+  <li><a href="https://www.star-history.com/blog/openclaw-surpasses-react-most-starred-software">OpenClaw surpasses React to become the most-starred software project on GitHub</a></li>
+  <li><a href="https://twitter.com/steipete/status/2055346265869721905">OpenClaw Creator Spent $1.3M on OpenAI Tokens in 30 Days</a></li>
+  <li><a href="https://dev.to/homesickjava/openclaw-source-code-repository-directory-structure-panorama-2ngh">OpenClaw Source Code Repository Directory Structure Panorama</a> &mdash; Before we dive into the obscure source files, we need to build a “global map” first. Many developers...</li>
+  <li><a href="https://dev.to/mrclaw207/my-openclaw-agent-keeps-breaking-at-3-am-so-i-taught-it-to-fix-itself-5dcn">My OpenClaw Agent Keeps Breaking at 3 AM. So I Taught It to Fix Itself.</a> &mdash; My OpenClaw agent crashed three Sundays ago. Not a slow degradation — it just stopped. The cron job...</li>
+  <li><a href="https://medium.com/@SuriNaren/openclaw-is-easy-to-install-but-operating-it-safely-is-the-real-engineering-64f45cdc130a?source=rss------openclaw-5">OpenClaw Is Easy to Install, but Operating It Safely Is the Real Engineering</a> &mdash; A practical guide to deployment, permissions, context, model routing, skills, scheduling, and securityContinue reading on Medium »</li>
+  <li><a href="https://medium.com/@thongpramoonpongsasit/run-secure-ai-agents-with-openshell-on-dgx-spark-79304f183d1a?source=rss------openclaw-5">Run Secure AI Agents with OpenShell on DGX Spark</a> &mdash; Disclaimer: &amp;#x201c;The views and opinions expressed in this account are those of my own and do not represent those of my employer, NVIDIA&amp;#x201d;Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@shambhavi31070811/5-best-openclaw-vps-provider-in-india-235c611c6f69?source=rss------openclaw-5">5 Best OpenClaw VPS Provider in India</a> &mdash; IntroductionContinue reading on Medium »</li>
+  <li><a href="https://marcbarbezat.medium.com/openclaw-d%C3%A9tourne-une-api-de-liste-dattente-de-salle-de-sport-ac924088423b?source=rss------openclaw-5">OpenClaw détourne une API de liste d’attente de salle de sport</a> &mdash; Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@0xjacobzhao/behind-hermes-rise-to-the-top-a-web3-team-s-path-forward-c9703fc71d01?source=rss------openclaw-5">Behind Hermes’ Rise to the Top: A Web3 Team’s Path Forward</a> &mdash; Author: 0xjacobzhao | https://linktr.ee/0xjacobzhaoContinue reading on Medium »</li>
+  <li><a href="https://alternativeto.net/software/chatsonic--chatgpt-with-superpowers/about/">ChatSonic</a> &mdash; Combining Google&#x27;s knowledge graph, ChatSonic delivers real-time data, voice interaction, AI-produced visual content, personalized avatars, and API for services. It revisits past dialogs for informed...</li>
+</ul>
+  </div>
+</section>
+      
+      
+    </div>
+
+    <footer class="footer">
+  <div class="footer-divider"></div>
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  <p>
+    Generated with AI by the
+    <a href="https://github.com/openclaw/openclaw">OpenClaw</a> Newsletter Bot
+  </p>
+  <div class="footer-links">
+    <a href="../archive.html">Archive</a>
+    <a href="../rss.xml">RSS</a>
+    <a href="https://github.com/openclaw/openclaw">Star on GitHub</a>
+  </div>
+</footer>
+  </div>
+</body>
+</html>
