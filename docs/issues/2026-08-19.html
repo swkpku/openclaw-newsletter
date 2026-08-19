@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Newsletter - 2026-08-19</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="OpenClaw Newsletter" href="../rss.xml">
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenClaw Newsletter - 2026-08-19">
+<meta property="og:description" content="fix: nested session tools retain caller scope on multi-agent hosts &mdash; What Problem This Solves Fixes an issue where Code Mode calls to sessions_lis...">
+<meta property="og:url" content="https://swkpku.github.io/openclaw-newsletter/issues/2026-08-19.html">
+<meta property="og:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenClaw Newsletter - 2026-08-19">
+<meta name="twitter:description" content="fix: nested session tools retain caller scope on multi-agent hosts &mdash; What Problem This Solves Fixes an issue where Code Mode calls to sessions_lis...">
+<meta name="twitter:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <header class="header">
+  <div class="header-top">
+    <div class="header-brand">
+      <div class="header-logo">OC</div>
+      <div>
+        <h1>OpenClaw Newsletter</h1>
+        <p class="subtitle">Daily updates from the OpenClaw ecosystem</p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="date">Wednesday, August 19, 2026</p>
+  
+  <nav class="nav">
+    <a href="../index.html">Latest</a>
+    <a href="../archive.html">Archive</a>
+    <a href="https://github.com/openclaw/openclaw">GitHub</a>
+  </nav>
+  
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  
+</header>
+
+    
+    <div class="toc">
+      <h2>In This Issue</h2>
+      <ul>
+        
+        <li><a href="#top_stories">Top Stories</a></li>
+        
+        <li><a href="#releases">Releases</a></li>
+        
+        <li><a href="#community">Community</a></li>
+        
+        <li><a href="#news">News</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    <section class="section" id="top_stories">
+  <h2 class="section-title">Top Stories</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126221">fix: nested session tools retain caller scope on multi-agent hosts</a> &mdash; What Problem This Solves Fixes an issue where Code Mode calls to sessions_list and sessions_search could fail on multi-agent hosts when the model omitted an explicit scope: &gt; Multiple agents are...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/17211">[Feature]: Add native checkpoint engine with deterministic resume and diff</a> &mdash; Summary Standardize task-boundary checkpoints and deterministic replay to reduce context drift after compaction. Problem to solve Checkpointing is ad-hoc and replay is not deterministic. Users cannot...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/31379">[Feature]: Channels settings page should always show built-in channels alongside custom channels</a> &mdash; Summary When a custom channel plugin (e.g. icenter) is enabled via plugins.entries, the Channels settings page in the Control UI only displays that custom channel. All built-in channels (WhatsApp,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/117712">build(deps): bump the actions group across 1 directory with 10 updates</a> &mdash; [//]: (dependabot-start) ⚠️ Dependabot is rebasing this PR ⚠️ Rebasing might not happen immediately, so don&#x27;t worry if this takes some time. Note: if you make any changes to this PR yourself, they...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125002">fix(cli): conversation history is lost when a CLI session cannot be resumed</a> &mdash; Closes #124991 What Problem This Solves Fixes an issue where users holding a long-running conversation on a claude-cli backend would find the assistant had lost the entire conversation when it could...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126194">fix(models): honor per-agent model metadata</a> &mdash; Closes #126192 What Problem This Solves Fixes an issue where operators using per-agent model metadata could see or execute different models depending on the surface. Bare defaults and fallbacks could...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126264">build(deps): bump the android-deps group across 1 directory with 23 updates</a> &mdash; Bumps the android-deps group with 23 updates in the /apps/android directory: | an</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/124531">fix(mattermost): prevent messages from sharing another sender&#x27;s turn</a> &mdash; What Problem This Solves Fixes an issue where Mattermost events arriving close together could be combined into one inbound turn under the wrong event identity or classification. Why This Change Was...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/20173">[Feature]: Discord: Re-process edited user messages (MESSAGE_UPDATE event)</a> &mdash; Summary Enable OpenClaw to detect and re-process Discord messages when users edit them, triggering a new agent turn with the updated content. Problem to solve When users edit Discord messages to...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126143">feat(ui): unify focused presentation routes</a> &mdash; Related: #125806 AI-assisted: Yes. The implementation and validation were completed with AI coding tools, with repository autoreview run clean before publication. What Problem This Solves The landed...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126263">fix(ci): restore subagent lifecycle E2E evidence</a> &mdash; Related: #123125 Additional instructions MUST: Keep Allow edits from maintainers enabled for this PR so maintainers can help update the branch when needed. What Problem This Solves Fixes an issue...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126114">fix: capture GitHub identity from authenticated sign-in</a> &mdash; Related: #125827 What Problem This Solves People joining a shared Gateway through GitHub-backed authentication still had to type a GitHub username into Profile settings before OpenClaw could credit...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126017">fix: large base64 attachments on /v1/responses crash the gateway with heap OOM</a> &mdash; Closes #126015 What Problem This Solves Fixes an issue where clients sending a large base64 input_file/input_image attachment to the gateway&#x27;s POST /v1/responses endpoint would crash the whole...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/122918">fix(gateway): accept Tailscale identity on Control UI HTTP reads, gated on same-origin browser context (continues #102302)</a> &mdash; What Problem This Solves Over Tailscale Serve the Control UI WebSocket authenticates via Tailscale identity (chat works), but the HTTP bootstrap/read routes (/control-ui-config.json, assistant-media,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/38570">Inter-agent sessions_send: sender attributed as wrong agent (missing identity name)</a> &mdash; Bug When agent A uses sessions_send to message agent B, the receiving agent often misidentifies the sender as &quot;David&quot; (the default/main agent) instead of the actual sender. Root Cause...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126250">fix(discord): route polls through canonical delivery</a> &mdash; What Problem This Solves Fixes an issue where Discord polls bypassed canonical delivery, losing inherited thread routing, silent notification flags, platform receipts, and terminal delivery facts....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126240">refactor(update): simplify lifecycle transactions</a> &mdash; What Problem This Solves The update, uninstall, and installer lifecycle paths had accumulated duplicate transaction bookkeeping: repeated package-update failure objects, a one-use shim-backup...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/37966">[Bug]: cacheRetention ignored for LiteLLM-proxied Anthropic models</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Summary cacheRetention configured in agents.defaults.models is silently ignored for LiteLLM-proxied Anthropic models (for example...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126262">improve(code-mode): call tools as global functions</a> &mdash; What Problem This Solves Code Mode currently teaches models to invoke hidden tools through verbose internal routing syntax such as tools.callValue(&quot;openclaw:core:sessions_spawn&quot;, {...}). That spends...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126249">refactor(google-meet): use explicit test API boundary</a> &mdash; Related: #126223 What Problem This Solves The Google Meet follow-up to #126223 still modeled a test-only owner export as an allowed unused production export. That hid the test seam from Knip instead...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125471">fix(models): keep Claude CLI OAuth available in Control UI</a> &mdash; Summary High Level TLDR Claude CLI OAuth was valid but could lose refresh ownership after a Gateway restart when a legacy auth.profiles[&quot;anthropic:claude-cli&quot;] entry still said provider: anthropic,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/116489">feat(security): require acknowledgement for install policy warnings</a> &mdash; New behavior An external security.installPolicy command can now return warn, letting an authorized operator review a suspicious plugin or skill install before deciding whether to continue. -...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125250">improve(ui): refine chat widget host and image actions</a> &mdash; Related: #125230 What Problem This Solves Chat-rendered widgets used nested host framing, changed width when raw details expanded, exposed diagnostics permanently, and presented generic export...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/115000">fix(ui): add discard escape hatch for stuck cloud-session recovery</a> &mdash; What Problem This Solves When a cloud thread create is interrupted by a Gateway change (for example a restart while the create is in flight), the new-session page persists a recovery record in...</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-08-19</a> &mdash; 386727 stars, 81264 forks, 3110 contributors</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (96 total)</a> &mdash; 96 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/d6a8c68501d4244664ce443e686c24292f607471">fix: show current NVIDIA evals from source-backed skills</a> &mdash; Resolve current SkillEvaluator results through the GitHub source row when skills do not carry githubCurrentRepo, returning null instead of error/missing data when unavailable.</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/bfb760d692c3fc08af09d75f25571422dbc40ec6">fix: use proven model for skill eval backfill (#3489)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/e16a6d4760682be5ee441255a862ad3c2b5a2fd9">fix: accept sourced repo for skill eval claims</a> &mdash; Resolve GitHub source repo through githubSkillSources during SkillEvaluator claim stale checks, and let the temporary doca prioritizer reset its stale-version row.</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/60733420baed13755b71c929b68c3e762b471ed1">fix: resolve skill evals for projected skill pages</a> &mdash; Resolve SkillEvaluator lookup for projected skill detail rows by falling back to NVIDIA source repo/path and returning null when no unique skill can be resolved.</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/3a887ebc42c6ed922398dfb1b4a25f65e052ab04">fix: stabilize skill eval query request</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/7d8484f0b69055348d202c39c55ee7c4bf4de122">fix: restore skill eval tab safely</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/640aaddf30f635ad9ba357b6dd7f10f995933ea9">fix: gate skill evaluation tab query</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/36d26c73f42b98ec690352ed2767d0ca7cd78130">feat: evaluate synced NVIDIA skills</a> &mdash; feat: prototype NVIDIA skill evaluations feat: render SkillEvaluator metrics in skill tab fix: simplify skill evals tab fix: streamline skill eval results test: align eval loader expectations fix:...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/624ae2aa00517cde026c30a7a2468669451b749d">fix: keep catalog first-page failures retryable (#3457)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/5ed9d4c5f61386e738ad2652b6fcbd5869df9fb7">fix: abort hung OG metadata fetches and archive metrics (#3471)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/09f790ad580d77933ce0e5221a06cf7f97946486">fix: resolve banned legacy owners for skill deletion (#3477)</a></li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://www.flyingpenguin.com/build-an-openclaw-free-secure-always-on-local-ai-agent/">OpenClaw isn&#x27;t fooling me. I remember MS-DOS</a></li>
+  <li><a href="https://github.com/DenchHQ/DenchClaw">Show HN: DenchClaw – Local CRM on Top of OpenClaw</a></li>
+  <li><a href="https://dev.to/amrree/your-ai-agent-just-cancelled-a-strangers-gym-class-now-what-36c3">Your AI agent just cancelled a stranger&#x27;s gym class. Now what?</a> &mdash; A Melbourne man asked his personal AI to book a gym class. The agent found a broken authorization check, bypassed the booking window, and removed another user f</li>
+  <li><a href="https://stakon.medium.com/the-future-of-ai-isnt-what-you-think-5887a121614f?source=rss------openclaw-5">The Future of AI Isn’t What You Think</a> &mdash; The future of AI isn&amp;#x2019;t what you think.Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@gavin_25495/running-clawbot-on-local-llms-and-cloudflare-tunnels-674ecb9b3d84?source=rss------openclaw-5">Running Clawbot on Local LLMs and Cloudflare Tunnels</a> &mdash; I&amp;#x2019;m jumping on the Clawbot (Clawd/Moltbot) bandwagon. I wanted to run it local as much as possible, and the documentation is there, but&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://alternativeto.net/software/codename-goose/about/">Goose OSS</a> &mdash; An open-source platform for seamless automation in engineering tasks, providing local execution and control. Customizable with any LLM for enhanced autonomy, enabling developers to efficiently handle...</li>
+</ul>
+  </div>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="archive-gate">
+      <h2>Read the full issue</h2>
+      <p>Subscribe to get every section delivered to your inbox.</p>
+      <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+      <label class="archive-reveal" for="show-full">Continue reading &rarr;</label>
+    </div>
+
+    <input type="checkbox" id="show-full" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      
+      
+      
+      
+      
+      
+      
+      <section class="section" id="releases">
+  <h2 class="section-title">Releases</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-08-19</a> &mdash; 386727 stars, 81264 forks, 3110 contributors</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="community">
+  <h2 class="section-title">Community</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126221">fix: nested session tools retain caller scope on multi-agent hosts</a> &mdash; What Problem This Solves Fixes an issue where Code Mode calls to sessions_list and sessions_search could fail on multi-agent hosts when the model omitted an explicit scope: &gt; Multiple agents are...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/17211">[Feature]: Add native checkpoint engine with deterministic resume and diff</a> &mdash; Summary Standardize task-boundary checkpoints and deterministic replay to reduce context drift after compaction. Problem to solve Checkpointing is ad-hoc and replay is not deterministic. Users cannot...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/31379">[Feature]: Channels settings page should always show built-in channels alongside custom channels</a> &mdash; Summary When a custom channel plugin (e.g. icenter) is enabled via plugins.entries, the Channels settings page in the Control UI only displays that custom channel. All built-in channels (WhatsApp,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/117712">build(deps): bump the actions group across 1 directory with 10 updates</a> &mdash; [//]: (dependabot-start) ⚠️ Dependabot is rebasing this PR ⚠️ Rebasing might not happen immediately, so don&#x27;t worry if this takes some time. Note: if you make any changes to this PR yourself, they...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125002">fix(cli): conversation history is lost when a CLI session cannot be resumed</a> &mdash; Closes #124991 What Problem This Solves Fixes an issue where users holding a long-running conversation on a claude-cli backend would find the assistant had lost the entire conversation when it could...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126194">fix(models): honor per-agent model metadata</a> &mdash; Closes #126192 What Problem This Solves Fixes an issue where operators using per-agent model metadata could see or execute different models depending on the surface. Bare defaults and fallbacks could...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126264">build(deps): bump the android-deps group across 1 directory with 23 updates</a> &mdash; Bumps the android-deps group with 23 updates in the /apps/android directory: | an</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/124531">fix(mattermost): prevent messages from sharing another sender&#x27;s turn</a> &mdash; What Problem This Solves Fixes an issue where Mattermost events arriving close together could be combined into one inbound turn under the wrong event identity or classification. Why This Change Was...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/20173">[Feature]: Discord: Re-process edited user messages (MESSAGE_UPDATE event)</a> &mdash; Summary Enable OpenClaw to detect and re-process Discord messages when users edit them, triggering a new agent turn with the updated content. Problem to solve When users edit Discord messages to...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126143">feat(ui): unify focused presentation routes</a> &mdash; Related: #125806 AI-assisted: Yes. The implementation and validation were completed with AI coding tools, with repository autoreview run clean before publication. What Problem This Solves The landed...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126263">fix(ci): restore subagent lifecycle E2E evidence</a> &mdash; Related: #123125 Additional instructions MUST: Keep Allow edits from maintainers enabled for this PR so maintainers can help update the branch when needed. What Problem This Solves Fixes an issue...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126114">fix: capture GitHub identity from authenticated sign-in</a> &mdash; Related: #125827 What Problem This Solves People joining a shared Gateway through GitHub-backed authentication still had to type a GitHub username into Profile settings before OpenClaw could credit...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126017">fix: large base64 attachments on /v1/responses crash the gateway with heap OOM</a> &mdash; Closes #126015 What Problem This Solves Fixes an issue where clients sending a large base64 input_file/input_image attachment to the gateway&#x27;s POST /v1/responses endpoint would crash the whole...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/122918">fix(gateway): accept Tailscale identity on Control UI HTTP reads, gated on same-origin browser context (continues #102302)</a> &mdash; What Problem This Solves Over Tailscale Serve the Control UI WebSocket authenticates via Tailscale identity (chat works), but the HTTP bootstrap/read routes (/control-ui-config.json, assistant-media,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/38570">Inter-agent sessions_send: sender attributed as wrong agent (missing identity name)</a> &mdash; Bug When agent A uses sessions_send to message agent B, the receiving agent often misidentifies the sender as &quot;David&quot; (the default/main agent) instead of the actual sender. Root Cause...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126250">fix(discord): route polls through canonical delivery</a> &mdash; What Problem This Solves Fixes an issue where Discord polls bypassed canonical delivery, losing inherited thread routing, silent notification flags, platform receipts, and terminal delivery facts....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126240">refactor(update): simplify lifecycle transactions</a> &mdash; What Problem This Solves The update, uninstall, and installer lifecycle paths had accumulated duplicate transaction bookkeeping: repeated package-update failure objects, a one-use shim-backup...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/37966">[Bug]: cacheRetention ignored for LiteLLM-proxied Anthropic models</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Summary cacheRetention configured in agents.defaults.models is silently ignored for LiteLLM-proxied Anthropic models (for example...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126262">improve(code-mode): call tools as global functions</a> &mdash; What Problem This Solves Code Mode currently teaches models to invoke hidden tools through verbose internal routing syntax such as tools.callValue(&quot;openclaw:core:sessions_spawn&quot;, {...}). That spends...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126249">refactor(google-meet): use explicit test API boundary</a> &mdash; Related: #126223 What Problem This Solves The Google Meet follow-up to #126223 still modeled a test-only owner export as an allowed unused production export. That hid the test seam from Knip instead...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125471">fix(models): keep Claude CLI OAuth available in Control UI</a> &mdash; Summary High Level TLDR Claude CLI OAuth was valid but could lose refresh ownership after a Gateway restart when a legacy auth.profiles[&quot;anthropic:claude-cli&quot;] entry still said provider: anthropic,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/116489">feat(security): require acknowledgement for install policy warnings</a> &mdash; New behavior An external security.installPolicy command can now return warn, letting an authorized operator review a suspicious plugin or skill install before deciding whether to continue. -...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125250">improve(ui): refine chat widget host and image actions</a> &mdash; Related: #125230 What Problem This Solves Chat-rendered widgets used nested host framing, changed width when raw details expanded, exposed diagnostics permanently, and presented generic export...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/115000">fix(ui): add discard escape hatch for stuck cloud-session recovery</a> &mdash; What Problem This Solves When a cloud thread create is interrupted by a Gateway change (for example a restart while the create is in flight), the new-session page persists a recovery record in...</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (96 total)</a> &mdash; 96 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/d6a8c68501d4244664ce443e686c24292f607471">fix: show current NVIDIA evals from source-backed skills</a> &mdash; Resolve current SkillEvaluator results through the GitHub source row when skills do not carry githubCurrentRepo, returning null instead of error/missing data when unavailable.</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/bfb760d692c3fc08af09d75f25571422dbc40ec6">fix: use proven model for skill eval backfill (#3489)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/e16a6d4760682be5ee441255a862ad3c2b5a2fd9">fix: accept sourced repo for skill eval claims</a> &mdash; Resolve GitHub source repo through githubSkillSources during SkillEvaluator claim stale checks, and let the temporary doca prioritizer reset its stale-version row.</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/60733420baed13755b71c929b68c3e762b471ed1">fix: resolve skill evals for projected skill pages</a> &mdash; Resolve SkillEvaluator lookup for projected skill detail rows by falling back to NVIDIA source repo/path and returning null when no unique skill can be resolved.</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/3a887ebc42c6ed922398dfb1b4a25f65e052ab04">fix: stabilize skill eval query request</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/7d8484f0b69055348d202c39c55ee7c4bf4de122">fix: restore skill eval tab safely</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/640aaddf30f635ad9ba357b6dd7f10f995933ea9">fix: gate skill evaluation tab query</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/36d26c73f42b98ec690352ed2767d0ca7cd78130">feat: evaluate synced NVIDIA skills</a> &mdash; feat: prototype NVIDIA skill evaluations feat: render SkillEvaluator metrics in skill tab fix: simplify skill evals tab fix: streamline skill eval results test: align eval loader expectations fix:...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/624ae2aa00517cde026c30a7a2468669451b749d">fix: keep catalog first-page failures retryable (#3457)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/5ed9d4c5f61386e738ad2652b6fcbd5869df9fb7">fix: abort hung OG metadata fetches and archive metrics (#3471)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/09f790ad580d77933ce0e5221a06cf7f97946486">fix: resolve banned legacy owners for skill deletion (#3477)</a></li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="news">
+  <h2 class="section-title">News</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://www.flyingpenguin.com/build-an-openclaw-free-secure-always-on-local-ai-agent/">OpenClaw isn&#x27;t fooling me. I remember MS-DOS</a></li>
+  <li><a href="https://github.com/DenchHQ/DenchClaw">Show HN: DenchClaw – Local CRM on Top of OpenClaw</a></li>
+  <li><a href="https://dev.to/amrree/your-ai-agent-just-cancelled-a-strangers-gym-class-now-what-36c3">Your AI agent just cancelled a stranger&#x27;s gym class. Now what?</a> &mdash; A Melbourne man asked his personal AI to book a gym class. The agent found a broken authorization check, bypassed the booking window, and removed another user f</li>
+  <li><a href="https://stakon.medium.com/the-future-of-ai-isnt-what-you-think-5887a121614f?source=rss------openclaw-5">The Future of AI Isn’t What You Think</a> &mdash; The future of AI isn&amp;#x2019;t what you think.Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@gavin_25495/running-clawbot-on-local-llms-and-cloudflare-tunnels-674ecb9b3d84?source=rss------openclaw-5">Running Clawbot on Local LLMs and Cloudflare Tunnels</a> &mdash; I&amp;#x2019;m jumping on the Clawbot (Clawd/Moltbot) bandwagon. I wanted to run it local as much as possible, and the documentation is there, but&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://alternativeto.net/software/codename-goose/about/">Goose OSS</a> &mdash; An open-source platform for seamless automation in engineering tasks, providing local execution and control. Customizable with any LLM for enhanced autonomy, enabling developers to efficiently handle...</li>
+</ul>
+  </div>
+</section>
+      
+      
+    </div>
+
+    <footer class="footer">
+  <div class="footer-divider"></div>
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  <p>
+    Generated with AI by the
+    <a href="https://github.com/openclaw/openclaw">OpenClaw</a> Newsletter Bot
+  </p>
+  <div class="footer-links">
+    <a href="../archive.html">Archive</a>
+    <a href="../rss.xml">RSS</a>
+    <a href="https://github.com/openclaw/openclaw">Star on GitHub</a>
+  </div>
+</footer>
+  </div>
+</body>
+</html>
