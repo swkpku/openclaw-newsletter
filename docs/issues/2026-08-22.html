@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Newsletter - 2026-08-22</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="OpenClaw Newsletter" href="../rss.xml">
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenClaw Newsletter - 2026-08-22">
+<meta property="og:description" content="compaction: absolute token thresholds break when switching models with different context windows &mdash; Problem Four compaction parameters use absolute...">
+<meta property="og:url" content="https://swkpku.github.io/openclaw-newsletter/issues/2026-08-22.html">
+<meta property="og:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenClaw Newsletter - 2026-08-22">
+<meta name="twitter:description" content="compaction: absolute token thresholds break when switching models with different context windows &mdash; Problem Four compaction parameters use absolute...">
+<meta name="twitter:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <header class="header">
+  <div class="header-top">
+    <div class="header-brand">
+      <div class="header-logo">OC</div>
+      <div>
+        <h1>OpenClaw Newsletter</h1>
+        <p class="subtitle">Daily updates from the OpenClaw ecosystem</p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="date">Saturday, August 22, 2026</p>
+  
+  <nav class="nav">
+    <a href="../index.html">Latest</a>
+    <a href="../archive.html">Archive</a>
+    <a href="https://github.com/openclaw/openclaw">GitHub</a>
+  </nav>
+  
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  
+</header>
+
+    
+    <div class="toc">
+      <h2>In This Issue</h2>
+      <ul>
+        
+        <li><a href="#top_stories">Top Stories</a></li>
+        
+        <li><a href="#releases">Releases</a></li>
+        
+        <li><a href="#community">Community</a></li>
+        
+        <li><a href="#news">News</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    <section class="section" id="top_stories">
+  <h2 class="section-title">Top Stories</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/issues/87136">compaction: absolute token thresholds break when switching models with different context windows</a> &mdash; Problem Four compaction parameters use absolute token counts, not relative percentages of the context window: Meanwhile, contextThreshold (0.75) and maxHistoryShare (0.8) correctl</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127805">fix(slack): keep command tests inside plugin boundary</a> &mdash; What Problem This Solves Resolves a problem where the Slack slash-command test exercised core reply-dispatch internals instead of the public plugin SDK contract. That made the release-validation test...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127155">fix(memory): bisect embedding batches on provider item-count 400s</a> &mdash; Closes #125640 Additional instructions MUST: Keep Allow edits from maintainers enabled for this PR so maintainers can help update the branch when needed. What Problem This Solves Fixes an issue where...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127796">feat(agent): allow explicit one-shot tools</a> &mdash; Related: #126255 What Problem This Solves openclaw agent exec uses a restrictive one-shot tool profile, but callers cannot add one explicitly trusted tool without writing persistent configuration....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/111349">fix(plugins): pretag pack checks stop hanging on stalled commands</a> &mdash; What Problem This Solves\n\nFixes an issue where the fast plugin pretag check could return after timing out a stalled build or pack command while bash/npm descendant processes remained alive and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127806">fix(release): accept frozen QA completion evidence</a> &mdash; What Problem This Solves Resolves a release-validation problem where a successful frozen QA runtime-pair run could be rejected after the legacy producer omitted its terminal run.status, forcing an...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127301">fix(release): preserve validation state across reruns</a> &mdash; What Problem This Solves Fixes an issue where rerunning a failed Full Release Validation parent job could lose attempt-scoped artifacts, preventing the parent from adopting its already-dispatched...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/51184">Feature: Surface cron job name / session label in /status and statusline</a> &mdash; Problem When viewing /status in the TUI, cron job sessions and their runs display as raw UUIDs: The session store already has a label field (e.g., &quot;Cron: claude-keepalive&quot;) and cron jobs have a name...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/121050">fix(control-ui): retain webchat context for config restarts</a> &mdash; Summary Carry { channel: &quot;webchat&quot;, to: sessionKey } on Control UI config.apply and config.patch requests. This preserves the restart wake for the originating webchat session while preventing a stale...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126255">feat(browser): add policy-bound Browser Use CLI 3.0</a> &mdash; Related: #19289 What Problem This Solves OpenClaw agents need a supported way to use Browser Use CLI 3.0 against an orchestrator-owned Cloud browser without giving an external executable independent...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/125776">Codex dynamic tool progress duplicates a single call in Telegram</a> &mdash; Bug type Behavior bug Beta release blocker No Summary A single Codex dynamic tool invocation can appear twice in the same Telegram progress draft: once as an id-less textual result summary and once...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127778">fix(codex): keep Computer Use working after desktop updates</a> &mdash; Related: #127024 What Problem This Solves Fixes an issue where Codex-native Computer Use could keep using an app-server loaded from the previous ChatGPT or Codex desktop build after the desktop app...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/124689">[Bug]: Model picker only applies changes to new sessions; Ollama Cloud requests sign-in despite configured API key</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary I am seeing two related problems in the model picker in the OpenClaw Control UI: 1. Changing the model...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127797">refactor(plugins): unify synchronous message hooks</a> &mdash; What Problem This Solves The synchronous message-hook wrappers duplicated sequencing and failure policy. That left tool_result_persist and before_message_write vulnerable to drifting apart on event...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127794">fix(onboard): emit JSON on option-validation failures</a> &mdash; What Problem This Solves openclaw onboard --json promises a machine-readable result, but only some terminal outcomes produce one. The success path writes a JSON object, and the top-level CLI error...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/127807">No plugin-facing hook can force agent-run termination -- before_tool_call denies calls, nothing can stop a turn</a> &mdash; Summary No plugin-facing hook can force an agent run/turn to stop. A plugin can deny individual tool calls (before_tool_call), but has no way to end the session once it has correctly detected that...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127790">improve(gateway): avoid targetless session cache allocations</a> &mdash; What Problem This Solves Ordinary authenticated Gateway RPCs without a session target, such as status, allocated two empty session lookup maps during authorization even though they never performed a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/118505">macOS: surface realtime Talk settings</a> &mdash; What Problem This Solves macOS operators need a direct handoff from Voice &amp; Talk settings to the existing Control UI Talk configuration. The Control UI must also preserve a configured realtime...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127787">fix(mantis): publish proof comments on auto-triggered runs</a> &mdash; What Problem This Solves Auto-triggered Mantis proof runs (label/clawsweeper_label and other non-comment request sources) end with no PR comment at all. The durable evidence publisher runs with...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/125371">[Bug]: Android Realtime Talk suppresses the microphone for all of assistant playback, so it cannot be interrupted</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary On Android, Realtime Talk discards captured microphone audio for the entire duration of assistant...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127783">improve(gateway): avoid copying single-chunk request bodies</a> &mdash; What Problem This Solves Reduces CPU and allocation overhead when Gateway HTTP endpoints read request bodies delivered as a single chunk. The previous completion path copied that chunk into a new...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127700">chore(deps): bump the actions group across 1 directory with 11 updates</a> &mdash; [//]: (dependabot-start) ⚠️ Dependabot is rebasing this PR ⚠️ Rebasing might not happen immediately, so don&#x27;t worry if this takes some time. Note: if you make any changes to this PR yourself, they...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127779">fix(onboard): reject --gateway-bind custom without a valid customBindHost</a> &mdash; What Problem This Solves Non-interactive onboarding accepts --gateway-bind custom without a gateway.customBindHost, writes bind: &quot;custom&quot; to the config, and reports success. The Gateway then refuses...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127232">fix(talk): share and bound Apple relay lifecycle</a> &mdash; What Problem This Solves The iOS-owned realtime Talk relay could not be reused by macOS and had unbounded or ambiguous audio lifecycle failure paths. Why This Change Was Made The canonical Apple...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126556">fix(exec): prevent zsh literal expansion failures</a> &mdash; Closes #126521 What Problem This Solves Fixes an issue where users running exec commands through zsh would have the entire command chain abort when model-generated shell text contained an...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/118499">macOS: add realtime Gateway-relay Talk support</a> &mdash; Related: https://github.com/openclaw/openclaw/issues/71195 and https://github.com/openclaw/openclaw/issues/116201 What Problem This Solves macOS Talk lacked a reusable, bounded Gateway realtime relay...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126825">perf(sqlite): skip schema write lock on current state</a> &mdash; What Problem This Solves Every fresh writable process open entered state.schema.ensure with BEGIN IMMEDIATE, even when the shared-state database was already canonical for the running OpenClaw...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127704">fix: stop limited access status from shifting page layouts</a> &mdash; What Problem This Solves Fixes an issue where users connected with limited device access would see the global access status consume a full row inside routed pages, making Automations and other narrow...</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-08-22</a> &mdash; 387080 stars, 81307 forks, 3120 contributors</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (94 total)</a> &mdash; 94 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/845c6d3bdb1a36573d8d28be2a8fb85a3c476720">fix(ci): bind package publish to release parent (#3500)</a> &mdash; Bind scoped upload and publish credentials to one server-derived authorization transaction, retain fail-closed v2 validation through staged finalization, and preserve idempotent same-storage retries...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/60733420baed13755b71c929b68c3e762b471ed1">fix: resolve skill evals for projected skill pages</a> &mdash; Resolve SkillEvaluator lookup for projected skill detail rows by falling back to NVIDIA source repo/path and returning null when no unique skill can be resolved.</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/2c65834c1d7c37ea1e739e03c6a0bb76e304e550">docs: update Git &amp; GitHub skill count to 160</a></li>
+  <li><a href="https://huggingface.co/ykarout/Qwen3.5-9b-Opus-Openclaw-Distilled-GGUF">ykarout/Qwen3.5-9b-Opus-Openclaw-Distilled-GGUF</a> &mdash; text-generation</li>
+  <li><a href="https://huggingface.co/sulpikar2/Qwen3.5-4B-Claude-4.6-Opus-Reasoning-openclaw">sulpikar2/Qwen3.5-4B-Claude-4.6-Opus-Reasoning-openclaw</a></li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://app.uniclaw.ai/arena?tab=costEffectiveness&amp;via=hn">StepFun 3.5 Flash is #1 cost-effective model for OpenClaw tasks (300 battles)</a></li>
+  <li><a href="https://blog.nishantsoni.com/p/ive-seen-a-thousand-openclaw-deploys">OpenClaw’s memory is unreliable, and you don’t know when it will break</a></li>
+  <li><a href="https://dev.to/norviktech/setting-up-an-openclaw-agent-o-36km">Setting Up an OpenClaw Agent o…</a> &mdash; Originally published at norvik.tech Introduction Explore the setup of an OpenClaw agent...</li>
+  <li><a href="https://dev.to/lars_winstand/i-thought-openclaw-would-just-install-and-instead-i-got-dropped-into-provider-hell-6cj">I thought OpenClaw would just install and instead I got dropped into provider hell</a> &mdash; A practical DEV post on why OpenClaw installs often fail at the provider layer, not the package layer. The piece argues for a boring but reliable setu</li>
+  <li><a href="https://medium.com/@srikanthbellary01/grok-bot-is-staff-the-computer-is-the-product-4c187f98f4c0?source=rss------openclaw-5">Grok Bot Is Staff. The Computer Is the Product.</a> &mdash; What it is, how I use it, and who it is actually for.Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@srikanthbellary01/the-assistant-needs-a-computer-who-runs-it-39112153a9cf?source=rss------openclaw-5">The Assistant Needs a Computer. Who Runs It?</a> &mdash; OpenClaw, Hermes, and Grok Bot are the same category. The step up is not a smarter model.Continue reading on Medium »</li>
+</ul>
+  </div>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="archive-gate">
+      <h2>Read the full issue</h2>
+      <p>Subscribe to get every section delivered to your inbox.</p>
+      <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+      <label class="archive-reveal" for="show-full">Continue reading &rarr;</label>
+    </div>
+
+    <input type="checkbox" id="show-full" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      
+      
+      
+      
+      
+      
+      
+      <section class="section" id="releases">
+  <h2 class="section-title">Releases</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-08-22</a> &mdash; 387080 stars, 81307 forks, 3120 contributors</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="community">
+  <h2 class="section-title">Community</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/issues/87136">compaction: absolute token thresholds break when switching models with different context windows</a> &mdash; Problem Four compaction parameters use absolute token counts, not relative percentages of the context window: Meanwhile, contextThreshold (0.75) and maxHistoryShare (0.8) correctl</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127805">fix(slack): keep command tests inside plugin boundary</a> &mdash; What Problem This Solves Resolves a problem where the Slack slash-command test exercised core reply-dispatch internals instead of the public plugin SDK contract. That made the release-validation test...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127155">fix(memory): bisect embedding batches on provider item-count 400s</a> &mdash; Closes #125640 Additional instructions MUST: Keep Allow edits from maintainers enabled for this PR so maintainers can help update the branch when needed. What Problem This Solves Fixes an issue where...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127796">feat(agent): allow explicit one-shot tools</a> &mdash; Related: #126255 What Problem This Solves openclaw agent exec uses a restrictive one-shot tool profile, but callers cannot add one explicitly trusted tool without writing persistent configuration....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/111349">fix(plugins): pretag pack checks stop hanging on stalled commands</a> &mdash; What Problem This Solves\n\nFixes an issue where the fast plugin pretag check could return after timing out a stalled build or pack command while bash/npm descendant processes remained alive and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127806">fix(release): accept frozen QA completion evidence</a> &mdash; What Problem This Solves Resolves a release-validation problem where a successful frozen QA runtime-pair run could be rejected after the legacy producer omitted its terminal run.status, forcing an...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127301">fix(release): preserve validation state across reruns</a> &mdash; What Problem This Solves Fixes an issue where rerunning a failed Full Release Validation parent job could lose attempt-scoped artifacts, preventing the parent from adopting its already-dispatched...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/51184">Feature: Surface cron job name / session label in /status and statusline</a> &mdash; Problem When viewing /status in the TUI, cron job sessions and their runs display as raw UUIDs: The session store already has a label field (e.g., &quot;Cron: claude-keepalive&quot;) and cron jobs have a name...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/121050">fix(control-ui): retain webchat context for config restarts</a> &mdash; Summary Carry { channel: &quot;webchat&quot;, to: sessionKey } on Control UI config.apply and config.patch requests. This preserves the restart wake for the originating webchat session while preventing a stale...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126255">feat(browser): add policy-bound Browser Use CLI 3.0</a> &mdash; Related: #19289 What Problem This Solves OpenClaw agents need a supported way to use Browser Use CLI 3.0 against an orchestrator-owned Cloud browser without giving an external executable independent...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/125776">Codex dynamic tool progress duplicates a single call in Telegram</a> &mdash; Bug type Behavior bug Beta release blocker No Summary A single Codex dynamic tool invocation can appear twice in the same Telegram progress draft: once as an id-less textual result summary and once...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127778">fix(codex): keep Computer Use working after desktop updates</a> &mdash; Related: #127024 What Problem This Solves Fixes an issue where Codex-native Computer Use could keep using an app-server loaded from the previous ChatGPT or Codex desktop build after the desktop app...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/124689">[Bug]: Model picker only applies changes to new sessions; Ollama Cloud requests sign-in despite configured API key</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary I am seeing two related problems in the model picker in the OpenClaw Control UI: 1. Changing the model...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127797">refactor(plugins): unify synchronous message hooks</a> &mdash; What Problem This Solves The synchronous message-hook wrappers duplicated sequencing and failure policy. That left tool_result_persist and before_message_write vulnerable to drifting apart on event...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127794">fix(onboard): emit JSON on option-validation failures</a> &mdash; What Problem This Solves openclaw onboard --json promises a machine-readable result, but only some terminal outcomes produce one. The success path writes a JSON object, and the top-level CLI error...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/127807">No plugin-facing hook can force agent-run termination -- before_tool_call denies calls, nothing can stop a turn</a> &mdash; Summary No plugin-facing hook can force an agent run/turn to stop. A plugin can deny individual tool calls (before_tool_call), but has no way to end the session once it has correctly detected that...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127790">improve(gateway): avoid targetless session cache allocations</a> &mdash; What Problem This Solves Ordinary authenticated Gateway RPCs without a session target, such as status, allocated two empty session lookup maps during authorization even though they never performed a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/118505">macOS: surface realtime Talk settings</a> &mdash; What Problem This Solves macOS operators need a direct handoff from Voice &amp; Talk settings to the existing Control UI Talk configuration. The Control UI must also preserve a configured realtime...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127787">fix(mantis): publish proof comments on auto-triggered runs</a> &mdash; What Problem This Solves Auto-triggered Mantis proof runs (label/clawsweeper_label and other non-comment request sources) end with no PR comment at all. The durable evidence publisher runs with...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/125371">[Bug]: Android Realtime Talk suppresses the microphone for all of assistant playback, so it cannot be interrupted</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary On Android, Realtime Talk discards captured microphone audio for the entire duration of assistant...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127783">improve(gateway): avoid copying single-chunk request bodies</a> &mdash; What Problem This Solves Reduces CPU and allocation overhead when Gateway HTTP endpoints read request bodies delivered as a single chunk. The previous completion path copied that chunk into a new...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127700">chore(deps): bump the actions group across 1 directory with 11 updates</a> &mdash; [//]: (dependabot-start) ⚠️ Dependabot is rebasing this PR ⚠️ Rebasing might not happen immediately, so don&#x27;t worry if this takes some time. Note: if you make any changes to this PR yourself, they...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127779">fix(onboard): reject --gateway-bind custom without a valid customBindHost</a> &mdash; What Problem This Solves Non-interactive onboarding accepts --gateway-bind custom without a gateway.customBindHost, writes bind: &quot;custom&quot; to the config, and reports success. The Gateway then refuses...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127232">fix(talk): share and bound Apple relay lifecycle</a> &mdash; What Problem This Solves The iOS-owned realtime Talk relay could not be reused by macOS and had unbounded or ambiguous audio lifecycle failure paths. Why This Change Was Made The canonical Apple...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126556">fix(exec): prevent zsh literal expansion failures</a> &mdash; Closes #126521 What Problem This Solves Fixes an issue where users running exec commands through zsh would have the entire command chain abort when model-generated shell text contained an...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/118499">macOS: add realtime Gateway-relay Talk support</a> &mdash; Related: https://github.com/openclaw/openclaw/issues/71195 and https://github.com/openclaw/openclaw/issues/116201 What Problem This Solves macOS Talk lacked a reusable, bounded Gateway realtime relay...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126825">perf(sqlite): skip schema write lock on current state</a> &mdash; What Problem This Solves Every fresh writable process open entered state.schema.ensure with BEGIN IMMEDIATE, even when the shared-state database was already canonical for the running OpenClaw...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127704">fix: stop limited access status from shifting page layouts</a> &mdash; What Problem This Solves Fixes an issue where users connected with limited device access would see the global access status consume a full row inside routed pages, making Automations and other narrow...</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (94 total)</a> &mdash; 94 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/845c6d3bdb1a36573d8d28be2a8fb85a3c476720">fix(ci): bind package publish to release parent (#3500)</a> &mdash; Bind scoped upload and publish credentials to one server-derived authorization transaction, retain fail-closed v2 validation through staged finalization, and preserve idempotent same-storage retries...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/60733420baed13755b71c929b68c3e762b471ed1">fix: resolve skill evals for projected skill pages</a> &mdash; Resolve SkillEvaluator lookup for projected skill detail rows by falling back to NVIDIA source repo/path and returning null when no unique skill can be resolved.</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/2c65834c1d7c37ea1e739e03c6a0bb76e304e550">docs: update Git &amp; GitHub skill count to 160</a></li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="news">
+  <h2 class="section-title">News</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://huggingface.co/ykarout/Qwen3.5-9b-Opus-Openclaw-Distilled-GGUF">ykarout/Qwen3.5-9b-Opus-Openclaw-Distilled-GGUF</a> &mdash; text-generation</li>
+  <li><a href="https://huggingface.co/sulpikar2/Qwen3.5-4B-Claude-4.6-Opus-Reasoning-openclaw">sulpikar2/Qwen3.5-4B-Claude-4.6-Opus-Reasoning-openclaw</a></li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://app.uniclaw.ai/arena?tab=costEffectiveness&amp;via=hn">StepFun 3.5 Flash is #1 cost-effective model for OpenClaw tasks (300 battles)</a></li>
+  <li><a href="https://blog.nishantsoni.com/p/ive-seen-a-thousand-openclaw-deploys">OpenClaw’s memory is unreliable, and you don’t know when it will break</a></li>
+  <li><a href="https://dev.to/norviktech/setting-up-an-openclaw-agent-o-36km">Setting Up an OpenClaw Agent o…</a> &mdash; Originally published at norvik.tech Introduction Explore the setup of an OpenClaw agent...</li>
+  <li><a href="https://dev.to/lars_winstand/i-thought-openclaw-would-just-install-and-instead-i-got-dropped-into-provider-hell-6cj">I thought OpenClaw would just install and instead I got dropped into provider hell</a> &mdash; A practical DEV post on why OpenClaw installs often fail at the provider layer, not the package layer. The piece argues for a boring but reliable setu</li>
+  <li><a href="https://medium.com/@srikanthbellary01/grok-bot-is-staff-the-computer-is-the-product-4c187f98f4c0?source=rss------openclaw-5">Grok Bot Is Staff. The Computer Is the Product.</a> &mdash; What it is, how I use it, and who it is actually for.Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@srikanthbellary01/the-assistant-needs-a-computer-who-runs-it-39112153a9cf?source=rss------openclaw-5">The Assistant Needs a Computer. Who Runs It?</a> &mdash; OpenClaw, Hermes, and Grok Bot are the same category. The step up is not a smarter model.Continue reading on Medium »</li>
+</ul>
+  </div>
+</section>
+      
+      
+    </div>
+
+    <footer class="footer">
+  <div class="footer-divider"></div>
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  <p>
+    Generated with AI by the
+    <a href="https://github.com/openclaw/openclaw">OpenClaw</a> Newsletter Bot
+  </p>
+  <div class="footer-links">
+    <a href="../archive.html">Archive</a>
+    <a href="../rss.xml">RSS</a>
+    <a href="https://github.com/openclaw/openclaw">Star on GitHub</a>
+  </div>
+</footer>
+  </div>
+</body>
+</html>
