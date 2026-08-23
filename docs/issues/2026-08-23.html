@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Newsletter - 2026-08-23</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="OpenClaw Newsletter" href="../rss.xml">
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenClaw Newsletter - 2026-08-23">
+<meta property="og:description" content="fix(gateway): keep conversation delivery within agent bindings &mdash; Additional instructions MUST: Keep Allow edits from maintainers enabled for this ...">
+<meta property="og:url" content="https://swkpku.github.io/openclaw-newsletter/issues/2026-08-23.html">
+<meta property="og:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenClaw Newsletter - 2026-08-23">
+<meta name="twitter:description" content="fix(gateway): keep conversation delivery within agent bindings &mdash; Additional instructions MUST: Keep Allow edits from maintainers enabled for this ...">
+<meta name="twitter:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <header class="header">
+  <div class="header-top">
+    <div class="header-brand">
+      <div class="header-logo">OC</div>
+      <div>
+        <h1>OpenClaw Newsletter</h1>
+        <p class="subtitle">Daily updates from the OpenClaw ecosystem</p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="date">Sunday, August 23, 2026</p>
+  
+  <nav class="nav">
+    <a href="../index.html">Latest</a>
+    <a href="../archive.html">Archive</a>
+    <a href="https://github.com/openclaw/openclaw">GitHub</a>
+  </nav>
+  
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  
+</header>
+
+    
+    <div class="toc">
+      <h2>In This Issue</h2>
+      <ul>
+        
+        <li><a href="#top_stories">Top Stories</a></li>
+        
+        <li><a href="#releases">Releases</a></li>
+        
+        <li><a href="#community">Community</a></li>
+        
+        <li><a href="#news">News</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    <section class="section" id="top_stories">
+  <h2 class="section-title">Top Stories</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126424">fix(gateway): keep conversation delivery within agent bindings</a> &mdash; Additional instructions MUST: Keep Allow edits from maintainers enabled for this PR so maintainers can help update the branch when needed. What Problem This Solves Fixes an issue where multi-agent...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/128156">[Bug]: gateway event-loop stalls - 76% of a 7.6s stall is log redaction (replacePatternBounded), one full regex pass per pattern</a> &mdash; What happened On a Windows host running six agents, the gateway event loop stalls for 60-200s several times an hour. TCP still accepts on the gateway port so Test-NetConnection reports healthy, but...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128144">fix(gateway): prevent silent delivery loss on closing connections</a> &mdash; What Problem This Solves Fixes an issue where operators using the Gateway or Control UI would silently lose responses, live updates, and worker connection handshakes when a WebSocket entered its...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120618">fix(codex): agents ignore AGENTS.md on sandboxed app-server runs [AI]</a> &mdash; Closes #120600 What Problem This Solves Fixes an issue where agents running through the Codex app-server with a sandbox enabled never receive their AGENTS.md. The workspace file is read and reported...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/124480">fix(together): add size range validation for video dimensions</a> &mdash; Problem The Together video generation provider parsed width/height from the size string but did not validate the range. Out-of-range values (e.g. 9999x9999) would be sent to the API, causing...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128155">fix(cli): return JSON for channel capability failures</a> &mdash; What Problem This Solves Fixes an issue where openclaw channels capabilities --json returned exit code 1 with empty stdout for semantic validation failures: --account or --target without a specific...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128143">refactor(context-engine): remove owner cleanup helper</a> &mdash; What Problem This Solves Context-engine registry production code exported an owner-specific cleanup helper solely for test fixture cleanup. Gateway health tests used that helper to delete selected...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/124471">fix(settings): take the settings file lock before the first-write read</a> &mdash; Closes #124394 What Problem This Solves Fixes an issue where users running two OpenClaw processes that each save a setting before settings.json exists would silently lose one of those settings. This...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/116062">Dashboard: Anthropic provider group missing from full model settings panel (stale after gateway restart, no config change)</a> &mdash; Summary The Anthropic provider group intermittently disappears from the full model settings panel in the OpenClaw Control UI dashboard (&quot;Chat model&quot; settings → provider list), even though: - The...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/127228">Visible sessions render incompletely—UI omits assistant messages despite transcript presence</a> &mdash; - Sessions appear in the sidebar as expected. - When opened, parts of the conversation, especially assistant messages, are missing despite being present in the transcript and visible in Mission...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/127148">[Bug]: Codex sessions.compact acquires a second app-server and hits active-writer conflict</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary Manual sessions.compact on a bound Codex app-server session can acquire a second app-server client for a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/49381">Feishu: duplicate final replies can occur after model failover from rate-limited primary</a> &mdash; Summary In Feishu direct messages, a single user message can sometimes result in two final assistant replies when the primary model fails with rate limiting and OpenClaw falls back to a secondary...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/118625">[Bug]: Main-session compaction holds the session write-lock past the 60s acquire timeout; completed subagent announces time out and give up, silently losing results</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary When the main session triggers transcript compaction (trigger=cli_budget), the compaction flow holds the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/127541">PDF fallback applies extraction budgets per file without an aggregate request bound</a> &mdash; Summary The PDF tool documents and admits up to ten PDFs. On the generic extraction fallback, each PDF independently receives the full 200,000-character and 4,000,000-render-pixel budgets, then every...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/121576">fix(text): only insert separator between word chars when stripping model tokens</a> &mdash; What Problem This Solves Closes #121426. stripModelSpecialTokens inserts a separator space whenever both characters surrounding a removed leaked control token are non-whitespace. It does not...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/126847">A failed tool call always terminates the visible turn as &quot;temporary model failure&quot; — the error is never returned to the model (0/40 recoverable in 24h)</a> &mdash; Summary When a tool call fails inside an embedded run, the visible turn terminates immediately. The failure is not returned to the model as a tool result, so the model never gets to adapt, work...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/127496">apply_patch commits earlier hunks before returning a later-hunk error</a> &mdash; What happens A valid multi-file apply_patch envelope mutates each hunk immediately. If a later hunk is invalid, mismatched, or cancellation arrives between hunks, the tool rejects with only the later...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/89791">5.26 supervisor mode + dual-plist install: 30s EADDRINUSE loop + silent-fail unset order</a> &mdash; OpenClaw 5.26 supervisor mode + dual-plist install: 30s loop + silent-fail unset order TL;DR: When ai.openclaw.gateway and ai.openclaw.node plists both run, OpenClaw 5.26&#x27;s detectRespawnSupervisor()...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/118627">[Bug]: sessions.reset RPC on agent:main:main throws &quot;RangeError: Maximum call stack size exceeded&quot; (UNAVAILABLE) in 2026.7.2-beta.7</a> &mdash; Bug type Behavior bug + crash (uncaught JavaScript stack overflow, reproducible via official RPC) Beta release blocker Yes — the official sessions.reset RPC cannot be used against the protected main...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128148">Record what agents re-read after auto-compaction</a> &mdash; What Problem This Solves After auto-compaction summarizes context away, the model often immediately re-reads what was just summarized — re-issuing read/exec calls whose signatures existed right...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/127499">Cron events refresh the table but leave selected job detail stale</a> &mdash; What happens When another authorized client updates or removes a selected Cron job, the Control UI receives an exact lifecycle event but ignores its action, jobId, and job snapshot. It refreshes only...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/57425">Feature: Graceful Gateway Restart with Session Recovery</a> &mdash; Problem When the gateway restarts — whether from openclaw gateway restart, a config change, SIGUSR1, or a crash — all in-flight work is silently killed. There is no mechanism for sessions to know...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128149">fix(gateway): keep rootless sessions usable after permission changes</a> &mdash; Fixes #128039 What Problem This Solves Fixes an issue where selecting a root-dependent permission mode on a legacy session with no recorded session root could persist an invalid state. Later turns...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/116489">feat(security): require acknowledgement for install policy warnings</a> &mdash; New behavior An external security.installPolicy command can now return warn, letting an authorized operator review a suspicious plugin or skill install before deciding whether to continue. -...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/112138">[Bug] Flaky session token validation on clock skew across clustered nodes</a> &mdash; Description When validating session tokens generated by peer nodes, small clock skews (&gt;1 second) cause tokens created in the near future to be rejected immediately as invalid. Affected Files -...</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-08-23</a> &mdash; 387190 stars, 81313 forks, 3122 contributors</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (94 total)</a> &mdash; 94 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/fb0ef1d21eab78ad2b9da69f48045d7747cc73c1">fix(publish): ignore duplicate leased recovery dispatches (#3510)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/b306f1ae2c8fd47526911c8622fcc455977c8514">fix(workers): terminalize skill evaluation outcomes (#3509)</a></li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/4a6d835e24ce5c7146747fc595190534b215ffc9">Add skill: riffkit/riffkit</a></li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li>Ask HN: Who is using OpenClaw?</li>
+  <li><a href="https://twitter.com/BenjaminBadejo/status/2025987544853188836">You are not supposed to install OpenClaw on your personal computer</a></li>
+  <li><a href="https://dev.to/dhpp/saving-50-70-on-coding-agent-bills-protecting-prompt-cache-affinity-with-vmr-3d2j">Saving 50-70% on Coding Agent Bills: Protecting Prompt Cache Affinity with VMR</a> &mdash; TL;DR — With per-token pricing now the default everywhere, the biggest line item in a coding-agent...</li>
+  <li><a href="https://dev.to/lars_winstand/my-262k-token-model-kept-faceplanting-at-33k-and-the-fix-was-nowhere-near-openclaw-50mg">My 262k-token model kept faceplanting at 33k and the fix was nowhere near OpenClaw</a> &mdash; If OpenClaw says 262k tokens but ollama ps shows ~33k, the real bottleneck is usually Ollama runtime allocation or Docker env handling, not the mode</li>
+  <li><a href="https://dev.to/lunacommsnet/building-reusable-agent-skills-for-openclaw-5cg4">Building Reusable Agent Skills for OpenClaw</a></li>
+  <li><a href="https://dev.to/amrree/clawhub-skill-spotlight-ai-workflow-automation-expert-4k5p">ClawHub Skill Spotlight: AI Workflow Automation Expert</a> &mdash; A structured approach to designing and running multi-step AI agent workflows — from simple cron tasks to full multi-agent coordination systems.</li>
+  <li><a href="https://medium.com/@srikanthbellary01/grok-bot-architecture-and-design-712b5c16b7ed?source=rss------openclaw-5">Grok Bot: architecture and design</a> &mdash; Grok Bot is early beta. Surfaces and limits can change.Continue reading on Medium »</li>
+  <li><a href="https://medium.com/illumination/build-a-local-code-review-refactoring-assistant-with-openclaw-ollama-7f0075de4b56?source=rss------openclaw-5">Build a Local Code Review &amp; Refactoring Assistant with OpenClaw &amp; Ollama</a> &mdash; How to build a private, zero-cost AI code auditor on your own machine in about 30 minutes?Continue reading on ILLUMINATION »</li>
+</ul>
+  </div>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="archive-gate">
+      <h2>Read the full issue</h2>
+      <p>Subscribe to get every section delivered to your inbox.</p>
+      <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+      <label class="archive-reveal" for="show-full">Continue reading &rarr;</label>
+    </div>
+
+    <input type="checkbox" id="show-full" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      
+      
+      
+      
+      
+      
+      
+      <section class="section" id="releases">
+  <h2 class="section-title">Releases</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-08-23</a> &mdash; 387190 stars, 81313 forks, 3122 contributors</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="community">
+  <h2 class="section-title">Community</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126424">fix(gateway): keep conversation delivery within agent bindings</a> &mdash; Additional instructions MUST: Keep Allow edits from maintainers enabled for this PR so maintainers can help update the branch when needed. What Problem This Solves Fixes an issue where multi-agent...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/128156">[Bug]: gateway event-loop stalls - 76% of a 7.6s stall is log redaction (replacePatternBounded), one full regex pass per pattern</a> &mdash; What happened On a Windows host running six agents, the gateway event loop stalls for 60-200s several times an hour. TCP still accepts on the gateway port so Test-NetConnection reports healthy, but...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128144">fix(gateway): prevent silent delivery loss on closing connections</a> &mdash; What Problem This Solves Fixes an issue where operators using the Gateway or Control UI would silently lose responses, live updates, and worker connection handshakes when a WebSocket entered its...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120618">fix(codex): agents ignore AGENTS.md on sandboxed app-server runs [AI]</a> &mdash; Closes #120600 What Problem This Solves Fixes an issue where agents running through the Codex app-server with a sandbox enabled never receive their AGENTS.md. The workspace file is read and reported...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/124480">fix(together): add size range validation for video dimensions</a> &mdash; Problem The Together video generation provider parsed width/height from the size string but did not validate the range. Out-of-range values (e.g. 9999x9999) would be sent to the API, causing...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128155">fix(cli): return JSON for channel capability failures</a> &mdash; What Problem This Solves Fixes an issue where openclaw channels capabilities --json returned exit code 1 with empty stdout for semantic validation failures: --account or --target without a specific...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128143">refactor(context-engine): remove owner cleanup helper</a> &mdash; What Problem This Solves Context-engine registry production code exported an owner-specific cleanup helper solely for test fixture cleanup. Gateway health tests used that helper to delete selected...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/124471">fix(settings): take the settings file lock before the first-write read</a> &mdash; Closes #124394 What Problem This Solves Fixes an issue where users running two OpenClaw processes that each save a setting before settings.json exists would silently lose one of those settings. This...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/116062">Dashboard: Anthropic provider group missing from full model settings panel (stale after gateway restart, no config change)</a> &mdash; Summary The Anthropic provider group intermittently disappears from the full model settings panel in the OpenClaw Control UI dashboard (&quot;Chat model&quot; settings → provider list), even though: - The...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/127228">Visible sessions render incompletely—UI omits assistant messages despite transcript presence</a> &mdash; - Sessions appear in the sidebar as expected. - When opened, parts of the conversation, especially assistant messages, are missing despite being present in the transcript and visible in Mission...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/127148">[Bug]: Codex sessions.compact acquires a second app-server and hits active-writer conflict</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary Manual sessions.compact on a bound Codex app-server session can acquire a second app-server client for a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/49381">Feishu: duplicate final replies can occur after model failover from rate-limited primary</a> &mdash; Summary In Feishu direct messages, a single user message can sometimes result in two final assistant replies when the primary model fails with rate limiting and OpenClaw falls back to a secondary...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/118625">[Bug]: Main-session compaction holds the session write-lock past the 60s acquire timeout; completed subagent announces time out and give up, silently losing results</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary When the main session triggers transcript compaction (trigger=cli_budget), the compaction flow holds the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/127541">PDF fallback applies extraction budgets per file without an aggregate request bound</a> &mdash; Summary The PDF tool documents and admits up to ten PDFs. On the generic extraction fallback, each PDF independently receives the full 200,000-character and 4,000,000-render-pixel budgets, then every...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/121576">fix(text): only insert separator between word chars when stripping model tokens</a> &mdash; What Problem This Solves Closes #121426. stripModelSpecialTokens inserts a separator space whenever both characters surrounding a removed leaked control token are non-whitespace. It does not...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/126847">A failed tool call always terminates the visible turn as &quot;temporary model failure&quot; — the error is never returned to the model (0/40 recoverable in 24h)</a> &mdash; Summary When a tool call fails inside an embedded run, the visible turn terminates immediately. The failure is not returned to the model as a tool result, so the model never gets to adapt, work...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/127496">apply_patch commits earlier hunks before returning a later-hunk error</a> &mdash; What happens A valid multi-file apply_patch envelope mutates each hunk immediately. If a later hunk is invalid, mismatched, or cancellation arrives between hunks, the tool rejects with only the later...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/89791">5.26 supervisor mode + dual-plist install: 30s EADDRINUSE loop + silent-fail unset order</a> &mdash; OpenClaw 5.26 supervisor mode + dual-plist install: 30s loop + silent-fail unset order TL;DR: When ai.openclaw.gateway and ai.openclaw.node plists both run, OpenClaw 5.26&#x27;s detectRespawnSupervisor()...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/118627">[Bug]: sessions.reset RPC on agent:main:main throws &quot;RangeError: Maximum call stack size exceeded&quot; (UNAVAILABLE) in 2026.7.2-beta.7</a> &mdash; Bug type Behavior bug + crash (uncaught JavaScript stack overflow, reproducible via official RPC) Beta release blocker Yes — the official sessions.reset RPC cannot be used against the protected main...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128148">Record what agents re-read after auto-compaction</a> &mdash; What Problem This Solves After auto-compaction summarizes context away, the model often immediately re-reads what was just summarized — re-issuing read/exec calls whose signatures existed right...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/127499">Cron events refresh the table but leave selected job detail stale</a> &mdash; What happens When another authorized client updates or removes a selected Cron job, the Control UI receives an exact lifecycle event but ignores its action, jobId, and job snapshot. It refreshes only...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/57425">Feature: Graceful Gateway Restart with Session Recovery</a> &mdash; Problem When the gateway restarts — whether from openclaw gateway restart, a config change, SIGUSR1, or a crash — all in-flight work is silently killed. There is no mechanism for sessions to know...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128149">fix(gateway): keep rootless sessions usable after permission changes</a> &mdash; Fixes #128039 What Problem This Solves Fixes an issue where selecting a root-dependent permission mode on a legacy session with no recorded session root could persist an invalid state. Later turns...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/116489">feat(security): require acknowledgement for install policy warnings</a> &mdash; New behavior An external security.installPolicy command can now return warn, letting an authorized operator review a suspicious plugin or skill install before deciding whether to continue. -...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/112138">[Bug] Flaky session token validation on clock skew across clustered nodes</a> &mdash; Description When validating session tokens generated by peer nodes, small clock skews (&gt;1 second) cause tokens created in the near future to be rejected immediately as invalid. Affected Files -...</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (94 total)</a> &mdash; 94 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/fb0ef1d21eab78ad2b9da69f48045d7747cc73c1">fix(publish): ignore duplicate leased recovery dispatches (#3510)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/b306f1ae2c8fd47526911c8622fcc455977c8514">fix(workers): terminalize skill evaluation outcomes (#3509)</a></li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/4a6d835e24ce5c7146747fc595190534b215ffc9">Add skill: riffkit/riffkit</a></li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="news">
+  <h2 class="section-title">News</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li>Ask HN: Who is using OpenClaw?</li>
+  <li><a href="https://twitter.com/BenjaminBadejo/status/2025987544853188836">You are not supposed to install OpenClaw on your personal computer</a></li>
+  <li><a href="https://dev.to/dhpp/saving-50-70-on-coding-agent-bills-protecting-prompt-cache-affinity-with-vmr-3d2j">Saving 50-70% on Coding Agent Bills: Protecting Prompt Cache Affinity with VMR</a> &mdash; TL;DR — With per-token pricing now the default everywhere, the biggest line item in a coding-agent...</li>
+  <li><a href="https://dev.to/lars_winstand/my-262k-token-model-kept-faceplanting-at-33k-and-the-fix-was-nowhere-near-openclaw-50mg">My 262k-token model kept faceplanting at 33k and the fix was nowhere near OpenClaw</a> &mdash; If OpenClaw says 262k tokens but ollama ps shows ~33k, the real bottleneck is usually Ollama runtime allocation or Docker env handling, not the mode</li>
+  <li><a href="https://dev.to/lunacommsnet/building-reusable-agent-skills-for-openclaw-5cg4">Building Reusable Agent Skills for OpenClaw</a></li>
+  <li><a href="https://dev.to/amrree/clawhub-skill-spotlight-ai-workflow-automation-expert-4k5p">ClawHub Skill Spotlight: AI Workflow Automation Expert</a> &mdash; A structured approach to designing and running multi-step AI agent workflows — from simple cron tasks to full multi-agent coordination systems.</li>
+  <li><a href="https://medium.com/@srikanthbellary01/grok-bot-architecture-and-design-712b5c16b7ed?source=rss------openclaw-5">Grok Bot: architecture and design</a> &mdash; Grok Bot is early beta. Surfaces and limits can change.Continue reading on Medium »</li>
+  <li><a href="https://medium.com/illumination/build-a-local-code-review-refactoring-assistant-with-openclaw-ollama-7f0075de4b56?source=rss------openclaw-5">Build a Local Code Review &amp; Refactoring Assistant with OpenClaw &amp; Ollama</a> &mdash; How to build a private, zero-cost AI code auditor on your own machine in about 30 minutes?Continue reading on ILLUMINATION »</li>
+</ul>
+  </div>
+</section>
+      
+      
+    </div>
+
+    <footer class="footer">
+  <div class="footer-divider"></div>
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  <p>
+    Generated with AI by the
+    <a href="https://github.com/openclaw/openclaw">OpenClaw</a> Newsletter Bot
+  </p>
+  <div class="footer-links">
+    <a href="../archive.html">Archive</a>
+    <a href="../rss.xml">RSS</a>
+    <a href="https://github.com/openclaw/openclaw">Star on GitHub</a>
+  </div>
+</footer>
+  </div>
+</body>
+</html>
