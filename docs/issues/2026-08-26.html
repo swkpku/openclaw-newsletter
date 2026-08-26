@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Newsletter - 2026-08-26</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="OpenClaw Newsletter" href="../rss.xml">
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenClaw Newsletter - 2026-08-26">
+<meta property="og:description" content="feat(msteams): native Adaptive Card approve/deny for exec and plugin approvals &mdash; What Problem This Solves Microsoft Teams was the only major bundl...">
+<meta property="og:url" content="https://swkpku.github.io/openclaw-newsletter/issues/2026-08-26.html">
+<meta property="og:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenClaw Newsletter - 2026-08-26">
+<meta name="twitter:description" content="feat(msteams): native Adaptive Card approve/deny for exec and plugin approvals &mdash; What Problem This Solves Microsoft Teams was the only major bundl...">
+<meta name="twitter:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <header class="header">
+  <div class="header-top">
+    <div class="header-brand">
+      <div class="header-logo">OC</div>
+      <div>
+        <h1>OpenClaw Newsletter</h1>
+        <p class="subtitle">Daily updates from the OpenClaw ecosystem</p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="date">Wednesday, August 26, 2026</p>
+  
+  <nav class="nav">
+    <a href="../index.html">Latest</a>
+    <a href="../archive.html">Archive</a>
+    <a href="https://github.com/openclaw/openclaw">GitHub</a>
+  </nav>
+  
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  
+</header>
+
+    
+    <div class="toc">
+      <h2>In This Issue</h2>
+      <ul>
+        
+        <li><a href="#top_stories">Top Stories</a></li>
+        
+        <li><a href="#releases">Releases</a></li>
+        
+        <li><a href="#community">Community</a></li>
+        
+        <li><a href="#news">News</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    <section class="section" id="top_stories">
+  <h2 class="section-title">Top Stories</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/129997">feat(msteams): native Adaptive Card approve/deny for exec and plugin approvals</a> &mdash; What Problem This Solves Microsoft Teams was the only major bundled chat channel without native approval UI. When an exec approval or a gateway plugin approval originated from a Teams conversation,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/87321">WebChat replay drops user-visible sessions_yield messages stored only as tool results</a> &mdash; Summary On WebChat, a user-visible status update emitted through sessions_yield can appear live, but disappear after refresh/replay because the yielded text is persisted only inside a tool result...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/130029">fix(ui): keep Control UI startup stylesheet within its build budget</a> &mdash; What Problem This Solves Resolves a problem where unrelated pull requests fail Control UI build and real-gateway checks because the startup stylesheet has grown to 46,092 bytes gzip, exceeding its...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/77508">Misleading error when channel block is missing during channels login</a> &mdash; openclaw channels login --channel whatsapp succeeds and saves credentials, but if channels.whatsapp doesn&#x27;t exist in openclaw.json, gateway returns: Two problems: 1. invalid channels.start channel is...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/130027">fix(ui): remove unused startup styles to restore css budget</a> &mdash; What Problem This Solves Current main fails its production Control UI build because startup CSS compresses to 46,092 bytes, exceeding the existing 45 KiB limit by 12 bytes. The identical failure...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/130019">[Bug]: cron migration ignores agents.defaults.systemAgent under explicit ownership</a> &mdash; Bug type Explicit-ownership migration bug Environment - OpenClaw v2026.8.1-beta.3 - Commit 5831b80721f - agents.ownership = &quot;explicit&quot; - agents.defaults.systemAgent.agentId configured - Legacy cron...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/130013">fix(skills): keep the experience review on the foreground prompt-cache prefix</a> &mdash; Summary The detached skill experience review re-sent the whole conversation uncached on every run. It forced trigger manual, used the raw session key as its prompt-cache key, and rebuilt its tool set...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128249">fix(chat): show inherited reasoning in transcripts</a> &mdash; Closes #79469 What Problem This Solves Fixes an issue where completed assistant reasoning could stay hidden in Control UI when reasoning was enabled through an inherited agent/global default or...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/110179">fix(auth): decouple plugin synthetic-auth from profile fallback for gateway attempts (#110103)</a> &mdash; Closes #110103 What Problem This Solves Fixes an issue where anthropic-vertex users whose only credential is Google ADC (Application Default Credentials) hit &quot;No API key found&quot; on gateway-routed...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/122425">fix(ui): support slash commands and skills inside normal drafts</a> &mdash; Slash completion in the Control UI disappeared as soon as a draft contained ordinary prose. Users had to erase the draft or send the slash text as part of the model message. This PR makes the slash...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/129705">chore(deps): bump the actions group across 1 directory with 7 updates</a> &mdash; Bumps the actions group with 7 updates in the / directory: | [gi</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/129993">fix(subagents): a completed subagent does not wake an idle parent until someone sends a message</a> &mdash; Closes #129938 AI-assisted with Claude. The diff received an independent read-only adversarial Codex review, whose one P1 finding is addressed below. What Problem This Solves A subagent completion...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128658">chore(deps): bump the android-deps group across 1 directory with 4 updates</a> &mdash; Bumps the android-deps group with 4 updates in the /apps/android directory: gradle-wrapper, com.android.application, com.android.library and com.android.test. Updates gradle-wrapper from 9.7.0 to...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/129606">fix(google): retain provider-returned response model</a> &mdash; What Problem This Solves Google-backed agent turns lost the concrete model version returned by Gemini or Vertex. Requests made against aliases therefore recorded the requested alias in transcripts...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128318">fix(secrets): preserve canonical configuration path identity</a> &mdash; What problem does this solve? Configuration paths previously flattened literal dotted plugin IDs, record keys, and array indices into ambiguous strings. That let distinct secret targets collide,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/130018">[Bug]: auth migration canonicalizes profiles but leaves rotation state on openai-codex IDs</a> &mdash; Bug type Auth-profile migration correctness bug Environment - OpenClaw v2026.8.1-beta.3 - Commit 5831b80721f - Upgrade from legacy openai-codex: OAuth profile IDs to canonical openai: IDs Summary The...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/129985">refactor(scripts): share web-fetch benchmark argument parsing</a> &mdash; What Problem This Solves The offline web-fetch benchmark maintained its own argument validator, repeated flag scans, and two nearly identical numeric parsers even though repository tooling already...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123432">improve(agents): session compaction stops waiting on full model catalog rebuilds</a> &mdash; Relates to gap finding: compact-static-catalog (performance, evidence level B) What Problem This Solves Fixes an issue where users with several configured providers would wait on a full model catalog...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/129958">test(ui): trim duplicate routing coverage and stabilize cron E2E</a> &mdash; What Problem This Solves The Control UI browser-link suite contained two byte-identical browser-panel-unavailable cases. While landing that cleanup, exact-head CI also exposed a deterministic...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/130024">[Bug]: WhatsApp channel does not implement reconcileUnknownSend, so sends interrupted at send_attempt_started are permanently unrecoverable (silent reply loss)</a> &mdash; What happened When a WhatsApp send is interrupted after the platform attempt has started — a listener drop, a gateway restart, or an event-loop stall — the delivery entry lands in...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/129918">fix(config): bound recursion depth to prevent crash on deeply nested input</a> &mdash; Closes #129734 What Problem This Solves Supplying a deeply nested JSON object to config patch --file no longer crashes the process with a stack overflow or heap exhaustion. The command now returns a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/130020">[Bug]: macOS node LaunchAgent inherits NODE_COMPILE_CACHE and can hang before startup</a> &mdash; Bug type macOS service-startup bug Environment - OpenClaw v2026.8.1-beta.3 - Commit 5831b80721f - macOS LaunchAgent installed by openclaw node install - launchd manager environment contains...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126912">fix(sessions): exclude archived trajectory artifacts</a> &mdash; Closes #126879 What Problem This Solves Fixes an issue where session memory discovery treats renamed trajectory runtime archives (*.trajectory.jsonl.deleted. and reset variants) as retained...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/116797">fix(agent-exec): cold runs time out on slow hosts and fail on Windows cleanup EBUSY</a> &mdash; What Problem This Solves Fixes two issues that make openclaw agent exec fail on slower or loaded hosts: 1. Cold standalone runs time out during model-runtime preparation. The prepared-model-runtime...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/129413">fix(agents): worktree sessions inject shared AGENTS.md bootstrap instead of worktree files</a> &mdash; Closes #129411 Related: #129404 #129405 What Problem This Solves Fixes an issue where managed worktree sessions would inject AGENTS.md / SOUL.md / BOOTSTRAP.md from the shared agent home into the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/129972">improve(ui): calm the sidebar update affordance</a> &mdash; What Problem This Solves The sidebar footer update action added in #129813 competed with the Inbox and became visually loud, especially in dark mode. It also moved with the Inbox into a floating...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/121477">fix(workboard): truncate notification messages on read instead of crashing</a> &mdash; Summary Problem: The workboard plugin&#x27;s normalizeNotification function throws an error when reading back a notification message that exceeds 240 characters, crashing the entire dispatch. A single...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/115049">fix(codex): reduce active run transcript overhead</a> &mdash; What Problem This Solves Fixes an issue where active Codex context-engine runs repeatedly materialized the complete SQLite transcript during one attempt. Large sessions paid the full parse,...</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-08-26</a> &mdash; 387674 stars, 81389 forks, 3157 contributors</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (93 total)</a> &mdash; 93 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/85865573e9e6e26bc0dc59fdeab20587024d3015">fix(ci): version design audit reports (#3531)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/aec51d9d7a2ddeb9e62fd6edcaf67f8208645814">fix(ci): authenticate design audit pull requests (#3526)</a></li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/bb109fc2fc960f4857bd76387ac1fa4bed2e145e">Add scvd-tab to Productivity &amp; Tasks</a></li>
+  <li><a href="https://hub.docker.com/r/openclaw/openclaw">openclaw/openclaw on Docker Hub</a> &mdash; Official openclaw/openclaw docker images.</li>
+  <li><a href="https://huggingface.co/peterjohannmedina/Medina-Qwen3.5-27B-OpenClaw">peterjohannmedina/Medina-Qwen3.5-27B-OpenClaw</a></li>
+  <li><a href="https://huggingface.co/sulpikar2/Qwen3.5-4B-Claude-4.6-Opus-Reasoning-openclaw">sulpikar2/Qwen3.5-4B-Claude-4.6-Opus-Reasoning-openclaw</a></li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://dev.to/lars_winstand/i-thought-openclaw-would-just-install-and-instead-i-got-dropped-into-provider-hell-6cj">I thought OpenClaw would just install and instead I got dropped into provider hell</a> &mdash; A practical DEV post on why OpenClaw installs often fail at the provider layer, not the package layer. The piece argues for a boring but reliable setu</li>
+  <li><a href="https://dev.to/john_182319291/openclaw-vs-subscription-ai-assistants-real-token-costs-capability-gaps-and-the-usage-level-where-5en">OpenClaw vs Subscription AI Assistants: Real Token Costs, Capability Gaps and the Usage Level Where Self-Hosting Wins</a> &mdash; OpenClaw wins on cost only at the two extremes of usage: very light use, where a metered token bill...</li>
+  <li><a href="https://medium.com/@tatankavenkat_19803/openclaw-video-generator-beta-user-feedback-test-cases-1e36607d3c2b?source=rss------openclaw-5">OpenClaw Video Generator: Beta User Feedback Test Cases</a> &mdash; A comprehensive test suite based on real user feedback from the OpenClaw beta programContinue reading on Medium »</li>
+</ul>
+  </div>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="archive-gate">
+      <h2>Read the full issue</h2>
+      <p>Subscribe to get every section delivered to your inbox.</p>
+      <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+      <label class="archive-reveal" for="show-full">Continue reading &rarr;</label>
+    </div>
+
+    <input type="checkbox" id="show-full" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      
+      
+      
+      
+      
+      
+      
+      <section class="section" id="releases">
+  <h2 class="section-title">Releases</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-08-26</a> &mdash; 387674 stars, 81389 forks, 3157 contributors</li>
+  <li><a href="https://hub.docker.com/r/openclaw/openclaw">openclaw/openclaw on Docker Hub</a> &mdash; Official openclaw/openclaw docker images.</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="community">
+  <h2 class="section-title">Community</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/129997">feat(msteams): native Adaptive Card approve/deny for exec and plugin approvals</a> &mdash; What Problem This Solves Microsoft Teams was the only major bundled chat channel without native approval UI. When an exec approval or a gateway plugin approval originated from a Teams conversation,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/87321">WebChat replay drops user-visible sessions_yield messages stored only as tool results</a> &mdash; Summary On WebChat, a user-visible status update emitted through sessions_yield can appear live, but disappear after refresh/replay because the yielded text is persisted only inside a tool result...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/130029">fix(ui): keep Control UI startup stylesheet within its build budget</a> &mdash; What Problem This Solves Resolves a problem where unrelated pull requests fail Control UI build and real-gateway checks because the startup stylesheet has grown to 46,092 bytes gzip, exceeding its...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/77508">Misleading error when channel block is missing during channels login</a> &mdash; openclaw channels login --channel whatsapp succeeds and saves credentials, but if channels.whatsapp doesn&#x27;t exist in openclaw.json, gateway returns: Two problems: 1. invalid channels.start channel is...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/130027">fix(ui): remove unused startup styles to restore css budget</a> &mdash; What Problem This Solves Current main fails its production Control UI build because startup CSS compresses to 46,092 bytes, exceeding the existing 45 KiB limit by 12 bytes. The identical failure...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/130019">[Bug]: cron migration ignores agents.defaults.systemAgent under explicit ownership</a> &mdash; Bug type Explicit-ownership migration bug Environment - OpenClaw v2026.8.1-beta.3 - Commit 5831b80721f - agents.ownership = &quot;explicit&quot; - agents.defaults.systemAgent.agentId configured - Legacy cron...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/130013">fix(skills): keep the experience review on the foreground prompt-cache prefix</a> &mdash; Summary The detached skill experience review re-sent the whole conversation uncached on every run. It forced trigger manual, used the raw session key as its prompt-cache key, and rebuilt its tool set...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128249">fix(chat): show inherited reasoning in transcripts</a> &mdash; Closes #79469 What Problem This Solves Fixes an issue where completed assistant reasoning could stay hidden in Control UI when reasoning was enabled through an inherited agent/global default or...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/110179">fix(auth): decouple plugin synthetic-auth from profile fallback for gateway attempts (#110103)</a> &mdash; Closes #110103 What Problem This Solves Fixes an issue where anthropic-vertex users whose only credential is Google ADC (Application Default Credentials) hit &quot;No API key found&quot; on gateway-routed...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/122425">fix(ui): support slash commands and skills inside normal drafts</a> &mdash; Slash completion in the Control UI disappeared as soon as a draft contained ordinary prose. Users had to erase the draft or send the slash text as part of the model message. This PR makes the slash...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/129705">chore(deps): bump the actions group across 1 directory with 7 updates</a> &mdash; Bumps the actions group with 7 updates in the / directory: | [gi</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/129993">fix(subagents): a completed subagent does not wake an idle parent until someone sends a message</a> &mdash; Closes #129938 AI-assisted with Claude. The diff received an independent read-only adversarial Codex review, whose one P1 finding is addressed below. What Problem This Solves A subagent completion...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128658">chore(deps): bump the android-deps group across 1 directory with 4 updates</a> &mdash; Bumps the android-deps group with 4 updates in the /apps/android directory: gradle-wrapper, com.android.application, com.android.library and com.android.test. Updates gradle-wrapper from 9.7.0 to...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/129606">fix(google): retain provider-returned response model</a> &mdash; What Problem This Solves Google-backed agent turns lost the concrete model version returned by Gemini or Vertex. Requests made against aliases therefore recorded the requested alias in transcripts...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128318">fix(secrets): preserve canonical configuration path identity</a> &mdash; What problem does this solve? Configuration paths previously flattened literal dotted plugin IDs, record keys, and array indices into ambiguous strings. That let distinct secret targets collide,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/130018">[Bug]: auth migration canonicalizes profiles but leaves rotation state on openai-codex IDs</a> &mdash; Bug type Auth-profile migration correctness bug Environment - OpenClaw v2026.8.1-beta.3 - Commit 5831b80721f - Upgrade from legacy openai-codex: OAuth profile IDs to canonical openai: IDs Summary The...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/129985">refactor(scripts): share web-fetch benchmark argument parsing</a> &mdash; What Problem This Solves The offline web-fetch benchmark maintained its own argument validator, repeated flag scans, and two nearly identical numeric parsers even though repository tooling already...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123432">improve(agents): session compaction stops waiting on full model catalog rebuilds</a> &mdash; Relates to gap finding: compact-static-catalog (performance, evidence level B) What Problem This Solves Fixes an issue where users with several configured providers would wait on a full model catalog...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/129958">test(ui): trim duplicate routing coverage and stabilize cron E2E</a> &mdash; What Problem This Solves The Control UI browser-link suite contained two byte-identical browser-panel-unavailable cases. While landing that cleanup, exact-head CI also exposed a deterministic...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/130024">[Bug]: WhatsApp channel does not implement reconcileUnknownSend, so sends interrupted at send_attempt_started are permanently unrecoverable (silent reply loss)</a> &mdash; What happened When a WhatsApp send is interrupted after the platform attempt has started — a listener drop, a gateway restart, or an event-loop stall — the delivery entry lands in...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/129918">fix(config): bound recursion depth to prevent crash on deeply nested input</a> &mdash; Closes #129734 What Problem This Solves Supplying a deeply nested JSON object to config patch --file no longer crashes the process with a stack overflow or heap exhaustion. The command now returns a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/130020">[Bug]: macOS node LaunchAgent inherits NODE_COMPILE_CACHE and can hang before startup</a> &mdash; Bug type macOS service-startup bug Environment - OpenClaw v2026.8.1-beta.3 - Commit 5831b80721f - macOS LaunchAgent installed by openclaw node install - launchd manager environment contains...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126912">fix(sessions): exclude archived trajectory artifacts</a> &mdash; Closes #126879 What Problem This Solves Fixes an issue where session memory discovery treats renamed trajectory runtime archives (*.trajectory.jsonl.deleted. and reset variants) as retained...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/116797">fix(agent-exec): cold runs time out on slow hosts and fail on Windows cleanup EBUSY</a> &mdash; What Problem This Solves Fixes two issues that make openclaw agent exec fail on slower or loaded hosts: 1. Cold standalone runs time out during model-runtime preparation. The prepared-model-runtime...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/129413">fix(agents): worktree sessions inject shared AGENTS.md bootstrap instead of worktree files</a> &mdash; Closes #129411 Related: #129404 #129405 What Problem This Solves Fixes an issue where managed worktree sessions would inject AGENTS.md / SOUL.md / BOOTSTRAP.md from the shared agent home into the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/129972">improve(ui): calm the sidebar update affordance</a> &mdash; What Problem This Solves The sidebar footer update action added in #129813 competed with the Inbox and became visually loud, especially in dark mode. It also moved with the Inbox into a floating...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/121477">fix(workboard): truncate notification messages on read instead of crashing</a> &mdash; Summary Problem: The workboard plugin&#x27;s normalizeNotification function throws an error when reading back a notification message that exceeds 240 characters, crashing the entire dispatch. A single...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/115049">fix(codex): reduce active run transcript overhead</a> &mdash; What Problem This Solves Fixes an issue where active Codex context-engine runs repeatedly materialized the complete SQLite transcript during one attempt. Large sessions paid the full parse,...</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (93 total)</a> &mdash; 93 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/85865573e9e6e26bc0dc59fdeab20587024d3015">fix(ci): version design audit reports (#3531)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/aec51d9d7a2ddeb9e62fd6edcaf67f8208645814">fix(ci): authenticate design audit pull requests (#3526)</a></li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/bb109fc2fc960f4857bd76387ac1fa4bed2e145e">Add scvd-tab to Productivity &amp; Tasks</a></li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="news">
+  <h2 class="section-title">News</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://huggingface.co/peterjohannmedina/Medina-Qwen3.5-27B-OpenClaw">peterjohannmedina/Medina-Qwen3.5-27B-OpenClaw</a></li>
+  <li><a href="https://huggingface.co/sulpikar2/Qwen3.5-4B-Claude-4.6-Opus-Reasoning-openclaw">sulpikar2/Qwen3.5-4B-Claude-4.6-Opus-Reasoning-openclaw</a></li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://dev.to/lars_winstand/i-thought-openclaw-would-just-install-and-instead-i-got-dropped-into-provider-hell-6cj">I thought OpenClaw would just install and instead I got dropped into provider hell</a> &mdash; A practical DEV post on why OpenClaw installs often fail at the provider layer, not the package layer. The piece argues for a boring but reliable setu</li>
+  <li><a href="https://dev.to/john_182319291/openclaw-vs-subscription-ai-assistants-real-token-costs-capability-gaps-and-the-usage-level-where-5en">OpenClaw vs Subscription AI Assistants: Real Token Costs, Capability Gaps and the Usage Level Where Self-Hosting Wins</a> &mdash; OpenClaw wins on cost only at the two extremes of usage: very light use, where a metered token bill...</li>
+  <li><a href="https://medium.com/@tatankavenkat_19803/openclaw-video-generator-beta-user-feedback-test-cases-1e36607d3c2b?source=rss------openclaw-5">OpenClaw Video Generator: Beta User Feedback Test Cases</a> &mdash; A comprehensive test suite based on real user feedback from the OpenClaw beta programContinue reading on Medium »</li>
+</ul>
+  </div>
+</section>
+      
+      
+    </div>
+
+    <footer class="footer">
+  <div class="footer-divider"></div>
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  <p>
+    Generated with AI by the
+    <a href="https://github.com/openclaw/openclaw">OpenClaw</a> Newsletter Bot
+  </p>
+  <div class="footer-links">
+    <a href="../archive.html">Archive</a>
+    <a href="../rss.xml">RSS</a>
+    <a href="https://github.com/openclaw/openclaw">Star on GitHub</a>
+  </div>
+</footer>
+  </div>
+</body>
+</html>
