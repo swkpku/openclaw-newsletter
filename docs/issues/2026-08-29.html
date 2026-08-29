@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Newsletter - 2026-08-29</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="OpenClaw Newsletter" href="../rss.xml">
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenClaw Newsletter - 2026-08-29">
+<meta property="og:description" content="openclaw 2026.9.1-beta.1 &mdash; 2026.9.1 Highlights - Gateway restart recovery: preserve admitted turns across repeated Gateway restarts so restart-saf...">
+<meta property="og:url" content="https://swkpku.github.io/openclaw-newsletter/issues/2026-08-29.html">
+<meta property="og:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenClaw Newsletter - 2026-08-29">
+<meta name="twitter:description" content="openclaw 2026.9.1-beta.1 &mdash; 2026.9.1 Highlights - Gateway restart recovery: preserve admitted turns across repeated Gateway restarts so restart-saf...">
+<meta name="twitter:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <header class="header">
+  <div class="header-top">
+    <div class="header-brand">
+      <div class="header-logo">OC</div>
+      <div>
+        <h1>OpenClaw Newsletter</h1>
+        <p class="subtitle">Daily updates from the OpenClaw ecosystem</p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="date">Saturday, August 29, 2026</p>
+  
+  <nav class="nav">
+    <a href="../index.html">Latest</a>
+    <a href="../archive.html">Archive</a>
+    <a href="https://github.com/openclaw/openclaw">GitHub</a>
+  </nav>
+  
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  
+</header>
+
+    
+    <div class="toc">
+      <h2>In This Issue</h2>
+      <ul>
+        
+        <li><a href="#top_stories">Top Stories</a></li>
+        
+        <li><a href="#releases">Releases</a></li>
+        
+        <li><a href="#community">Community</a></li>
+        
+        <li><a href="#news">News</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    <section class="section" id="top_stories">
+  <h2 class="section-title">Top Stories</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/releases/tag/v2026.9.1-beta.1">openclaw 2026.9.1-beta.1</a> &mdash; 2026.9.1 Highlights - Gateway restart recovery: preserve admitted turns across repeated Gateway restarts so restart-safe runs continue through each checkpoint and deliver their final response....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132466">fix(anthropic): keep private CLI context out of chat history</a> &mdash; What Problem This Solves Fixes an issue where Claude CLI users could see private prompt-build hook context imported into chat history. The continuity release probe also installed its hook after...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132607">fix(agents): bypass trailing runtime-context carrier relocation for local providers</a> &mdash; Description Bypasses trailing runtime-context carrier relocation for local and self-hosted model backends (ollama, vllm, lmstudio, local). What Problem This Solves...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127671">RFC 0029 CM2: add Control Model conversations</a> &mdash; Summary - upstream draft for CM2 in the RFC 0029 Control Model series - adds lazy conversation models over the Gateway Client model foundation - projects bounded history/live state, runs, tools,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123448">fix(memory-wiki): reject unknown wiki_apply ops instead of falling back to update_metadata</a> &mdash; Summary fix(memory-wiki): reject unknown wiki_apply ops instead of silently executing them as update_metadata What Problem This Solves The wiki_apply tool accepts an op parameter (create_synthesis /...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132602">fix(tasks): retain CLI runs in standalone maintenance</a> &mdash; Summary - keep running CLI task rows during standalone task maintenance - keep Gateway maintenance authoritative for process-local liveness - report retained CLI rows as cli_runtime_not_authoritative...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/122846">agent-core: add per-response tool-call block cap (maxCallsPerBlock)</a> &mdash; What Problem This Solves When an assistant message emits more than 4-5 tool calls in a single response, the OpenClaw CLI loopback correlation buffer can overflow. Every active tool in the block...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132374">fix(cloud): bind computer control to session desktops</a> &mdash; Status: draft — live acceptance incomplete. Exact-head CI and packaged owner revocation checks pass, but no real native CUA action or Codex remote desktop action has been observed. This PR is not...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/131466">fix(macos): keep node connections working after app rebuilds</a> &mdash; Closes https://github.com/openclaw/openclaw/issues/131459 — rebuilding the macOS app can leave its node worker stale. Includes the emitted-SDK filesystem verification from #132076. The canonical...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132487">fix(xai): canonicalize OAuth model during setup verification</a> &mdash; Summary Fix xAI OAuth pairing in Model Setup when the stable xai/auto selector is verified before its authenticated live catalog metadata has reached the isolated setup runtime. The observed failure...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/131082">fix(tavily): resolve tavily_search and tavily_extract keys from any secret provider</a> &mdash; Closes #131065 What Problem This Solves Configured non-environment SecretRef values worked for Tavily&#x27;s generic web_search provider path but failed in the dedicated tavily_search and tavily_extract...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/130879">[Bug]: Browser role refs lose snapshot membership and ordering</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary Normal role-snapshot refs do not consistently preserve the snapshot&#x27;s selected membership and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132114">fix: cloud sessions reject image input</a> &mdash; Closes #131858 What Problem This Solves This work began with the explicit rejection of image input in cloud sessions. While the repair was being live-tested, the current-turn image/PDF repair landed....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132407">fix: apply workspace permission changes to active runs</a> &mdash; What Problem This Solves Changing workspace security during an active task changed the badge immediately while tools and approval prompts retained the old policy. Users had to manually Stop/Continue....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132595">fix(release): bound FRV transport uncertainty</a> &mdash; What Problem This Solves Fixes an issue where Full Release Validation could convert an exhausted temporary GitHub API outage into a terminal orchestration failure, discard the last complete child...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126890">fix(sessions): link stale-state notices</a> &mdash; What Problem This Solves Resolves a problem where stale session-state system notices name the changed session key but do not give the agent or operator an easy Control UI route to open that session....</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/130807">Gateway wedges at 100% CPU (unkillable without SIGKILL) when /tmp becomes a stale mount: unguarded recursive mkdirSync at logger module load never returns</a> &mdash; Summary If the systemd PrivateTmp backing directory (/tmp/systemd-private---) of a running OpenClaw gateway is deleted from the host&#x27;s real /tmp (e.g. by a tmp cleaner), the gateway degenerates into...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132081">[Bug]: Cron `failureAlert` send is fire-and-forget - never awaited, delivery never persisted, so alerting itself fails silently (#131847)</a> &mdash; Closes #131847 AI disclosure This contribution was prepared by an AI agent under the warren campaign camp-openclaw-131847-r2 (agent pi on openrouter/glm-5.3), approved by jayminwest. It follows the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132570">feat: per-session colors across web, macOS, iOS, Android with Claude Code import</a> &mdash; What Problem This Solves Operators running many sessions have no fast visual way to tell them apart in long session lists. Claude Code added exactly this affordance (/color for the prompt bar), and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125130">fix(agents): warn when fallback recovers subagent delivery</a> &mdash; Closes #62968 What Problem This Solves Fixes an issue where operators received no warning when a subagent completion&#x27;s direct announce failed but requester steering recovered delivery. The completion...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132606">fix(sessions): keep reset history closed after compaction</a> &mdash; Closes #132586 What Problem This Solves Fixes an issue where users would see messages and older compaction summaries reappear in session history after resetting a session and then compacting it....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/130877">fix(trajectory): bound SQLite export source bytes before parse</a> &mdash; Closes #127433 What Problem This Solves Exporting a session whose individual records are large (even when the record count is well below the cap) used to exhaust memory and crash the CLI with an OOM...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132418">fix(maintainers): wait for mergeability before admission</a> &mdash; Closes #132416 Additional instructions Maintainer edits remain enabled through the same-repository branch. What Problem This Solves Resolves a problem where maintainers landing a prepared PR through...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132136">fix(line): answer a multi-image send as one turn</a> &mdash; Fixes #132025 What Problem This Solves Sending several photos to a LINE bot in one action produced several unrelated turns instead of one. LINE does not deliver a multi-image send as one message. It...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128512">fix(agents): surface failed subagent completion notices</a> &mdash; What Problem This Solves Related to #128449. This PR fixes the silent direct-notice path only; the issue remains open to track its separate outcome=&#x27;completed&#x27; telemetry misclassification. When a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/115184">fix: recover ACP sessions when reset cleanup times out</a> &mdash; Closes #106631 What Problem This Solves Fixes an issue where resetting an ACP-backed session could leave users stuck when runtime cancellation or close exceeded the cleanup deadline. The reset could...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132421">chore(ui): refresh control ui locales</a> &mdash; What Problem This Solves Keeps generated Control UI locales synchronized without bypassing protected-branch checks. Why This Change Was Made The Control UI Locale Refresh workflow generated this...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/131956">fix(heartbeat): admit restart-sentinel in isTargetedUnscheduledWake</a> &mdash; Fixes #131850 Fixes #131490 What Problem This Solves Heartbeat restart-sentinel fix isTargetedUnscheduledWake() does not admit the source restart-sentinel, so when the target agent has no recurring...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/130546">fix(ui): render model provider controls progressively</a> &mdash; Fixes #130111. Problem The Model Providers page waited for provider quota and local session-cost requests before it showed auth, catalog, and config controls. A slow supplemental request left the...</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-08-29</a> &mdash; 387967 stars, 81471 forks, 3190 contributors</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (88 total)</a> &mdash; 88 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/9d43db7f02895dfdd734cd77e6646a004508aa6f">fix: isolate and simplify UI-proof Convex bootstrap (#3545)</a> &mdash; Use the current convex run --push flow with a verified loopback backend and fresh private state. Give one lifecycle owner responsibility for startup, proof processes, diagnostics, and cleanup....</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/3b7c67dc50340d446c23388507f3b5a75259c575">fix: return skill security audit overview (#3544)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/f2fdea416fcb2da1bfd634dd48e20d643461871e">fix: keep override cleanup within action timeout (#3540)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/8e98a092326e5d2d3e83a1c6d463f4472e5e053d">fix(ci): stabilize weekly design audit (#3525)</a></li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/a08415359a12154807722a0c5a521909facd30bd">Remove hosting and deployment details from README</a> &mdash; Removed hosting and deployment section from README.</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/2a89933e75088a49160eaee263818c4132d74add">docs: add avoid-ai-writing, model-hierarchy-skill, openclaw-search-skills</a></li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/bb109fc2fc960f4857bd76387ac1fa4bed2e145e">Add scvd-tab to Productivity &amp; Tasks</a></li>
+  <li><a href="https://formulae.brew.sh/formula/openclaw-cli">openclaw-cli 2026.7.1 on Homebrew</a> &mdash; Your own personal AI assistant</li>
+  <li><a href="https://hub.docker.com/r/openclaw/openclaw">openclaw/openclaw on Docker Hub</a> &mdash; Official openclaw/openclaw docker images.</li>
+  <li><a href="https://huggingface.co/mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-i1-GGUF">mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-i1-GGUF</a></li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-33579">OpenClaw privilege escalation vulnerability</a></li>
+  <li>Ask HN: Who is using OpenClaw?</li>
+  <li><a href="https://medium.com/redis-with-raphael-de-lio/openclaw-is-going-enterprise-rfc-27-redis-agent-file-system-dfe256c3b12f?source=rss------openclaw-5">OpenClaw Is Going Enterprise (RFC 27) + Redis Agent File System</a> &mdash; This blog post is also available as video. Watch it here.Continue reading on Redis with Raphael De Lio »</li>
+  <li><a href="https://medium.com/@jmatherkernai/one-in-four-of-those-skills-was-a-trap-e98ddce27021?source=rss------openclaw-5">One in Four of Those Skills Was a Trap</a> &mdash; A skill called &amp;#x201c;What Would Elon Do?&amp;#x201d; was functionally malwareContinue reading on Medium »</li>
+  <li><a href="https://medium.com/@tatankavenkat_19803/openclaw-video-generator-beta-user-feedback-test-cases-1e36607d3c2b?source=rss------openclaw-5">OpenClaw Video Generator: Beta User Feedback Test Cases</a> &mdash; A comprehensive test suite based on real user feedback from the OpenClaw beta programContinue reading on Medium »</li>
+</ul>
+  </div>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="archive-gate">
+      <h2>Read the full issue</h2>
+      <p>Subscribe to get every section delivered to your inbox.</p>
+      <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+      <label class="archive-reveal" for="show-full">Continue reading &rarr;</label>
+    </div>
+
+    <input type="checkbox" id="show-full" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      
+      
+      
+      
+      
+      
+      
+      <section class="section" id="releases">
+  <h2 class="section-title">Releases</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/releases/tag/v2026.9.1-beta.1">openclaw 2026.9.1-beta.1</a> &mdash; 2026.9.1 Highlights - Gateway restart recovery: preserve admitted turns across repeated Gateway restarts so restart-safe runs continue through each checkpoint and deliver their final response....</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-08-29</a> &mdash; 387967 stars, 81471 forks, 3190 contributors</li>
+  <li><a href="https://formulae.brew.sh/formula/openclaw-cli">openclaw-cli 2026.7.1 on Homebrew</a> &mdash; Your own personal AI assistant</li>
+  <li><a href="https://hub.docker.com/r/openclaw/openclaw">openclaw/openclaw on Docker Hub</a> &mdash; Official openclaw/openclaw docker images.</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="community">
+  <h2 class="section-title">Community</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132466">fix(anthropic): keep private CLI context out of chat history</a> &mdash; What Problem This Solves Fixes an issue where Claude CLI users could see private prompt-build hook context imported into chat history. The continuity release probe also installed its hook after...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132607">fix(agents): bypass trailing runtime-context carrier relocation for local providers</a> &mdash; Description Bypasses trailing runtime-context carrier relocation for local and self-hosted model backends (ollama, vllm, lmstudio, local). What Problem This Solves...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/127671">RFC 0029 CM2: add Control Model conversations</a> &mdash; Summary - upstream draft for CM2 in the RFC 0029 Control Model series - adds lazy conversation models over the Gateway Client model foundation - projects bounded history/live state, runs, tools,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/123448">fix(memory-wiki): reject unknown wiki_apply ops instead of falling back to update_metadata</a> &mdash; Summary fix(memory-wiki): reject unknown wiki_apply ops instead of silently executing them as update_metadata What Problem This Solves The wiki_apply tool accepts an op parameter (create_synthesis /...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132602">fix(tasks): retain CLI runs in standalone maintenance</a> &mdash; Summary - keep running CLI task rows during standalone task maintenance - keep Gateway maintenance authoritative for process-local liveness - report retained CLI rows as cli_runtime_not_authoritative...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/122846">agent-core: add per-response tool-call block cap (maxCallsPerBlock)</a> &mdash; What Problem This Solves When an assistant message emits more than 4-5 tool calls in a single response, the OpenClaw CLI loopback correlation buffer can overflow. Every active tool in the block...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132374">fix(cloud): bind computer control to session desktops</a> &mdash; Status: draft — live acceptance incomplete. Exact-head CI and packaged owner revocation checks pass, but no real native CUA action or Codex remote desktop action has been observed. This PR is not...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/131466">fix(macos): keep node connections working after app rebuilds</a> &mdash; Closes https://github.com/openclaw/openclaw/issues/131459 — rebuilding the macOS app can leave its node worker stale. Includes the emitted-SDK filesystem verification from #132076. The canonical...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132487">fix(xai): canonicalize OAuth model during setup verification</a> &mdash; Summary Fix xAI OAuth pairing in Model Setup when the stable xai/auto selector is verified before its authenticated live catalog metadata has reached the isolated setup runtime. The observed failure...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/131082">fix(tavily): resolve tavily_search and tavily_extract keys from any secret provider</a> &mdash; Closes #131065 What Problem This Solves Configured non-environment SecretRef values worked for Tavily&#x27;s generic web_search provider path but failed in the dedicated tavily_search and tavily_extract...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/130879">[Bug]: Browser role refs lose snapshot membership and ordering</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary Normal role-snapshot refs do not consistently preserve the snapshot&#x27;s selected membership and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132114">fix: cloud sessions reject image input</a> &mdash; Closes #131858 What Problem This Solves This work began with the explicit rejection of image input in cloud sessions. While the repair was being live-tested, the current-turn image/PDF repair landed....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132407">fix: apply workspace permission changes to active runs</a> &mdash; What Problem This Solves Changing workspace security during an active task changed the badge immediately while tools and approval prompts retained the old policy. Users had to manually Stop/Continue....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132595">fix(release): bound FRV transport uncertainty</a> &mdash; What Problem This Solves Fixes an issue where Full Release Validation could convert an exhausted temporary GitHub API outage into a terminal orchestration failure, discard the last complete child...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126890">fix(sessions): link stale-state notices</a> &mdash; What Problem This Solves Resolves a problem where stale session-state system notices name the changed session key but do not give the agent or operator an easy Control UI route to open that session....</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/130807">Gateway wedges at 100% CPU (unkillable without SIGKILL) when /tmp becomes a stale mount: unguarded recursive mkdirSync at logger module load never returns</a> &mdash; Summary If the systemd PrivateTmp backing directory (/tmp/systemd-private---) of a running OpenClaw gateway is deleted from the host&#x27;s real /tmp (e.g. by a tmp cleaner), the gateway degenerates into...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132081">[Bug]: Cron `failureAlert` send is fire-and-forget - never awaited, delivery never persisted, so alerting itself fails silently (#131847)</a> &mdash; Closes #131847 AI disclosure This contribution was prepared by an AI agent under the warren campaign camp-openclaw-131847-r2 (agent pi on openrouter/glm-5.3), approved by jayminwest. It follows the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132570">feat: per-session colors across web, macOS, iOS, Android with Claude Code import</a> &mdash; What Problem This Solves Operators running many sessions have no fast visual way to tell them apart in long session lists. Claude Code added exactly this affordance (/color for the prompt bar), and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/125130">fix(agents): warn when fallback recovers subagent delivery</a> &mdash; Closes #62968 What Problem This Solves Fixes an issue where operators received no warning when a subagent completion&#x27;s direct announce failed but requester steering recovered delivery. The completion...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132606">fix(sessions): keep reset history closed after compaction</a> &mdash; Closes #132586 What Problem This Solves Fixes an issue where users would see messages and older compaction summaries reappear in session history after resetting a session and then compacting it....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/130877">fix(trajectory): bound SQLite export source bytes before parse</a> &mdash; Closes #127433 What Problem This Solves Exporting a session whose individual records are large (even when the record count is well below the cap) used to exhaust memory and crash the CLI with an OOM...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132418">fix(maintainers): wait for mergeability before admission</a> &mdash; Closes #132416 Additional instructions Maintainer edits remain enabled through the same-repository branch. What Problem This Solves Resolves a problem where maintainers landing a prepared PR through...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132136">fix(line): answer a multi-image send as one turn</a> &mdash; Fixes #132025 What Problem This Solves Sending several photos to a LINE bot in one action produced several unrelated turns instead of one. LINE does not deliver a multi-image send as one message. It...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128512">fix(agents): surface failed subagent completion notices</a> &mdash; What Problem This Solves Related to #128449. This PR fixes the silent direct-notice path only; the issue remains open to track its separate outcome=&#x27;completed&#x27; telemetry misclassification. When a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/115184">fix: recover ACP sessions when reset cleanup times out</a> &mdash; Closes #106631 What Problem This Solves Fixes an issue where resetting an ACP-backed session could leave users stuck when runtime cancellation or close exceeded the cleanup deadline. The reset could...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132421">chore(ui): refresh control ui locales</a> &mdash; What Problem This Solves Keeps generated Control UI locales synchronized without bypassing protected-branch checks. Why This Change Was Made The Control UI Locale Refresh workflow generated this...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/131956">fix(heartbeat): admit restart-sentinel in isTargetedUnscheduledWake</a> &mdash; Fixes #131850 Fixes #131490 What Problem This Solves Heartbeat restart-sentinel fix isTargetedUnscheduledWake() does not admit the source restart-sentinel, so when the target agent has no recurring...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/130546">fix(ui): render model provider controls progressively</a> &mdash; Fixes #130111. Problem The Model Providers page waited for provider quota and local session-cost requests before it showed auth, catalog, and config controls. A slow supplemental request left the...</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (88 total)</a> &mdash; 88 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/9d43db7f02895dfdd734cd77e6646a004508aa6f">fix: isolate and simplify UI-proof Convex bootstrap (#3545)</a> &mdash; Use the current convex run --push flow with a verified loopback backend and fresh private state. Give one lifecycle owner responsibility for startup, proof processes, diagnostics, and cleanup....</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/3b7c67dc50340d446c23388507f3b5a75259c575">fix: return skill security audit overview (#3544)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/f2fdea416fcb2da1bfd634dd48e20d643461871e">fix: keep override cleanup within action timeout (#3540)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/8e98a092326e5d2d3e83a1c6d463f4472e5e053d">fix(ci): stabilize weekly design audit (#3525)</a></li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/a08415359a12154807722a0c5a521909facd30bd">Remove hosting and deployment details from README</a> &mdash; Removed hosting and deployment section from README.</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/2a89933e75088a49160eaee263818c4132d74add">docs: add avoid-ai-writing, model-hierarchy-skill, openclaw-search-skills</a></li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/bb109fc2fc960f4857bd76387ac1fa4bed2e145e">Add scvd-tab to Productivity &amp; Tasks</a></li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="news">
+  <h2 class="section-title">News</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://huggingface.co/mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-i1-GGUF">mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-i1-GGUF</a></li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-33579">OpenClaw privilege escalation vulnerability</a></li>
+  <li>Ask HN: Who is using OpenClaw?</li>
+  <li><a href="https://medium.com/redis-with-raphael-de-lio/openclaw-is-going-enterprise-rfc-27-redis-agent-file-system-dfe256c3b12f?source=rss------openclaw-5">OpenClaw Is Going Enterprise (RFC 27) + Redis Agent File System</a> &mdash; This blog post is also available as video. Watch it here.Continue reading on Redis with Raphael De Lio »</li>
+  <li><a href="https://medium.com/@jmatherkernai/one-in-four-of-those-skills-was-a-trap-e98ddce27021?source=rss------openclaw-5">One in Four of Those Skills Was a Trap</a> &mdash; A skill called &amp;#x201c;What Would Elon Do?&amp;#x201d; was functionally malwareContinue reading on Medium »</li>
+  <li><a href="https://medium.com/@tatankavenkat_19803/openclaw-video-generator-beta-user-feedback-test-cases-1e36607d3c2b?source=rss------openclaw-5">OpenClaw Video Generator: Beta User Feedback Test Cases</a> &mdash; A comprehensive test suite based on real user feedback from the OpenClaw beta programContinue reading on Medium »</li>
+</ul>
+  </div>
+</section>
+      
+      
+    </div>
+
+    <footer class="footer">
+  <div class="footer-divider"></div>
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  <p>
+    Generated with AI by the
+    <a href="https://github.com/openclaw/openclaw">OpenClaw</a> Newsletter Bot
+  </p>
+  <div class="footer-links">
+    <a href="../archive.html">Archive</a>
+    <a href="../rss.xml">RSS</a>
+    <a href="https://github.com/openclaw/openclaw">Star on GitHub</a>
+  </div>
+</footer>
+  </div>
+</body>
+</html>
