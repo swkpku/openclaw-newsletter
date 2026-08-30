@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Newsletter - 2026-08-30</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="OpenClaw Newsletter" href="../rss.xml">
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenClaw Newsletter - 2026-08-30">
+<meta property="og:description" content="fix(ci): reject malformed hosted-gate PR numbers &mdash; What Problem This Solves Fixes an issue where operators running hosted-gate verification could ...">
+<meta property="og:url" content="https://swkpku.github.io/openclaw-newsletter/issues/2026-08-30.html">
+<meta property="og:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenClaw Newsletter - 2026-08-30">
+<meta name="twitter:description" content="fix(ci): reject malformed hosted-gate PR numbers &mdash; What Problem This Solves Fixes an issue where operators running hosted-gate verification could ...">
+<meta name="twitter:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <header class="header">
+  <div class="header-top">
+    <div class="header-brand">
+      <div class="header-logo">OC</div>
+      <div>
+        <h1>OpenClaw Newsletter</h1>
+        <p class="subtitle">Daily updates from the OpenClaw ecosystem</p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="date">Sunday, August 30, 2026</p>
+  
+  <nav class="nav">
+    <a href="../index.html">Latest</a>
+    <a href="../archive.html">Archive</a>
+    <a href="https://github.com/openclaw/openclaw">GitHub</a>
+  </nav>
+  
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  
+</header>
+
+    
+    <div class="toc">
+      <h2>In This Issue</h2>
+      <ul>
+        
+        <li><a href="#top_stories">Top Stories</a></li>
+        
+        <li><a href="#releases">Releases</a></li>
+        
+        <li><a href="#community">Community</a></li>
+        
+        <li><a href="#news">News</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    <section class="section" id="top_stories">
+  <h2 class="section-title">Top Stories</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120472">fix(ci): reject malformed hosted-gate PR numbers</a> &mdash; What Problem This Solves Fixes an issue where operators running hosted-gate verification could pass JavaScript numeric syntax such as 1e3 or 0x10 to --pr, causing the verifier to silently target a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133300">fix(agents): recover after settled failed-tool batches</a> &mdash; Closes #133292 What Problem This Solves Fixes an issue where an embedded agent could stop after a transient provider transport drop when the immediately preceding tool batch had fully settled with a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/109711">fix: keep channel auto-restart after abort race during backoff</a> &mdash; Closes #109659 What Problem This Solves Fixes an issue where operators would lose a channel permanently after a normal provider close when auto-restart backoff raced the dying run&#x27;s abort signal....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133076">fix(agents): stop queued Swarm collectors with their parent</a> &mdash; Closes #131553 — stopping an exact parent leaves Swarm collectors running or queued. What Problem This Solves Stopping a parent turn could report success while its Swarm collectors kept running or...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/130706">fix: prevent Gateway stalls with multiple workspaces</a> &mdash; Related: #130324 What Problem This Solves Removes repeated plugin discovery from Gateway polling, bounds session-summary hydration, and repairs metadata-context escapes in session RPCs and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/131590">fix(cron): make one-shot terminal disables visible instead of silently parking jobs</a> &mdash; What Problem This Solves Fixes #131490. A one-shot agentTurn cron job that hits a permanently-classified error (or exhausts its transient retries) is disabled with only a log.warn — no notification,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132998">fix(infra): preserve block boundaries for attributed p and div tags</a> &mdash; What Problem This Solves Fixes #132969. sanitizeForPlainText strips attributed opening p and div tags instead of converting them to newlines, so adjacent outbound text gets concatenated...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/131949">fix(gateway): completed replies duplicate after a late abort</a> &mdash; Closes #131711 What Problem This Solves Fixes a race where a completed assistant reply could be recorded again as an aborted transcript entry when bounded post-turn context persistence outlived the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133164">feat(notifications): unify browser and native desktop delivery</a> &mdash; What Problem This Solves Follow-up to #129348, which merged as 20a61477998cbf78f2906639a49f5dda7ec1476b. Browser notifications had Gateway preferences and delivery, while native Settings exposed a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132754">fix(shared): invalidate hasBinary&#x27;s cache after a skill install lands a binary</a> &mdash; Closes #132751 What Problem This Solves Fixes an issue where a skill&#x27;s binary dependency continues to read as missing after skills.install successfully installs it, because hasBinary&#x27;s per-binary...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/93842">fix(plugins): report missing config clearly instead of misleading required-property errors</a> &mdash; What changed Two validation paths (validatePluginConfig in src/plugins/loader.ts and config-time validation in src/config/validation.ts) used value ?? {} / entry?.config ?? {} to coerce undefined...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/101665">feat: let plugin tools yield turns</a> &mdash; What Problem This Solves Plugin tools can send work to an external interaction surface, but before this change they could only return a normal tool result. The agent loop could then continue in the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/113734">docs: add Neon AI Gateway provider guide</a> &mdash; No linked issue: a search of open and closed items for this gateway returned nothing, so there is no prior context to reference. Additional instructions MUST: Keep Allow edits from maintainers...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/103723">feat(anthropic): add claude-haiku-4-5 to claude-cli catalog</a> &mdash; What Problem This Solves The Claude CLI catalog and setup allowlist do not include claude-haiku-4-5, so OpenClaw users running the local Claude CLI backend cannot select the full Haiku 4.5 model ref....</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/133303">[Bug]: plugin authoring commands (build/validate/init) abort on an invalid host config they never read</a> &mdash; Steps to reproduce The startup config guard runs for every CLI command that does not opt out, including plugins build, plugins validate, and plugins init — commands that operate on a target package,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133299">fix(plugins): newly scaffolded plugins fail to build when npm &quot;latest&quot; tag is older than the host CLI</a> &mdash; Closes #123335 What Problem This Solves Fixes an issue where users running openclaw plugins init to scaffold a new plugin project would get a scaffold whose plugin:build and plugin:validate steps...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/121044">fix: memory_search rebuilds the whole index after an ordinary zero-hit query</a> &mdash; Closes #121043 AI-assisted (Claude, via OpenClaw). I understand what the code does and validated it as described below. What Problem This Solves Fixes an issue where users whose memory query happens...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/111464">Durable Core PR 5/6: add operation-scoped execution recovery</a> &mdash; Durable Core stack context This is PR 5/6. Its incremental role is to add exact operation-kind/version execution, lease fencing, and expired-claim recovery; no new schema or public mutation. End...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133083">fix(telegram): preserve durable receipt in sendMessage action result</a> &mdash; What Problem This Solves Fixes #133051. Telegram can confirm a terminal sendMessage delivery while its action adapter drops the durable delivery receipt from the tool result. Source-reply recovery...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133247">fix: prevent duplicate commentary after tool handoffs</a> &mdash; Closes #133246 Additional instructions Allow edits from maintainers is enabled at creation. This is a same-repository maintainer branch. What Problem This Solves Fixes an issue where users following...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/130009">fix(agents): add denial guidance to plugin approval rejections</a> &mdash; What Problem This Solves A denied plugin tool approval reached the agent as only Denied by user. That text did not say the tool never ran, the approval request was closed, or the same call must not...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/95785">feat(cli): allow image generate input files</a> &mdash; What Problem This Solves openclaw infer image generate currently cannot accept local input/reference images, even though the shared image generation runner already supports file-backed inputImages...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/109754">fix(plugin-sdk): contextualize malformed provider catalogs</a> &mdash; What Problem This Solves Fixes an issue where operators using live provider model discovery could receive a raw JSON parser error when a provider returned a malformed successful response. The error...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133206">fix(gateway): send finalized text with required tool calls</a> &mdash; Closes #133205 What Problem This Solves Fixes an issue where clients requiring or pinning a function call received provisional text instead of the finalized assistant output from streaming Chat...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132849">feat(android): align chat, sidebar, and appearance with the web UI</a> &mdash; [AI-assisted] What Problem This Solves The Android app had accumulated parallel UI owners and Android-only navigation paths that diverged from the current OpenClaw Web UI. Agent and session selection...</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-08-30</a> &mdash; 388055 stars, 81473 forks, 3198 contributors</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (88 total)</a> &mdash; 88 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/85865573e9e6e26bc0dc59fdeab20587024d3015">fix(ci): version design audit reports (#3531)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/fb0ef1d21eab78ad2b9da69f48045d7747cc73c1">fix(publish): ignore duplicate leased recovery dispatches (#3510)</a></li>
+  <li><a href="https://huggingface.co/mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-i1-GGUF">mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-i1-GGUF</a></li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://dev.to/moltednet/how-to-host-openclaw-for-multiple-clients-in-production-51oc">How to Host OpenClaw for Multiple Clients in Production</a> &mdash; The first OpenClaw deployment is usually straightforward. You provision a machine, configure one...</li>
+  <li><a href="https://dev.to/clarkbw--/pluginsallow-is-exclusive-the-warnings-suggested-fix-disabled-44-plugins-35h">plugins.allow is exclusive: the warning&#x27;s suggested fix disabled 44 plugins</a> &mdash; A config warning told me, every single turn, that plugins.allow was empty — and helpfully printed...</li>
+  <li><a href="https://dev.to/philip098/save-money-deploying-qwen-35-on-developer-cloud-38c8">Save Money Deploying Qwen 3.5 on Developer Cloud</a> &mdash; A student can run the next‑gen legal AI Qwen 3.5 on AMD’s cloud without spending a dime. Follow a simple, zero‑setup workflow and stay under free credit limits.</li>
+  <li><a href="https://dev.to/dhpp/saving-50-70-on-coding-agent-bills-protecting-prompt-cache-affinity-with-vmr-3d2j">Saving 50-70% on Coding Agent Bills: Protecting Prompt Cache Affinity with VMR</a> &mdash; TL;DR — With per-token pricing now the default everywhere, the biggest line item in a coding-agent...</li>
+  <li><a href="https://blog.devops.dev/openclaw-or-hermes-d2134f161b1e?source=rss------openclaw-5">OpenClaw or Hermes?</a> &mdash; Which One Should You Use for Agent Workflows?Continue reading on DevOps.dev »</li>
+  <li><a href="https://medium.com/@nithishpkn2k/openclaw-platinum-bundle-what-you-get-and-is-it-worth-it-8825fc800660?source=rss------openclaw-5">OpenClaw Platinum Bundle: What You Get and Is It Worth It?</a> &mdash; If you have been looking into AI tools lately, you have probably noticed that there are plenty of options out there. Some are designed for&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@ellisruperth/6-open-source-ai-automation-tools-for-self-hosted-business-workflows-21f27c292aa7?source=rss------openclaw-5">6 Open-Source AI Automation Tools for Self-Hosted Business Workflows</a> &mdash; Self-hosting is becoming more interesting as businesses start using AI for more than simple chat.Continue reading on Medium »</li>
+  <li><a href="https://alternativeto.net/software/the-odysseus/about/">Odysseus</a> &mdash; Self-hosted AI workspace offering chat, tool use, and autonomous agent support. Enables email and research tasks securely on user hardware, keeps all data local, requires no external servers, and...</li>
+  <li><a href="https://alternativeto.net/software/khoj/about/">Khoj</a> &mdash; Open-source app offers local or cloud AI chat with major LLMs, advanced semantic search, automation, personal newsletters, document indexing, image generation, and text-to-speech. Access from web,...</li>
+</ul>
+  </div>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="archive-gate">
+      <h2>Read the full issue</h2>
+      <p>Subscribe to get every section delivered to your inbox.</p>
+      <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+      <label class="archive-reveal" for="show-full">Continue reading &rarr;</label>
+    </div>
+
+    <input type="checkbox" id="show-full" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      
+      
+      
+      
+      
+      
+      
+      <section class="section" id="releases">
+  <h2 class="section-title">Releases</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-08-30</a> &mdash; 388055 stars, 81473 forks, 3198 contributors</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="community">
+  <h2 class="section-title">Community</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120472">fix(ci): reject malformed hosted-gate PR numbers</a> &mdash; What Problem This Solves Fixes an issue where operators running hosted-gate verification could pass JavaScript numeric syntax such as 1e3 or 0x10 to --pr, causing the verifier to silently target a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133300">fix(agents): recover after settled failed-tool batches</a> &mdash; Closes #133292 What Problem This Solves Fixes an issue where an embedded agent could stop after a transient provider transport drop when the immediately preceding tool batch had fully settled with a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/109711">fix: keep channel auto-restart after abort race during backoff</a> &mdash; Closes #109659 What Problem This Solves Fixes an issue where operators would lose a channel permanently after a normal provider close when auto-restart backoff raced the dying run&#x27;s abort signal....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133076">fix(agents): stop queued Swarm collectors with their parent</a> &mdash; Closes #131553 — stopping an exact parent leaves Swarm collectors running or queued. What Problem This Solves Stopping a parent turn could report success while its Swarm collectors kept running or...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/130706">fix: prevent Gateway stalls with multiple workspaces</a> &mdash; Related: #130324 What Problem This Solves Removes repeated plugin discovery from Gateway polling, bounds session-summary hydration, and repairs metadata-context escapes in session RPCs and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/131590">fix(cron): make one-shot terminal disables visible instead of silently parking jobs</a> &mdash; What Problem This Solves Fixes #131490. A one-shot agentTurn cron job that hits a permanently-classified error (or exhausts its transient retries) is disabled with only a log.warn — no notification,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132998">fix(infra): preserve block boundaries for attributed p and div tags</a> &mdash; What Problem This Solves Fixes #132969. sanitizeForPlainText strips attributed opening p and div tags instead of converting them to newlines, so adjacent outbound text gets concatenated...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/131949">fix(gateway): completed replies duplicate after a late abort</a> &mdash; Closes #131711 What Problem This Solves Fixes a race where a completed assistant reply could be recorded again as an aborted transcript entry when bounded post-turn context persistence outlived the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133164">feat(notifications): unify browser and native desktop delivery</a> &mdash; What Problem This Solves Follow-up to #129348, which merged as 20a61477998cbf78f2906639a49f5dda7ec1476b. Browser notifications had Gateway preferences and delivery, while native Settings exposed a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132754">fix(shared): invalidate hasBinary&#x27;s cache after a skill install lands a binary</a> &mdash; Closes #132751 What Problem This Solves Fixes an issue where a skill&#x27;s binary dependency continues to read as missing after skills.install successfully installs it, because hasBinary&#x27;s per-binary...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/93842">fix(plugins): report missing config clearly instead of misleading required-property errors</a> &mdash; What changed Two validation paths (validatePluginConfig in src/plugins/loader.ts and config-time validation in src/config/validation.ts) used value ?? {} / entry?.config ?? {} to coerce undefined...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/101665">feat: let plugin tools yield turns</a> &mdash; What Problem This Solves Plugin tools can send work to an external interaction surface, but before this change they could only return a normal tool result. The agent loop could then continue in the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/113734">docs: add Neon AI Gateway provider guide</a> &mdash; No linked issue: a search of open and closed items for this gateway returned nothing, so there is no prior context to reference. Additional instructions MUST: Keep Allow edits from maintainers...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/103723">feat(anthropic): add claude-haiku-4-5 to claude-cli catalog</a> &mdash; What Problem This Solves The Claude CLI catalog and setup allowlist do not include claude-haiku-4-5, so OpenClaw users running the local Claude CLI backend cannot select the full Haiku 4.5 model ref....</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/133303">[Bug]: plugin authoring commands (build/validate/init) abort on an invalid host config they never read</a> &mdash; Steps to reproduce The startup config guard runs for every CLI command that does not opt out, including plugins build, plugins validate, and plugins init — commands that operate on a target package,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133299">fix(plugins): newly scaffolded plugins fail to build when npm &quot;latest&quot; tag is older than the host CLI</a> &mdash; Closes #123335 What Problem This Solves Fixes an issue where users running openclaw plugins init to scaffold a new plugin project would get a scaffold whose plugin:build and plugin:validate steps...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/121044">fix: memory_search rebuilds the whole index after an ordinary zero-hit query</a> &mdash; Closes #121043 AI-assisted (Claude, via OpenClaw). I understand what the code does and validated it as described below. What Problem This Solves Fixes an issue where users whose memory query happens...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/111464">Durable Core PR 5/6: add operation-scoped execution recovery</a> &mdash; Durable Core stack context This is PR 5/6. Its incremental role is to add exact operation-kind/version execution, lease fencing, and expired-claim recovery; no new schema or public mutation. End...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133083">fix(telegram): preserve durable receipt in sendMessage action result</a> &mdash; What Problem This Solves Fixes #133051. Telegram can confirm a terminal sendMessage delivery while its action adapter drops the durable delivery receipt from the tool result. Source-reply recovery...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133247">fix: prevent duplicate commentary after tool handoffs</a> &mdash; Closes #133246 Additional instructions Allow edits from maintainers is enabled at creation. This is a same-repository maintainer branch. What Problem This Solves Fixes an issue where users following...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/130009">fix(agents): add denial guidance to plugin approval rejections</a> &mdash; What Problem This Solves A denied plugin tool approval reached the agent as only Denied by user. That text did not say the tool never ran, the approval request was closed, or the same call must not...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/95785">feat(cli): allow image generate input files</a> &mdash; What Problem This Solves openclaw infer image generate currently cannot accept local input/reference images, even though the shared image generation runner already supports file-backed inputImages...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/109754">fix(plugin-sdk): contextualize malformed provider catalogs</a> &mdash; What Problem This Solves Fixes an issue where operators using live provider model discovery could receive a raw JSON parser error when a provider returned a malformed successful response. The error...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133206">fix(gateway): send finalized text with required tool calls</a> &mdash; Closes #133205 What Problem This Solves Fixes an issue where clients requiring or pinning a function call received provisional text instead of the finalized assistant output from streaming Chat...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132849">feat(android): align chat, sidebar, and appearance with the web UI</a> &mdash; [AI-assisted] What Problem This Solves The Android app had accumulated parallel UI owners and Android-only navigation paths that diverged from the current OpenClaw Web UI. Agent and session selection...</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (88 total)</a> &mdash; 88 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/85865573e9e6e26bc0dc59fdeab20587024d3015">fix(ci): version design audit reports (#3531)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/fb0ef1d21eab78ad2b9da69f48045d7747cc73c1">fix(publish): ignore duplicate leased recovery dispatches (#3510)</a></li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="news">
+  <h2 class="section-title">News</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://huggingface.co/mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-i1-GGUF">mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-i1-GGUF</a></li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://dev.to/moltednet/how-to-host-openclaw-for-multiple-clients-in-production-51oc">How to Host OpenClaw for Multiple Clients in Production</a> &mdash; The first OpenClaw deployment is usually straightforward. You provision a machine, configure one...</li>
+  <li><a href="https://dev.to/clarkbw--/pluginsallow-is-exclusive-the-warnings-suggested-fix-disabled-44-plugins-35h">plugins.allow is exclusive: the warning&#x27;s suggested fix disabled 44 plugins</a> &mdash; A config warning told me, every single turn, that plugins.allow was empty — and helpfully printed...</li>
+  <li><a href="https://dev.to/philip098/save-money-deploying-qwen-35-on-developer-cloud-38c8">Save Money Deploying Qwen 3.5 on Developer Cloud</a> &mdash; A student can run the next‑gen legal AI Qwen 3.5 on AMD’s cloud without spending a dime. Follow a simple, zero‑setup workflow and stay under free credit limits.</li>
+  <li><a href="https://dev.to/dhpp/saving-50-70-on-coding-agent-bills-protecting-prompt-cache-affinity-with-vmr-3d2j">Saving 50-70% on Coding Agent Bills: Protecting Prompt Cache Affinity with VMR</a> &mdash; TL;DR — With per-token pricing now the default everywhere, the biggest line item in a coding-agent...</li>
+  <li><a href="https://blog.devops.dev/openclaw-or-hermes-d2134f161b1e?source=rss------openclaw-5">OpenClaw or Hermes?</a> &mdash; Which One Should You Use for Agent Workflows?Continue reading on DevOps.dev »</li>
+  <li><a href="https://medium.com/@nithishpkn2k/openclaw-platinum-bundle-what-you-get-and-is-it-worth-it-8825fc800660?source=rss------openclaw-5">OpenClaw Platinum Bundle: What You Get and Is It Worth It?</a> &mdash; If you have been looking into AI tools lately, you have probably noticed that there are plenty of options out there. Some are designed for&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@ellisruperth/6-open-source-ai-automation-tools-for-self-hosted-business-workflows-21f27c292aa7?source=rss------openclaw-5">6 Open-Source AI Automation Tools for Self-Hosted Business Workflows</a> &mdash; Self-hosting is becoming more interesting as businesses start using AI for more than simple chat.Continue reading on Medium »</li>
+  <li><a href="https://alternativeto.net/software/the-odysseus/about/">Odysseus</a> &mdash; Self-hosted AI workspace offering chat, tool use, and autonomous agent support. Enables email and research tasks securely on user hardware, keeps all data local, requires no external servers, and...</li>
+  <li><a href="https://alternativeto.net/software/khoj/about/">Khoj</a> &mdash; Open-source app offers local or cloud AI chat with major LLMs, advanced semantic search, automation, personal newsletters, document indexing, image generation, and text-to-speech. Access from web,...</li>
+</ul>
+  </div>
+</section>
+      
+      
+    </div>
+
+    <footer class="footer">
+  <div class="footer-divider"></div>
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  <p>
+    Generated with AI by the
+    <a href="https://github.com/openclaw/openclaw">OpenClaw</a> Newsletter Bot
+  </p>
+  <div class="footer-links">
+    <a href="../archive.html">Archive</a>
+    <a href="../rss.xml">RSS</a>
+    <a href="https://github.com/openclaw/openclaw">Star on GitHub</a>
+  </div>
+</footer>
+  </div>
+</body>
+</html>
