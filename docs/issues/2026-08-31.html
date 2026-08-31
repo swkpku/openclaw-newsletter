@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Newsletter - 2026-08-31</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="OpenClaw Newsletter" href="../rss.xml">
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenClaw Newsletter - 2026-08-31">
+<meta property="og:description" content="OpenClaw 2026.8.1 &mdash; 2026.8.1 2026.8.1 release notes &gt; Update help: If the automatic update fails, use a local coding harness to help complete t...">
+<meta property="og:url" content="https://swkpku.github.io/openclaw-newsletter/issues/2026-08-31.html">
+<meta property="og:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenClaw Newsletter - 2026-08-31">
+<meta name="twitter:description" content="OpenClaw 2026.8.1 &mdash; 2026.8.1 2026.8.1 release notes &gt; Update help: If the automatic update fails, use a local coding harness to help complete t...">
+<meta name="twitter:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <header class="header">
+  <div class="header-top">
+    <div class="header-brand">
+      <div class="header-logo">OC</div>
+      <div>
+        <h1>OpenClaw Newsletter</h1>
+        <p class="subtitle">Daily updates from the OpenClaw ecosystem</p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="date">Monday, August 31, 2026</p>
+  
+  <nav class="nav">
+    <a href="../index.html">Latest</a>
+    <a href="../archive.html">Archive</a>
+    <a href="https://github.com/openclaw/openclaw">GitHub</a>
+  </nav>
+  
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  
+</header>
+
+    
+    <div class="toc">
+      <h2>In This Issue</h2>
+      <ul>
+        
+        <li><a href="#top_stories">Top Stories</a></li>
+        
+        <li><a href="#releases">Releases</a></li>
+        
+        <li><a href="#community">Community</a></li>
+        
+        <li><a href="#news">News</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    <section class="section" id="top_stories">
+  <h2 class="section-title">Top Stories</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/releases/tag/v2026.8.1">OpenClaw 2026.8.1</a> &mdash; 2026.8.1 2026.8.1 release notes &gt; Update help: If the automatic update fails, use a local coding harness to help complete the update, diagnose any migration errors, and verify that the Gateway starts...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/53763">[Feature]: Built-in headless browser for reliable web access without external dependencies</a> &mdash; Summary Bundle a headless Chromium instance as a first-class OpenClaw tool, so agents can reliably access any webpage (including JS-rendered and login-required pages) without depending on the user&#x27;s...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134242">fix(slack): honor the configured image downscale limit on downloadFile</a> &mdash; What Problem This Solves agents.defaults.imageMaxDimensionPx is documented as the max image side length &quot;when sanitizing transcript/tool-result image payloads&quot; (src/config/schema.help.agents.ts,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133728">fix: recover cloud sessions across restart and cancellation</a> &mdash; Fixes #131713 What Problem This Solves Real cloud-session testing exposed several failures at shared lifecycle boundaries: restart recovery rejected legitimate workspace drift; a lost browser ACK...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134053">fix(release): complete ClawHub publication after parent success</a> &mdash; What Problem This Solves Regular release publication could not satisfy ClawHub&#x27;s deployed v2 authorization contract: the caller did not produce the exact parent/child package receipt, while waiting...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134045">fix: retain 2026.8.1 release fixes on main</a> &mdash; What Problem This Solves Main was missing several fixes shipped in 2026.8.1: public plugin SDK callbacks and exports, Windows short-path skill watching, paired-worker deadline outcomes, and session...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134221">feat(onboarding): quick-start lane opens the web dashboard from one prompt</a> &mdash; What Problem This Solves OpenClaw&#x27;s onboarding wizard is thorough, but there is no ten-second taste-test path. A pristine npx openclaw@latest run walks ~6 interactive prompts, always installs a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134101">fix(setup): complete runtime capability review across apps</a> &mdash; Related: #133793. Thanks @coygeek for reporting the missing capability review. This reconciles the useful session-ownership work by @roboclaw-bot and @VACInc with the independently tested...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134234">fix(test): stop returning the timer handle from a promise executor</a> &mdash; What Problem This Solves check-lint-core-1 is red on main, so every open pull request inherits the failure. src/gateway/server-kernel.test.ts passes a concise arrow body to a Promise executor, which...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134225">fix(ui): include job name in Cron row action aria-labels</a> &mdash; Closes #127330 What Problem This Solves Screen-reader users managing multiple Cron automations could not tell which job a row action button belonged to: every &quot;Run now&quot;, &quot;Pause/Resume&quot;, and &quot;More&quot;...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134241">fix(browser): partition relay pre-auth admission [AI]</a> &mdash; What Problem This Solves A burst of silent Browser relay WebSocket handshakes from one client address could consume every shared pre-authentication slot and reject an independently paired Chrome...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134216">perf(ci): bound plugin lint project discovery</a> &mdash; Type-aware plugin lint was building an unnecessarily large compiler project. The Go lint helper discovers the nearest owning tsconfig.json; it does not receive oxlint&#x27;s --tsconfig option. Plugin...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120105">fix(scripts): stabilize Vitest shard timing keys</a> &mdash; What Problem This Solves Vitest shard timing keys included the include-pattern array in caller order. The same set of test files could therefore produce different keys when discovery order changed,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134235">fix(line): tell the agent it has the buttons LINE renders</a> &mdash; What Problem This Solves LINE renders presentation buttons, and the agent is told it cannot. The system prompt carries both statements a few lines apart: - Inline buttons OFF for line; ask owner for...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126790">fix(agents): bind the gateway instance for heartbeat-spawned and visible subagents</a> &mdash; What Problem This Solves A subagent that ran to completion could fail to announce its result, and the requester was told nothing: The significant detail is that there is a completion to announce —...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133799">feat(github): connect personal accounts alongside the system account</a> &mdash; Closes #133590 — Personal GitHub connections and explicit publication identity. Additional instructions MUST: Keep Allow edits from maintainers enabled so maintainers can update this branch. This is...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133735">fix: cancel cloud provisioning when stopping a worker</a> &mdash; Related: #133551. This follows the landed lifecycle-ordering repair without replaying it. Current status Fresh packaged provisioning Stop, native CUA/WebVNC, GUI Stop, original API reclaim, and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134088">fix(workers): expire unused snapshots when projects are idle</a> &mdash; Stacked on #134043; base branch: codex/project-warm-start. What Problem This Solves Fixes an issue where operators could retain unused cloud worker snapshots indefinitely after their last worker...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/133797">Heartbeat (isolatedSession) continuation runs with empty transcript when transcript projection is rebuilding → confused visible replies announced to primary channel</a> &mdash; Summary Hourly agent heartbeats (agents.defaults.heartbeat with lightContext: true, isolatedSession: true) intermittently run with an empty transcript. When the durable session&#x27;s transcript...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134193">fix(update): npm-hardened global updates no longer roll back</a> &mdash; Closes #134177 What Problem This Solves Fixes an issue where operators with npm ignore-scripts=true could download an OpenClaw update successfully, but strict package verification rejected the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/109249">feat: allow global pairing reply templates</a> &mdash; Closes #109240 What Problem This Solves Operators using DM pairing currently send a fixed OpenClaw-branded reply to every new requester. They cannot localize it, align it with an assistant identity,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128050">feat(ui): send new-session drafts to background sessions [AI-assisted]</a> &mdash; Closes #128037 Related: #80901, #81946, #84827, #123247 What Problem This Solves The Control UI New Session page could only start a draft by navigating into the created session. Operators could not...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134038">perf(ci): reduce startup work and control-job queue delays</a> &mdash; What Problem This Solves CI repeats unrelated build and source-discovery work, cold Anthropic registration loads credential machinery before any auth hook runs, and constrained lint runners have...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133980">refactor: consolidate package inventory exclusions</a> &mdash; What Problem This Solves Package inventory construction maintained two exclusion paths for externalized plugins. Keeping file inclusion and directory pruning aligned required duplicating the same...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134213">fix(snapshot): stream Git backup table dumps instead of buffering to disk</a> &mdash; Closes #133898 What Problem This Solves Fixes an issue where users running openclaw backup git create --agent main (or the scheduled backup enable job) on a large agent database would get exit code 1...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/134240">Internal runtime-context envelope leaks into Telegram channel messages (same class as documented ACP leak)</a> &mdash; Summary Similar to the documented ACP leak (docs/tools/acp-agents.md troubleshooting: &quot;Harness sees &gt;&gt;&quot; → &quot;Internal event envelope leaked across the ACP boundary&quot;), the same internal runtime-context...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133952">fix(doctor): identify malformed legacy exec approval fields</a> &mdash; Related: #118242, #118282. What Problem This Solves Fixes an issue where operators running Doctor against malformed legacy exec approvals receive only a generic preservation warning, leaving them...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/134224">[Bug]: Switching to Codex drops compacted conversation summaries</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary Switching a compacted OpenClaw conversation to a fresh native Codex thread omits the stored compaction...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/117734">feat(channels): conversation burst budget catches multi-party bot storms</a> &mdash; What Problem This Solves The bot pair loop guard keys on unordered sender/receiver pairs, so a multi-party bot storm is invisible to it: with N bots replying to each other in one conversation,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133988">fix(gateway): release cached transcript backing storage</a> &mdash; Closes #133941. What Problem This Solves Listing named sessions with long initial messages retained whole prompt allocations through short cached title fields. The cache held bounded strings, but...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/134226">[BUG] Fallback chain fails with &#x27;Cannot read properties of undefined (reading trim)&#x27; on 2026.8.1</a> &mdash; OpenClaw 2026.8.1 Bug Report 报告人：Anonymous user OpenClaw 版本：2026.8.1 (ea80657) Node：v24.18.0 OS：macOS (Apple Silicon) 报告日期：2026-08-31 发现两个独立但相关的 bug，建议拆成两个 GitHub issue。 Bug 1: Fallback 链全失败 — Cannot...</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-08-31</a> &mdash; 388236 stars, 81503 forks, 3205 contributors</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (88 total)</a> &mdash; 88 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/20c3b2f0ff4cba6437eb1d0f91c1e00765b6470b">improve: remove skill icons from detail headers (#3557)</a> &mdash; Remove the presentation icon from shared skill detail heroes while preserving taxonomy category icons, creator avatars, listing/search icons, and unrelated surfaces. Add focused regression coverage...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/db2a12c4625ffa162910a3e6aa2cb786ced89e2f">fix: complete release inventories and preserve plugin inspection outcomes (#3563)</a> &mdash; Accept full release parent inventories while preserving identity and recovery bounds; index publisher-scoped runtime claims; protect recovery and quarantine identity invariants; preserve inspector...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/da21772a03474e5c1788a0dfa4547132c45471e2">fix: scope plugin runtime identities to publishers (#3562)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/0699d1aa4ec6e2e0d03d787e129428ecf45ace28">fix(deps): bound inspector memory during publication (#3561)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/2b2c90809ec707bd4301eb88955f8dd7f9936224">fix(deps): pin inspector extraction lifecycle repair (#3560)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/16436535e782fadaa9907ee062e46f1bdc43f773">feat: integrate Krill Switch feature flags (#3285)</a> &mdash; Add an opt-in homepage copy flag with SSR bootstrap, hydration-safe defaults, and a bounded fail-open evaluation path.</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/78efe6e32e55157160a75bbf84d6e7eba42df3c7">fix: align mobile search trigger with content tabs (#3553)</a> &mdash; Keep the collapsed search trigger beside Skills and Plugins on mobile while preserving the expanded search panel below the discovery tabs.</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/12b24666158ea308a5b090ee1c2abf3eff1c8ffb">fix: show hero artwork in light mode (#3551)</a> &mdash; Add a dedicated compressed hero asset for light mode and cover the theme-specific CSS contract.</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/e6744500dd2384312afa4a9e24fb18c321cdcc12">Add skill: dkistenev/agent-inner-life</a></li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/6adf892951e04bbe592110c6c7865e6291603d4f">Add skill: programmingwtf/repo-standardizer</a></li>
+  <li><a href="https://www.npmjs.com/package/openclaw">openclaw v2026.8.1 on npm</a> &mdash; Multi-channel AI gateway with extensible messaging integrations</li>
+  <li><a href="https://hub.docker.com/r/openclaw/openclaw">openclaw/openclaw on Docker Hub</a> &mdash; Official openclaw/openclaw docker images.</li>
+  <li><a href="https://huggingface.co/mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-i1-GGUF">mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-i1-GGUF</a></li>
+  <li><a href="https://huggingface.co/mradermacher/Qwen3.5-9b-Opus-Openclaw-Distilled-i1-GGUF">mradermacher/Qwen3.5-9b-Opus-Openclaw-Distilled-i1-GGUF</a> &mdash; text-generation</li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li>Tell HN: Anthropic no longer allowing Claude Code subscriptions to use OpenClaw</li>
+  <li><a href="https://dev.to/orson098/launch-openclaw-on-developer-cloud-without-credit-hassles-4paj">Launch OpenCLaw on Developer Cloud Without Credit Hassles</a> &mdash; Deploy OpenCLaw on AMD&#x27;s free Developer Cloud in minutes, no credit cards required. Follow a step‑by‑step guide and keep your legal automation running on Qwen 3</li>
+  <li><a href="https://medium.com/@seacloud9/i-gave-an-open-source-agent-a-local-30b-brain-and-taught-it-to-run-a-brand-on-x-1186e181f24c?source=rss------openclaw-5">I Gave an Open-Source Agent a Local 30B Brain and Taught It to Run a Brand on X</a> &mdash; A practical deep dive into OpenClaw, Qwen3 on Apple silicon, MCP, OAuth, scheduling, and the human approval layer that keeps an AI usefulContinue reading on Medium »</li>
+  <li><a href="https://medium.com/@hungryclaw/donely-vs-self-hosting-openclaw-the-real-cost-of-no-devops-28e62a3a2a2e?source=rss------openclaw-5">Donely vs Self-Hosting OpenClaw: The Real Cost of ‘No DevOps’</a> &mdash; Pay Donely&amp;#x2019;s $25 monthly Personal fee only after a self-hosted OpenClaw instance becomes an operational chore. For one personal agent, the&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@yicheng.881218/its-just-a-while-loop-why-do-mature-agent-harnesses-work-so-much-better-55256ff8bc3e?source=rss------openclaw-5">It’s Just a While Loop. Why Do Mature Agent Harnesses Work So Much Better?</a> &mdash; There is more and more discussion around Agent Harnesses right now.Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@nithishpkn2k/openclaw-platinum-bundle-what-you-get-and-is-it-worth-it-8825fc800660?source=rss------openclaw-5">OpenClaw Platinum Bundle: What You Get and Is It Worth It?</a> &mdash; If you have been looking into AI tools lately, you have probably noticed that there are plenty of options out there. Some are designed for&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://alternativeto.net/software/hermes-agent/about/">Hermes Agent</a> &mdash; The self-improving AI agent built by Nous Research. It&#x27;s the only agent with a built-in learning loop — it creates skills from experience, improves them during use, nudges itself to persist...</li>
+</ul>
+  </div>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="archive-gate">
+      <h2>Read the full issue</h2>
+      <p>Subscribe to get every section delivered to your inbox.</p>
+      <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+      <label class="archive-reveal" for="show-full">Continue reading &rarr;</label>
+    </div>
+
+    <input type="checkbox" id="show-full" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      
+      
+      
+      
+      
+      
+      
+      <section class="section" id="releases">
+  <h2 class="section-title">Releases</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/releases/tag/v2026.8.1">OpenClaw 2026.8.1</a> &mdash; 2026.8.1 2026.8.1 release notes &gt; Update help: If the automatic update fails, use a local coding harness to help complete the update, diagnose any migration errors, and verify that the Gateway starts...</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-08-31</a> &mdash; 388236 stars, 81503 forks, 3205 contributors</li>
+  <li><a href="https://www.npmjs.com/package/openclaw">openclaw v2026.8.1 on npm</a> &mdash; Multi-channel AI gateway with extensible messaging integrations</li>
+  <li><a href="https://hub.docker.com/r/openclaw/openclaw">openclaw/openclaw on Docker Hub</a> &mdash; Official openclaw/openclaw docker images.</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="community">
+  <h2 class="section-title">Community</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/issues/53763">[Feature]: Built-in headless browser for reliable web access without external dependencies</a> &mdash; Summary Bundle a headless Chromium instance as a first-class OpenClaw tool, so agents can reliably access any webpage (including JS-rendered and login-required pages) without depending on the user&#x27;s...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134242">fix(slack): honor the configured image downscale limit on downloadFile</a> &mdash; What Problem This Solves agents.defaults.imageMaxDimensionPx is documented as the max image side length &quot;when sanitizing transcript/tool-result image payloads&quot; (src/config/schema.help.agents.ts,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133728">fix: recover cloud sessions across restart and cancellation</a> &mdash; Fixes #131713 What Problem This Solves Real cloud-session testing exposed several failures at shared lifecycle boundaries: restart recovery rejected legitimate workspace drift; a lost browser ACK...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134053">fix(release): complete ClawHub publication after parent success</a> &mdash; What Problem This Solves Regular release publication could not satisfy ClawHub&#x27;s deployed v2 authorization contract: the caller did not produce the exact parent/child package receipt, while waiting...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134045">fix: retain 2026.8.1 release fixes on main</a> &mdash; What Problem This Solves Main was missing several fixes shipped in 2026.8.1: public plugin SDK callbacks and exports, Windows short-path skill watching, paired-worker deadline outcomes, and session...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134221">feat(onboarding): quick-start lane opens the web dashboard from one prompt</a> &mdash; What Problem This Solves OpenClaw&#x27;s onboarding wizard is thorough, but there is no ten-second taste-test path. A pristine npx openclaw@latest run walks ~6 interactive prompts, always installs a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134101">fix(setup): complete runtime capability review across apps</a> &mdash; Related: #133793. Thanks @coygeek for reporting the missing capability review. This reconciles the useful session-ownership work by @roboclaw-bot and @VACInc with the independently tested...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134234">fix(test): stop returning the timer handle from a promise executor</a> &mdash; What Problem This Solves check-lint-core-1 is red on main, so every open pull request inherits the failure. src/gateway/server-kernel.test.ts passes a concise arrow body to a Promise executor, which...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134225">fix(ui): include job name in Cron row action aria-labels</a> &mdash; Closes #127330 What Problem This Solves Screen-reader users managing multiple Cron automations could not tell which job a row action button belonged to: every &quot;Run now&quot;, &quot;Pause/Resume&quot;, and &quot;More&quot;...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134241">fix(browser): partition relay pre-auth admission [AI]</a> &mdash; What Problem This Solves A burst of silent Browser relay WebSocket handshakes from one client address could consume every shared pre-authentication slot and reject an independently paired Chrome...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134216">perf(ci): bound plugin lint project discovery</a> &mdash; Type-aware plugin lint was building an unnecessarily large compiler project. The Go lint helper discovers the nearest owning tsconfig.json; it does not receive oxlint&#x27;s --tsconfig option. Plugin...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/120105">fix(scripts): stabilize Vitest shard timing keys</a> &mdash; What Problem This Solves Vitest shard timing keys included the include-pattern array in caller order. The same set of test files could therefore produce different keys when discovery order changed,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134235">fix(line): tell the agent it has the buttons LINE renders</a> &mdash; What Problem This Solves LINE renders presentation buttons, and the agent is told it cannot. The system prompt carries both statements a few lines apart: - Inline buttons OFF for line; ask owner for...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126790">fix(agents): bind the gateway instance for heartbeat-spawned and visible subagents</a> &mdash; What Problem This Solves A subagent that ran to completion could fail to announce its result, and the requester was told nothing: The significant detail is that there is a completion to announce —...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133799">feat(github): connect personal accounts alongside the system account</a> &mdash; Closes #133590 — Personal GitHub connections and explicit publication identity. Additional instructions MUST: Keep Allow edits from maintainers enabled so maintainers can update this branch. This is...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133735">fix: cancel cloud provisioning when stopping a worker</a> &mdash; Related: #133551. This follows the landed lifecycle-ordering repair without replaying it. Current status Fresh packaged provisioning Stop, native CUA/WebVNC, GUI Stop, original API reclaim, and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134088">fix(workers): expire unused snapshots when projects are idle</a> &mdash; Stacked on #134043; base branch: codex/project-warm-start. What Problem This Solves Fixes an issue where operators could retain unused cloud worker snapshots indefinitely after their last worker...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/133797">Heartbeat (isolatedSession) continuation runs with empty transcript when transcript projection is rebuilding → confused visible replies announced to primary channel</a> &mdash; Summary Hourly agent heartbeats (agents.defaults.heartbeat with lightContext: true, isolatedSession: true) intermittently run with an empty transcript. When the durable session&#x27;s transcript...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134193">fix(update): npm-hardened global updates no longer roll back</a> &mdash; Closes #134177 What Problem This Solves Fixes an issue where operators with npm ignore-scripts=true could download an OpenClaw update successfully, but strict package verification rejected the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/109249">feat: allow global pairing reply templates</a> &mdash; Closes #109240 What Problem This Solves Operators using DM pairing currently send a fixed OpenClaw-branded reply to every new requester. They cannot localize it, align it with an assistant identity,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128050">feat(ui): send new-session drafts to background sessions [AI-assisted]</a> &mdash; Closes #128037 Related: #80901, #81946, #84827, #123247 What Problem This Solves The Control UI New Session page could only start a draft by navigating into the created session. Operators could not...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134038">perf(ci): reduce startup work and control-job queue delays</a> &mdash; What Problem This Solves CI repeats unrelated build and source-discovery work, cold Anthropic registration loads credential machinery before any auth hook runs, and constrained lint runners have...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133980">refactor: consolidate package inventory exclusions</a> &mdash; What Problem This Solves Package inventory construction maintained two exclusion paths for externalized plugins. Keeping file inclusion and directory pruning aligned required duplicating the same...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134213">fix(snapshot): stream Git backup table dumps instead of buffering to disk</a> &mdash; Closes #133898 What Problem This Solves Fixes an issue where users running openclaw backup git create --agent main (or the scheduled backup enable job) on a large agent database would get exit code 1...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/134240">Internal runtime-context envelope leaks into Telegram channel messages (same class as documented ACP leak)</a> &mdash; Summary Similar to the documented ACP leak (docs/tools/acp-agents.md troubleshooting: &quot;Harness sees &gt;&gt;&quot; → &quot;Internal event envelope leaked across the ACP boundary&quot;), the same internal runtime-context...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133952">fix(doctor): identify malformed legacy exec approval fields</a> &mdash; Related: #118242, #118282. What Problem This Solves Fixes an issue where operators running Doctor against malformed legacy exec approvals receive only a generic preservation warning, leaving them...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/134224">[Bug]: Switching to Codex drops compacted conversation summaries</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary Switching a compacted OpenClaw conversation to a fresh native Codex thread omits the stored compaction...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/117734">feat(channels): conversation burst budget catches multi-party bot storms</a> &mdash; What Problem This Solves The bot pair loop guard keys on unordered sender/receiver pairs, so a multi-party bot storm is invisible to it: with N bots replying to each other in one conversation,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/133988">fix(gateway): release cached transcript backing storage</a> &mdash; Closes #133941. What Problem This Solves Listing named sessions with long initial messages retained whole prompt allocations through short cached title fields. The cache held bounded strings, but...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/134226">[BUG] Fallback chain fails with &#x27;Cannot read properties of undefined (reading trim)&#x27; on 2026.8.1</a> &mdash; OpenClaw 2026.8.1 Bug Report 报告人：Anonymous user OpenClaw 版本：2026.8.1 (ea80657) Node：v24.18.0 OS：macOS (Apple Silicon) 报告日期：2026-08-31 发现两个独立但相关的 bug，建议拆成两个 GitHub issue。 Bug 1: Fallback 链全失败 — Cannot...</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (88 total)</a> &mdash; 88 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/20c3b2f0ff4cba6437eb1d0f91c1e00765b6470b">improve: remove skill icons from detail headers (#3557)</a> &mdash; Remove the presentation icon from shared skill detail heroes while preserving taxonomy category icons, creator avatars, listing/search icons, and unrelated surfaces. Add focused regression coverage...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/db2a12c4625ffa162910a3e6aa2cb786ced89e2f">fix: complete release inventories and preserve plugin inspection outcomes (#3563)</a> &mdash; Accept full release parent inventories while preserving identity and recovery bounds; index publisher-scoped runtime claims; protect recovery and quarantine identity invariants; preserve inspector...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/da21772a03474e5c1788a0dfa4547132c45471e2">fix: scope plugin runtime identities to publishers (#3562)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/0699d1aa4ec6e2e0d03d787e129428ecf45ace28">fix(deps): bound inspector memory during publication (#3561)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/2b2c90809ec707bd4301eb88955f8dd7f9936224">fix(deps): pin inspector extraction lifecycle repair (#3560)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/16436535e782fadaa9907ee062e46f1bdc43f773">feat: integrate Krill Switch feature flags (#3285)</a> &mdash; Add an opt-in homepage copy flag with SSR bootstrap, hydration-safe defaults, and a bounded fail-open evaluation path.</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/78efe6e32e55157160a75bbf84d6e7eba42df3c7">fix: align mobile search trigger with content tabs (#3553)</a> &mdash; Keep the collapsed search trigger beside Skills and Plugins on mobile while preserving the expanded search panel below the discovery tabs.</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/12b24666158ea308a5b090ee1c2abf3eff1c8ffb">fix: show hero artwork in light mode (#3551)</a> &mdash; Add a dedicated compressed hero asset for light mode and cover the theme-specific CSS contract.</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/e6744500dd2384312afa4a9e24fb18c321cdcc12">Add skill: dkistenev/agent-inner-life</a></li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/6adf892951e04bbe592110c6c7865e6291603d4f">Add skill: programmingwtf/repo-standardizer</a></li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="news">
+  <h2 class="section-title">News</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://huggingface.co/mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-i1-GGUF">mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-i1-GGUF</a></li>
+  <li><a href="https://huggingface.co/mradermacher/Qwen3.5-9b-Opus-Openclaw-Distilled-i1-GGUF">mradermacher/Qwen3.5-9b-Opus-Openclaw-Distilled-i1-GGUF</a> &mdash; text-generation</li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li>Tell HN: Anthropic no longer allowing Claude Code subscriptions to use OpenClaw</li>
+  <li><a href="https://dev.to/orson098/launch-openclaw-on-developer-cloud-without-credit-hassles-4paj">Launch OpenCLaw on Developer Cloud Without Credit Hassles</a> &mdash; Deploy OpenCLaw on AMD&#x27;s free Developer Cloud in minutes, no credit cards required. Follow a step‑by‑step guide and keep your legal automation running on Qwen 3</li>
+  <li><a href="https://medium.com/@seacloud9/i-gave-an-open-source-agent-a-local-30b-brain-and-taught-it-to-run-a-brand-on-x-1186e181f24c?source=rss------openclaw-5">I Gave an Open-Source Agent a Local 30B Brain and Taught It to Run a Brand on X</a> &mdash; A practical deep dive into OpenClaw, Qwen3 on Apple silicon, MCP, OAuth, scheduling, and the human approval layer that keeps an AI usefulContinue reading on Medium »</li>
+  <li><a href="https://medium.com/@hungryclaw/donely-vs-self-hosting-openclaw-the-real-cost-of-no-devops-28e62a3a2a2e?source=rss------openclaw-5">Donely vs Self-Hosting OpenClaw: The Real Cost of ‘No DevOps’</a> &mdash; Pay Donely&amp;#x2019;s $25 monthly Personal fee only after a self-hosted OpenClaw instance becomes an operational chore. For one personal agent, the&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@yicheng.881218/its-just-a-while-loop-why-do-mature-agent-harnesses-work-so-much-better-55256ff8bc3e?source=rss------openclaw-5">It’s Just a While Loop. Why Do Mature Agent Harnesses Work So Much Better?</a> &mdash; There is more and more discussion around Agent Harnesses right now.Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@nithishpkn2k/openclaw-platinum-bundle-what-you-get-and-is-it-worth-it-8825fc800660?source=rss------openclaw-5">OpenClaw Platinum Bundle: What You Get and Is It Worth It?</a> &mdash; If you have been looking into AI tools lately, you have probably noticed that there are plenty of options out there. Some are designed for&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://alternativeto.net/software/hermes-agent/about/">Hermes Agent</a> &mdash; The self-improving AI agent built by Nous Research. It&#x27;s the only agent with a built-in learning loop — it creates skills from experience, improves them during use, nudges itself to persist...</li>
+</ul>
+  </div>
+</section>
+      
+      
+    </div>
+
+    <footer class="footer">
+  <div class="footer-divider"></div>
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  <p>
+    Generated with AI by the
+    <a href="https://github.com/openclaw/openclaw">OpenClaw</a> Newsletter Bot
+  </p>
+  <div class="footer-links">
+    <a href="../archive.html">Archive</a>
+    <a href="../rss.xml">RSS</a>
+    <a href="https://github.com/openclaw/openclaw">Star on GitHub</a>
+  </div>
+</footer>
+  </div>
+</body>
+</html>
