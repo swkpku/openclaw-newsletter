@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Newsletter - 2026-09-03</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="OpenClaw Newsletter" href="../rss.xml">
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenClaw Newsletter - 2026-09-03">
+<meta property="og:description" content="fix: keep accepted chat messages queued through retryable failures &mdash; What Problem This Solves Fixes an issue where an accepted chat message could ...">
+<meta property="og:url" content="https://swkpku.github.io/openclaw-newsletter/issues/2026-09-03.html">
+<meta property="og:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenClaw Newsletter - 2026-09-03">
+<meta name="twitter:description" content="fix: keep accepted chat messages queued through retryable failures &mdash; What Problem This Solves Fixes an issue where an accepted chat message could ...">
+<meta name="twitter:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <header class="header">
+  <div class="header-top">
+    <div class="header-brand">
+      <div class="header-logo">OC</div>
+      <div>
+        <h1>OpenClaw Newsletter</h1>
+        <p class="subtitle">Daily updates from the OpenClaw ecosystem</p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="date">Thursday, September 3, 2026</p>
+  
+  <nav class="nav">
+    <a href="../index.html">Latest</a>
+    <a href="../archive.html">Archive</a>
+    <a href="https://github.com/openclaw/openclaw">GitHub</a>
+  </nav>
+  
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  
+</header>
+
+    
+    <div class="toc">
+      <h2>In This Issue</h2>
+      <ul>
+        
+        <li><a href="#top_stories">Top Stories</a></li>
+        
+        <li><a href="#releases">Releases</a></li>
+        
+        <li><a href="#community">Community</a></li>
+        
+        <li><a href="#news">News</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    <section class="section" id="top_stories">
+  <h2 class="section-title">Top Stories</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/137267">fix: keep accepted chat messages queued through retryable failures</a> &mdash; What Problem This Solves Fixes an issue where an accepted chat message could turn into a terminal red error and later be marked interrupted when a retryable transcript projection rebuild temporarily...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/124162">fix: disconnection watchdog in provider lifecycle owner</a> &mdash; What Problem This Solves When the Discord gateway disconnects and an event-loop stall prevents the reconnect timer from firing, the gateway stays in &#x27;reconnect scheduled&#x27; state indefinitely and goes...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/112187">docs(acpx): clarify ACP reasoning controls</a> &mdash; Related: #108392 What Problem This Solves The ACP routing skill does not explain how to pass reasoning effort or handle an unsupported control. Agents can retry the same rejected field. Why This...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/111795">fix(workboard): keep forced recovery cards dispatchable</a> &mdash; Closes #111794 What Problem This Solves Fixes an issue where operators force-promoting a dependency-blocked Workboard card for recovery would see it return to todo before the dispatcher could start...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/137290">perf(workers): defer Browser initialization until requested</a> &mdash; Related: #134931. This optimization is independent of the prepared-snapshot work and does not change its schema or lifecycle. What Problem This Solves Workers initialize the bundled Browser and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/137299">[Feature]: exec children carry no calling-agent identity, so a scoped wrapper must encode the agent in its own path</a> &mdash; Summary An exec tool call runs its command as a child of the Gateway with no marker of which agent&#x27;s turn initiated it. On a multi-agent install where the leashed agents run tools.exec.mode:...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/137300">feat(reef): add host-approved remote session prompts</a> &mdash; What Problem This Solves Paired Reef Gateways can exchange guarded messages, but one Gateway cannot safely propose a prompt to a session owned by the other. There is no session-scoped mount, host...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134970">feat(multi-user): add provider-neutral connected accounts</a> &mdash; What this changes People sharing a Gateway can add their own provider accounts, choose a new-chat default, and see or change the account selected for an individual chat. Settings → Profile →...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/81300">codex: plumb session reasoningLevel into codex model_reasoning_summary</a> &mdash; Problem The codex app-server defaults model_reasoning_summary to &quot;none&quot; when it isnt explicitly configured. As a result codex still produces reasoning items internally (visible in its rollout .jsonl)...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126224">fix(models): recover after catalog generation mismatch</a> &mdash; Closes #126108 What Problem This Solves Fixes an issue where a full model-catalog request can retire a mismatched worker but still reacquire the unchanged configured owner. A persistent mismatch then...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/72314">fix(auto-reply): dedupe idless inbound retries</a> &mdash; Summary - add a content/timestamp fallback inbound dedupe key when providers do not supply a stable message id - keep normal provider-message-id dedupe unchanged - cover idless retry dedupe and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132397">fix(auto-reply): surface allowlist pairing-store read errors</a> &mdash; What Problem This Solves /allowlist list treated a pairing-store read failure as an empty list. Operators saw normal config output with no store status, so a failed read looked identical to a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/117434">fix(doctor): fail visibly on contradictory lint selectors</a> &mdash; Summary - Reject contradictory Doctor lint check selections using the existing canonical core/doctor/lint-selection error. - Preserve skip precedence, unknown-ID errors, non-conflicting checks, and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/130693">fix(codex): spread canonical channel fields in Dashboard hook context</a> &mdash; What Problem This Solves Active Memory skips automatic cross-conversation recall in a persistent Codex-backed Dashboard session because the before_prompt_build hook receives no canonical channel...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/112709">feat(tasks): support atomic managed TaskFlow cancellation state</a> &mdash; Closes #112708 AI-assisted. I reviewed the implementation, invariants, and validation evidence. What Problem This Solves Managed TaskFlow controllers cannot currently persist their durable stateJson...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/137301">fix(daemon): verify successor in Windows scheduled-task restart handoff</a> &mdash; Fixes #137266. What this changes The Windows scheduled-task restart handoff helper (windows-task-restart.ts) previously exited the gateway and delegated recovery to a detached cmd script that (a)...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/137296">test(channels): reuse the shared setup call guard</a> &mdash; What Problem This Solves The channel-setup status tests maintain a generic first-call guard and tuple type assertion that duplicate the existing shared presence helper. The wrapper adds test-support...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/119674">fix(daemon): scope systemd unit resolution to the active profile</a> &mdash; What Problem This Solves Fixes an issue where openclaw --profile doctor on multi-agent Linux hosts can report another agent&#x27;s systemd unit as the target profile&#x27;s gateway. When the profile&#x27;s own unit...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/122476">Single-character streamed prefix of NO_REPLY can render before suppression (Matrix and other delta-rendering channels)</a> &mdash; Summary A one-character streamed prefix of the NO_REPLY silent-reply token can render visibly in chat for an instant before the full token resolves and the message is retroactively suppressed....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134003">feat(talk): support native realtime for thin audio clients</a> &mdash; &gt; Current candidate: 90903ef72355. The package-runner cleanup repair passes65 tests, selected checks and fresh review. Production is unchanged since c825. The independent build, current-profile and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/115933">fix: agent turn dies silently while waiting for an exec approval only someone else can grant</a> &mdash; What problem this solves An exec approval could silently kill an agent turn when the channel supported native approvals but the sender on that turn could not approve the command. The old routing...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/137270">fix(gateway): show denied commands correctly after policy reload</a> &mdash; What Problem This Solves Fixes an issue where operators denying a connected node&#x27;s required command would see a pending-approval action in the session device picker after policy hot reload, instead...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128127">fix(gateway): preserve pending config restarts across repeated writes and reverts</a> &mdash; Fixes #119360 — reverting a deferred restart-required edit still restarts the Gateway. Related: #131067 — the guided cloud-setup draft independently exposed an equivalent Save → Apply failure....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/112388">feat: resume requesters after deferred sessions_send replies</a> &mdash; Closes #112372 What Problem This Solves Adds opt-in wakeOnReply: true behavior to sessions_send. The tool returns after target dispatch, then resumes the exact requesting session incarnation and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/137200">fix(memory): degrade to interval sync when kernel watch capacity is exhausted</a> &mdash; What Problem This Solves On hosts where the kernel cannot grant watch/inotify instances (shared-tenant containers exhausting fs.inotify.max_user_instances, or global fd limits), the memory watcher&#x27;s...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/137255">fix(ui): pause stale dashboard progress cards during later runs</a> &mdash; What Problem This Solves Fixes an issue where users viewing the Control UI dashboard could see a stale session progress card continue showing a live spinner when a later session run was active. Fixes...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/137223">perf: reuse Windows shell wrapper patterns</a> &mdash; What Problem This Solves Windows command analysis and reconstruction repeatedly prepare the same PowerShell wrapper patterns, including on each unwrap pass. This adds avoidable allocation and string...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/122805">Sidebar group created from pinned session shows &quot;No sessions found for this agent&quot;</a> &mdash; Summary Creating a new sidebar group from a pinned session creates the group, but the current session is not shown inside it. The new group renders No sessions found for this agent even though the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/63112">fix(cron): warn when --system-event on main session contains shell commands</a> &mdash; Summary - cron add --system-event &quot;./run.sh&quot; --session main and similar commands used to create or edit the job silently even though main-session system events do not execute shell commands. - Adds a...</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-09-03</a> &mdash; 388710 stars, 81623 forks, 3256 contributors</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (87 total)</a> &mdash; 87 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/fae070615057acd3d104c7c6dc2e8813ded9888c">docs: repair published plugin validation anchors (#3581)</a> &mdash; Repair 12 stale plugin-validation references to the published manifest and runtime anchors. Preserve the live-valid CLI and publishing #github-actions-1 links. Record the canonical-source and...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/d40547056deee00781721daa24cbc73c497cf2ba">fix: let staff stop stuck signal scans (#3574)</a> &mdash; fix: make signal scans cancelable fix: harden signal scan cancellation</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/78efe6e32e55157160a75bbf84d6e7eba42df3c7">fix: align mobile search trigger with content tabs (#3553)</a> &mdash; Keep the collapsed search trigger beside Skills and Plugins on mobile while preserving the expanded search panel below the discovery tabs.</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/86d678b260de7c0b2552cbee385144e789aa2d75">Add Stepone AI China phone skill</a></li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://twitter.com/steipete/status/2055346265869721905">OpenClaw Creator Spent $1.3M on OpenAI Tokens in 30 Days</a></li>
+  <li><a href="https://dev.to/philip098/save-money-deploying-qwen-35-on-developer-cloud-38c8">Save Money Deploying Qwen 3.5 on Developer Cloud</a> &mdash; A student can run the next‑gen legal AI Qwen 3.5 on AMD’s cloud without spending a dime. Follow a simple, zero‑setup workflow and stay under free credit limits.</li>
+  <li><a href="https://dev.to/chiefmojo79/12-defensive-patterns-i-shipped-after-openclaw-2026414-broke-my-agents-39c7">12 defensive patterns I shipped after OpenClaw 2026.4.14 broke my agents</a> &mdash; What broke OpenClaw 2026.4.14 took out lossless-claw (#66591) and active-memory (#66849)....</li>
+  <li><a href="https://dev.to/zira125/your-agent-queue-needs-backpressure-not-just-more-workers-276i">Your Agent Queue Needs Backpressure, Not Just More Workers</a> &mdash; Long-running agents rarely fail because a single request is too large. They fail when work arrives...</li>
+  <li><a href="https://pub.huizhou92.com/openclaw-2-0-makes-installation-easy-whether-you-need-it-is-another-question-7c859c2f9302?source=rss------openclaw-5">OpenClaw 2.0 Makes Installation Easy — Whether You Need It Is Another Question</a> &mdash; 933 contributors and 16,000 pull requests &amp;#x2014; easier setup, shared agent sessions, and memory that learns from itselfContinue reading on The Ordinary Programmer »</li>
+  <li><a href="https://medium.com/@safeburseng/how-to-set-up-an-ai-agent-for-smes-insurance-and-beyond-b9ebff288c45?source=rss------openclaw-5">How to set up an AI agent for SMEs (insurance and beyond)</a> &mdash; A practical playbook: pick one workflow, write the policy before the prompt, and pilot for 30 to 60 days across insurance, property&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://levelup.gitconnected.com/openclaw-2-0s-full-feature-breakdown-and-how-it-stacks-up-against-hermes-and-grok-bot-e813b6fdb152?source=rss------openclaw-5">OpenClaw 2.0’s full feature breakdown, and how it stacks up against Hermes and Grok Bot</a> &mdash; I tested every new feature in OpenClaw 2.0. Here&amp;#x2019;s what held up.Continue reading on Level Up Coding »</li>
+  <li><a href="https://medium.com/no-time/openclaw-2-0-just-dropped-and-it-is-a-massive-upgrade-2333df6bd397?source=rss------openclaw-5">OpenClaw 2.0 Just Dropped and It Is a Massive Upgrade</a> &mdash; Here Is Everything You Need to KnowContinue reading on No Time »</li>
+</ul>
+  </div>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="archive-gate">
+      <h2>Read the full issue</h2>
+      <p>Subscribe to get every section delivered to your inbox.</p>
+      <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+      <label class="archive-reveal" for="show-full">Continue reading &rarr;</label>
+    </div>
+
+    <input type="checkbox" id="show-full" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      
+      
+      
+      
+      
+      
+      
+      <section class="section" id="releases">
+  <h2 class="section-title">Releases</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-09-03</a> &mdash; 388710 stars, 81623 forks, 3256 contributors</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="community">
+  <h2 class="section-title">Community</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/137267">fix: keep accepted chat messages queued through retryable failures</a> &mdash; What Problem This Solves Fixes an issue where an accepted chat message could turn into a terminal red error and later be marked interrupted when a retryable transcript projection rebuild temporarily...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/124162">fix: disconnection watchdog in provider lifecycle owner</a> &mdash; What Problem This Solves When the Discord gateway disconnects and an event-loop stall prevents the reconnect timer from firing, the gateway stays in &#x27;reconnect scheduled&#x27; state indefinitely and goes...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/112187">docs(acpx): clarify ACP reasoning controls</a> &mdash; Related: #108392 What Problem This Solves The ACP routing skill does not explain how to pass reasoning effort or handle an unsupported control. Agents can retry the same rejected field. Why This...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/111795">fix(workboard): keep forced recovery cards dispatchable</a> &mdash; Closes #111794 What Problem This Solves Fixes an issue where operators force-promoting a dependency-blocked Workboard card for recovery would see it return to todo before the dispatcher could start...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/137290">perf(workers): defer Browser initialization until requested</a> &mdash; Related: #134931. This optimization is independent of the prepared-snapshot work and does not change its schema or lifecycle. What Problem This Solves Workers initialize the bundled Browser and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/137299">[Feature]: exec children carry no calling-agent identity, so a scoped wrapper must encode the agent in its own path</a> &mdash; Summary An exec tool call runs its command as a child of the Gateway with no marker of which agent&#x27;s turn initiated it. On a multi-agent install where the leashed agents run tools.exec.mode:...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/137300">feat(reef): add host-approved remote session prompts</a> &mdash; What Problem This Solves Paired Reef Gateways can exchange guarded messages, but one Gateway cannot safely propose a prompt to a session owned by the other. There is no session-scoped mount, host...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134970">feat(multi-user): add provider-neutral connected accounts</a> &mdash; What this changes People sharing a Gateway can add their own provider accounts, choose a new-chat default, and see or change the account selected for an individual chat. Settings → Profile →...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/81300">codex: plumb session reasoningLevel into codex model_reasoning_summary</a> &mdash; Problem The codex app-server defaults model_reasoning_summary to &quot;none&quot; when it isnt explicitly configured. As a result codex still produces reasoning items internally (visible in its rollout .jsonl)...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/126224">fix(models): recover after catalog generation mismatch</a> &mdash; Closes #126108 What Problem This Solves Fixes an issue where a full model-catalog request can retire a mismatched worker but still reacquire the unchanged configured owner. A persistent mismatch then...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/72314">fix(auto-reply): dedupe idless inbound retries</a> &mdash; Summary - add a content/timestamp fallback inbound dedupe key when providers do not supply a stable message id - keep normal provider-message-id dedupe unchanged - cover idless retry dedupe and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/132397">fix(auto-reply): surface allowlist pairing-store read errors</a> &mdash; What Problem This Solves /allowlist list treated a pairing-store read failure as an empty list. Operators saw normal config output with no store status, so a failed read looked identical to a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/117434">fix(doctor): fail visibly on contradictory lint selectors</a> &mdash; Summary - Reject contradictory Doctor lint check selections using the existing canonical core/doctor/lint-selection error. - Preserve skip precedence, unknown-ID errors, non-conflicting checks, and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/130693">fix(codex): spread canonical channel fields in Dashboard hook context</a> &mdash; What Problem This Solves Active Memory skips automatic cross-conversation recall in a persistent Codex-backed Dashboard session because the before_prompt_build hook receives no canonical channel...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/112709">feat(tasks): support atomic managed TaskFlow cancellation state</a> &mdash; Closes #112708 AI-assisted. I reviewed the implementation, invariants, and validation evidence. What Problem This Solves Managed TaskFlow controllers cannot currently persist their durable stateJson...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/137301">fix(daemon): verify successor in Windows scheduled-task restart handoff</a> &mdash; Fixes #137266. What this changes The Windows scheduled-task restart handoff helper (windows-task-restart.ts) previously exited the gateway and delegated recovery to a detached cmd script that (a)...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/137296">test(channels): reuse the shared setup call guard</a> &mdash; What Problem This Solves The channel-setup status tests maintain a generic first-call guard and tuple type assertion that duplicate the existing shared presence helper. The wrapper adds test-support...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/119674">fix(daemon): scope systemd unit resolution to the active profile</a> &mdash; What Problem This Solves Fixes an issue where openclaw --profile doctor on multi-agent Linux hosts can report another agent&#x27;s systemd unit as the target profile&#x27;s gateway. When the profile&#x27;s own unit...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/122476">Single-character streamed prefix of NO_REPLY can render before suppression (Matrix and other delta-rendering channels)</a> &mdash; Summary A one-character streamed prefix of the NO_REPLY silent-reply token can render visibly in chat for an instant before the full token resolves and the message is retroactively suppressed....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/134003">feat(talk): support native realtime for thin audio clients</a> &mdash; &gt; Current candidate: 90903ef72355. The package-runner cleanup repair passes65 tests, selected checks and fresh review. Production is unchanged since c825. The independent build, current-profile and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/115933">fix: agent turn dies silently while waiting for an exec approval only someone else can grant</a> &mdash; What problem this solves An exec approval could silently kill an agent turn when the channel supported native approvals but the sender on that turn could not approve the command. The old routing...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/137270">fix(gateway): show denied commands correctly after policy reload</a> &mdash; What Problem This Solves Fixes an issue where operators denying a connected node&#x27;s required command would see a pending-approval action in the session device picker after policy hot reload, instead...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/128127">fix(gateway): preserve pending config restarts across repeated writes and reverts</a> &mdash; Fixes #119360 — reverting a deferred restart-required edit still restarts the Gateway. Related: #131067 — the guided cloud-setup draft independently exposed an equivalent Save → Apply failure....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/112388">feat: resume requesters after deferred sessions_send replies</a> &mdash; Closes #112372 What Problem This Solves Adds opt-in wakeOnReply: true behavior to sessions_send. The tool returns after target dispatch, then resumes the exact requesting session incarnation and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/137200">fix(memory): degrade to interval sync when kernel watch capacity is exhausted</a> &mdash; What Problem This Solves On hosts where the kernel cannot grant watch/inotify instances (shared-tenant containers exhausting fs.inotify.max_user_instances, or global fd limits), the memory watcher&#x27;s...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/137255">fix(ui): pause stale dashboard progress cards during later runs</a> &mdash; What Problem This Solves Fixes an issue where users viewing the Control UI dashboard could see a stale session progress card continue showing a live spinner when a later session run was active. Fixes...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/137223">perf: reuse Windows shell wrapper patterns</a> &mdash; What Problem This Solves Windows command analysis and reconstruction repeatedly prepare the same PowerShell wrapper patterns, including on each unwrap pass. This adds avoidable allocation and string...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/122805">Sidebar group created from pinned session shows &quot;No sessions found for this agent&quot;</a> &mdash; Summary Creating a new sidebar group from a pinned session creates the group, but the current session is not shown inside it. The new group renders No sessions found for this agent even though the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/63112">fix(cron): warn when --system-event on main session contains shell commands</a> &mdash; Summary - cron add --system-event &quot;./run.sh&quot; --session main and similar commands used to create or edit the job silently even though main-session system events do not execute shell commands. - Adds a...</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (87 total)</a> &mdash; 87 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/fae070615057acd3d104c7c6dc2e8813ded9888c">docs: repair published plugin validation anchors (#3581)</a> &mdash; Repair 12 stale plugin-validation references to the published manifest and runtime anchors. Preserve the live-valid CLI and publishing #github-actions-1 links. Record the canonical-source and...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/d40547056deee00781721daa24cbc73c497cf2ba">fix: let staff stop stuck signal scans (#3574)</a> &mdash; fix: make signal scans cancelable fix: harden signal scan cancellation</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/78efe6e32e55157160a75bbf84d6e7eba42df3c7">fix: align mobile search trigger with content tabs (#3553)</a> &mdash; Keep the collapsed search trigger beside Skills and Plugins on mobile while preserving the expanded search panel below the discovery tabs.</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/86d678b260de7c0b2552cbee385144e789aa2d75">Add Stepone AI China phone skill</a></li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="news">
+  <h2 class="section-title">News</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://twitter.com/steipete/status/2055346265869721905">OpenClaw Creator Spent $1.3M on OpenAI Tokens in 30 Days</a></li>
+  <li><a href="https://dev.to/philip098/save-money-deploying-qwen-35-on-developer-cloud-38c8">Save Money Deploying Qwen 3.5 on Developer Cloud</a> &mdash; A student can run the next‑gen legal AI Qwen 3.5 on AMD’s cloud without spending a dime. Follow a simple, zero‑setup workflow and stay under free credit limits.</li>
+  <li><a href="https://dev.to/chiefmojo79/12-defensive-patterns-i-shipped-after-openclaw-2026414-broke-my-agents-39c7">12 defensive patterns I shipped after OpenClaw 2026.4.14 broke my agents</a> &mdash; What broke OpenClaw 2026.4.14 took out lossless-claw (#66591) and active-memory (#66849)....</li>
+  <li><a href="https://dev.to/zira125/your-agent-queue-needs-backpressure-not-just-more-workers-276i">Your Agent Queue Needs Backpressure, Not Just More Workers</a> &mdash; Long-running agents rarely fail because a single request is too large. They fail when work arrives...</li>
+  <li><a href="https://pub.huizhou92.com/openclaw-2-0-makes-installation-easy-whether-you-need-it-is-another-question-7c859c2f9302?source=rss------openclaw-5">OpenClaw 2.0 Makes Installation Easy — Whether You Need It Is Another Question</a> &mdash; 933 contributors and 16,000 pull requests &amp;#x2014; easier setup, shared agent sessions, and memory that learns from itselfContinue reading on The Ordinary Programmer »</li>
+  <li><a href="https://medium.com/@safeburseng/how-to-set-up-an-ai-agent-for-smes-insurance-and-beyond-b9ebff288c45?source=rss------openclaw-5">How to set up an AI agent for SMEs (insurance and beyond)</a> &mdash; A practical playbook: pick one workflow, write the policy before the prompt, and pilot for 30 to 60 days across insurance, property&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://levelup.gitconnected.com/openclaw-2-0s-full-feature-breakdown-and-how-it-stacks-up-against-hermes-and-grok-bot-e813b6fdb152?source=rss------openclaw-5">OpenClaw 2.0’s full feature breakdown, and how it stacks up against Hermes and Grok Bot</a> &mdash; I tested every new feature in OpenClaw 2.0. Here&amp;#x2019;s what held up.Continue reading on Level Up Coding »</li>
+  <li><a href="https://medium.com/no-time/openclaw-2-0-just-dropped-and-it-is-a-massive-upgrade-2333df6bd397?source=rss------openclaw-5">OpenClaw 2.0 Just Dropped and It Is a Massive Upgrade</a> &mdash; Here Is Everything You Need to KnowContinue reading on No Time »</li>
+</ul>
+  </div>
+</section>
+      
+      
+    </div>
+
+    <footer class="footer">
+  <div class="footer-divider"></div>
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  <p>
+    Generated with AI by the
+    <a href="https://github.com/openclaw/openclaw">OpenClaw</a> Newsletter Bot
+  </p>
+  <div class="footer-links">
+    <a href="../archive.html">Archive</a>
+    <a href="../rss.xml">RSS</a>
+    <a href="https://github.com/openclaw/openclaw">Star on GitHub</a>
+  </div>
+</footer>
+  </div>
+</body>
+</html>
