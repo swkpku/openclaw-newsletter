@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Newsletter - 2026-09-07</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="OpenClaw Newsletter" href="../rss.xml">
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenClaw Newsletter - 2026-09-07">
+<meta property="og:description" content="[Bug]: failover rate-limit copy drops the provider reset hint - aggregate &quot;All models failed&quot; string exceeds the 300-char guard &mdash; &gt; H...">
+<meta property="og:url" content="https://swkpku.github.io/openclaw-newsletter/issues/2026-09-07.html">
+<meta property="og:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenClaw Newsletter - 2026-09-07">
+<meta name="twitter:description" content="[Bug]: failover rate-limit copy drops the provider reset hint - aggregate &quot;All models failed&quot; string exceeds the 300-char guard &mdash; &gt; H...">
+<meta name="twitter:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <header class="header">
+  <div class="header-top">
+    <div class="header-brand">
+      <div class="header-logo">OC</div>
+      <div>
+        <h1>OpenClaw Newsletter</h1>
+        <p class="subtitle">Daily updates from the OpenClaw ecosystem</p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="date">Monday, September 7, 2026</p>
+  
+  <nav class="nav">
+    <a href="../index.html">Latest</a>
+    <a href="../archive.html">Archive</a>
+    <a href="https://github.com/openclaw/openclaw">GitHub</a>
+  </nav>
+  
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  
+</header>
+
+    
+    <div class="toc">
+      <h2>In This Issue</h2>
+      <ul>
+        
+        <li><a href="#top_stories">Top Stories</a></li>
+        
+        <li><a href="#releases">Releases</a></li>
+        
+        <li><a href="#community">Community</a></li>
+        
+        <li><a href="#news">News</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    <section class="section" id="top_stories">
+  <h2 class="section-title">Top Stories</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/issues/141260">[Bug]: failover rate-limit copy drops the provider reset hint - aggregate &quot;All models failed&quot; string exceeds the 300-char guard</a> &mdash; &gt; Housekeeping: #141259 is a stray empty issue accidentally opened by a permission probe from this same integration, which turns out to have create-only rights and cannot edit or close it. Please...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/119057">feat(code-mode): send current replies without an extra turn</a> &mdash; What Problem This Solves Enables a host-authorized current-conversation reply from the same OpenClaw Code Mode cell without requiring another model turn. Plugin-supplied public options must not...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/141205">fix(ui): compact successful Swarm completion cards</a> &mdash; Closes #140943 What Problem This Solves Fixes an issue where users lose mobile conversation space to a tall completed Swarm card even after every child succeeds and Child details is closed. The...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/135969">fix(providers): persist Code Mode tool results before replying</a> &mdash; What Problem This Solves Fixes an issue where users resuming suspended OpenClaw Code Mode work through Copilot could receive native replay that no longer matched the transcript committed by the host....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/119056">fix(code-mode): preserve collector launches across restarts</a> &mdash; What Problem This Solves Fixes an issue where users launching collector work through OpenClaw Code Mode could observe an accepted run before its built-in task and subagent state were consistently...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/140977">feat: save named chat bookmarks with the OpenClaw claw</a> &mdash; Related: #140468. Builds on the position rail introduced in #138603. What Problem This Solves Long Control UI conversations need named, durable message destinations. This revision also fixes lost...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/141254">[Bug]: 2026.9.2 New Chat fails: archived &quot;New chat&quot; labels stay unique (Android 2026.7.4 still sends the constant)</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary On OpenClaw Gateway 2026.9.2, Android New Chat fails with INVALID_REQUEST: label already in use: New chat...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/141135">refactor(native): share socket generation admission</a> &mdash; What Problem This Solves The macOS connection owner and shared node session separately implement the same physical-socket generation rules. Keeping both copies synchronized risks letting delayed...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/141186">fix(test): preserve managed handoff fixture state</a> &mdash; What Problem This Solves Resolves intermittent managed-service handoff test failures when overlapping native fixture processes lose parked/restored state or fail before recording a service command....</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/140978">Discord message tool: channel-edit blocked by trust guard, pin/delete/read blocked by delegation guard (external plugin), even in the exact current conversation</a> &mdash; Summary Two independent guards make the Discord message tool unusable for anything beyond send, even when the request originates from a genuine Discord turn in the exact same channel and the sender...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/141259">TEST-PERMISSION-PROBE</a></li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/141258">refactor(tts): share readiness fallback fixtures</a> &mdash; What Problem This Solves The speech and telephony readiness-fallback tests repeat the same fixture setup and result assertions. Keeping that shared contract aligned currently requires editing both...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/119055">fix(code-mode): keep waiting results durable across retries</a> &mdash; What Problem This Solves Fixes an issue where users continuing suspended OpenClaw Code Mode work could lose a valid continuation after expiry renewal, confuse repeated waits across turns, or fail an...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/119237">feat(code-mode): expose attempt-local lifecycle accounting</a> &mdash; Related preservation material: #115869. Local-model qualification remains separate from this supported-frontier stack. What Problem This Solves Lifecycle accounting was reconstructed after the fact,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/136126">improve: log which control contained apply_patch when it rejects a path</a> &mdash; Related: #93140 What Problem This Solves Operators who hit apply_patch failed: Path escapes sandbox root (...) in the Gateway log have no way to tell which setting caused it, and the most obvious...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/141252">2026.9.2 regression: reply runs fail with &quot;Reply operation has no active tool authority snapshot&quot; (busy-session/queued replies); user gets generic error, fallback chain misfires</a> &mdash; Summary Since upgrading to 2026.9.2, agent reply runs intermittently fail with: When the failing run is user-facing, the user only receive</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/138679">Fix #113481: [Feature]: Add per-agent daily model spend alerts</a> &mdash; Automated fix for #113481 Confidence Score: 0.85/1.0 Test Result: Passed Solution Summary: Generated patch to address the reported issue. Payout Wallets: - ETH:...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/141240">fix(gateway): UTF-16-safe public session title and message truncation</a> &mdash; What Problem This Solves Public shared-session HTML truncated titles and message bodies with raw .slice(...). When a UTF-16 surrogate pair (emoji) sat on the title or per-message budget boundary, the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/140943">[Bug]: Completed Swarm cards waste composer space on mobile</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary Successful completed Swarm child groups retain a tall multi-line card above the Control UI composer even...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/140680">fix(ci): reuse verified runner toolchain archives</a> &mdash; Additional instructions This is a same-repository branch. What Problem This Solves Resolves a problem where Crabbox validation repeatedly downloads Node and pnpm even when its runner image already...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/141253">refactor(skills): share leaf materialization and metadata type</a> &mdash; What Problem This Solves Session and local skill loaders independently construct the same skill metadata, and the session loader also duplicates the structural Skill interface. New fields or...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/119886">fix(slack): mention detection stays disabled forever after a transient startup auth.test failure</a> &mdash; Related: #119861 What Problem This Solves Fixes an issue where a Slack account whose startup auth.test call fails once (for example a transient timeout during boot) runs with &quot;socket mode connected...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/141255">[Bug]: second model-scoped cooldown widens shared auth profile and skips healthy third fallback</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary On OpenClaw 2026.9.2, two sequential model-scoped failures on different models sharing one OAuth profile...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/141233">[Bug]: Codex transcript mirror duplicates unkeyed user inputs from Chat Completions</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary A Chat Completions request routed to the native Codex app-server harness persists the same user input...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/141257">[Bug]: second model-scoped cooldown widens shared auth profile and skips healthy third fallback</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary On OpenClaw 2026.9.2, two sequential model-scoped failures on different models sharing one OAuth profile...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/136761">fix(release): consolidate frozen target harness contracts</a> &mdash; Canonical replacement This rewrites #136761 as the single frozen-target harness repair and folds #136835 (with co-author credit). It removes duplicate source/SHA forwarding and broad mobile...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/141256">improve(reply): reduce repeated preparation for replies with attachments</a> &mdash; What Problem This Solves Replies with attachments repeat media-note preparation immediately before the agent run, even though admission has already prepared the prompt and attachment positions. This...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/141223">fix(agents): preserve structured tool results in Code Mode</a> &mdash; Related: #140912 What Problem This Solves Fixes an issue where users filtering or reducing valid structured tool results in Code Mode would receive a truncation marker instead of the declared result...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/141247">fix: keep active sessions scoped to their agent</a> &mdash; Related: #141045 What Problem This Solves Fixes an issue where Activity and other session snapshots could mark an idle agent’s session as running when different agent stores contained the same...</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-09-07</a> &mdash; 389103 stars, 81757 forks, 3295 contributors</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (87 total)</a> &mdash; 87 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/d3bde70e3c9373720d4d3e335f9935399ea2c008">docs: fix two anchors that break on the published site (#3618)</a> &mdash; Both links resolve on GitHub and 404 on docs.openclaw.ai, because the two renderers slug headings differently. OpenClaw&#x27;s publishing parser (scripts/lib/docs-markdown.mjs in openclaw/openclaw)...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/3aba7d1b0088e4e5bc072cbda4407c2248e7862e">fix(publish): carry scan metadata as JSON across the Node action boundary (#3594)</a> &mdash; The first production publish after #3591 failed with &quot;Field name $schema starts with a &#x27;$&#x27;, which is reserved&quot;: the moderation scan now runs in a Node action, so its input became Convex action...</li>
+  <li><a href="https://formulae.brew.sh/formula/openclaw-cli">openclaw-cli 2026.9.2 on Homebrew</a> &mdash; Your own personal AI assistant</li>
+  <li><a href="https://huggingface.co/mradermacher/Qwen3.5-9b-Opus-Openclaw-Distilled-i1-GGUF">mradermacher/Qwen3.5-9b-Opus-Openclaw-Distilled-i1-GGUF</a> &mdash; text-generation</li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://composio.dev/content/openclaw-security-and-vulnerabilities">OpenClaw is a security nightmare dressed up as a daydream</a></li>
+  <li><a href="https://twitter.com/steipete/status/2055346265869721905">OpenClaw Creator Spent $1.3M on OpenAI Tokens in 30 Days</a></li>
+  <li><a href="https://dev.to/rosgluk/agent-skills-vs-mcp-servers-decision-framework-3n04">Agent Skills vs MCP Servers: Decision Framework</a> &mdash; Agent Skills and MCP servers are often presented as competing ways to extend an AI agent. That...</li>
+  <li><a href="https://dev.to/hitjethva/top-7-openclaw-hosting-providers-for-2026-289a">Top 7 OpenClaw Hosting Providers for 2026</a> &mdash; Atlantic.Net is our top OpenClaw hosting pick for users who want a one-click deployment on an...</li>
+  <li><a href="https://dev.to/homesickjava/openclaw-source-code-repository-directory-structure-panorama-2ngh">OpenClaw Source Code Repository Directory Structure Panorama</a> &mdash; Before we dive into the obscure source files, we need to build a “global map” first. Many developers...</li>
+  <li><a href="https://dev.to/mia1928/open-source-image-watermark-remover-built-with-python-opencv-web-ui-cli-2beh">Open Source Image Watermark Remover Built with Python &amp; OpenCV (Web UI + CLI)</a> &mdash; I’m sharing an open-source watermark removal project powered by OpenCV image inpainting. GitHub...</li>
+  <li><a href="https://medium.com/@elena.voss/easyclaw-puts-openclaw-agents-on-your-desktop-in-minutes-but-check-the-limits-before-you-pay-651d01cda523?source=rss------openclaw-5">EasyClaw puts OpenClaw agents on your desktop in minutes, but check the limits before you pay</a> &mdash; A researcher budgets an afternoon to self-host an agent stack and spends it on keys, drivers, and config files instead.Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@seacloud9/from-one-queue-to-a-local-command-center-building-an-openclaw-qwen-dashboard-cdc653920f08?source=rss------openclaw-5">From One Queue to a Local Command Center: Building an OpenClaw + Qwen Dashboard</a> &mdash; Part 2: Giving local agents useful jobs, clear handoffs, and somewhere to put the paperworkContinue reading on Medium »</li>
+  <li><a href="https://medium.com/@miracalder_93891/should-your-team-pay-for-easyclaw-or-stay-on-the-open-source-framework-d6a0e01b3ff2?source=rss------openclaw-5">Should Your Team Pay for EasyClaw or Stay on the Open-Source Framework</a> &mdash; If your team has nobody on hand to babysit a terminal setup, the buying decision is already half-made before you read another comparison&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@mustaque74/remoteai-2-0-review-is-this-all-in-one-ai-platform-worth-it-6ee9b127be4d?source=rss------openclaw-5">RemoteAI 2.0 Review: Is This All-in-One AI Platform Worth It?</a> &mdash; Artificial intelligence has moved far beyond simple chatbots.Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@theovarn/when-to-pay-for-a-managed-ai-agent-and-when-to-just-self-host-01be701e17e6?source=rss------openclaw-5">When to pay for a managed AI agent and when to just self-host</a> &mdash; KiloClaw shut its doors to new users, so your managed-agent decision just got simpler. The primary tool in this duo-pick is KiloClaw, the&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@neonmaxima/the-openclaw-setup-nobody-talks-about-local-offline-and-actually-private-b8a93dd27649?source=rss------openclaw-5">The OpenClaw Setup Nobody Talks About: Local, Offline, and Actually Private</a> &mdash; Everyone&amp;#x2019;s OpenClaw runs on a cloud VM they rent from someone else&amp;#x2019;s computer. Read that sentence again.Continue reading on Medium »</li>
+  <li><a href="https://alternativeto.net/software/the-odysseus/about/">Odysseus</a> &mdash; Self-hosted AI workspace offering chat, tool use, and autonomous agent support. Enables email and research tasks securely on user hardware, keeps all data local, requires no external servers, and...</li>
+</ul>
+  </div>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="archive-gate">
+      <h2>Read the full issue</h2>
+      <p>Subscribe to get every section delivered to your inbox.</p>
+      <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+      <label class="archive-reveal" for="show-full">Continue reading &rarr;</label>
+    </div>
+
+    <input type="checkbox" id="show-full" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      
+      
+      
+      
+      
+      
+      
+      <section class="section" id="releases">
+  <h2 class="section-title">Releases</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-09-07</a> &mdash; 389103 stars, 81757 forks, 3295 contributors</li>
+  <li><a href="https://formulae.brew.sh/formula/openclaw-cli">openclaw-cli 2026.9.2 on Homebrew</a> &mdash; Your own personal AI assistant</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="community">
+  <h2 class="section-title">Community</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/issues/141260">[Bug]: failover rate-limit copy drops the provider reset hint - aggregate &quot;All models failed&quot; string exceeds the 300-char guard</a> &mdash; &gt; Housekeeping: #141259 is a stray empty issue accidentally opened by a permission probe from this same integration, which turns out to have create-only rights and cannot edit or close it. Please...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/119057">feat(code-mode): send current replies without an extra turn</a> &mdash; What Problem This Solves Enables a host-authorized current-conversation reply from the same OpenClaw Code Mode cell without requiring another model turn. Plugin-supplied public options must not...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/141205">fix(ui): compact successful Swarm completion cards</a> &mdash; Closes #140943 What Problem This Solves Fixes an issue where users lose mobile conversation space to a tall completed Swarm card even after every child succeeds and Child details is closed. The...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/135969">fix(providers): persist Code Mode tool results before replying</a> &mdash; What Problem This Solves Fixes an issue where users resuming suspended OpenClaw Code Mode work through Copilot could receive native replay that no longer matched the transcript committed by the host....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/119056">fix(code-mode): preserve collector launches across restarts</a> &mdash; What Problem This Solves Fixes an issue where users launching collector work through OpenClaw Code Mode could observe an accepted run before its built-in task and subagent state were consistently...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/140977">feat: save named chat bookmarks with the OpenClaw claw</a> &mdash; Related: #140468. Builds on the position rail introduced in #138603. What Problem This Solves Long Control UI conversations need named, durable message destinations. This revision also fixes lost...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/141254">[Bug]: 2026.9.2 New Chat fails: archived &quot;New chat&quot; labels stay unique (Android 2026.7.4 still sends the constant)</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary On OpenClaw Gateway 2026.9.2, Android New Chat fails with INVALID_REQUEST: label already in use: New chat...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/141135">refactor(native): share socket generation admission</a> &mdash; What Problem This Solves The macOS connection owner and shared node session separately implement the same physical-socket generation rules. Keeping both copies synchronized risks letting delayed...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/141186">fix(test): preserve managed handoff fixture state</a> &mdash; What Problem This Solves Resolves intermittent managed-service handoff test failures when overlapping native fixture processes lose parked/restored state or fail before recording a service command....</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/140978">Discord message tool: channel-edit blocked by trust guard, pin/delete/read blocked by delegation guard (external plugin), even in the exact current conversation</a> &mdash; Summary Two independent guards make the Discord message tool unusable for anything beyond send, even when the request originates from a genuine Discord turn in the exact same channel and the sender...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/141259">TEST-PERMISSION-PROBE</a></li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/141258">refactor(tts): share readiness fallback fixtures</a> &mdash; What Problem This Solves The speech and telephony readiness-fallback tests repeat the same fixture setup and result assertions. Keeping that shared contract aligned currently requires editing both...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/119055">fix(code-mode): keep waiting results durable across retries</a> &mdash; What Problem This Solves Fixes an issue where users continuing suspended OpenClaw Code Mode work could lose a valid continuation after expiry renewal, confuse repeated waits across turns, or fail an...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/119237">feat(code-mode): expose attempt-local lifecycle accounting</a> &mdash; Related preservation material: #115869. Local-model qualification remains separate from this supported-frontier stack. What Problem This Solves Lifecycle accounting was reconstructed after the fact,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/136126">improve: log which control contained apply_patch when it rejects a path</a> &mdash; Related: #93140 What Problem This Solves Operators who hit apply_patch failed: Path escapes sandbox root (...) in the Gateway log have no way to tell which setting caused it, and the most obvious...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/141252">2026.9.2 regression: reply runs fail with &quot;Reply operation has no active tool authority snapshot&quot; (busy-session/queued replies); user gets generic error, fallback chain misfires</a> &mdash; Summary Since upgrading to 2026.9.2, agent reply runs intermittently fail with: When the failing run is user-facing, the user only receive</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/138679">Fix #113481: [Feature]: Add per-agent daily model spend alerts</a> &mdash; Automated fix for #113481 Confidence Score: 0.85/1.0 Test Result: Passed Solution Summary: Generated patch to address the reported issue. Payout Wallets: - ETH:...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/141240">fix(gateway): UTF-16-safe public session title and message truncation</a> &mdash; What Problem This Solves Public shared-session HTML truncated titles and message bodies with raw .slice(...). When a UTF-16 surrogate pair (emoji) sat on the title or per-message budget boundary, the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/140943">[Bug]: Completed Swarm cards waste composer space on mobile</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary Successful completed Swarm child groups retain a tall multi-line card above the Control UI composer even...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/140680">fix(ci): reuse verified runner toolchain archives</a> &mdash; Additional instructions This is a same-repository branch. What Problem This Solves Resolves a problem where Crabbox validation repeatedly downloads Node and pnpm even when its runner image already...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/141253">refactor(skills): share leaf materialization and metadata type</a> &mdash; What Problem This Solves Session and local skill loaders independently construct the same skill metadata, and the session loader also duplicates the structural Skill interface. New fields or...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/119886">fix(slack): mention detection stays disabled forever after a transient startup auth.test failure</a> &mdash; Related: #119861 What Problem This Solves Fixes an issue where a Slack account whose startup auth.test call fails once (for example a transient timeout during boot) runs with &quot;socket mode connected...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/141255">[Bug]: second model-scoped cooldown widens shared auth profile and skips healthy third fallback</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary On OpenClaw 2026.9.2, two sequential model-scoped failures on different models sharing one OAuth profile...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/141233">[Bug]: Codex transcript mirror duplicates unkeyed user inputs from Chat Completions</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary A Chat Completions request routed to the native Codex app-server harness persists the same user input...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/141257">[Bug]: second model-scoped cooldown widens shared auth profile and skips healthy third fallback</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary On OpenClaw 2026.9.2, two sequential model-scoped failures on different models sharing one OAuth profile...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/136761">fix(release): consolidate frozen target harness contracts</a> &mdash; Canonical replacement This rewrites #136761 as the single frozen-target harness repair and folds #136835 (with co-author credit). It removes duplicate source/SHA forwarding and broad mobile...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/141256">improve(reply): reduce repeated preparation for replies with attachments</a> &mdash; What Problem This Solves Replies with attachments repeat media-note preparation immediately before the agent run, even though admission has already prepared the prompt and attachment positions. This...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/141223">fix(agents): preserve structured tool results in Code Mode</a> &mdash; Related: #140912 What Problem This Solves Fixes an issue where users filtering or reducing valid structured tool results in Code Mode would receive a truncation marker instead of the declared result...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/141247">fix: keep active sessions scoped to their agent</a> &mdash; Related: #141045 What Problem This Solves Fixes an issue where Activity and other session snapshots could mark an idle agent’s session as running when different agent stores contained the same...</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (87 total)</a> &mdash; 87 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/d3bde70e3c9373720d4d3e335f9935399ea2c008">docs: fix two anchors that break on the published site (#3618)</a> &mdash; Both links resolve on GitHub and 404 on docs.openclaw.ai, because the two renderers slug headings differently. OpenClaw&#x27;s publishing parser (scripts/lib/docs-markdown.mjs in openclaw/openclaw)...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/3aba7d1b0088e4e5bc072cbda4407c2248e7862e">fix(publish): carry scan metadata as JSON across the Node action boundary (#3594)</a> &mdash; The first production publish after #3591 failed with &quot;Field name $schema starts with a &#x27;$&#x27;, which is reserved&quot;: the moderation scan now runs in a Node action, so its input became Convex action...</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="news">
+  <h2 class="section-title">News</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://huggingface.co/mradermacher/Qwen3.5-9b-Opus-Openclaw-Distilled-i1-GGUF">mradermacher/Qwen3.5-9b-Opus-Openclaw-Distilled-i1-GGUF</a> &mdash; text-generation</li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://composio.dev/content/openclaw-security-and-vulnerabilities">OpenClaw is a security nightmare dressed up as a daydream</a></li>
+  <li><a href="https://twitter.com/steipete/status/2055346265869721905">OpenClaw Creator Spent $1.3M on OpenAI Tokens in 30 Days</a></li>
+  <li><a href="https://dev.to/rosgluk/agent-skills-vs-mcp-servers-decision-framework-3n04">Agent Skills vs MCP Servers: Decision Framework</a> &mdash; Agent Skills and MCP servers are often presented as competing ways to extend an AI agent. That...</li>
+  <li><a href="https://dev.to/hitjethva/top-7-openclaw-hosting-providers-for-2026-289a">Top 7 OpenClaw Hosting Providers for 2026</a> &mdash; Atlantic.Net is our top OpenClaw hosting pick for users who want a one-click deployment on an...</li>
+  <li><a href="https://dev.to/homesickjava/openclaw-source-code-repository-directory-structure-panorama-2ngh">OpenClaw Source Code Repository Directory Structure Panorama</a> &mdash; Before we dive into the obscure source files, we need to build a “global map” first. Many developers...</li>
+  <li><a href="https://dev.to/mia1928/open-source-image-watermark-remover-built-with-python-opencv-web-ui-cli-2beh">Open Source Image Watermark Remover Built with Python &amp; OpenCV (Web UI + CLI)</a> &mdash; I’m sharing an open-source watermark removal project powered by OpenCV image inpainting. GitHub...</li>
+  <li><a href="https://medium.com/@elena.voss/easyclaw-puts-openclaw-agents-on-your-desktop-in-minutes-but-check-the-limits-before-you-pay-651d01cda523?source=rss------openclaw-5">EasyClaw puts OpenClaw agents on your desktop in minutes, but check the limits before you pay</a> &mdash; A researcher budgets an afternoon to self-host an agent stack and spends it on keys, drivers, and config files instead.Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@seacloud9/from-one-queue-to-a-local-command-center-building-an-openclaw-qwen-dashboard-cdc653920f08?source=rss------openclaw-5">From One Queue to a Local Command Center: Building an OpenClaw + Qwen Dashboard</a> &mdash; Part 2: Giving local agents useful jobs, clear handoffs, and somewhere to put the paperworkContinue reading on Medium »</li>
+  <li><a href="https://medium.com/@miracalder_93891/should-your-team-pay-for-easyclaw-or-stay-on-the-open-source-framework-d6a0e01b3ff2?source=rss------openclaw-5">Should Your Team Pay for EasyClaw or Stay on the Open-Source Framework</a> &mdash; If your team has nobody on hand to babysit a terminal setup, the buying decision is already half-made before you read another comparison&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@mustaque74/remoteai-2-0-review-is-this-all-in-one-ai-platform-worth-it-6ee9b127be4d?source=rss------openclaw-5">RemoteAI 2.0 Review: Is This All-in-One AI Platform Worth It?</a> &mdash; Artificial intelligence has moved far beyond simple chatbots.Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@theovarn/when-to-pay-for-a-managed-ai-agent-and-when-to-just-self-host-01be701e17e6?source=rss------openclaw-5">When to pay for a managed AI agent and when to just self-host</a> &mdash; KiloClaw shut its doors to new users, so your managed-agent decision just got simpler. The primary tool in this duo-pick is KiloClaw, the&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@neonmaxima/the-openclaw-setup-nobody-talks-about-local-offline-and-actually-private-b8a93dd27649?source=rss------openclaw-5">The OpenClaw Setup Nobody Talks About: Local, Offline, and Actually Private</a> &mdash; Everyone&amp;#x2019;s OpenClaw runs on a cloud VM they rent from someone else&amp;#x2019;s computer. Read that sentence again.Continue reading on Medium »</li>
+  <li><a href="https://alternativeto.net/software/the-odysseus/about/">Odysseus</a> &mdash; Self-hosted AI workspace offering chat, tool use, and autonomous agent support. Enables email and research tasks securely on user hardware, keeps all data local, requires no external servers, and...</li>
+</ul>
+  </div>
+</section>
+      
+      
+    </div>
+
+    <footer class="footer">
+  <div class="footer-divider"></div>
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  <p>
+    Generated with AI by the
+    <a href="https://github.com/openclaw/openclaw">OpenClaw</a> Newsletter Bot
+  </p>
+  <div class="footer-links">
+    <a href="../archive.html">Archive</a>
+    <a href="../rss.xml">RSS</a>
+    <a href="https://github.com/openclaw/openclaw">Star on GitHub</a>
+  </div>
+</footer>
+  </div>
+</body>
+</html>
