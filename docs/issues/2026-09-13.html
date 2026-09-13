@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Newsletter - 2026-09-13</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="OpenClaw Newsletter" href="../rss.xml">
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenClaw Newsletter - 2026-09-13">
+<meta property="og:description" content="refactor(markdown): remove dominated chunk guards &mdash; What Problem This Solves Two private Markdown chunking helpers repeat a single-character guard...">
+<meta property="og:url" content="https://swkpku.github.io/openclaw-newsletter/issues/2026-09-13.html">
+<meta property="og:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenClaw Newsletter - 2026-09-13">
+<meta name="twitter:description" content="refactor(markdown): remove dominated chunk guards &mdash; What Problem This Solves Two private Markdown chunking helpers repeat a single-character guard...">
+<meta name="twitter:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <header class="header">
+  <div class="header-top">
+    <div class="header-brand">
+      <div class="header-logo">OC</div>
+      <div>
+        <h1>OpenClaw Newsletter</h1>
+        <p class="subtitle">Daily updates from the OpenClaw ecosystem</p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="date">Sunday, September 13, 2026</p>
+  
+  <nav class="nav">
+    <a href="../index.html">Latest</a>
+    <a href="../archive.html">Archive</a>
+    <a href="https://github.com/openclaw/openclaw">GitHub</a>
+  </nav>
+  
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  
+</header>
+
+    
+    <div class="toc">
+      <h2>In This Issue</h2>
+      <ul>
+        
+        <li><a href="#top_stories">Top Stories</a></li>
+        
+        <li><a href="#releases">Releases</a></li>
+        
+        <li><a href="#community">Community</a></li>
+        
+        <li><a href="#news">News</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    <section class="section" id="top_stories">
+  <h2 class="section-title">Top Stories</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147046">refactor(markdown): remove dominated chunk guards</a> &mdash; What Problem This Solves Two private Markdown chunking helpers repeat a single-character guard already enforced by their sole public caller. User Impact No user-visible behavior changes. Oversized...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147045">fix(ci): restore OAuth recovery E2E coverage</a> &mdash; Related: https://github.com/openclaw/openclaw/pull/145051, https://github.com/openclaw/openclaw/pull/145484 What Problem This Solves Gateway E2E fails four OAuth recovery cases when their delivered...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147030">fix(tests): memory reclamation fixture fails after worker reuse</a> &mdash; Related: #140897, #146760. What Problem This Solves Core test typechecking fails, and the borrowed-memory deletion regression no longer reaches retained-worker commit coordination after the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/146246">fix(update): preserve migrated default agent across restarts</a> &mdash; Fixes #146195 Refs #146216 Reported by @lilei0311 (#146195). Additional instructions This branch is in the upstream repository and maintainers can update it. What Problem This Solves Fixes an issue...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147019">fix(update): bound activation and accept slow Windows identity reads</a> &mdash; Related: #146860, #138560 What Problem This Solves Updates can remain in activating without an enclosing execution deadline, while the managed handoff rejects valid Windows process identities when...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/146940">fix(ui): keep Undo available while a toast is focused or hovered</a> &mdash; Additional instructions MUST: Keep Allow edits from maintainers enabled for this PR so maintainers can help update the branch when needed. What Problem This Solves Fixes an issue where users lose the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147035">refactor(skills): reuse install string normalization</a> &mdash; What Problem This Solves Skill install metadata repeats primitive-string checks and trimming in four field normalizers. User Impact No user-visible behavior changes. Package, URL, digest, and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147034">refactor(qa): share memory retrieval arguments</a> &mdash; What Problem This Solves QA memory scenarios copy the same memory_get argument construction in four places. User Impact No user-visible behavior changes. Memory tool, session-ranking, thread-recall,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147023">fix(update): correct backup guidance and cover incident regressions</a> &mdash; What Problem This Solves Recovery guidance names openclaw backup as the archive-creation command, but the bare command prints usage and exits 1. The reported update failures also need regressions for...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/146715">fix: sessions_spawn outputSchema is ignored on CLI backends</a> &mdash; Related: #141474 What Problem This Solves Fixes: a Swarm collector child silently ignores outputSchema and its agents_wait returns status: &quot;failed&quot; with schemaError: &quot;structured_output was not...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/146823">improve(gateway): avoid decoding saved prompts for search and previews</a> &mdash; What Problem This Solves Session search and previews decode unused saved prompts. Search can also fail when a shared physical store contains another agent&#x27;s session rows. User Impact Search and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147039">fix(tests): restore memory reclamation race coverage</a> &mdash; What Problem This Solves Fixes the memory reclamation race regression failing after session deletion moved to the shared SQLite mutation worker. User Impact No production behavior changes. This...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/144507">fix(whatsapp): TTS voice notes play on WhatsApp mobile (16 kHz + WhatsApp vendor tag)</a> &mdash; Closes #144502 What Problem This Solves Fixes an issue where users sending TTS-generated voice notes through the WhatsApp channel could not play them on WhatsApp mobile: the message shows size and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147029">fix(test): avoid settings lock writer startup timeouts</a> &mdash; Related: #146949 Refs #144558 What Problem This Solves Fixes spurious settings-lock CI failures when starting a second child consumes the independent 10-second budget of the first child, which is...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147043">refactor(terminal): share health status prefix colors</a> &mdash; What Problem This Solves Health status formatting repeats the same prefix matching and color application in eight branches. User Impact No user-visible behavior changes. Status spelling, casing,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/145219">fix(update): derive update budgets from measured state instead of fixed literals</a> &mdash; Refs #144758, #144901, #144890, #143292, #146637. The first four PRs cover five reported defects; #144901 covers snapshot timing and the executor clamp. #146637 is related evidence, not a claimed...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/147037">A 429 with a multi-day reset pins the turn to the failing model instead of walking the fallback chain</a> &mdash; Version: OpenClaw 2026.9.4 (3a9d69d), macOS 26.5 arm64 What happens A provider returns HTTP 429 with a quota reset several days out. OpenClaw classifies it as a transient same-model retry and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/147042">Telegram voice answer to ask_user succeeds, then transcript rewrite conflict fails the run and inserts synthetic aborted</a> &mdash; Issue draft: Telegram voice answer to ask_user succeeds, then transcript rewrite conflict fails the run and inserts synthetic aborted Bug type Behavior/session-state bug (valid answer accepted,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/146865">fix(doctor): explain surviving service processes during maintenance</a> &mdash; Summary High Level TLDR Doctor and update maintenance report that service inspection is unavailable when a stopped Linux Gateway still has child processes in its systemd cgroup. Name those remaining...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147013">fix(apple): stop guessing &quot;unowned&quot; for an unconfirmed session routing contract</a> &mdash; Closes #136135 What Problem This Solves Resolves a problem where the iOS/macOS/watchOS chat client, running against a Gateway with agents.ownership: explicit and multiple agents configured, would...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147001">fix(channels): keep replies working after hot config reloads</a> &mdash; Fixes #146854 Related: #145563 What Problem This Solves Fixes inbound channel replies failing with PreparedModelCatalogConfigReplacedError after a hot config reload when a long-lived plugin monitor...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147044">fix(ci): honor realtime meeting live-test opt-in</a> &mdash; Related: https://github.com/openclaw/openclaw/pull/146546 What Problem This Solves Fixes the native OpenAI live-test shard failing after all enabled tests pass because the meeting test intentionally...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147038">fix(docs): restore Gateway CLI option anchors</a> &mdash; Additional instructions MUST: Keep Allow edits from maintainers enabled for this PR so maintainers can help update the branch when needed. What Problem This Solves Resolves a problem where the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/146726">fix(anthropic): skip usage polling for setup-token profiles</a> &mdash; What Problem This Solves Anthropic setup-token profiles can authenticate inference successfully, but OpenClaw currently forwards those tokens to the Claude usage endpoint. That endpoint does not...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147033">refactor(cli): share poll result line assembly</a> &mdash; What Problem This Solves The message CLI duplicates poll-result line assembly for direct and gateway deliveries. User Impact No user-visible change. Direct and gateway summaries, target details,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/147041">[Bug]: bundle-mcp leaves stdio MCP server processes running — orphaned trees accumulate (~185 MB each)</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary A configured stdio MCP server (npx -y @upstash/context7-mcp) is spawned repeatedly by bundle-mcp, but its...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147036">fix(pairing): QR setup rejects trusted-proxy gateways without a shared secret</a> &mdash; What Problem This Solves Fixes #146910. QR setup rejects a gateway using only trusted-proxy authentication, even when the authorized issuer can already create the device bootstrap credential. User...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/143817">fix: reveal active desktops and browsers when opening sessions</a> &mdash; What Problem This Solves Fixes: existing Desktop and Browser panels stay hidden when users reopen a session that already owns those resources. User Impact User impact: existing resources appear...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/146963">fix: guard env: undefined in normalizeCronPayload to prevent SQLite persist crash</a> &mdash; Problem When running openclaw automations edit --command &#x27;...&#x27; on a job that currently has payload.kind: &quot;agentTurn&quot;, the gateway returns: Root Cause The call chain is: 1. cron.update →...</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-09-13</a> &mdash; 389575 stars, 81896 forks, 3359 contributors</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (87 total)</a> &mdash; 87 sponsors supporting OpenClaw</li>
+  <li><a href="https://huggingface.co/mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-GGUF">mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-GGUF</a></li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://www.jakequist.com/thoughts/openclaw-is-what-apple-intelligence-should-have-been">OpenClaw is what Apple intelligence should have been</a></li>
+  <li>Ask HN: Who is using OpenClaw?</li>
+  <li><a href="https://dev.to/minix/diary-of-a-shrimp-keeper-my-openclaw-misadventures-5449">Diary of a Shrimp Keeper: My OpenClaw (mis)Adventures</a> &mdash; I. Why OpenClaw? The First Choice: NanoBot In January 2026, as news about...</li>
+  <li><a href="https://dev.to/hitjethva/top-7-openclaw-hosting-providers-for-2026-289a">Top 7 OpenClaw Hosting Providers for 2026</a> &mdash; Atlantic.Net is our top OpenClaw hosting pick for users who want a one-click deployment on an...</li>
+  <li><a href="https://dev.to/chiefmojo79/how-i-detected-and-patched-12-autonomous-agent-failure-modes-234f">How I detected and patched 12 autonomous-agent failure modes</a> &mdash; Field data After running 33 autonomous agents in production, the failure modes cluster....</li>
+  <li><a href="https://infosecwriteups.com/how-i-tricked-openclaw-into-attacking-its-own-network-a-nat64-ssrf-bypass-9b93a7f11cd9?source=rss------openclaw-5">How I Tricked OpenClaw Into Attacking Its Own Network: A NAT64 SSRF Bypass</a> &mdash; A story about how a single misread pair of bytes let a public-looking IPv6 address secretly point at 169.254.169.254.Continue reading on InfoSec Write-ups »</li>
+  <li><a href="https://medium.com/@humble92/migrating-openclaw-from-helm-to-kustomize-without-data-loss-24837d1fc9e0?source=rss------openclaw-5">Migrating OpenClaw from Helm to Kustomize Without Data Loss</a> &mdash; A quick share of my working experience with preserving persistent storage, migrating state, and streamlining future Kubernetes upgrades.Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@seacloud9/i-gave-my-local-llm-a-job-description-it-still-needed-a-manager-7aeb32fabe6e?source=rss------openclaw-5">I Gave My Local LLM a Job Description. It Still Needed a Manager.</a> &mdash; Creating a useful OpenClaw agent with Qwen, a clear role, and a deliberately boring safety boundaryContinue reading on Medium »</li>
+</ul>
+  </div>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="archive-gate">
+      <h2>Read the full issue</h2>
+      <p>Subscribe to get every section delivered to your inbox.</p>
+      <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+      <label class="archive-reveal" for="show-full">Continue reading &rarr;</label>
+    </div>
+
+    <input type="checkbox" id="show-full" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      
+      
+      
+      
+      
+      
+      
+      <section class="section" id="releases">
+  <h2 class="section-title">Releases</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-09-13</a> &mdash; 389575 stars, 81896 forks, 3359 contributors</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="community">
+  <h2 class="section-title">Community</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147046">refactor(markdown): remove dominated chunk guards</a> &mdash; What Problem This Solves Two private Markdown chunking helpers repeat a single-character guard already enforced by their sole public caller. User Impact No user-visible behavior changes. Oversized...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147045">fix(ci): restore OAuth recovery E2E coverage</a> &mdash; Related: https://github.com/openclaw/openclaw/pull/145051, https://github.com/openclaw/openclaw/pull/145484 What Problem This Solves Gateway E2E fails four OAuth recovery cases when their delivered...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147030">fix(tests): memory reclamation fixture fails after worker reuse</a> &mdash; Related: #140897, #146760. What Problem This Solves Core test typechecking fails, and the borrowed-memory deletion regression no longer reaches retained-worker commit coordination after the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/146246">fix(update): preserve migrated default agent across restarts</a> &mdash; Fixes #146195 Refs #146216 Reported by @lilei0311 (#146195). Additional instructions This branch is in the upstream repository and maintainers can update it. What Problem This Solves Fixes an issue...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147019">fix(update): bound activation and accept slow Windows identity reads</a> &mdash; Related: #146860, #138560 What Problem This Solves Updates can remain in activating without an enclosing execution deadline, while the managed handoff rejects valid Windows process identities when...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/146940">fix(ui): keep Undo available while a toast is focused or hovered</a> &mdash; Additional instructions MUST: Keep Allow edits from maintainers enabled for this PR so maintainers can help update the branch when needed. What Problem This Solves Fixes an issue where users lose the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147035">refactor(skills): reuse install string normalization</a> &mdash; What Problem This Solves Skill install metadata repeats primitive-string checks and trimming in four field normalizers. User Impact No user-visible behavior changes. Package, URL, digest, and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147034">refactor(qa): share memory retrieval arguments</a> &mdash; What Problem This Solves QA memory scenarios copy the same memory_get argument construction in four places. User Impact No user-visible behavior changes. Memory tool, session-ranking, thread-recall,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147023">fix(update): correct backup guidance and cover incident regressions</a> &mdash; What Problem This Solves Recovery guidance names openclaw backup as the archive-creation command, but the bare command prints usage and exits 1. The reported update failures also need regressions for...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/146715">fix: sessions_spawn outputSchema is ignored on CLI backends</a> &mdash; Related: #141474 What Problem This Solves Fixes: a Swarm collector child silently ignores outputSchema and its agents_wait returns status: &quot;failed&quot; with schemaError: &quot;structured_output was not...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/146823">improve(gateway): avoid decoding saved prompts for search and previews</a> &mdash; What Problem This Solves Session search and previews decode unused saved prompts. Search can also fail when a shared physical store contains another agent&#x27;s session rows. User Impact Search and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147039">fix(tests): restore memory reclamation race coverage</a> &mdash; What Problem This Solves Fixes the memory reclamation race regression failing after session deletion moved to the shared SQLite mutation worker. User Impact No production behavior changes. This...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/144507">fix(whatsapp): TTS voice notes play on WhatsApp mobile (16 kHz + WhatsApp vendor tag)</a> &mdash; Closes #144502 What Problem This Solves Fixes an issue where users sending TTS-generated voice notes through the WhatsApp channel could not play them on WhatsApp mobile: the message shows size and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147029">fix(test): avoid settings lock writer startup timeouts</a> &mdash; Related: #146949 Refs #144558 What Problem This Solves Fixes spurious settings-lock CI failures when starting a second child consumes the independent 10-second budget of the first child, which is...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147043">refactor(terminal): share health status prefix colors</a> &mdash; What Problem This Solves Health status formatting repeats the same prefix matching and color application in eight branches. User Impact No user-visible behavior changes. Status spelling, casing,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/145219">fix(update): derive update budgets from measured state instead of fixed literals</a> &mdash; Refs #144758, #144901, #144890, #143292, #146637. The first four PRs cover five reported defects; #144901 covers snapshot timing and the executor clamp. #146637 is related evidence, not a claimed...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/147037">A 429 with a multi-day reset pins the turn to the failing model instead of walking the fallback chain</a> &mdash; Version: OpenClaw 2026.9.4 (3a9d69d), macOS 26.5 arm64 What happens A provider returns HTTP 429 with a quota reset several days out. OpenClaw classifies it as a transient same-model retry and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/147042">Telegram voice answer to ask_user succeeds, then transcript rewrite conflict fails the run and inserts synthetic aborted</a> &mdash; Issue draft: Telegram voice answer to ask_user succeeds, then transcript rewrite conflict fails the run and inserts synthetic aborted Bug type Behavior/session-state bug (valid answer accepted,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/146865">fix(doctor): explain surviving service processes during maintenance</a> &mdash; Summary High Level TLDR Doctor and update maintenance report that service inspection is unavailable when a stopped Linux Gateway still has child processes in its systemd cgroup. Name those remaining...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147013">fix(apple): stop guessing &quot;unowned&quot; for an unconfirmed session routing contract</a> &mdash; Closes #136135 What Problem This Solves Resolves a problem where the iOS/macOS/watchOS chat client, running against a Gateway with agents.ownership: explicit and multiple agents configured, would...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147001">fix(channels): keep replies working after hot config reloads</a> &mdash; Fixes #146854 Related: #145563 What Problem This Solves Fixes inbound channel replies failing with PreparedModelCatalogConfigReplacedError after a hot config reload when a long-lived plugin monitor...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147044">fix(ci): honor realtime meeting live-test opt-in</a> &mdash; Related: https://github.com/openclaw/openclaw/pull/146546 What Problem This Solves Fixes the native OpenAI live-test shard failing after all enabled tests pass because the meeting test intentionally...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147038">fix(docs): restore Gateway CLI option anchors</a> &mdash; Additional instructions MUST: Keep Allow edits from maintainers enabled for this PR so maintainers can help update the branch when needed. What Problem This Solves Resolves a problem where the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/146726">fix(anthropic): skip usage polling for setup-token profiles</a> &mdash; What Problem This Solves Anthropic setup-token profiles can authenticate inference successfully, but OpenClaw currently forwards those tokens to the Claude usage endpoint. That endpoint does not...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147033">refactor(cli): share poll result line assembly</a> &mdash; What Problem This Solves The message CLI duplicates poll-result line assembly for direct and gateway deliveries. User Impact No user-visible change. Direct and gateway summaries, target details,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/147041">[Bug]: bundle-mcp leaves stdio MCP server processes running — orphaned trees accumulate (~185 MB each)</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary A configured stdio MCP server (npx -y @upstash/context7-mcp) is spawned repeatedly by bundle-mcp, but its...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147036">fix(pairing): QR setup rejects trusted-proxy gateways without a shared secret</a> &mdash; What Problem This Solves Fixes #146910. QR setup rejects a gateway using only trusted-proxy authentication, even when the authorized issuer can already create the device bootstrap credential. User...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/143817">fix: reveal active desktops and browsers when opening sessions</a> &mdash; What Problem This Solves Fixes: existing Desktop and Browser panels stay hidden when users reopen a session that already owns those resources. User Impact User impact: existing resources appear...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/146963">fix: guard env: undefined in normalizeCronPayload to prevent SQLite persist crash</a> &mdash; Problem When running openclaw automations edit --command &#x27;...&#x27; on a job that currently has payload.kind: &quot;agentTurn&quot;, the gateway returns: Root Cause The call chain is: 1. cron.update →...</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (87 total)</a> &mdash; 87 sponsors supporting OpenClaw</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="news">
+  <h2 class="section-title">News</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://huggingface.co/mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-GGUF">mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-GGUF</a></li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://www.jakequist.com/thoughts/openclaw-is-what-apple-intelligence-should-have-been">OpenClaw is what Apple intelligence should have been</a></li>
+  <li>Ask HN: Who is using OpenClaw?</li>
+  <li><a href="https://dev.to/minix/diary-of-a-shrimp-keeper-my-openclaw-misadventures-5449">Diary of a Shrimp Keeper: My OpenClaw (mis)Adventures</a> &mdash; I. Why OpenClaw? The First Choice: NanoBot In January 2026, as news about...</li>
+  <li><a href="https://dev.to/hitjethva/top-7-openclaw-hosting-providers-for-2026-289a">Top 7 OpenClaw Hosting Providers for 2026</a> &mdash; Atlantic.Net is our top OpenClaw hosting pick for users who want a one-click deployment on an...</li>
+  <li><a href="https://dev.to/chiefmojo79/how-i-detected-and-patched-12-autonomous-agent-failure-modes-234f">How I detected and patched 12 autonomous-agent failure modes</a> &mdash; Field data After running 33 autonomous agents in production, the failure modes cluster....</li>
+  <li><a href="https://infosecwriteups.com/how-i-tricked-openclaw-into-attacking-its-own-network-a-nat64-ssrf-bypass-9b93a7f11cd9?source=rss------openclaw-5">How I Tricked OpenClaw Into Attacking Its Own Network: A NAT64 SSRF Bypass</a> &mdash; A story about how a single misread pair of bytes let a public-looking IPv6 address secretly point at 169.254.169.254.Continue reading on InfoSec Write-ups »</li>
+  <li><a href="https://medium.com/@humble92/migrating-openclaw-from-helm-to-kustomize-without-data-loss-24837d1fc9e0?source=rss------openclaw-5">Migrating OpenClaw from Helm to Kustomize Without Data Loss</a> &mdash; A quick share of my working experience with preserving persistent storage, migrating state, and streamlining future Kubernetes upgrades.Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@seacloud9/i-gave-my-local-llm-a-job-description-it-still-needed-a-manager-7aeb32fabe6e?source=rss------openclaw-5">I Gave My Local LLM a Job Description. It Still Needed a Manager.</a> &mdash; Creating a useful OpenClaw agent with Qwen, a clear role, and a deliberately boring safety boundaryContinue reading on Medium »</li>
+</ul>
+  </div>
+</section>
+      
+      
+    </div>
+
+    <footer class="footer">
+  <div class="footer-divider"></div>
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  <p>
+    Generated with AI by the
+    <a href="https://github.com/openclaw/openclaw">OpenClaw</a> Newsletter Bot
+  </p>
+  <div class="footer-links">
+    <a href="../archive.html">Archive</a>
+    <a href="../rss.xml">RSS</a>
+    <a href="https://github.com/openclaw/openclaw">Star on GitHub</a>
+  </div>
+</footer>
+  </div>
+</body>
+</html>
