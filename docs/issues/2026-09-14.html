@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Newsletter - 2026-09-14</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="OpenClaw Newsletter" href="../rss.xml">
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenClaw Newsletter - 2026-09-14">
+<meta property="og:description" content="fix(test): run wizard recovery with its host broker &mdash; What Problem This Solves Fixes campaign failure red main #25: wizard inference-recovery cove...">
+<meta property="og:url" content="https://swkpku.github.io/openclaw-newsletter/issues/2026-09-14.html">
+<meta property="og:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenClaw Newsletter - 2026-09-14">
+<meta name="twitter:description" content="fix(test): run wizard recovery with its host broker &mdash; What Problem This Solves Fixes campaign failure red main #25: wizard inference-recovery cove...">
+<meta name="twitter:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <header class="header">
+  <div class="header-top">
+    <div class="header-brand">
+      <div class="header-logo">OC</div>
+      <div>
+        <h1>OpenClaw Newsletter</h1>
+        <p class="subtitle">Daily updates from the OpenClaw ecosystem</p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="date">Monday, September 14, 2026</p>
+  
+  <nav class="nav">
+    <a href="../index.html">Latest</a>
+    <a href="../archive.html">Archive</a>
+    <a href="https://github.com/openclaw/openclaw">GitHub</a>
+  </nav>
+  
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  
+</header>
+
+    
+    <div class="toc">
+      <h2>In This Issue</h2>
+      <ul>
+        
+        <li><a href="#top_stories">Top Stories</a></li>
+        
+        <li><a href="#releases">Releases</a></li>
+        
+        <li><a href="#community">Community</a></li>
+        
+        <li><a href="#news">News</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    <section class="section" id="top_stories">
+  <h2 class="section-title">Top Stories</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148320">fix(test): run wizard recovery with its host broker</a> &mdash; What Problem This Solves Fixes campaign failure red main #25: wizard inference-recovery coverage fails on unrelated PR merge refs with Shared-state admission requires the host broker, before reaching...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/145074">fix(node): reject blank gateway host on run and install</a> &mdash; What Problem This Solves openclaw node run --host &quot;&quot; (and the same --host on node install) silently fell back to the baseline Gateway host — the paired, configured, or loopback (127.0.0.1) endpoint —...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/143295">fix(memory): add reusable read-only search managers</a> &mdash; What Problem This Solves Memory Core needs a reusable, query-only SQLite reader lifecycle so repeated consumers can avoid rebuilding read managers while keeping index mutation, upgrade, repair,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148228">fix(approvals): forwarded approval prompts are dropped while a channel&#x27;s native approval handler is not running</a> &mdash; Closes #148031 Related: #147255 What Problem This Solves Fixes: when a channel is configured for native approval delivery but that account&#x27;s native approval handler is not running (bootstrap still...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148122">feat(maturity): report app inventory drift</a> &mdash; Related: #141950 What Problem This Solves New product app roots can land without anyone noticing that the maturity taxonomy has no owner for them. User Impact User impact: maintainers can run one...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148123">chore(maturity): surface unmapped catalog entries</a> &mdash; Related: #141950 What Problem This Solves Official plugins and catalog entries can gain no maturity owner without any signal in the normal maturity check. User Impact User impact: pnpm maturity:check...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/143216">feat(wear): add direct Gateway conversations and approvals</a> &mdash; Related: https://github.com/openclaw/openclaw/issues/142916 PR base: main, preserving the maintainer&#x27;s retarget. Depends on the Android client foundation:...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/148319">Update failure: fetch-failed (2026.9.4)</a> &mdash; OpenClaw update failure report This report was explicitly reviewed and confirmed in OpenClaw. - OpenClaw version: 2026.9.4 - Platform: linux/x64 - Node version: 26.8.1 - Update target: latest -...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148198">refactor(gateway): consolidate history continuation scans</a> &mdash; Closes #148197 What Problem This Solves Paging chat history repeats sequence extraction and sibling scans when calculating the next offset. User Impact Continuation calculation does less work while...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148301">fix(auto-reply): recover failed streamed reply tails without replaying prefixes</a> &mdash; Depends on #148318. What Problem This Solves A streamed prefix could mark the complete reply sent. If its deferred tail then failed, the final reply was already gone. Why This Change Was Made One...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148317">fix(gateway): cancel HTTP work after response-only disconnects</a> &mdash; What Problem This Solves Fixes: OpenAI-compatible HTTP requests keep media downloads and agent/provider work alive after a client disconnects when the runtime exposes the disconnect through the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/106696">ACP run-mode one-shots do not resume completed backend sessions</a> &mdash; Problem An ACP child started with sessions_spawn(runtime=&quot;acp&quot;, mode=&quot;run&quot;) can complete successfully and record a stable backend session id, but a later parent sessions_send does not resume that...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/143694">[Bug]: acpx sessions_send rewrites valid ACP session as implicit native and returns ACP_SESSION_INIT_FAILED</a> &mdash; Bug type Regression (worked before, now fails) Beta release blocker No Summary A first sessions_send to a freshly spawned acpx session changes its stored runtime metadata from ACP/session-key to...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148234">fix: keep failed web output complete when stdout is piped</a> &mdash; What Problem This Solves Fixes truncated, invalid JSON from infer web fetch and infer web search when a provider returns a failed result and stdout is piped to a slow reader. The capability alias has...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148318">refactor(auto-reply): split dispatch delivery into modules</a> &mdash; Move-only refactor; no behavior change. Existing tests are unchanged. What Problem This Solves Separates existing delivery code so the streamed-tail fix in #148301 can be reviewed without module...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147984">refactor: simplify Gateway session-name precedence</a> &mdash; What Problem This Solves Gateway session-name selection computes fallback metadata even when an explicit label or human group title already determines the name. User Impact No user-visible behavior...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147684">feat(desktop): switch saved Gateways independently of Primary</a> &mdash; Closes #147576 What Problem This Solves Tauri could connect its Primary Gateway and open discovered dashboards, but lacked native macOS-style saved-Gateway switching and window reuse. User Impact...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147971">refactor: speed up repeated schema validation</a> &mdash; What Problem This Solves Repeated validation walks Zod schemas and constructs parser state in configuration, transcript, plugin, and worker paths. Readers that reconstruct stable schemas also repeat...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148302">improve: avoid duplicate PCM buffers in Discord recordings</a> &mdash; What Problem This Solves Discord recordings concatenate received PCM chunks before the WAV writer copies that combined buffer again. User Impact Recordings keep the same WAV bytes and transcription...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147711">fix(doctor): defer missing-plugin migrations with a warning instead of blocking</a> &mdash; Fixes #123326 What Problem This Solves Fixes updates and Gateway startup failing when Doctor reaches a configured plugin&#x27;s migrations before its package is available or converged. User Impact Missing...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148179">refactor(plugins): avoid copying prior setup registration keys</a> &mdash; Closes #148177 What Problem This Solves Plugin setup assembly repeats bookkeeping over keys that earlier registrations have already committed. User Impact No user-visible behavior changes. This is an...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148316">refactor(agents): reuse accepted Tool Search batch text</a> &mdash; What Problem This Solves Batched tool discovery formats the accepted response twice, once to check its size and again to return it. User Impact No user-visible behavior change is intended. Search...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148293">fix(ci): stabilize scoped model catalog checks</a> &mdash; What Problem This Solves Fixes model-catalog scope CI failing when worker discovery finishes after the foreground response. This is maintainer-requested CI stability work. User Impact No production...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/140156">fix(agents): defer model-call terminal to result() after bare EOF</a> &mdash; Closes #127538 What Problem This Solves When a model call ended in a bare-EOF stream (iterator finished with no terminal done/error chunk) and the provider&#x27;s result() later rejected, OpenClaw&#x27;s...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/148294">Unify subagent resume and completion ownership across entry points</a> &mdash; Summary Consolidate delegated-task pause, resume, and completion ownership across entry points using the existing registry and adoption mechanisms. Problem to solve A September 14, 2026 source-first...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/97616">[Bug]: OpenClaw leaks unreaped hook/tool child processes, causing zombie accumulation and runtime degradation</a> &mdash; Bug type Regression (worked before, now fails) Beta release blocker No Summary Summary OpenClaw appears to leak unreaped child processes from hook/tool execution. Over time these accumulate as...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/148306">Update failure: unexpected-error (2026.9.4)</a> &mdash; OpenClaw update failure report This report was explicitly reviewed and confirmed in OpenClaw. - OpenClaw version: 2026.9.4 - Platform: linux/x64 - Node version: 26.8.1 - Update target: exact target...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/148314">Update failure: database-schema-preflight (2026.9.4)</a> &mdash; OpenClaw update failure report This report was explicitly reviewed and confirmed in OpenClaw. - OpenClaw version: 2026.9.4 - Platform: darwin/arm64 - Node version: 26.8.2 - Update target: exact...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/148287">Update failure: runtime-verification-failed (2026.9.3)</a> &mdash; OpenClaw update failure report This report was explicitly reviewed and confirmed in OpenClaw. - OpenClaw version: 2026.9.3 - Platform: win32/x64 - Update target: exact target unavailable; mode: npm -...</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-09-14</a> &mdash; 389657 stars, 81916 forks, 3363 contributors</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (88 total)</a> &mdash; 88 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/d871c764f2e50646b37119048d604b5992a81d2c">fix: preserve plugin category compatibility during rollout (#3650)</a> &mdash; fix(cli): explain deprecated plugin category inputs fix: preserve historical plugin category reads * fix: refresh categories for historical rootless bundles</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/0802240d57651180dcbebd9578eef812bb154c5b">Add skill: glasser-ai/glasser</a> &mdash; Co-Authored-By: Claude Fable 5.1</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/bceedd44372cc5fa53a94481c144761a326583e3">fix: communication skill count 145 → 146</a></li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://dev.to/trent-ai/we-benchmarked-5-openclaw-skill-scanners-recall-went-from-8-to-95-2hi1">We Benchmarked 5 OpenClaw Skill Scanners. Recall Went From 8% to 95%.</a> &mdash; By Jordan Massiah, MTS @ Trent AI A couple of months ago we released the OpenClaw Security...</li>
+  <li><a href="https://dev.to/bengreenberg/wiring-a-reachy-mini-into-openclaw-without-trusting-the-robot-3lgh">Wiring a Reachy Mini into OpenClaw without trusting the robot</a> &mdash; I put a Reachy Mini in the living room. It is a small desktop robot from Pollen Robotics, now part...</li>
+  <li><a href="https://medium.com/@techlatest.net/i-tested-clawhub-skills-for-openclaw-here-are-the-ones-worth-using-b6d332dbc0cf?source=rss------openclaw-5">I Tested ClawHub Skills for OpenClaw — Here Are the Ones Worth Using</a> &mdash; A practical guide to finding useful OpenClaw skills, installing them, and checking what you&amp;#x2019;re actually giving an agent access to.Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@fayaz.noor.afridi/how-to-reduce-openclaw-token-usage-and-api-cost-ba8200849ba4?source=rss------openclaw-5">How to Reduce OpenClaw Token Usage and API Cost</a> &mdash; A practical guide to controlling context, model calls, prompt caching, heartbeats, automations, and background agent spending.Continue reading on Medium »</li>
+  <li><a href="https://pub.towardsai.net/fryday-8-10-agent-harnesses-that-change-what-the-same-model-can-do-4b5a84771fc7?source=rss------openclaw-5">Fryday #8: 10 Agent Harnesses That Change What the Same Model Can Do</a> &mdash; I started this issue expecting a fairly conventional ranking. Claude Code and Codex would probably occupy the expensive end, several open&amp;#x2026;Continue reading on Towards AI »</li>
+</ul>
+  </div>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="archive-gate">
+      <h2>Read the full issue</h2>
+      <p>Subscribe to get every section delivered to your inbox.</p>
+      <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+      <label class="archive-reveal" for="show-full">Continue reading &rarr;</label>
+    </div>
+
+    <input type="checkbox" id="show-full" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      
+      
+      
+      
+      
+      
+      
+      <section class="section" id="releases">
+  <h2 class="section-title">Releases</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-09-14</a> &mdash; 389657 stars, 81916 forks, 3363 contributors</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="community">
+  <h2 class="section-title">Community</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148320">fix(test): run wizard recovery with its host broker</a> &mdash; What Problem This Solves Fixes campaign failure red main #25: wizard inference-recovery coverage fails on unrelated PR merge refs with Shared-state admission requires the host broker, before reaching...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/145074">fix(node): reject blank gateway host on run and install</a> &mdash; What Problem This Solves openclaw node run --host &quot;&quot; (and the same --host on node install) silently fell back to the baseline Gateway host — the paired, configured, or loopback (127.0.0.1) endpoint —...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/143295">fix(memory): add reusable read-only search managers</a> &mdash; What Problem This Solves Memory Core needs a reusable, query-only SQLite reader lifecycle so repeated consumers can avoid rebuilding read managers while keeping index mutation, upgrade, repair,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148228">fix(approvals): forwarded approval prompts are dropped while a channel&#x27;s native approval handler is not running</a> &mdash; Closes #148031 Related: #147255 What Problem This Solves Fixes: when a channel is configured for native approval delivery but that account&#x27;s native approval handler is not running (bootstrap still...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148122">feat(maturity): report app inventory drift</a> &mdash; Related: #141950 What Problem This Solves New product app roots can land without anyone noticing that the maturity taxonomy has no owner for them. User Impact User impact: maintainers can run one...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148123">chore(maturity): surface unmapped catalog entries</a> &mdash; Related: #141950 What Problem This Solves Official plugins and catalog entries can gain no maturity owner without any signal in the normal maturity check. User Impact User impact: pnpm maturity:check...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/143216">feat(wear): add direct Gateway conversations and approvals</a> &mdash; Related: https://github.com/openclaw/openclaw/issues/142916 PR base: main, preserving the maintainer&#x27;s retarget. Depends on the Android client foundation:...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/148319">Update failure: fetch-failed (2026.9.4)</a> &mdash; OpenClaw update failure report This report was explicitly reviewed and confirmed in OpenClaw. - OpenClaw version: 2026.9.4 - Platform: linux/x64 - Node version: 26.8.1 - Update target: latest -...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148198">refactor(gateway): consolidate history continuation scans</a> &mdash; Closes #148197 What Problem This Solves Paging chat history repeats sequence extraction and sibling scans when calculating the next offset. User Impact Continuation calculation does less work while...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148301">fix(auto-reply): recover failed streamed reply tails without replaying prefixes</a> &mdash; Depends on #148318. What Problem This Solves A streamed prefix could mark the complete reply sent. If its deferred tail then failed, the final reply was already gone. Why This Change Was Made One...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148317">fix(gateway): cancel HTTP work after response-only disconnects</a> &mdash; What Problem This Solves Fixes: OpenAI-compatible HTTP requests keep media downloads and agent/provider work alive after a client disconnects when the runtime exposes the disconnect through the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/106696">ACP run-mode one-shots do not resume completed backend sessions</a> &mdash; Problem An ACP child started with sessions_spawn(runtime=&quot;acp&quot;, mode=&quot;run&quot;) can complete successfully and record a stable backend session id, but a later parent sessions_send does not resume that...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/143694">[Bug]: acpx sessions_send rewrites valid ACP session as implicit native and returns ACP_SESSION_INIT_FAILED</a> &mdash; Bug type Regression (worked before, now fails) Beta release blocker No Summary A first sessions_send to a freshly spawned acpx session changes its stored runtime metadata from ACP/session-key to...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148234">fix: keep failed web output complete when stdout is piped</a> &mdash; What Problem This Solves Fixes truncated, invalid JSON from infer web fetch and infer web search when a provider returns a failed result and stdout is piped to a slow reader. The capability alias has...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148318">refactor(auto-reply): split dispatch delivery into modules</a> &mdash; Move-only refactor; no behavior change. Existing tests are unchanged. What Problem This Solves Separates existing delivery code so the streamed-tail fix in #148301 can be reviewed without module...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147984">refactor: simplify Gateway session-name precedence</a> &mdash; What Problem This Solves Gateway session-name selection computes fallback metadata even when an explicit label or human group title already determines the name. User Impact No user-visible behavior...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147684">feat(desktop): switch saved Gateways independently of Primary</a> &mdash; Closes #147576 What Problem This Solves Tauri could connect its Primary Gateway and open discovered dashboards, but lacked native macOS-style saved-Gateway switching and window reuse. User Impact...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147971">refactor: speed up repeated schema validation</a> &mdash; What Problem This Solves Repeated validation walks Zod schemas and constructs parser state in configuration, transcript, plugin, and worker paths. Readers that reconstruct stable schemas also repeat...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148302">improve: avoid duplicate PCM buffers in Discord recordings</a> &mdash; What Problem This Solves Discord recordings concatenate received PCM chunks before the WAV writer copies that combined buffer again. User Impact Recordings keep the same WAV bytes and transcription...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147711">fix(doctor): defer missing-plugin migrations with a warning instead of blocking</a> &mdash; Fixes #123326 What Problem This Solves Fixes updates and Gateway startup failing when Doctor reaches a configured plugin&#x27;s migrations before its package is available or converged. User Impact Missing...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148179">refactor(plugins): avoid copying prior setup registration keys</a> &mdash; Closes #148177 What Problem This Solves Plugin setup assembly repeats bookkeeping over keys that earlier registrations have already committed. User Impact No user-visible behavior changes. This is an...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148316">refactor(agents): reuse accepted Tool Search batch text</a> &mdash; What Problem This Solves Batched tool discovery formats the accepted response twice, once to check its size and again to return it. User Impact No user-visible behavior change is intended. Search...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148293">fix(ci): stabilize scoped model catalog checks</a> &mdash; What Problem This Solves Fixes model-catalog scope CI failing when worker discovery finishes after the foreground response. This is maintainer-requested CI stability work. User Impact No production...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/140156">fix(agents): defer model-call terminal to result() after bare EOF</a> &mdash; Closes #127538 What Problem This Solves When a model call ended in a bare-EOF stream (iterator finished with no terminal done/error chunk) and the provider&#x27;s result() later rejected, OpenClaw&#x27;s...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/148294">Unify subagent resume and completion ownership across entry points</a> &mdash; Summary Consolidate delegated-task pause, resume, and completion ownership across entry points using the existing registry and adoption mechanisms. Problem to solve A September 14, 2026 source-first...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/97616">[Bug]: OpenClaw leaks unreaped hook/tool child processes, causing zombie accumulation and runtime degradation</a> &mdash; Bug type Regression (worked before, now fails) Beta release blocker No Summary Summary OpenClaw appears to leak unreaped child processes from hook/tool execution. Over time these accumulate as...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/148306">Update failure: unexpected-error (2026.9.4)</a> &mdash; OpenClaw update failure report This report was explicitly reviewed and confirmed in OpenClaw. - OpenClaw version: 2026.9.4 - Platform: linux/x64 - Node version: 26.8.1 - Update target: exact target...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/148314">Update failure: database-schema-preflight (2026.9.4)</a> &mdash; OpenClaw update failure report This report was explicitly reviewed and confirmed in OpenClaw. - OpenClaw version: 2026.9.4 - Platform: darwin/arm64 - Node version: 26.8.2 - Update target: exact...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/148287">Update failure: runtime-verification-failed (2026.9.3)</a> &mdash; OpenClaw update failure report This report was explicitly reviewed and confirmed in OpenClaw. - OpenClaw version: 2026.9.3 - Platform: win32/x64 - Update target: exact target unavailable; mode: npm -...</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (88 total)</a> &mdash; 88 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/d871c764f2e50646b37119048d604b5992a81d2c">fix: preserve plugin category compatibility during rollout (#3650)</a> &mdash; fix(cli): explain deprecated plugin category inputs fix: preserve historical plugin category reads * fix: refresh categories for historical rootless bundles</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/0802240d57651180dcbebd9578eef812bb154c5b">Add skill: glasser-ai/glasser</a> &mdash; Co-Authored-By: Claude Fable 5.1</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/bceedd44372cc5fa53a94481c144761a326583e3">fix: communication skill count 145 → 146</a></li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="news">
+  <h2 class="section-title">News</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://dev.to/trent-ai/we-benchmarked-5-openclaw-skill-scanners-recall-went-from-8-to-95-2hi1">We Benchmarked 5 OpenClaw Skill Scanners. Recall Went From 8% to 95%.</a> &mdash; By Jordan Massiah, MTS @ Trent AI A couple of months ago we released the OpenClaw Security...</li>
+  <li><a href="https://dev.to/bengreenberg/wiring-a-reachy-mini-into-openclaw-without-trusting-the-robot-3lgh">Wiring a Reachy Mini into OpenClaw without trusting the robot</a> &mdash; I put a Reachy Mini in the living room. It is a small desktop robot from Pollen Robotics, now part...</li>
+  <li><a href="https://medium.com/@techlatest.net/i-tested-clawhub-skills-for-openclaw-here-are-the-ones-worth-using-b6d332dbc0cf?source=rss------openclaw-5">I Tested ClawHub Skills for OpenClaw — Here Are the Ones Worth Using</a> &mdash; A practical guide to finding useful OpenClaw skills, installing them, and checking what you&amp;#x2019;re actually giving an agent access to.Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@fayaz.noor.afridi/how-to-reduce-openclaw-token-usage-and-api-cost-ba8200849ba4?source=rss------openclaw-5">How to Reduce OpenClaw Token Usage and API Cost</a> &mdash; A practical guide to controlling context, model calls, prompt caching, heartbeats, automations, and background agent spending.Continue reading on Medium »</li>
+  <li><a href="https://pub.towardsai.net/fryday-8-10-agent-harnesses-that-change-what-the-same-model-can-do-4b5a84771fc7?source=rss------openclaw-5">Fryday #8: 10 Agent Harnesses That Change What the Same Model Can Do</a> &mdash; I started this issue expecting a fairly conventional ranking. Claude Code and Codex would probably occupy the expensive end, several open&amp;#x2026;Continue reading on Towards AI »</li>
+</ul>
+  </div>
+</section>
+      
+      
+    </div>
+
+    <footer class="footer">
+  <div class="footer-divider"></div>
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  <p>
+    Generated with AI by the
+    <a href="https://github.com/openclaw/openclaw">OpenClaw</a> Newsletter Bot
+  </p>
+  <div class="footer-links">
+    <a href="../archive.html">Archive</a>
+    <a href="../rss.xml">RSS</a>
+    <a href="https://github.com/openclaw/openclaw">Star on GitHub</a>
+  </div>
+</footer>
+  </div>
+</body>
+</html>
