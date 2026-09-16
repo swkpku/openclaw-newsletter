@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Newsletter - 2026-09-16</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="OpenClaw Newsletter" href="../rss.xml">
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenClaw Newsletter - 2026-09-16">
+<meta property="og:description" content="chore(deps): refresh dependencies with seven-day cutoff &mdash; What Problem This Solves Refreshes OpenClaw&#x27;s application, native-app, and developm...">
+<meta property="og:url" content="https://swkpku.github.io/openclaw-newsletter/issues/2026-09-16.html">
+<meta property="og:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenClaw Newsletter - 2026-09-16">
+<meta name="twitter:description" content="chore(deps): refresh dependencies with seven-day cutoff &mdash; What Problem This Solves Refreshes OpenClaw&#x27;s application, native-app, and developm...">
+<meta name="twitter:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <header class="header">
+  <div class="header-top">
+    <div class="header-brand">
+      <div class="header-logo">OC</div>
+      <div>
+        <h1>OpenClaw Newsletter</h1>
+        <p class="subtitle">Daily updates from the OpenClaw ecosystem</p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="date">Wednesday, September 16, 2026</p>
+  
+  <nav class="nav">
+    <a href="../index.html">Latest</a>
+    <a href="../archive.html">Archive</a>
+    <a href="https://github.com/openclaw/openclaw">GitHub</a>
+  </nav>
+  
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  
+</header>
+
+    
+    <div class="toc">
+      <h2>In This Issue</h2>
+      <ul>
+        
+        <li><a href="#top_stories">Top Stories</a></li>
+        
+        <li><a href="#releases">Releases</a></li>
+        
+        <li><a href="#community">Community</a></li>
+        
+        <li><a href="#news">News</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    <section class="section" id="top_stories">
+  <h2 class="section-title">Top Stories</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/149908">chore(deps): refresh dependencies with seven-day cutoff</a> &mdash; What Problem This Solves Refreshes OpenClaw&#x27;s application, native-app, and development dependencies using releases published on or before 2026-09-09T06:51:52Z, a frozen seven-day cutoff. Existing...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148857">fix(backup): SQLite databases named .db bypass verified backup snapshots</a> &mdash; &gt; AI-assisted: yes Closes #148796 What Problem This Solves - Fixes an issue where users running openclaw backup create --verify on a state directory containing a live SQLite database named with a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/150067">refactor(plugins): move hosted catalog snapshots off the caller thread</a> &mdash; What Problem This Solves Hosted marketplace listing and refresh can perform snapshot SQLite work on the calling Gateway or CLI thread. User Impact Snapshot database work moves to the existing shared...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/150010">fix(projects): preserve Windows environment snapshots</a> &mdash; Project removal, registration, clone creation, and refresh can lose mixed-case Windows environment keys when copying inputs before asynchronous work. Use the existing platform-aware snapshot helper...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/149916">fix(agents): continuation-skip re-injects workspace context every turn on completed workspaces</a> &mdash; Closes #149867 What Problem This Solves agents.defaults.contextInjection: &quot;continuation-skip&quot; repeatedly injects workspace instructions on workspaces that have already completed onboarding,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/150021">[Bug]: Control UI Session Sources collapse and re-expand when returning to Appearance</a> &mdash; Part of the WebUI performance/stability study in #149361. Where and impact Settings → Appearance → Session Sources. Returning from Notifications temporarily removes the already displayed...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148574">refactor(tasks): prepare cold task and flow reads asynchronously</a> &mdash; Related: #144592. Builds on merged #148305. Problem and behavior Cold task and flow preparation reads SQLite on the parent thread before awaited SDK operations reach the worker. Gateway startup,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/150065">fix(subagents): report owed updates after private batch completion</a> &mdash; Related: #149073 What Problem This Solves A parent can receive completed subagent results and still fail to report back after a private or mixed batch settles, including after sessions_yield. User...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/149729">perf(test): speed up perf-gateway-agents test groups</a> &mdash; What Problem This Solves Selected Gateway and agent tests pay avoidable costs for runtime imports, repeated module/metadata setup, and real deadline waits. User Impact User-facing behavior is...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/150069">[Feature]: Search automation inventories from the CLI</a> &mdash; Summary Expose the existing automation-inventory text query through openclaw automations list --query and its cron list spelling. Problem to solve Operators finding related automations from a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/150066">fix(ui): return to queued edits while another page loads</a> &mdash; What Problem This Solves Fixes: Review edit can leave you on Agents instead of returning to a queued correction when clicked while that page is still loading. User Impact The action returns to the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/149725">feat(macos): prototype shared Rust node runtime via sidecar</a> &mdash; What Problem This Solves Evaluates whether the macOS app can consume the shared Rust Gateway client and node runtime proposed in RFC #54, and measures the cost in maintained code and runtime...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/149291">feat: report session list CPU time in diagnostics</a> &mdash; Related: #145679 What Problem This Solves Session-list elapsed timings cannot identify which synchronous stages consume CPU when requests also yield or wait. User Impact Operators can inspect six...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/138534">fix: unlock direct auth after a skipped empty profile tier</a> &mdash; Summary - Skipping a profile auth tier with zero runnable candidates (all in cooldown) left priorProfileAttempted false. - Direct attempts gated by requiresPriorProfileAttempt (Claude CLI native...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/138691">fix: keep pairing for bootstrap-token when auth.mode is none</a> &mdash; Summary - shouldSkipControlUiPairing treated auth.mode === &quot;none&quot; alone as a pairing bypass. - Dashboard bootstrap-token handoffs still authenticate with a concrete method while mode is none, so...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/149882">feat(update): support root-owned foreground FreeBSD updates</a> &mdash; Related: https://github.com/openclaw/openclaw/issues/45233 and https://github.com/openclaw/openclaw/issues/147681 What Problem This Solves Root-owned FreeBSD installations without an rc.d service...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/149609">refactor(skills): remove test-only installer dependency wiring</a> &mdash; What Problem This Solves Maintaining skill-installer tests currently requires mutable dependency wiring and a test global in production code, even though normal installs use the canonical...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/150059">fix(cron): skill reviews fail with implicit Codex defaults</a> &mdash; Related: #141102 Related: #148328 What Problem This Solves Fixes weekly Skill collection reviews failing before reading any skills when the agent implicitly uses Codex. The reported error is...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/149987">fix(codex): enforce 40k reserve floor to prevent compaction loops</a> &mdash; Closes #149689 📌 Problem Statement On OpenClaw with the native Codex runtime, a single turn was observed performing 38 consecutive compactions (lasting over 99 minutes) while the provider-reported...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148176">feat(feishu): adopt the shared progress-draft compositor on the streaming card</a> &mdash; What Problem This Solves Feishu was the only preview-capable bundled channel that did not use the shared progress-draft compositor. It rendered a single replaceable tool status line that could only...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/142383">fix: coordinate Control UI startup skeletons</a> &mdash; What Problem This Solves Opening a conversation can show unrelated loading shapes in succession: conversation, terminal and right-hand panel skeletons. This PR makes the conversation area show a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/116016">feat: register Telnyx as an official external provider</a> &mdash; What Registers Telnyx as a vendor-maintained external inference provider in OpenClaw&#x27;s official catalog. This PR contains catalog metadata, onboarding/install contracts, documentation, and tests; it...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/150062">fix(test): include diagnostics when mock server startup fails</a> &mdash; What Problem This Solves When an E2E mock server exits before announcing readiness, its test helper reports only the exit code and signal. The stderr already captured by the fixture is lost, leaving...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/150068">Update failure: runtime-verification-failed (2026.9.3)</a> &mdash; OpenClaw update failure report This report was explicitly reviewed and confirmed in OpenClaw. - OpenClaw version: 2026.9.3 - Platform: win32/x64 - Update target: exact target unavailable; mode: npm -...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/150035">fix(state): preserve Windows roots when opening agent workers</a> &mdash; What Problem This Solves Agent SQLite workers can select the wrong shared state root on Windows when their environment uses mixed-case variable names. User Impact Worker opening and lease cleanup...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/149361">WebUI: continuous performance and stability study with real-Gateway evidence</a> &mdash; Purpose and current status Continuous, evidence-led performance and stability work on the OpenClaw WebUI: startup, navigation, mounts/remounts, scrolling, layout shifts, optimistic actions, loading...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/150030">[Bug]: Settings search targets remain off-screen after shell focus restoration</a> &mdash; Part of the WebUI performance/stability study in #149361. Where and impact Desktop Settings search changes the route/hash to a result such as Connection or Chat, but the main content remains at the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/131941">fix(sandbox): preserve active runtimes during age pruning</a> &mdash; What Problem This Solves Fixes sandbox commands, filesystem operations, and browser requests being interrupted when automatic age pruning or configuration recycling removes a runtime they are still...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/149907">chore(deps): bump the swift-deps group across 1 directory with 3 updates</a> &mdash; Bumps the swift-deps group with 3 updates in the /apps/macos directory: github.com/sindresorhus/keyboardshortcuts, github.com/apple/swift-log and github.com/sparkle-project/sparkle. Updates...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/150063">fix(secrets): yield during multi-agent auth-store preparation</a> &mdash; Fixes #149933. What Problem This Solves prepareSecretsRuntimeSnapshot (src/secrets/runtime.ts) loads and structuredClones every candidate agent&#x27;s auth store in one synchronous for loop before it ever...</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-09-16</a> &mdash; 389839 stars, 81942 forks, 3378 contributors</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (87 total)</a> &mdash; 87 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/30660cd4fffc31c11af50c031ef9a91f973dc1c9">fix(ci): prevent catalog sync failures during production deploys (#3748)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/25b2bb65ea2d2775121494a1fc56e31872dba754">feat: support audited plugin category corrections (#3747)</a> &mdash; fix: preserve survivor categories across package lifecycle feat: support audited plugin category corrections</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/05cee5498a7c08e5d0821e764b5dc4c728148950">feat: run ClawHub intelligence reports in the background (#3746)</a> &mdash; feat: generate intelligence reports with bounded background jobs feat: load staff intelligence reports in the background * feat: resume saved intelligence reports in admin CLI</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/ee65ab15a4e5a146b144346856e6924498bfc64c">fix: isolate assigned scan worker concurrency (#3745)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/a0cfdeb2543c40b0949cc46579a621f81382a58d">feat: distribute assigned scans across more worker machines (#3744)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/30e4bf0e37b0e4f940798c8aafadd2eaa9d7c64c">fix: classify plugins by supported workflow (#3743)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/d0fc3c80b8aa0951091c4ad2247dac30d5ed1097">fix: bound full skill intelligence report work</a> &mdash; Share only-needed fallback transactions, publisher facts, and adoption reads inside canonical skill search. Preserve complete reports and exact result ordering while projecting external payloads and...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/65639a919e292ceed16036afbd141f04787d07e1">fix(packages): reclaim unadopted multipart uploads</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/b0fee70b989ca102b380e2e2f7816778ffdf5870">fix: reject incomplete hosted skill archives</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/7dce0235285b5a1b3b98eef544e6d81ecaace33a">fix: local browser tests fail with deeply nested TMPDIR (#3739)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/c1c9cfbd04c24b99b1d9c2b2fc8c8a8f4874a8a1">fix: preserve semantic skill metadata wrapping</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/19bb43f5a7f166df897b4034396618fd62c3b98d">fix(import): reclaim blobs before version persistence</a> &mdash; fix(import): delete GitHub skill blobs when import fails importGitHubSkillForUser stored Convex blobs before validating slug/owner/semver, and publish failures left those ids unreferenced....</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/e5f60853e9dd2a8670f0c8fa6d1abc4cf83506aa">fix: preserve multipart skill files after persistence</a> &mdash; fix: delete unpublished skill blobs when publish fails Multipart POST /api/v1/skills stored each uploaded file, then parsed the payload. An invalid body, a later oversized file, or a 400 after parse...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/be87bfd9d3f837707e4ac2b22bcaacbb9ec9c3d0">fix(packages): reclaim unadopted legacy ZIPs</a> &mdash; fix: delete unpublished package zip on publish failure Non-npm-pack publishes stored a legacy zip before version and reuse checks. A duplicate version or insert failure left the new Convex blob...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/f96495690dadb686934f37b6cebbbe8c7d5222d9">fix: derive plugin categories from consistent release evidence (#3729)</a> &mdash; fix: classify plugin purpose before discovery exclusions fix: restore surviving plugin release categories fix: share published artifact evidence for category classification docs: align category...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/e48b318b6c2dd453c0d20a0a20e286c4f2399caf">fix: resume category refresh when main advances (#3732)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/e28bfda47d25219055cc0fe5eab7f6f7a34fbbd5">fix: fail closed when a skill archive blob is missing (#3547)</a> &mdash; Signed-off-by: Sebastien Tardif Co-authored-by: Patrick Erichsen</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/60c9e2927a0112e383f40c421a36d82e064a77b6">[automation] Update Convex AI files (#3516)</a> &mdash; chore: update Convex AI files docs: fix managed Convex component example Co-authored-by: github-actions[bot] Co-authored-by: Patrick Erichsen</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/0ef3e59e539df9846def3a1e50aafd70cd7b1f46">fix: preserve trusted publish tag refs (#3528)</a> &mdash; Co-authored-by: Patrick Erichsen</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/9bed2f09dd943bcb27cb90a05f7477cdb6df290a">fix: preserve skill catalog owner identity and null versions (#3580)</a> &mdash; Preserve owner-qualified skill identity in catalog query/HTTP output and CLI explore. Require explicit nullable latestVersion in the canonical API/shared schema while retaining the documented older...</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/0802240d57651180dcbebd9578eef812bb154c5b">Add skill: glasser-ai/glasser</a> &mdash; Co-Authored-By: Claude Fable 5.1</li>
+  <li><a href="https://huggingface.co/mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-i1-GGUF">mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-i1-GGUF</a></li>
+  <li><a href="https://huggingface.co/mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-GGUF">mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-GGUF</a></li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://www.jakequist.com/thoughts/openclaw-is-what-apple-intelligence-should-have-been">OpenClaw is what Apple intelligence should have been</a></li>
+  <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-33579">OpenClaw privilege escalation vulnerability</a></li>
+  <li><a href="https://dev.to/philip098/save-money-deploying-qwen-35-on-developer-cloud-38c8">Save Money Deploying Qwen 3.5 on Developer Cloud</a> &mdash; A student can run the next‑gen legal AI Qwen 3.5 on AMD’s cloud without spending a dime. Follow a simple, zero‑setup workflow and stay under free credit limits.</li>
+  <li><a href="https://hostkey.medium.com/openclaw-the-orchestration-layer-for-autonomous-ai-agents-2c4b8251b912?source=rss------openclaw-5">OpenClaw: The Orchestration Layer for Autonomous AI Agents</a> &mdash; The shift from simple chatbots to &amp;#x201c;agentic AI&amp;#x201d; is moving beyond text generation toward autonomous action. OpenClaw is an open-source&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@elena.voss/which-ai-agent-setup-is-defensible-when-the-evidence-is-thin-209c06f72061?source=rss------openclaw-5">Which AI Agent Setup Is Defensible When the Evidence Is Thin</a> &mdash; EasyClaw makes a strong convenience pitch, but the practical decision depends on what the public evidence can actually support. AI agent&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@fayaz.noor.afridi/how-to-reduce-openclaw-token-usage-and-api-cost-ba8200849ba4?source=rss------openclaw-5">How to Reduce OpenClaw Token Usage and API Cost</a> &mdash; A practical guide to controlling context, model calls, prompt caching, heartbeats, automations, and background agent spending.Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@salem.yosri2/cloudways-managed-ai-agents-the-enterprise-shortcut-to-production-ready-ai-plus-50-off-this-0ddc448185fb?source=rss------openclaw-5">The Easiest Way to Deploy AI Agents in Production: Meet Cloudways Managed AI (September Special)</a> &mdash; Cloudways just launched Managed AI Agents with OpenClaw and Hermes &amp;#x2014; deploy enterprise-grade AI agents in minutes, no DevOps required. And&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://alternativeto.net/software/manus/about/">Manus</a> &mdash; AI agent bridges thoughts and actions, excelling in work and life tasks like personalized travel, stock analysis, insurance comparisons, and supplier sourcing, autonomously completing tasks and...</li>
+  <li><a href="https://alternativeto.net/software/privategpt/about/">Private GPT</a> &mdash; Ask questions to your documents without an internet connection, using the power of LLMs. 100% private, no data leaves your execution environment at any point. You can ingest documents and ask...</li>
+</ul>
+  </div>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="archive-gate">
+      <h2>Read the full issue</h2>
+      <p>Subscribe to get every section delivered to your inbox.</p>
+      <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+      <label class="archive-reveal" for="show-full">Continue reading &rarr;</label>
+    </div>
+
+    <input type="checkbox" id="show-full" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      
+      
+      
+      
+      
+      
+      
+      <section class="section" id="releases">
+  <h2 class="section-title">Releases</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-09-16</a> &mdash; 389839 stars, 81942 forks, 3378 contributors</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="community">
+  <h2 class="section-title">Community</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/149908">chore(deps): refresh dependencies with seven-day cutoff</a> &mdash; What Problem This Solves Refreshes OpenClaw&#x27;s application, native-app, and development dependencies using releases published on or before 2026-09-09T06:51:52Z, a frozen seven-day cutoff. Existing...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148857">fix(backup): SQLite databases named .db bypass verified backup snapshots</a> &mdash; &gt; AI-assisted: yes Closes #148796 What Problem This Solves - Fixes an issue where users running openclaw backup create --verify on a state directory containing a live SQLite database named with a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/150067">refactor(plugins): move hosted catalog snapshots off the caller thread</a> &mdash; What Problem This Solves Hosted marketplace listing and refresh can perform snapshot SQLite work on the calling Gateway or CLI thread. User Impact Snapshot database work moves to the existing shared...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/150010">fix(projects): preserve Windows environment snapshots</a> &mdash; Project removal, registration, clone creation, and refresh can lose mixed-case Windows environment keys when copying inputs before asynchronous work. Use the existing platform-aware snapshot helper...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/149916">fix(agents): continuation-skip re-injects workspace context every turn on completed workspaces</a> &mdash; Closes #149867 What Problem This Solves agents.defaults.contextInjection: &quot;continuation-skip&quot; repeatedly injects workspace instructions on workspaces that have already completed onboarding,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/150021">[Bug]: Control UI Session Sources collapse and re-expand when returning to Appearance</a> &mdash; Part of the WebUI performance/stability study in #149361. Where and impact Settings → Appearance → Session Sources. Returning from Notifications temporarily removes the already displayed...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148574">refactor(tasks): prepare cold task and flow reads asynchronously</a> &mdash; Related: #144592. Builds on merged #148305. Problem and behavior Cold task and flow preparation reads SQLite on the parent thread before awaited SDK operations reach the worker. Gateway startup,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/150065">fix(subagents): report owed updates after private batch completion</a> &mdash; Related: #149073 What Problem This Solves A parent can receive completed subagent results and still fail to report back after a private or mixed batch settles, including after sessions_yield. User...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/149729">perf(test): speed up perf-gateway-agents test groups</a> &mdash; What Problem This Solves Selected Gateway and agent tests pay avoidable costs for runtime imports, repeated module/metadata setup, and real deadline waits. User Impact User-facing behavior is...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/150069">[Feature]: Search automation inventories from the CLI</a> &mdash; Summary Expose the existing automation-inventory text query through openclaw automations list --query and its cron list spelling. Problem to solve Operators finding related automations from a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/150066">fix(ui): return to queued edits while another page loads</a> &mdash; What Problem This Solves Fixes: Review edit can leave you on Agents instead of returning to a queued correction when clicked while that page is still loading. User Impact The action returns to the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/149725">feat(macos): prototype shared Rust node runtime via sidecar</a> &mdash; What Problem This Solves Evaluates whether the macOS app can consume the shared Rust Gateway client and node runtime proposed in RFC #54, and measures the cost in maintained code and runtime...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/149291">feat: report session list CPU time in diagnostics</a> &mdash; Related: #145679 What Problem This Solves Session-list elapsed timings cannot identify which synchronous stages consume CPU when requests also yield or wait. User Impact Operators can inspect six...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/138534">fix: unlock direct auth after a skipped empty profile tier</a> &mdash; Summary - Skipping a profile auth tier with zero runnable candidates (all in cooldown) left priorProfileAttempted false. - Direct attempts gated by requiresPriorProfileAttempt (Claude CLI native...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/138691">fix: keep pairing for bootstrap-token when auth.mode is none</a> &mdash; Summary - shouldSkipControlUiPairing treated auth.mode === &quot;none&quot; alone as a pairing bypass. - Dashboard bootstrap-token handoffs still authenticate with a concrete method while mode is none, so...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/149882">feat(update): support root-owned foreground FreeBSD updates</a> &mdash; Related: https://github.com/openclaw/openclaw/issues/45233 and https://github.com/openclaw/openclaw/issues/147681 What Problem This Solves Root-owned FreeBSD installations without an rc.d service...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/149609">refactor(skills): remove test-only installer dependency wiring</a> &mdash; What Problem This Solves Maintaining skill-installer tests currently requires mutable dependency wiring and a test global in production code, even though normal installs use the canonical...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/150059">fix(cron): skill reviews fail with implicit Codex defaults</a> &mdash; Related: #141102 Related: #148328 What Problem This Solves Fixes weekly Skill collection reviews failing before reading any skills when the agent implicitly uses Codex. The reported error is...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/149987">fix(codex): enforce 40k reserve floor to prevent compaction loops</a> &mdash; Closes #149689 📌 Problem Statement On OpenClaw with the native Codex runtime, a single turn was observed performing 38 consecutive compactions (lasting over 99 minutes) while the provider-reported...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/148176">feat(feishu): adopt the shared progress-draft compositor on the streaming card</a> &mdash; What Problem This Solves Feishu was the only preview-capable bundled channel that did not use the shared progress-draft compositor. It rendered a single replaceable tool status line that could only...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/142383">fix: coordinate Control UI startup skeletons</a> &mdash; What Problem This Solves Opening a conversation can show unrelated loading shapes in succession: conversation, terminal and right-hand panel skeletons. This PR makes the conversation area show a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/116016">feat: register Telnyx as an official external provider</a> &mdash; What Registers Telnyx as a vendor-maintained external inference provider in OpenClaw&#x27;s official catalog. This PR contains catalog metadata, onboarding/install contracts, documentation, and tests; it...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/150062">fix(test): include diagnostics when mock server startup fails</a> &mdash; What Problem This Solves When an E2E mock server exits before announcing readiness, its test helper reports only the exit code and signal. The stderr already captured by the fixture is lost, leaving...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/150068">Update failure: runtime-verification-failed (2026.9.3)</a> &mdash; OpenClaw update failure report This report was explicitly reviewed and confirmed in OpenClaw. - OpenClaw version: 2026.9.3 - Platform: win32/x64 - Update target: exact target unavailable; mode: npm -...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/150035">fix(state): preserve Windows roots when opening agent workers</a> &mdash; What Problem This Solves Agent SQLite workers can select the wrong shared state root on Windows when their environment uses mixed-case variable names. User Impact Worker opening and lease cleanup...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/149361">WebUI: continuous performance and stability study with real-Gateway evidence</a> &mdash; Purpose and current status Continuous, evidence-led performance and stability work on the OpenClaw WebUI: startup, navigation, mounts/remounts, scrolling, layout shifts, optimistic actions, loading...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/150030">[Bug]: Settings search targets remain off-screen after shell focus restoration</a> &mdash; Part of the WebUI performance/stability study in #149361. Where and impact Desktop Settings search changes the route/hash to a result such as Connection or Chat, but the main content remains at the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/131941">fix(sandbox): preserve active runtimes during age pruning</a> &mdash; What Problem This Solves Fixes sandbox commands, filesystem operations, and browser requests being interrupted when automatic age pruning or configuration recycling removes a runtime they are still...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/149907">chore(deps): bump the swift-deps group across 1 directory with 3 updates</a> &mdash; Bumps the swift-deps group with 3 updates in the /apps/macos directory: github.com/sindresorhus/keyboardshortcuts, github.com/apple/swift-log and github.com/sparkle-project/sparkle. Updates...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/150063">fix(secrets): yield during multi-agent auth-store preparation</a> &mdash; Fixes #149933. What Problem This Solves prepareSecretsRuntimeSnapshot (src/secrets/runtime.ts) loads and structuredClones every candidate agent&#x27;s auth store in one synchronous for loop before it ever...</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (87 total)</a> &mdash; 87 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/30660cd4fffc31c11af50c031ef9a91f973dc1c9">fix(ci): prevent catalog sync failures during production deploys (#3748)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/25b2bb65ea2d2775121494a1fc56e31872dba754">feat: support audited plugin category corrections (#3747)</a> &mdash; fix: preserve survivor categories across package lifecycle feat: support audited plugin category corrections</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/05cee5498a7c08e5d0821e764b5dc4c728148950">feat: run ClawHub intelligence reports in the background (#3746)</a> &mdash; feat: generate intelligence reports with bounded background jobs feat: load staff intelligence reports in the background * feat: resume saved intelligence reports in admin CLI</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/ee65ab15a4e5a146b144346856e6924498bfc64c">fix: isolate assigned scan worker concurrency (#3745)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/a0cfdeb2543c40b0949cc46579a621f81382a58d">feat: distribute assigned scans across more worker machines (#3744)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/30e4bf0e37b0e4f940798c8aafadd2eaa9d7c64c">fix: classify plugins by supported workflow (#3743)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/d0fc3c80b8aa0951091c4ad2247dac30d5ed1097">fix: bound full skill intelligence report work</a> &mdash; Share only-needed fallback transactions, publisher facts, and adoption reads inside canonical skill search. Preserve complete reports and exact result ordering while projecting external payloads and...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/65639a919e292ceed16036afbd141f04787d07e1">fix(packages): reclaim unadopted multipart uploads</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/b0fee70b989ca102b380e2e2f7816778ffdf5870">fix: reject incomplete hosted skill archives</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/7dce0235285b5a1b3b98eef544e6d81ecaace33a">fix: local browser tests fail with deeply nested TMPDIR (#3739)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/c1c9cfbd04c24b99b1d9c2b2fc8c8a8f4874a8a1">fix: preserve semantic skill metadata wrapping</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/19bb43f5a7f166df897b4034396618fd62c3b98d">fix(import): reclaim blobs before version persistence</a> &mdash; fix(import): delete GitHub skill blobs when import fails importGitHubSkillForUser stored Convex blobs before validating slug/owner/semver, and publish failures left those ids unreferenced....</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/e5f60853e9dd2a8670f0c8fa6d1abc4cf83506aa">fix: preserve multipart skill files after persistence</a> &mdash; fix: delete unpublished skill blobs when publish fails Multipart POST /api/v1/skills stored each uploaded file, then parsed the payload. An invalid body, a later oversized file, or a 400 after parse...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/be87bfd9d3f837707e4ac2b22bcaacbb9ec9c3d0">fix(packages): reclaim unadopted legacy ZIPs</a> &mdash; fix: delete unpublished package zip on publish failure Non-npm-pack publishes stored a legacy zip before version and reuse checks. A duplicate version or insert failure left the new Convex blob...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/f96495690dadb686934f37b6cebbbe8c7d5222d9">fix: derive plugin categories from consistent release evidence (#3729)</a> &mdash; fix: classify plugin purpose before discovery exclusions fix: restore surviving plugin release categories fix: share published artifact evidence for category classification docs: align category...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/e48b318b6c2dd453c0d20a0a20e286c4f2399caf">fix: resume category refresh when main advances (#3732)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/e28bfda47d25219055cc0fe5eab7f6f7a34fbbd5">fix: fail closed when a skill archive blob is missing (#3547)</a> &mdash; Signed-off-by: Sebastien Tardif Co-authored-by: Patrick Erichsen</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/60c9e2927a0112e383f40c421a36d82e064a77b6">[automation] Update Convex AI files (#3516)</a> &mdash; chore: update Convex AI files docs: fix managed Convex component example Co-authored-by: github-actions[bot] Co-authored-by: Patrick Erichsen</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/0ef3e59e539df9846def3a1e50aafd70cd7b1f46">fix: preserve trusted publish tag refs (#3528)</a> &mdash; Co-authored-by: Patrick Erichsen</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/9bed2f09dd943bcb27cb90a05f7477cdb6df290a">fix: preserve skill catalog owner identity and null versions (#3580)</a> &mdash; Preserve owner-qualified skill identity in catalog query/HTTP output and CLI explore. Require explicit nullable latestVersion in the canonical API/shared schema while retaining the documented older...</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/0802240d57651180dcbebd9578eef812bb154c5b">Add skill: glasser-ai/glasser</a> &mdash; Co-Authored-By: Claude Fable 5.1</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="news">
+  <h2 class="section-title">News</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://huggingface.co/mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-i1-GGUF">mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-i1-GGUF</a></li>
+  <li><a href="https://huggingface.co/mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-GGUF">mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-GGUF</a></li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://www.jakequist.com/thoughts/openclaw-is-what-apple-intelligence-should-have-been">OpenClaw is what Apple intelligence should have been</a></li>
+  <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-33579">OpenClaw privilege escalation vulnerability</a></li>
+  <li><a href="https://dev.to/philip098/save-money-deploying-qwen-35-on-developer-cloud-38c8">Save Money Deploying Qwen 3.5 on Developer Cloud</a> &mdash; A student can run the next‑gen legal AI Qwen 3.5 on AMD’s cloud without spending a dime. Follow a simple, zero‑setup workflow and stay under free credit limits.</li>
+  <li><a href="https://hostkey.medium.com/openclaw-the-orchestration-layer-for-autonomous-ai-agents-2c4b8251b912?source=rss------openclaw-5">OpenClaw: The Orchestration Layer for Autonomous AI Agents</a> &mdash; The shift from simple chatbots to &amp;#x201c;agentic AI&amp;#x201d; is moving beyond text generation toward autonomous action. OpenClaw is an open-source&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@elena.voss/which-ai-agent-setup-is-defensible-when-the-evidence-is-thin-209c06f72061?source=rss------openclaw-5">Which AI Agent Setup Is Defensible When the Evidence Is Thin</a> &mdash; EasyClaw makes a strong convenience pitch, but the practical decision depends on what the public evidence can actually support. AI agent&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@fayaz.noor.afridi/how-to-reduce-openclaw-token-usage-and-api-cost-ba8200849ba4?source=rss------openclaw-5">How to Reduce OpenClaw Token Usage and API Cost</a> &mdash; A practical guide to controlling context, model calls, prompt caching, heartbeats, automations, and background agent spending.Continue reading on Medium »</li>
+  <li><a href="https://medium.com/@salem.yosri2/cloudways-managed-ai-agents-the-enterprise-shortcut-to-production-ready-ai-plus-50-off-this-0ddc448185fb?source=rss------openclaw-5">The Easiest Way to Deploy AI Agents in Production: Meet Cloudways Managed AI (September Special)</a> &mdash; Cloudways just launched Managed AI Agents with OpenClaw and Hermes &amp;#x2014; deploy enterprise-grade AI agents in minutes, no DevOps required. And&amp;#x2026;Continue reading on Medium »</li>
+  <li><a href="https://alternativeto.net/software/manus/about/">Manus</a> &mdash; AI agent bridges thoughts and actions, excelling in work and life tasks like personalized travel, stock analysis, insurance comparisons, and supplier sourcing, autonomously completing tasks and...</li>
+  <li><a href="https://alternativeto.net/software/privategpt/about/">Private GPT</a> &mdash; Ask questions to your documents without an internet connection, using the power of LLMs. 100% private, no data leaves your execution environment at any point. You can ingest documents and ask...</li>
+</ul>
+  </div>
+</section>
+      
+      
+    </div>
+
+    <footer class="footer">
+  <div class="footer-divider"></div>
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  <p>
+    Generated with AI by the
+    <a href="https://github.com/openclaw/openclaw">OpenClaw</a> Newsletter Bot
+  </p>
+  <div class="footer-links">
+    <a href="../archive.html">Archive</a>
+    <a href="../rss.xml">RSS</a>
+    <a href="https://github.com/openclaw/openclaw">Star on GitHub</a>
+  </div>
+</footer>
+  </div>
+</body>
+</html>
