@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Newsletter - 2026-09-20</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="OpenClaw Newsletter" href="../rss.xml">
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenClaw Newsletter - 2026-09-20">
+<meta property="og:description" content="fix: hide internal prompts when Talk steers an active run &mdash; What Problem This Solves Native Talk can redirect an agent that is already working. Th...">
+<meta property="og:url" content="https://swkpku.github.io/openclaw-newsletter/issues/2026-09-20.html">
+<meta property="og:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenClaw Newsletter - 2026-09-20">
+<meta name="twitter:description" content="fix: hide internal prompts when Talk steers an active run &mdash; What Problem This Solves Native Talk can redirect an agent that is already working. Th...">
+<meta name="twitter:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <header class="header">
+  <div class="header-top">
+    <div class="header-brand">
+      <div class="header-logo">OC</div>
+      <div>
+        <h1>OpenClaw Newsletter</h1>
+        <p class="subtitle">Daily updates from the OpenClaw ecosystem</p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="date">Sunday, September 20, 2026</p>
+  
+  <nav class="nav">
+    <a href="../index.html">Latest</a>
+    <a href="../archive.html">Archive</a>
+    <a href="https://github.com/openclaw/openclaw">GitHub</a>
+  </nav>
+  
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  
+</header>
+
+    
+    <div class="toc">
+      <h2>In This Issue</h2>
+      <ul>
+        
+        <li><a href="#top_stories">Top Stories</a></li>
+        
+        <li><a href="#releases">Releases</a></li>
+        
+        <li><a href="#community">Community</a></li>
+        
+        <li><a href="#news">News</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    <section class="section" id="top_stories">
+  <h2 class="section-title">Top Stories</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153698">fix: hide internal prompts when Talk steers an active run</a> &mdash; What Problem This Solves Native Talk can redirect an agent that is already working. The spoken request is recorded separately, but the generated steering envelope was also being persisted as an...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153681">ci: activate measured tooling weights after capacity is available</a> &mdash; What Problem This Solves The compact planner treats PR tooling files as cheap even when their measured work dominates the PR critical path. Related: #153515. User Impact Blocked draft; do not merge....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153696">fix: Node recovery tests fail under version managers</a> &mdash; Related: #139428 What Problem This Solves Nine Node recovery-guidance tests fail when the test runner uses a version-manager installation such as mise. User Impact No production update behavior...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153694">fix(plugins): avoid redundant parsing during packaged startup</a> &mdash; Related: #153399 What Problem This Solves Packaged Gateways parse plugin JavaScript for source-SDK rewrites even when no source-SDK target can resolve. User Impact Removes unnecessary startup parsing...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/67421">feat: add per-agent web_fetch ssrf overrides</a> &mdash; Summary This PR makes web_fetch SSRF policy configurable per named agent at: The global sett</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153692">fix(agents): repair string-form edit arguments instead of discarding them</a> &mdash; What Problem This Solves When a model sends the edit tool&#x27;s replacements as a JSON string instead of an array, every edit is lost as soon as one replacement value spans a line. The model embeds a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153178">fix: verify Gateway recovery after update finalization fails</a> &mdash; What Problem This Solves Fixes: update finalization reports runtime-verification-failed and unavailable health without checking a Gateway that is still serving. Fixes #152811, fixes #152788, fixes...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153662">fix(plugins): retain captured code through active web searches</a> &mdash; What Problem This Solves Retiring a plugin could remove its captured package.json while a web_search request was still reading from that generation. Fixes #153290. Related: #153246, #153038. User...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/152875">fix(build): refuse dist rebuild under a live managed Gateway</a> &mdash; What Problem This Solves Fixes: a managed Gateway whose ExecStart points at a source checkout dist becomes unusable when pnpm build or dirty-tree auto-build deletes hashed modules mid-flight...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/152161">feat(secrets): optional plugin-enforced secret-assignment projection for exec</a> &mdash; What Problem This Solves OpenClaw&#x27;s exec tool can project secrets from the team secret store into the executable environment. Before this change there was no supported seam for a policy plugin to...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153546">fix(plugins): preserve sibling native assets in captured generations</a> &mdash; Related: #153516 What Problem This Solves Plugin staging breaks sqlite-vec&#x27;s relative lookup of its optional platform package, preventing native extension loading and disabling the affected plugin&#x27;s...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153601">perf(state): retain SQLite handles for 30 minutes of inactivity</a> &mdash; What Problem This Solves Repeated agent reads, shared-state Worker reads, and handle-fence acquisitions reopen SQLite unnecessarily. The 64-agent handle cap also makes a 65-agent working set reopen a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153425">fix(update): preserve failed step identities in reports</a> &mdash; What Problem This Solves Fixes update failure reports that erase the failed operation as [redacted-command] because the updater used display text or a Git command as the step name. Related: #153230,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/152466">fix: foreground Gateway updates fail after replacing runtime files</a> &mdash; Related: #150153. This is the foreground-update slice; the combined PR must not be merged. What Problem This Solves Fixes missing-module failures and stalled restarts when a foreground Gateway...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153638">fix(macos): get_window_state fails with invalid snapshot reference on Peekaboo</a> &mdash; &gt; AI-assisted: yes Closes #153622 What Problem This Solves - Fixes an issue where users calling the V2 computer action get_window_state against a paired macOS node (Peekaboo provider) would get...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/153691">Update failure: global-install-failed (2026.9.3)</a> &mdash; OpenClaw update failure report This report was explicitly reviewed and confirmed in OpenClaw. - OpenClaw version: 2026.9.3 - Platform: linux/x64 - Update target: exact target unavailable; mode: npm -...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/153695">Session SQLite migration recovery report (session-sqlite-1789908130492-f9f36936)</a> &mdash; OpenClaw doctor generated this sanitized report from a local session SQLite migration recovery. Session SQLite Migration Failure - Run: session-sqlite-1789908130492-f9f36936 - Generated:...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153676">ci: collect measured timings for PR-only tooling</a> &mdash; What Problem This Solves PR-only tooling never entered the daily timing refit, leaving critical-path tests packed with stale hand-fitted costs. Related: #153515. User Impact This PR makes PR tooling...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147886">fix(feishu): accept the documented markdown table mode</a> &mdash; What Problem This Solves Feishu configuration rejects the documented markdown.tables option at channel and account scope, blocking gateway startup. User Impact Channel and account markdown.tables...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147440">fix(config): preserve reference intent and file ownership during writes</a> &mdash; Related: https://github.com/openclaw/openclaw/issues/136025 Part of https://github.com/openclaw/openclaw/issues/145252 What Problem This Solves Equivalent environment references could falsely...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153693">fix: show installed agent discovery failures and recovery</a> &mdash; Related: #150224 What Problem This Solves Installed agents could appear green as Installed even when the Gateway reported rejected sign-in or failed model discovery. Check again only rescanned...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153673">fix: keep CLI tools available after config hot reload</a> &mdash; Closes #153572 What Problem This Solves Fixes an issue where users of CLI backends lose all OpenClaw MCP tools after a config hot reload retires the plugin generation that first started the bridge....</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/139428">Test audit: reduce redundant test code and full-suite runtime</a> &mdash; Problem The test suite has substantial maintenance and execution cost. At 342b7fc95009cca85425a38ccbd360b859ac0f0e, tracked files containing .test. or .spec. account for 5,552,085 physical lines...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/150982">fix(agent): scope preflight token estimates to the compacted window</a> &mdash; Closes #150579 What Problem This Solves Fixes: the pre-compaction/budget flush-hook token meter reports a session&#x27;s prompt size from the retained transcript, including messages already superseded by...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153539">perf(codex): reuse database workers in app-server tests</a> &mdash; Related: #153435 Problem and change Codex app-server tests repeatedly retired and reopened native SQLite workers after every case. Most cases use in-memory app-server transports. The shared fixture...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153537">feat(ui): open and archive sessions with keyboard shortcuts</a> &mdash; What Problem This Solves Opening New Session or archiving the current conversation required clicking controls or opening a menu instead of using a direct shortcut. User Impact - ⌘⇧O / Ctrl+Shift+O...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153540">fix(update): verify paired trusted-proxy gateways with service credentials</a> &mdash; What Problem This Solves Fixes update and restart verification waiting until its deadline on a healthy trusted-proxy Gateway when the local CLI is already paired but no shared token or password is...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153548">fix: avoid slow task lookups and maintenance as history grows</a> &mdash; What Problem This Solves Task ownership checks, session recovery, and maintenance perform unnecessary database work as retained history grows. Scoped delivery cleanup scans unrelated queues, and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147255">feat(line): approve exec, plugin, and OpenClaw-change requests from a card in LINE</a> &mdash; Related: #104521 What Problem This Solves When an operator is asked in LINE to approve a command, they have to copy the approval ID out of a text prompt and type /approve back. Discord, Slack,...</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-09-20</a> &mdash; 390129 stars, 82036 forks, 3400 contributors</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (86 total)</a> &mdash; 86 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/18bcb11489e60da1770940ae1bda9dd0714dc108">fix: preserve approved Featured order across public catalogs (#3766)</a></li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/bceedd44372cc5fa53a94481c144761a326583e3">fix: communication skill count 145 → 146</a></li>
+  <li><a href="https://formulae.brew.sh/formula/openclaw-cli">openclaw-cli 2026.9.5 on Homebrew</a> &mdash; Your own personal AI assistant</li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://openclaw.ai/blog/introducing-openclaw">OpenClaw – Moltbot Renamed Again</a></li>
+  <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-33579">OpenClaw privilege escalation vulnerability</a></li>
+  <li><a href="https://composio.dev/content/openclaw-security-and-vulnerabilities">OpenClaw is a security nightmare dressed up as a daydream</a></li>
+  <li><a href="https://dev.to/rosgluk/self-reinforcing-memory-loops-in-ai-agents-causes-and-fixes-35d8">Self-Reinforcing Memory Loops in AI Agents: Causes and Fixes</a> &mdash; Persistent memory turns an agent from a re-explained tool into one that carries context forward — but...</li>
+  <li><a href="https://dev.to/freehostgoogie/openclaw-on-a-vps-what-beginners-should-know-2ga7">OpenClaw on a VPS: What Beginners Should Know</a></li>
+  <li><a href="https://dev.to/chiefmojo79/how-i-detected-and-patched-12-autonomous-agent-failure-modes-40a9">How I detected and patched 12 autonomous-agent failure modes</a> &mdash; Field data After running 33 autonomous agents in production, the failure modes cluster....</li>
+  <li><a href="https://dev.to/chiefmojo79/12-defensive-patterns-i-shipped-after-openclaw-2026414-broke-my-agents-39ap">12 defensive patterns I shipped after OpenClaw 2026.4.14 broke my agents</a> &mdash; What broke OpenClaw 2026.4.14 took out lossless-claw (#66591) and active-memory (#66849)....</li>
+  <li><a href="https://dev.to/orson098/launch-openclaw-on-developer-cloud-without-credit-hassles-4paj">Launch OpenCLaw on Developer Cloud Without Credit Hassles</a> &mdash; Deploy OpenCLaw on AMD&#x27;s free Developer Cloud in minutes, no credit cards required. Follow a step‑by‑step guide and keep your legal automation running on Qwen 3</li>
+  <li><a href="https://towardsdev.com/from-raw-logs-to-root-cause-clues-with-openclaw-minicpm5-2b-70fdf4cc3df5?source=rss------openclaw-5">From Raw Logs to Root-Cause Clues with OpenClaw &amp; MiniCPM5–2B</a> &mdash; AI tools, developer platforms, and infrastructure generate an enormous amount of information every day. Application logs are a perfect&amp;#x2026;Continue reading on Towards Dev »</li>
+  <li><a href="https://alternativeto.net/software/maid-ai-/about/">Maid (AI)</a> &mdash; Maid is a cross-platform Flutter app for interfacing with GGUF / llama.cpp models locally, and with Ollama and OpenAI models remotely.</li>
+</ul>
+  </div>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="archive-gate">
+      <h2>Read the full issue</h2>
+      <p>Subscribe to get every section delivered to your inbox.</p>
+      <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+      <label class="archive-reveal" for="show-full">Continue reading &rarr;</label>
+    </div>
+
+    <input type="checkbox" id="show-full" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      
+      
+      
+      
+      
+      
+      
+      <section class="section" id="releases">
+  <h2 class="section-title">Releases</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-09-20</a> &mdash; 390129 stars, 82036 forks, 3400 contributors</li>
+  <li><a href="https://formulae.brew.sh/formula/openclaw-cli">openclaw-cli 2026.9.5 on Homebrew</a> &mdash; Your own personal AI assistant</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="community">
+  <h2 class="section-title">Community</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153698">fix: hide internal prompts when Talk steers an active run</a> &mdash; What Problem This Solves Native Talk can redirect an agent that is already working. The spoken request is recorded separately, but the generated steering envelope was also being persisted as an...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153681">ci: activate measured tooling weights after capacity is available</a> &mdash; What Problem This Solves The compact planner treats PR tooling files as cheap even when their measured work dominates the PR critical path. Related: #153515. User Impact Blocked draft; do not merge....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153696">fix: Node recovery tests fail under version managers</a> &mdash; Related: #139428 What Problem This Solves Nine Node recovery-guidance tests fail when the test runner uses a version-manager installation such as mise. User Impact No production update behavior...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153694">fix(plugins): avoid redundant parsing during packaged startup</a> &mdash; Related: #153399 What Problem This Solves Packaged Gateways parse plugin JavaScript for source-SDK rewrites even when no source-SDK target can resolve. User Impact Removes unnecessary startup parsing...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/67421">feat: add per-agent web_fetch ssrf overrides</a> &mdash; Summary This PR makes web_fetch SSRF policy configurable per named agent at: The global sett</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153692">fix(agents): repair string-form edit arguments instead of discarding them</a> &mdash; What Problem This Solves When a model sends the edit tool&#x27;s replacements as a JSON string instead of an array, every edit is lost as soon as one replacement value spans a line. The model embeds a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153178">fix: verify Gateway recovery after update finalization fails</a> &mdash; What Problem This Solves Fixes: update finalization reports runtime-verification-failed and unavailable health without checking a Gateway that is still serving. Fixes #152811, fixes #152788, fixes...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153662">fix(plugins): retain captured code through active web searches</a> &mdash; What Problem This Solves Retiring a plugin could remove its captured package.json while a web_search request was still reading from that generation. Fixes #153290. Related: #153246, #153038. User...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/152875">fix(build): refuse dist rebuild under a live managed Gateway</a> &mdash; What Problem This Solves Fixes: a managed Gateway whose ExecStart points at a source checkout dist becomes unusable when pnpm build or dirty-tree auto-build deletes hashed modules mid-flight...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/152161">feat(secrets): optional plugin-enforced secret-assignment projection for exec</a> &mdash; What Problem This Solves OpenClaw&#x27;s exec tool can project secrets from the team secret store into the executable environment. Before this change there was no supported seam for a policy plugin to...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153546">fix(plugins): preserve sibling native assets in captured generations</a> &mdash; Related: #153516 What Problem This Solves Plugin staging breaks sqlite-vec&#x27;s relative lookup of its optional platform package, preventing native extension loading and disabling the affected plugin&#x27;s...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153601">perf(state): retain SQLite handles for 30 minutes of inactivity</a> &mdash; What Problem This Solves Repeated agent reads, shared-state Worker reads, and handle-fence acquisitions reopen SQLite unnecessarily. The 64-agent handle cap also makes a 65-agent working set reopen a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153425">fix(update): preserve failed step identities in reports</a> &mdash; What Problem This Solves Fixes update failure reports that erase the failed operation as [redacted-command] because the updater used display text or a Git command as the step name. Related: #153230,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/152466">fix: foreground Gateway updates fail after replacing runtime files</a> &mdash; Related: #150153. This is the foreground-update slice; the combined PR must not be merged. What Problem This Solves Fixes missing-module failures and stalled restarts when a foreground Gateway...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153638">fix(macos): get_window_state fails with invalid snapshot reference on Peekaboo</a> &mdash; &gt; AI-assisted: yes Closes #153622 What Problem This Solves - Fixes an issue where users calling the V2 computer action get_window_state against a paired macOS node (Peekaboo provider) would get...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/153691">Update failure: global-install-failed (2026.9.3)</a> &mdash; OpenClaw update failure report This report was explicitly reviewed and confirmed in OpenClaw. - OpenClaw version: 2026.9.3 - Platform: linux/x64 - Update target: exact target unavailable; mode: npm -...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/153695">Session SQLite migration recovery report (session-sqlite-1789908130492-f9f36936)</a> &mdash; OpenClaw doctor generated this sanitized report from a local session SQLite migration recovery. Session SQLite Migration Failure - Run: session-sqlite-1789908130492-f9f36936 - Generated:...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153676">ci: collect measured timings for PR-only tooling</a> &mdash; What Problem This Solves PR-only tooling never entered the daily timing refit, leaving critical-path tests packed with stale hand-fitted costs. Related: #153515. User Impact This PR makes PR tooling...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147886">fix(feishu): accept the documented markdown table mode</a> &mdash; What Problem This Solves Feishu configuration rejects the documented markdown.tables option at channel and account scope, blocking gateway startup. User Impact Channel and account markdown.tables...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147440">fix(config): preserve reference intent and file ownership during writes</a> &mdash; Related: https://github.com/openclaw/openclaw/issues/136025 Part of https://github.com/openclaw/openclaw/issues/145252 What Problem This Solves Equivalent environment references could falsely...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153693">fix: show installed agent discovery failures and recovery</a> &mdash; Related: #150224 What Problem This Solves Installed agents could appear green as Installed even when the Gateway reported rejected sign-in or failed model discovery. Check again only rescanned...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153673">fix: keep CLI tools available after config hot reload</a> &mdash; Closes #153572 What Problem This Solves Fixes an issue where users of CLI backends lose all OpenClaw MCP tools after a config hot reload retires the plugin generation that first started the bridge....</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/139428">Test audit: reduce redundant test code and full-suite runtime</a> &mdash; Problem The test suite has substantial maintenance and execution cost. At 342b7fc95009cca85425a38ccbd360b859ac0f0e, tracked files containing .test. or .spec. account for 5,552,085 physical lines...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/150982">fix(agent): scope preflight token estimates to the compacted window</a> &mdash; Closes #150579 What Problem This Solves Fixes: the pre-compaction/budget flush-hook token meter reports a session&#x27;s prompt size from the retained transcript, including messages already superseded by...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153539">perf(codex): reuse database workers in app-server tests</a> &mdash; Related: #153435 Problem and change Codex app-server tests repeatedly retired and reopened native SQLite workers after every case. Most cases use in-memory app-server transports. The shared fixture...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153537">feat(ui): open and archive sessions with keyboard shortcuts</a> &mdash; What Problem This Solves Opening New Session or archiving the current conversation required clicking controls or opening a menu instead of using a direct shortcut. User Impact - ⌘⇧O / Ctrl+Shift+O...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153540">fix(update): verify paired trusted-proxy gateways with service credentials</a> &mdash; What Problem This Solves Fixes update and restart verification waiting until its deadline on a healthy trusted-proxy Gateway when the local CLI is already paired but no shared token or password is...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/153548">fix: avoid slow task lookups and maintenance as history grows</a> &mdash; What Problem This Solves Task ownership checks, session recovery, and maintenance perform unnecessary database work as retained history grows. Scoped delivery cleanup scans unrelated queues, and...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147255">feat(line): approve exec, plugin, and OpenClaw-change requests from a card in LINE</a> &mdash; Related: #104521 What Problem This Solves When an operator is asked in LINE to approve a command, they have to copy the approval ID out of a text prompt and type /approve back. Discord, Slack,...</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (86 total)</a> &mdash; 86 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/18bcb11489e60da1770940ae1bda9dd0714dc108">fix: preserve approved Featured order across public catalogs (#3766)</a></li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/bceedd44372cc5fa53a94481c144761a326583e3">fix: communication skill count 145 → 146</a></li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="news">
+  <h2 class="section-title">News</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://openclaw.ai/blog/introducing-openclaw">OpenClaw – Moltbot Renamed Again</a></li>
+  <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-33579">OpenClaw privilege escalation vulnerability</a></li>
+  <li><a href="https://composio.dev/content/openclaw-security-and-vulnerabilities">OpenClaw is a security nightmare dressed up as a daydream</a></li>
+  <li><a href="https://dev.to/rosgluk/self-reinforcing-memory-loops-in-ai-agents-causes-and-fixes-35d8">Self-Reinforcing Memory Loops in AI Agents: Causes and Fixes</a> &mdash; Persistent memory turns an agent from a re-explained tool into one that carries context forward — but...</li>
+  <li><a href="https://dev.to/freehostgoogie/openclaw-on-a-vps-what-beginners-should-know-2ga7">OpenClaw on a VPS: What Beginners Should Know</a></li>
+  <li><a href="https://dev.to/chiefmojo79/how-i-detected-and-patched-12-autonomous-agent-failure-modes-40a9">How I detected and patched 12 autonomous-agent failure modes</a> &mdash; Field data After running 33 autonomous agents in production, the failure modes cluster....</li>
+  <li><a href="https://dev.to/chiefmojo79/12-defensive-patterns-i-shipped-after-openclaw-2026414-broke-my-agents-39ap">12 defensive patterns I shipped after OpenClaw 2026.4.14 broke my agents</a> &mdash; What broke OpenClaw 2026.4.14 took out lossless-claw (#66591) and active-memory (#66849)....</li>
+  <li><a href="https://dev.to/orson098/launch-openclaw-on-developer-cloud-without-credit-hassles-4paj">Launch OpenCLaw on Developer Cloud Without Credit Hassles</a> &mdash; Deploy OpenCLaw on AMD&#x27;s free Developer Cloud in minutes, no credit cards required. Follow a step‑by‑step guide and keep your legal automation running on Qwen 3</li>
+  <li><a href="https://towardsdev.com/from-raw-logs-to-root-cause-clues-with-openclaw-minicpm5-2b-70fdf4cc3df5?source=rss------openclaw-5">From Raw Logs to Root-Cause Clues with OpenClaw &amp; MiniCPM5–2B</a> &mdash; AI tools, developer platforms, and infrastructure generate an enormous amount of information every day. Application logs are a perfect&amp;#x2026;Continue reading on Towards Dev »</li>
+  <li><a href="https://alternativeto.net/software/maid-ai-/about/">Maid (AI)</a> &mdash; Maid is a cross-platform Flutter app for interfacing with GGUF / llama.cpp models locally, and with Ollama and OpenAI models remotely.</li>
+</ul>
+  </div>
+</section>
+      
+      
+    </div>
+
+    <footer class="footer">
+  <div class="footer-divider"></div>
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  <p>
+    Generated with AI by the
+    <a href="https://github.com/openclaw/openclaw">OpenClaw</a> Newsletter Bot
+  </p>
+  <div class="footer-links">
+    <a href="../archive.html">Archive</a>
+    <a href="../rss.xml">RSS</a>
+    <a href="https://github.com/openclaw/openclaw">Star on GitHub</a>
+  </div>
+</footer>
+  </div>
+</body>
+</html>
