@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Newsletter - 2026-09-25</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="OpenClaw Newsletter" href="../rss.xml">
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenClaw Newsletter - 2026-09-25">
+<meta property="og:description" content="openclaw 2026.9.6 &mdash; &gt; macOS app rebuilt 2026-09-24: the original 2026.9.6 macOS build crashed at launch (#156861) and was replaced at 09:52 UTC...">
+<meta property="og:url" content="https://swkpku.github.io/openclaw-newsletter/issues/2026-09-25.html">
+<meta property="og:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenClaw Newsletter - 2026-09-25">
+<meta name="twitter:description" content="openclaw 2026.9.6 &mdash; &gt; macOS app rebuilt 2026-09-24: the original 2026.9.6 macOS build crashed at launch (#156861) and was replaced at 09:52 UTC...">
+<meta name="twitter:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <header class="header">
+  <div class="header-top">
+    <div class="header-brand">
+      <div class="header-logo">OC</div>
+      <div>
+        <h1>OpenClaw Newsletter</h1>
+        <p class="subtitle">Daily updates from the OpenClaw ecosystem</p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="date">Friday, September 25, 2026</p>
+  
+  <nav class="nav">
+    <a href="../index.html">Latest</a>
+    <a href="../archive.html">Archive</a>
+    <a href="https://github.com/openclaw/openclaw">GitHub</a>
+  </nav>
+  
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  
+</header>
+
+    
+    <div class="toc">
+      <h2>In This Issue</h2>
+      <ul>
+        
+        <li><a href="#top_stories">Top Stories</a></li>
+        
+        <li><a href="#releases">Releases</a></li>
+        
+        <li><a href="#community">Community</a></li>
+        
+        <li><a href="#news">News</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    <section class="section" id="top_stories">
+  <h2 class="section-title">Top Stories</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/releases/tag/v2026.9.6">openclaw 2026.9.6</a> &mdash; &gt; macOS app rebuilt 2026-09-24: the original 2026.9.6 macOS build crashed at launch (#156861) and was replaced at 09:52 UTC by a rebuilt, notarized 2026.9.6 build with the fix (#156881). Download the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/145847">docs: update maturity scorecard</a> &mdash; What Problem This Solves Keep the release maturity source and rendered docs synchronized with full-taxonomy QA evidence. Why This Change Was Made The maturity workflow generated this update from the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/117535">fix(doctor): classify critically low disk space as an error</a> &mdash; What Problem This Solves openclaw doctor --lint --only core/doctor/disk-space --severity-min error --json silently hid critically low disk space and exited successfully. The existing health producer...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/157723">feat(desktop): advertise current managed desktop audio</a> &mdash; Related: #157667 Desktop audio stack 4/7. Depends on https://github.com/openclaw/openclaw/pull/157722. Review against the immediate base branch; do not land out of order. What Problem This Solves...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/98259">fix(openai): enable prompt cache keys for Azure</a> &mdash; Summary - centralize Azure OpenAI chat-completions prompt-cache-key detection in the shared completions compat defaults - apply that default in the legacy provider builder, boundary-aware OpenAI...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/157720">feat(desktop): isolate managed Linux application audio</a> &mdash; Related: #157667 Desktop audio stack 2/7. Depends on https://github.com/openclaw/openclaw/pull/157718. Review against the immediate base branch; do not land out of order. What Problem This Solves...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/117456">fix(line): honor provider message action and delivery contracts</a> &mdash; What Problem This Solves LINE messages could be rejected, silently lose valid controls, or expose malformed action payloads because quick replies, templates, Flex components, imagemaps, and generated...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158128">fix: model pickers ignore clicks during startup loading</a> &mdash; What Problem This Solves Fixes model pickers ignoring clicks after opening the Control UI on a freshly started Gateway, even when model rows are already known. User Impact The chat model chip opens...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/157465">feat: speak Gemini dialogues with two voices</a> &mdash; Related: #157331 What Problem This Solves Gemini 3.8 can speak a dialogue in two voices, but OpenClaw still sends every Google TTS request as one speaker. User Impact User impact: with...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/67820">fix(whatsapp): reuse active QR and preserve runtime warnings</a> &mdash; Related: #67815 Related: #67818 What Problem This Solves Fixes the WhatsApp QR login lifecycle and auth diagnosis. Active QR reuse stays in the plugin-owned loginWithQrStart path, and cached QR...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/155284">fix(qa-lab): retain tab focus and scroll during polling</a> &mdash; What Problem This Solves When polling replaces the QA Lab tab bar, keyboard focus disappears and an intentionally scrolled mobile tab bar snaps back to the start. Why This Change Was Made The...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158081">fix: show GitHub merge and closure dates beside sidebar badges</a> &mdash; What Problem This Solves Fixes: GitHub&#x27;s reader sidebar shows the creation date beside a Merged or Closed badge instead of when that status happened. User Impact Merged pull requests show their merge...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/157986">Automations: every agentTurn job fails with DataCloneError, while command/script payloads work</a> &mdash; Environment: OpenClaw 2026.9.6 (eb377ac) | Windows 10.0.26200 (x64) | Node v24.19.0 | gateway installed as a Windows Scheduled Task, port 9812, bind=loopback. Summary Since 2026-09-24T23:25+08:00,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/157667">Remote desktop application audio for managed Linux desktops</a> &mdash; Landing progress Final recovery boundary repair: optional audio has its own three-retries/five-minutes budget. Exhaustion or unrecoverable audio disables capture with guidance while healthy desktop...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158047">fix(gateway): cancel pending model reloads during shutdown</a> &mdash; Related: #147584, #151608 What Problem This Solves The last Gateway could wait for a model-publication timeout during shutdown because it joined a config reload before signalling cancellation to that...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/98248">fix: Codex catalog honors app-server context caps</a> &mdash; Related: #93764 What Problem This Solves Fixes an issue where users running the Codex harness could see OpenClaw model context display and budgeting based on stale local context metadata when Codex...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/149305">[Bug]: Terminal outcome classification depends on observation order between provider failure and queue timeout</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary The exported terminal-outcome merge produces different canonical results for equivalent provider-failure...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/157555">refactor: receive channel webhooks through Gateway routes</a> &mdash; Closes #157553 Coordinator follow-up: blocked; do not land The approved runtime-default design is implemented and reviewed. Final rebased Testbox live proof and exact-head CI are in progress; no...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/144594">Inter-session messages accepted into `pendingInputs` can be silently retained in `interrupted` state with no automatic replay and no bilateral warning</a> &mdash; Summary When a session&#x27;s run is interrupted (gateway restart, cooldown, provider error killing the run), inbound inter-session messages that were already accepted (sender received status: accepted,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158110">perf(skills): preserve canonical sources in worktree sessions</a> &mdash; Related: #158092 What Problem This Solves Managed-worktree sessions can select modified worktree skills ahead of their configured agent workspace and canonical project checkout. Team&#x27;s perf campaign...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/149867">contextInjection: &quot;continuation-skip&quot; never skips on a completed workspace (completion marker can never be written)</a> &mdash; Version: OpenClaw 2026.9.4 (3a9d69d, npm latest at time of writing) Host: Linux 6.6.87.2-microsoft-standard-WSL2, Node 24.18.0, single agent main Model: deepseek/deepseek-flash (1.0M window) Summary...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/157500">feat(workers): authenticate stock GitHub clients on enterprise workers</a> &mdash; What Problem This Solves Cloud worker turns and Codex remote execution cannot currently use stock git and gh against a configured GitHub Enterprise host with a short-lived GitHub App installation...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/150262">[Feature]: Add option to sync LM Studio&#x27;s available models with OpenClaw after install</a> &mdash; Summary When installing OpenClaw it can detect the available models that LM Studio offers, and write them to openclaw.json. However, when one adds more models to LM Studio afterwards, there is no...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/117374">fix(doctor): diagnose inaccessible Claude CLI workspace paths</a> &mdash; What Problem This Solves Claude CLI doctor silently treated inaccessible, malformed, dangling, non-searchable, and uncreatable workspace/project directories as harmless missing paths. Existing...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/157975">fix(agents): agent-started subagents take over the user&#x27;s chat</a> &mdash; What Problem This Solves Fixes: when an agent starts a subagent with sessions_spawn and thread: true, OpenClaw binds the chat the user is in to that subagent. On Telegram (forum topics and DMs bind...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158118">fix: keep child completion responsive during database contention</a> &mdash; What Problem This Solves Fixes Gateway event handling stalling when a child run finishes while another process holds the shared state database. User Impact Child completion and cancellation wait for...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/158131">Update failure: global-install-failed (2026.9.3)</a> &mdash; OpenClaw update failure report This report was explicitly reviewed and confirmed in OpenClaw. - OpenClaw version: 2026.9.3 - Platform: linux/x64 - Update target: exact target unavailable; mode: npm -...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/117430">fix(ui): make copy actions accessible and consistent across surfaces</a> &mdash; What Problem This Solves Control UI copy surfaces can retain an old failure state after a successful retry or let an earlier timer erase newer copied feedback. The Gateway connection command also...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/157661">fix: preserve legacy state when Termux denies migration hardlinks</a> &mdash; Related: #157519 &gt; Not merge-ready: the required published-driver acceptance cell is blocked. On real stock Termux, unmodified OpenClaw 2026.6.1 exits before candidate installation with Gateway...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/154114">openclaw update: candidate rehearsal fails with &#x27;No usable, authenticated, tool-capable inference route&#x27; despite live Gateway having working model auth</a> &mdash; Summary openclaw update (both via scheduled/cron-triggered automatic updates and manual openclaw update --yes --json runs) consistently fails to complete the 2026.9.4 → 2026.9.5 upgrade at the...</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-09-25</a> &mdash; 390474 stars, 82146 forks, 3425 contributors</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (88 total)</a> &mdash; 88 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/f6a1b53566206fd1e340a2bc07e8510869121f55">fix(ui): show full SkillSpector source ranges (#3818)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/cb9c3ea5eefb6859ccbbf863152805330402c833">fix(ui): clarify scanner evidence and compact AIG findings (#3817)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/0ae54008b388c9a9deb621b6a3a9e3de9d4ac60a">fix(ui): render compact inline AIG and SkillSpector reports (#3816)</a> &mdash; fix(ui): render inline security reports as compact markdown fix(ui): label plain-text audit remediation</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/73d65ef1dfff4cdbecd16b3d2587872645973983">improve(workers): use GPT-6 Sol and prepare skill card reuse (#3803)</a> &mdash; improve(workers): reuse unchanged skill cards with GPT-6 Sol test(skill-cards): qualify worker credentials with an isolated fixture test(skill-cards): exercise reuse and fencing on the local backend...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/c3dd025b7d469447879f05a276d7b7431401d973">fix: do not promote a pending skill version to latest (#3771)</a> &mdash; Revoke and quarantine replacement now reuses the owner-delete publication filter so a staged pending sibling cannot become latestVersionId. Signed-off-by: Sebastien Tardif</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/826992bd72b9f9ab09254dc43551facdf94cb07b">improve: lead the homepage with Plugins and Featured (#3794)</a> &mdash; Default the homepage catalog to Featured plugins, place Plugins before Skills, and put Featured before Trending when browsing Skills. Preserve dedicated browse routes. Co-authored-by: Patrick-Erichsen</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/e992cbe200881291d0adccc55a1e49768b9073a8">improve: distinguish Voice with a microphone icon (#3792)</a> &mdash; Use the existing Lucide microphone for the shared Voice category, with matching generated schema artifacts and a regression test for unchanged filtering. Co-authored-by: Patrick-Erichsen...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/2c901bdf46ef9a75a1702616e6c0f3c5b9361be3">fix: enforce publication visibility across registry reads (#3764)</a> &mdash; fix(skills): centralize checked publication reads and hash matches fix(packages): centralize checked public release selection fix(downloads): consume checked skill version snapshots fix(skills):...</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/d6814b8828c7f783e6ed1a3f9b9132da801e2550">Add skill: patelnav/youtube-transcript-speaker-diarization</a></li>
+  <li><a href="https://formulae.brew.sh/formula/openclaw-cli">openclaw-cli 2026.9.6 on Homebrew</a> &mdash; Your own personal AI assistant</li>
+  <li><a href="https://hub.docker.com/r/openclaw/openclaw">openclaw/openclaw on Docker Hub</a> &mdash; Official openclaw/openclaw docker images.</li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://www.flyingpenguin.com/build-an-openclaw-free-secure-always-on-local-ai-agent/">OpenClaw isn&#x27;t fooling me. I remember MS-DOS</a></li>
+  <li><a href="https://www.star-history.com/blog/openclaw-surpasses-react-most-starred-software">OpenClaw surpasses React to become the most-starred software project on GitHub</a></li>
+  <li><a href="https://klausai.com/">Show HN: Klaus – OpenClaw on a VM, batteries included</a></li>
+  <li><a href="https://dev.to/philip098/save-money-deploying-qwen-35-on-developer-cloud-38c8">Save Money Deploying Qwen 3.5 on Developer Cloud</a> &mdash; A student can run the next‑gen legal AI Qwen 3.5 on AMD’s cloud without spending a dime. Follow a simple, zero‑setup workflow and stay under free credit limits.</li>
+  <li><a href="https://s-saci95.medium.com/everybody-told-me-to-not-connect-openclaw-to-supply-chain-systems-so-i-tried-with-a-fake-one-first-b3ec7bbd7175?source=rss------openclaw-5">Everybody Told Me to NOT Connect OpenClaw To Supply Chain Systems: So I Tried With a Fake One First</a> &mdash; My customers want an agent watching their operation, but none of them has a safe place to find out what it would actually do.Continue reading on Medium »</li>
+</ul>
+  </div>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="archive-gate">
+      <h2>Read the full issue</h2>
+      <p>Subscribe to get every section delivered to your inbox.</p>
+      <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+      <label class="archive-reveal" for="show-full">Continue reading &rarr;</label>
+    </div>
+
+    <input type="checkbox" id="show-full" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      
+      
+      
+      
+      
+      
+      
+      <section class="section" id="releases">
+  <h2 class="section-title">Releases</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/releases/tag/v2026.9.6">openclaw 2026.9.6</a> &mdash; &gt; macOS app rebuilt 2026-09-24: the original 2026.9.6 macOS build crashed at launch (#156861) and was replaced at 09:52 UTC by a rebuilt, notarized 2026.9.6 build with the fix (#156881). Download the...</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-09-25</a> &mdash; 390474 stars, 82146 forks, 3425 contributors</li>
+  <li><a href="https://formulae.brew.sh/formula/openclaw-cli">openclaw-cli 2026.9.6 on Homebrew</a> &mdash; Your own personal AI assistant</li>
+  <li><a href="https://hub.docker.com/r/openclaw/openclaw">openclaw/openclaw on Docker Hub</a> &mdash; Official openclaw/openclaw docker images.</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="community">
+  <h2 class="section-title">Community</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/145847">docs: update maturity scorecard</a> &mdash; What Problem This Solves Keep the release maturity source and rendered docs synchronized with full-taxonomy QA evidence. Why This Change Was Made The maturity workflow generated this update from the...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/117535">fix(doctor): classify critically low disk space as an error</a> &mdash; What Problem This Solves openclaw doctor --lint --only core/doctor/disk-space --severity-min error --json silently hid critically low disk space and exited successfully. The existing health producer...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/157723">feat(desktop): advertise current managed desktop audio</a> &mdash; Related: #157667 Desktop audio stack 4/7. Depends on https://github.com/openclaw/openclaw/pull/157722. Review against the immediate base branch; do not land out of order. What Problem This Solves...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/98259">fix(openai): enable prompt cache keys for Azure</a> &mdash; Summary - centralize Azure OpenAI chat-completions prompt-cache-key detection in the shared completions compat defaults - apply that default in the legacy provider builder, boundary-aware OpenAI...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/157720">feat(desktop): isolate managed Linux application audio</a> &mdash; Related: #157667 Desktop audio stack 2/7. Depends on https://github.com/openclaw/openclaw/pull/157718. Review against the immediate base branch; do not land out of order. What Problem This Solves...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/117456">fix(line): honor provider message action and delivery contracts</a> &mdash; What Problem This Solves LINE messages could be rejected, silently lose valid controls, or expose malformed action payloads because quick replies, templates, Flex components, imagemaps, and generated...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158128">fix: model pickers ignore clicks during startup loading</a> &mdash; What Problem This Solves Fixes model pickers ignoring clicks after opening the Control UI on a freshly started Gateway, even when model rows are already known. User Impact The chat model chip opens...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/157465">feat: speak Gemini dialogues with two voices</a> &mdash; Related: #157331 What Problem This Solves Gemini 3.8 can speak a dialogue in two voices, but OpenClaw still sends every Google TTS request as one speaker. User Impact User impact: with...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/67820">fix(whatsapp): reuse active QR and preserve runtime warnings</a> &mdash; Related: #67815 Related: #67818 What Problem This Solves Fixes the WhatsApp QR login lifecycle and auth diagnosis. Active QR reuse stays in the plugin-owned loginWithQrStart path, and cached QR...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/155284">fix(qa-lab): retain tab focus and scroll during polling</a> &mdash; What Problem This Solves When polling replaces the QA Lab tab bar, keyboard focus disappears and an intentionally scrolled mobile tab bar snaps back to the start. Why This Change Was Made The...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158081">fix: show GitHub merge and closure dates beside sidebar badges</a> &mdash; What Problem This Solves Fixes: GitHub&#x27;s reader sidebar shows the creation date beside a Merged or Closed badge instead of when that status happened. User Impact Merged pull requests show their merge...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/157986">Automations: every agentTurn job fails with DataCloneError, while command/script payloads work</a> &mdash; Environment: OpenClaw 2026.9.6 (eb377ac) | Windows 10.0.26200 (x64) | Node v24.19.0 | gateway installed as a Windows Scheduled Task, port 9812, bind=loopback. Summary Since 2026-09-24T23:25+08:00,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/157667">Remote desktop application audio for managed Linux desktops</a> &mdash; Landing progress Final recovery boundary repair: optional audio has its own three-retries/five-minutes budget. Exhaustion or unrecoverable audio disables capture with guidance while healthy desktop...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158047">fix(gateway): cancel pending model reloads during shutdown</a> &mdash; Related: #147584, #151608 What Problem This Solves The last Gateway could wait for a model-publication timeout during shutdown because it joined a config reload before signalling cancellation to that...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/98248">fix: Codex catalog honors app-server context caps</a> &mdash; Related: #93764 What Problem This Solves Fixes an issue where users running the Codex harness could see OpenClaw model context display and budgeting based on stale local context metadata when Codex...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/149305">[Bug]: Terminal outcome classification depends on observation order between provider failure and queue timeout</a> &mdash; Bug type Behavior bug (incorrect output/state without crash) Beta release blocker No Summary The exported terminal-outcome merge produces different canonical results for equivalent provider-failure...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/157555">refactor: receive channel webhooks through Gateway routes</a> &mdash; Closes #157553 Coordinator follow-up: blocked; do not land The approved runtime-default design is implemented and reviewed. Final rebased Testbox live proof and exact-head CI are in progress; no...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/144594">Inter-session messages accepted into `pendingInputs` can be silently retained in `interrupted` state with no automatic replay and no bilateral warning</a> &mdash; Summary When a session&#x27;s run is interrupted (gateway restart, cooldown, provider error killing the run), inbound inter-session messages that were already accepted (sender received status: accepted,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158110">perf(skills): preserve canonical sources in worktree sessions</a> &mdash; Related: #158092 What Problem This Solves Managed-worktree sessions can select modified worktree skills ahead of their configured agent workspace and canonical project checkout. Team&#x27;s perf campaign...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/149867">contextInjection: &quot;continuation-skip&quot; never skips on a completed workspace (completion marker can never be written)</a> &mdash; Version: OpenClaw 2026.9.4 (3a9d69d, npm latest at time of writing) Host: Linux 6.6.87.2-microsoft-standard-WSL2, Node 24.18.0, single agent main Model: deepseek/deepseek-flash (1.0M window) Summary...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/157500">feat(workers): authenticate stock GitHub clients on enterprise workers</a> &mdash; What Problem This Solves Cloud worker turns and Codex remote execution cannot currently use stock git and gh against a configured GitHub Enterprise host with a short-lived GitHub App installation...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/150262">[Feature]: Add option to sync LM Studio&#x27;s available models with OpenClaw after install</a> &mdash; Summary When installing OpenClaw it can detect the available models that LM Studio offers, and write them to openclaw.json. However, when one adds more models to LM Studio afterwards, there is no...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/117374">fix(doctor): diagnose inaccessible Claude CLI workspace paths</a> &mdash; What Problem This Solves Claude CLI doctor silently treated inaccessible, malformed, dangling, non-searchable, and uncreatable workspace/project directories as harmless missing paths. Existing...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/157975">fix(agents): agent-started subagents take over the user&#x27;s chat</a> &mdash; What Problem This Solves Fixes: when an agent starts a subagent with sessions_spawn and thread: true, OpenClaw binds the chat the user is in to that subagent. On Telegram (forum topics and DMs bind...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158118">fix: keep child completion responsive during database contention</a> &mdash; What Problem This Solves Fixes Gateway event handling stalling when a child run finishes while another process holds the shared state database. User Impact Child completion and cancellation wait for...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/158131">Update failure: global-install-failed (2026.9.3)</a> &mdash; OpenClaw update failure report This report was explicitly reviewed and confirmed in OpenClaw. - OpenClaw version: 2026.9.3 - Platform: linux/x64 - Update target: exact target unavailable; mode: npm -...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/117430">fix(ui): make copy actions accessible and consistent across surfaces</a> &mdash; What Problem This Solves Control UI copy surfaces can retain an old failure state after a successful retry or let an earlier timer erase newer copied feedback. The Gateway connection command also...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/157661">fix: preserve legacy state when Termux denies migration hardlinks</a> &mdash; Related: #157519 &gt; Not merge-ready: the required published-driver acceptance cell is blocked. On real stock Termux, unmodified OpenClaw 2026.6.1 exits before candidate installation with Gateway...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/154114">openclaw update: candidate rehearsal fails with &#x27;No usable, authenticated, tool-capable inference route&#x27; despite live Gateway having working model auth</a> &mdash; Summary openclaw update (both via scheduled/cron-triggered automatic updates and manual openclaw update --yes --json runs) consistently fails to complete the 2026.9.4 → 2026.9.5 upgrade at the...</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (88 total)</a> &mdash; 88 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/f6a1b53566206fd1e340a2bc07e8510869121f55">fix(ui): show full SkillSpector source ranges (#3818)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/cb9c3ea5eefb6859ccbbf863152805330402c833">fix(ui): clarify scanner evidence and compact AIG findings (#3817)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/0ae54008b388c9a9deb621b6a3a9e3de9d4ac60a">fix(ui): render compact inline AIG and SkillSpector reports (#3816)</a> &mdash; fix(ui): render inline security reports as compact markdown fix(ui): label plain-text audit remediation</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/73d65ef1dfff4cdbecd16b3d2587872645973983">improve(workers): use GPT-6 Sol and prepare skill card reuse (#3803)</a> &mdash; improve(workers): reuse unchanged skill cards with GPT-6 Sol test(skill-cards): qualify worker credentials with an isolated fixture test(skill-cards): exercise reuse and fencing on the local backend...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/c3dd025b7d469447879f05a276d7b7431401d973">fix: do not promote a pending skill version to latest (#3771)</a> &mdash; Revoke and quarantine replacement now reuses the owner-delete publication filter so a staged pending sibling cannot become latestVersionId. Signed-off-by: Sebastien Tardif</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/826992bd72b9f9ab09254dc43551facdf94cb07b">improve: lead the homepage with Plugins and Featured (#3794)</a> &mdash; Default the homepage catalog to Featured plugins, place Plugins before Skills, and put Featured before Trending when browsing Skills. Preserve dedicated browse routes. Co-authored-by: Patrick-Erichsen</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/e992cbe200881291d0adccc55a1e49768b9073a8">improve: distinguish Voice with a microphone icon (#3792)</a> &mdash; Use the existing Lucide microphone for the shared Voice category, with matching generated schema artifacts and a regression test for unchanged filtering. Co-authored-by: Patrick-Erichsen...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/2c901bdf46ef9a75a1702616e6c0f3c5b9361be3">fix: enforce publication visibility across registry reads (#3764)</a> &mdash; fix(skills): centralize checked publication reads and hash matches fix(packages): centralize checked public release selection fix(downloads): consume checked skill version snapshots fix(skills):...</li>
+  <li><a href="https://github.com/VoltAgent/awesome-openclaw-skills/commit/d6814b8828c7f783e6ed1a3f9b9132da801e2550">Add skill: patelnav/youtube-transcript-speaker-diarization</a></li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="news">
+  <h2 class="section-title">News</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://www.flyingpenguin.com/build-an-openclaw-free-secure-always-on-local-ai-agent/">OpenClaw isn&#x27;t fooling me. I remember MS-DOS</a></li>
+  <li><a href="https://www.star-history.com/blog/openclaw-surpasses-react-most-starred-software">OpenClaw surpasses React to become the most-starred software project on GitHub</a></li>
+  <li><a href="https://klausai.com/">Show HN: Klaus – OpenClaw on a VM, batteries included</a></li>
+  <li><a href="https://dev.to/philip098/save-money-deploying-qwen-35-on-developer-cloud-38c8">Save Money Deploying Qwen 3.5 on Developer Cloud</a> &mdash; A student can run the next‑gen legal AI Qwen 3.5 on AMD’s cloud without spending a dime. Follow a simple, zero‑setup workflow and stay under free credit limits.</li>
+  <li><a href="https://s-saci95.medium.com/everybody-told-me-to-not-connect-openclaw-to-supply-chain-systems-so-i-tried-with-a-fake-one-first-b3ec7bbd7175?source=rss------openclaw-5">Everybody Told Me to NOT Connect OpenClaw To Supply Chain Systems: So I Tried With a Fake One First</a> &mdash; My customers want an agent watching their operation, but none of them has a safe place to find out what it would actually do.Continue reading on Medium »</li>
+</ul>
+  </div>
+</section>
+      
+      
+    </div>
+
+    <footer class="footer">
+  <div class="footer-divider"></div>
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  <p>
+    Generated with AI by the
+    <a href="https://github.com/openclaw/openclaw">OpenClaw</a> Newsletter Bot
+  </p>
+  <div class="footer-links">
+    <a href="../archive.html">Archive</a>
+    <a href="../rss.xml">RSS</a>
+    <a href="https://github.com/openclaw/openclaw">Star on GitHub</a>
+  </div>
+</footer>
+  </div>
+</body>
+</html>
