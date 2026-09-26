@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenClaw Newsletter - 2026-09-26</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="alternate" type="application/rss+xml" title="OpenClaw Newsletter" href="../rss.xml">
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenClaw Newsletter - 2026-09-26">
+<meta property="og:description" content="improve(update): avoid missing metadata reads during inventory &mdash; What Problem This Solves Updates waste filesystem operations probing every retain...">
+<meta property="og:url" content="https://swkpku.github.io/openclaw-newsletter/issues/2026-09-26.html">
+<meta property="og:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenClaw Newsletter - 2026-09-26">
+<meta name="twitter:description" content="improve(update): avoid missing metadata reads during inventory &mdash; What Problem This Solves Updates waste filesystem operations probing every retain...">
+<meta name="twitter:image" content="https://swkpku.github.io/openclaw-newsletter/assets/og-image.svg">
+</head>
+<body>
+  <div class="container">
+    
+    <header class="header">
+  <div class="header-top">
+    <div class="header-brand">
+      <div class="header-logo">OC</div>
+      <div>
+        <h1>OpenClaw Newsletter</h1>
+        <p class="subtitle">Daily updates from the OpenClaw ecosystem</p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="date">Saturday, September 26, 2026</p>
+  
+  <nav class="nav">
+    <a href="../index.html">Latest</a>
+    <a href="../archive.html">Archive</a>
+    <a href="https://github.com/openclaw/openclaw">GitHub</a>
+  </nav>
+  
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  
+</header>
+
+    
+    <div class="toc">
+      <h2>In This Issue</h2>
+      <ul>
+        
+        <li><a href="#top_stories">Top Stories</a></li>
+        
+        <li><a href="#releases">Releases</a></li>
+        
+        <li><a href="#community">Community</a></li>
+        
+        <li><a href="#news">News</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    <section class="section" id="top_stories">
+  <h2 class="section-title">Top Stories</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158522">improve(update): avoid missing metadata reads during inventory</a> &mdash; What Problem This Solves Updates waste filesystem operations probing every retained runtime directory for package and pnpm metadata that usually does not exist. User Impact Candidate inventory runs...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158630">improve(gateway): reduce session update work for concurrent viewers</a> &mdash; What Problem This Solves Frequent session updates repeat row preparation, presentation, and encoding for every connected Control UI viewer, increasing Gateway CPU use during large shared demos. User...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/158287">Update failure: gateway-recovery-verification (2026.9.6)</a> &mdash; OpenClaw update failure report This report was explicitly reviewed and confirmed in OpenClaw. - OpenClaw version: 2026.9.6 - Platform: linux/x64 - Node version: 24.20.0 - Update action: Gateway RPC:...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158629">perf(gateway): keep progress updates from blocking other chats</a> &mdash; What Problem This Solves Progress-card updates synchronously run SQLite on the Gateway thread, delaying other Control UI clients during bursts of updates. User Impact Progress-card persistence leaves...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158477">refactor(channels): discover ingress accounts in worker</a> &mdash; What Problem This Solves Ingress account discovery still reads SQLite on its caller thread, and a duplicate synchronous helper can create state just to list accounts. User Impact No user-visible...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158469">improve: reduce chat history catch-up CPU</a> &mdash; What Problem This Solves Chat history catch-up requests serialize the same session metadata in every message envelope just to enforce the response byte limit. User Impact Controlled 100-message...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158886">refactor(channels): deslop discord and slack third pass</a> &mdash; What Problem This Solves Maintainer-requested third pass over the Discord and Slack plugins removes redundant forwarding, duplicated transport projections, and retired compatibility code left after...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158624">fix(cli): defer inference runtimes until command execution</a> &mdash; What Problem This Solves Inference help and shell completion load provider execution, authentication, configuration, and Gateway runtimes while building the command tree. That makes discovery depend...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158464">perf(gateway): keep Control UI file reads off the event loop</a> &mdash; What Problem This Solves Concurrent Control UI page loads repeat synchronous filesystem admission on the Gateway event loop, delaying other requests and chat delivery. User Impact Bundled UI assets...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/146721">refactor: reuse shared deferred promises in core and plugin tests</a> &mdash; What Problem This Solves Core and plugin tests repeatedly implement Promise resolver capture, including wrappers that own separate cleanup policy. User Impact No production behavior changes....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/141535">fix(gateway): don&#x27;t fail the whole turn on a skill-authoring run-replacement race</a> &mdash; What Problem This Solves Opening the same &quot;main&quot; agent chat from a second device (mobile app) while a turn was already in flight on another device caused the entire embedded agent run to fail with a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/139290">refactor(test): reuse the container spawn-call assertion helper</a> &mdash; What Problem This Solves The container CLI tests duplicate the shared mock-call assertion helper with a local tuple cast. This maintainer-requested test cleanup removes that duplicate without...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/152328">Add OpenClaw Desktop as a submodule</a> &mdash; &gt; &quot;could this be done with a submodule? fork is a bit confusing when it&#x27;s sth that improves the experience on top!&quot; Yes — here it is. @steipete What Problem This Solves OpenClaw Desktop is a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158436">refactor(firecrawl): consolidate target validation tests</a> &mdash; What Problem This Solves Firecrawl target validation is tested through two direct private-helper layers and one actual scrape call. The direct layers cannot detect removal of the guard invocation...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158863">feat: reserve ordered model recommendations in catalog v2</a> &mdash; What Problem This Solves Provider authors need one ordered, curated model shortlist in the catalog, without scattering recommendation flags across model rows. User Impact No user-visible change....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158558">fix(browser): stop shared profiles from mixing session tabs</a> &mdash; What Problem This Solves Fixes browser panels and tab-targeted agent actions mixing tabs from different conversations when they share a browser profile. User Impact Each conversation lists, selects,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158465">perf(sessions): keep durable chat metadata patches off the Gateway thread</a> &mdash; What Problem This Solves Concurrent chat starts and completions can pause the Gateway while durable session metadata patches execute SQLite on its main thread. User Impact Writer claims, usage...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/67421">feat: add per-agent web_fetch ssrf overrides</a> &mdash; Summary This PR makes web_fetch SSRF policy configurable per named agent at: The global sett</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158833">perf(gateway): reuse resident mutation authority facts</a> &mdash; What Problem This Solves Repeated session mutation admission and post-await authorization guards reopen session metadata during concurrent Control UI prompting, despite current committed facts...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158885">perf(sessions): bound maintenance planning outside write admission</a> &mdash; What Problem This Solves Automatic session maintenance repeatedly decodes unrelated entry payloads and holds write admission during candidate planning on large stores. User Impact Maintenance does...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/156496">refactor(synology-chat): strengthen client test assertions</a> &mdash; Related: https://github.com/openclaw/openclaw/issues/139428 What Problem This Solves The Synology Chat malformed-user regression could pass from a cached result, while recipient and hosted-URL cases...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158714">test(core,plugins,ui): remove low-value tests (batch d014)</a> &mdash; What Problem This Solves The affected suites repeat parameter permutations, helper-level probes, and fixture setup already covered at their owning behavior boundaries. Batch d014 removes those...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/152384">fix(test): preserve stack coordinates in redacted failure reports</a> &mdash; Related: https://github.com/openclaw/openclaw/pull/150983 What Problem This Solves Fixes missing line and column coordinates in Vitest failure reports when a source filename resembles a credential...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/157236">improve(test): strengthen speech and regional provider regression checks</a> &mdash; What Problem This Solves Speech and regional provider tests repeat weaker checks, miss precise error or preview output, and can leave streaming results unreleased when assertions fail. Why This...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147303">feat(push): add durable Live Activity delivery</a> &mdash; What Problem This Solves Remote Live Activity delivery needs bounded state that survives Gateway restarts without reusing stale authority or replacing ordinary device-push registrations. This PR...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/158832">[Feature]: doctor warns for capability-gated core tool show_widget pulled in via group:openclaw, with no config-level way to resolve it</a> &mdash; Summary openclaw doctor reports show_widget as an unavailable allowlist entry on any install/surface that does not advertise the inline-widgets client capability, and because show_widget is a member...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158811">test(core,plugins,tooling): remove low-value tests (batch d011)</a> &mdash; What Problem This Solves The test suite carries repeated input variants, copied implementation inventories, and fixture boilerplate that add maintenance cost without independent behavior coverage....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158856">test(core,plugins,ui): remove low-value tests (batch d018)</a> &mdash; What Problem This Solves Redundant test matrices, wrapper-level checks, and repeated fixtures make the test suite harder to maintain. This maintainer-requested batch removes audited low-value cases...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158882">test(core,ui,plugins): remove low-value tests (batch d017)</a> &mdash; What Problem This Solves This maintainer-requested batch removes redundant test cases and repeated fixtures from the wizard, Control UI, agent runtime, configuration, skills, and four bundled...</li>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-09-26</a> &mdash; 390548 stars, 82149 forks, 3431 contributors</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (88 total)</a> &mdash; 88 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/21dc829bf2943c78dfb101f043eef1edb731d35f">feat: use the completed 24-hour window for plugin Trending (#3826)</a> &mdash; feat: rank plugin trending over the completed 24-hour window docs: describe the 24-hour plugin trending API fix: preserve plugin Trending during the 24-hour cutover docs: clarify lifetime download...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/8d6d7b95585517501ffb54bcb1bcb4e0ae99b0b8">fix: preserve homepage plugin Trending search and pagination (#3825)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/0b899b1a2c641c318c787ab88faeb2f81fe5c87d">fix: align catalog tabs and featured skill rows (#3829)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/337e7b4c5c1bae715b5d4922fc356dc3d696ba23">feat: target category previews by package name (#3823)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/b2876dffe8b8ea2769ba945be7e1a5bb988bc743">feat: curate plugin discovery and add Computer use (#3822)</a> &mdash; feat: curate plugin discovery and add computer use category fix: retain all languages in complete plugin category browse</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/650e3362864fd6b5180d8117bc3ee0a127112d79">feat: support skills.sh entries in featured skills (#3821)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/81663351960fa5364c10d1f22b3ffa5641fcedb7">fix: order featured catalogs by newest selection (#3820)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/cb9c3ea5eefb6859ccbbf863152805330402c833">fix(ui): clarify scanner evidence and compact AIG findings (#3817)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/0ae54008b388c9a9deb621b6a3a9e3de9d4ac60a">fix(ui): render compact inline AIG and SkillSpector reports (#3816)</a> &mdash; fix(ui): render inline security reports as compact markdown fix(ui): label plain-text audit remediation</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/cf06a69d314aec7535b3363156684fb538cc7779">fix: HTTP skill owner checks ignore current org membership (#3758)</a> &mdash; fix: use current org membership for skill HTTP owner checks GET /moderation and hidden-skill owner hints still treated historical ownerUserId as owner after GHSA-9558. Org skills now use...</li>
+  <li><a href="https://huggingface.co/ykarout/Qwen3.5-9b-Opus-Openclaw-Distilled-GGUF">ykarout/Qwen3.5-9b-Opus-Openclaw-Distilled-GGUF</a> &mdash; text-generation</li>
+  <li><a href="https://huggingface.co/mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-GGUF">mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-GGUF</a></li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://brandon.wang/2026/clawdbot">A sane but bull case on Clawdbot / OpenClaw</a></li>
+  <li><a href="https://www.star-history.com/blog/openclaw-surpasses-react-most-starred-software">OpenClaw surpasses React to become the most-starred software project on GitHub</a></li>
+  <li><a href="https://app.uniclaw.ai/arena?tab=costEffectiveness&amp;via=hn">StepFun 3.5 Flash is #1 cost-effective model for OpenClaw tasks (300 battles)</a></li>
+  <li><a href="https://twitter.com/steipete/status/2055346265869721905">OpenClaw Creator Spent $1.3M on OpenAI Tokens in 30 Days</a></li>
+  <li><a href="https://dev.to/rosgluk/agent-skills-vs-mcp-servers-decision-framework-3n04">Agent Skills vs MCP Servers: Decision Framework</a> &mdash; Agent Skills and MCP servers are often presented as competing ways to extend an AI agent. That...</li>
+  <li><a href="https://dev.to/moltednet/how-to-host-openclaw-for-multiple-clients-in-production-51oc">How to Host OpenClaw for Multiple Clients in Production</a> &mdash; The first OpenClaw deployment is usually straightforward. You provision a machine, configure one...</li>
+  <li><a href="https://dev.to/philip098/save-money-deploying-qwen-35-on-developer-cloud-38c8">Save Money Deploying Qwen 3.5 on Developer Cloud</a> &mdash; A student can run the next‑gen legal AI Qwen 3.5 on AMD’s cloud without spending a dime. Follow a simple, zero‑setup workflow and stay under free credit limits.</li>
+  <li><a href="https://medium.com/@aatreyaadvith/openclaw-vs-hermes-agent-which-ai-agent-fits-your-workflow-9a46fb535131?source=rss------openclaw-5">OpenClaw vs Hermes Agent: Which AI Agent Fits Your Workflow?</a> &mdash; AI agents are moving beyond simple chat.Continue reading on Medium »</li>
+  <li><a href="https://alternativeto.net/software/manus/about/">Manus</a> &mdash; AI agent bridges thoughts and actions, excelling in work and life tasks like personalized travel, stock analysis, insurance comparisons, and supplier sourcing, autonomously completing tasks and...</li>
+  <li><a href="https://alternativeto.net/software/meta-muse/about/">Meta Muse</a> &mdash; An approval-based AI agent that manages email and scheduling, books reservations, tracks spending and subscriptions, compares prices, and monitors health data. It can continue tasks such as trip...</li>
+</ul>
+  </div>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="archive-gate">
+      <h2>Read the full issue</h2>
+      <p>Subscribe to get every section delivered to your inbox.</p>
+      <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+      <label class="archive-reveal" for="show-full">Continue reading &rarr;</label>
+    </div>
+
+    <input type="checkbox" id="show-full" class="archive-toggle" hidden>
+
+    <div class="archive-content">
+      
+      
+      
+      
+      
+      
+      
+      <section class="section" id="releases">
+  <h2 class="section-title">Releases</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw">OpenClaw repo stats for 2026-09-26</a> &mdash; 390548 stars, 82149 forks, 3431 contributors</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="community">
+  <h2 class="section-title">Community</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158522">improve(update): avoid missing metadata reads during inventory</a> &mdash; What Problem This Solves Updates waste filesystem operations probing every retained runtime directory for package and pnpm metadata that usually does not exist. User Impact Candidate inventory runs...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158630">improve(gateway): reduce session update work for concurrent viewers</a> &mdash; What Problem This Solves Frequent session updates repeat row preparation, presentation, and encoding for every connected Control UI viewer, increasing Gateway CPU use during large shared demos. User...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/158287">Update failure: gateway-recovery-verification (2026.9.6)</a> &mdash; OpenClaw update failure report This report was explicitly reviewed and confirmed in OpenClaw. - OpenClaw version: 2026.9.6 - Platform: linux/x64 - Node version: 24.20.0 - Update action: Gateway RPC:...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158629">perf(gateway): keep progress updates from blocking other chats</a> &mdash; What Problem This Solves Progress-card updates synchronously run SQLite on the Gateway thread, delaying other Control UI clients during bursts of updates. User Impact Progress-card persistence leaves...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158477">refactor(channels): discover ingress accounts in worker</a> &mdash; What Problem This Solves Ingress account discovery still reads SQLite on its caller thread, and a duplicate synchronous helper can create state just to list accounts. User Impact No user-visible...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158469">improve: reduce chat history catch-up CPU</a> &mdash; What Problem This Solves Chat history catch-up requests serialize the same session metadata in every message envelope just to enforce the response byte limit. User Impact Controlled 100-message...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158886">refactor(channels): deslop discord and slack third pass</a> &mdash; What Problem This Solves Maintainer-requested third pass over the Discord and Slack plugins removes redundant forwarding, duplicated transport projections, and retired compatibility code left after...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158624">fix(cli): defer inference runtimes until command execution</a> &mdash; What Problem This Solves Inference help and shell completion load provider execution, authentication, configuration, and Gateway runtimes while building the command tree. That makes discovery depend...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158464">perf(gateway): keep Control UI file reads off the event loop</a> &mdash; What Problem This Solves Concurrent Control UI page loads repeat synchronous filesystem admission on the Gateway event loop, delaying other requests and chat delivery. User Impact Bundled UI assets...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/146721">refactor: reuse shared deferred promises in core and plugin tests</a> &mdash; What Problem This Solves Core and plugin tests repeatedly implement Promise resolver capture, including wrappers that own separate cleanup policy. User Impact No production behavior changes....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/141535">fix(gateway): don&#x27;t fail the whole turn on a skill-authoring run-replacement race</a> &mdash; What Problem This Solves Opening the same &quot;main&quot; agent chat from a second device (mobile app) while a turn was already in flight on another device caused the entire embedded agent run to fail with a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/139290">refactor(test): reuse the container spawn-call assertion helper</a> &mdash; What Problem This Solves The container CLI tests duplicate the shared mock-call assertion helper with a local tuple cast. This maintainer-requested test cleanup removes that duplicate without...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/152328">Add OpenClaw Desktop as a submodule</a> &mdash; &gt; &quot;could this be done with a submodule? fork is a bit confusing when it&#x27;s sth that improves the experience on top!&quot; Yes — here it is. @steipete What Problem This Solves OpenClaw Desktop is a...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158436">refactor(firecrawl): consolidate target validation tests</a> &mdash; What Problem This Solves Firecrawl target validation is tested through two direct private-helper layers and one actual scrape call. The direct layers cannot detect removal of the guard invocation...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158863">feat: reserve ordered model recommendations in catalog v2</a> &mdash; What Problem This Solves Provider authors need one ordered, curated model shortlist in the catalog, without scattering recommendation flags across model rows. User Impact No user-visible change....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158558">fix(browser): stop shared profiles from mixing session tabs</a> &mdash; What Problem This Solves Fixes browser panels and tab-targeted agent actions mixing tabs from different conversations when they share a browser profile. User Impact Each conversation lists, selects,...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158465">perf(sessions): keep durable chat metadata patches off the Gateway thread</a> &mdash; What Problem This Solves Concurrent chat starts and completions can pause the Gateway while durable session metadata patches execute SQLite on its main thread. User Impact Writer claims, usage...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/67421">feat: add per-agent web_fetch ssrf overrides</a> &mdash; Summary This PR makes web_fetch SSRF policy configurable per named agent at: The global sett</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158833">perf(gateway): reuse resident mutation authority facts</a> &mdash; What Problem This Solves Repeated session mutation admission and post-await authorization guards reopen session metadata during concurrent Control UI prompting, despite current committed facts...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158885">perf(sessions): bound maintenance planning outside write admission</a> &mdash; What Problem This Solves Automatic session maintenance repeatedly decodes unrelated entry payloads and holds write admission during candidate planning on large stores. User Impact Maintenance does...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/156496">refactor(synology-chat): strengthen client test assertions</a> &mdash; Related: https://github.com/openclaw/openclaw/issues/139428 What Problem This Solves The Synology Chat malformed-user regression could pass from a cached result, while recipient and hosted-URL cases...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158714">test(core,plugins,ui): remove low-value tests (batch d014)</a> &mdash; What Problem This Solves The affected suites repeat parameter permutations, helper-level probes, and fixture setup already covered at their owning behavior boundaries. Batch d014 removes those...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/152384">fix(test): preserve stack coordinates in redacted failure reports</a> &mdash; Related: https://github.com/openclaw/openclaw/pull/150983 What Problem This Solves Fixes missing line and column coordinates in Vitest failure reports when a source filename resembles a credential...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/157236">improve(test): strengthen speech and regional provider regression checks</a> &mdash; What Problem This Solves Speech and regional provider tests repeat weaker checks, miss precise error or preview output, and can leave streaming results unreleased when assertions fail. Why This...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/147303">feat(push): add durable Live Activity delivery</a> &mdash; What Problem This Solves Remote Live Activity delivery needs bounded state that survives Gateway restarts without reusing stale authority or replacing ordinary device-push registrations. This PR...</li>
+  <li><a href="https://github.com/openclaw/openclaw/issues/158832">[Feature]: doctor warns for capability-gated core tool show_widget pulled in via group:openclaw, with no config-level way to resolve it</a> &mdash; Summary openclaw doctor reports show_widget as an unavailable allowlist entry on any install/surface that does not advertise the inline-widgets client capability, and because show_widget is a member...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158811">test(core,plugins,tooling): remove low-value tests (batch d011)</a> &mdash; What Problem This Solves The test suite carries repeated input variants, copied implementation inventories, and fixture boilerplate that add maintenance cost without independent behavior coverage....</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158856">test(core,plugins,ui): remove low-value tests (batch d018)</a> &mdash; What Problem This Solves Redundant test matrices, wrapper-level checks, and repeated fixtures make the test suite harder to maintain. This maintainer-requested batch removes audited low-value cases...</li>
+  <li><a href="https://github.com/openclaw/openclaw/pull/158882">test(core,ui,plugins): remove low-value tests (batch d017)</a> &mdash; What Problem This Solves This maintainer-requested batch removes redundant test cases and repeated fixtures from the wizard, Control UI, agent runtime, configuration, skills, and four bundled...</li>
+  <li><a href="https://github.com/sponsors/openclaw">OpenClaw sponsors (88 total)</a> &mdash; 88 sponsors supporting OpenClaw</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/21dc829bf2943c78dfb101f043eef1edb731d35f">feat: use the completed 24-hour window for plugin Trending (#3826)</a> &mdash; feat: rank plugin trending over the completed 24-hour window docs: describe the 24-hour plugin trending API fix: preserve plugin Trending during the 24-hour cutover docs: clarify lifetime download...</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/8d6d7b95585517501ffb54bcb1bcb4e0ae99b0b8">fix: preserve homepage plugin Trending search and pagination (#3825)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/0b899b1a2c641c318c787ab88faeb2f81fe5c87d">fix: align catalog tabs and featured skill rows (#3829)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/337e7b4c5c1bae715b5d4922fc356dc3d696ba23">feat: target category previews by package name (#3823)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/b2876dffe8b8ea2769ba945be7e1a5bb988bc743">feat: curate plugin discovery and add Computer use (#3822)</a> &mdash; feat: curate plugin discovery and add computer use category fix: retain all languages in complete plugin category browse</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/650e3362864fd6b5180d8117bc3ee0a127112d79">feat: support skills.sh entries in featured skills (#3821)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/81663351960fa5364c10d1f22b3ffa5641fcedb7">fix: order featured catalogs by newest selection (#3820)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/cb9c3ea5eefb6859ccbbf863152805330402c833">fix(ui): clarify scanner evidence and compact AIG findings (#3817)</a></li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/0ae54008b388c9a9deb621b6a3a9e3de9d4ac60a">fix(ui): render compact inline AIG and SkillSpector reports (#3816)</a> &mdash; fix(ui): render inline security reports as compact markdown fix(ui): label plain-text audit remediation</li>
+  <li><a href="https://github.com/openclaw/clawhub/commit/cf06a69d314aec7535b3363156684fb538cc7779">fix: HTTP skill owner checks ignore current org membership (#3758)</a> &mdash; fix: use current org membership for skill HTTP owner checks GET /moderation and hidden-skill owner hints still treated historical ownerUserId as owner after GHSA-9558. Org skills now use...</li>
+</ul>
+  </div>
+</section>
+      
+      
+      
+      <section class="section" id="news">
+  <h2 class="section-title">News</h2>
+  <div class="section-content">
+    <ul>
+  <li><a href="https://huggingface.co/ykarout/Qwen3.5-9b-Opus-Openclaw-Distilled-GGUF">ykarout/Qwen3.5-9b-Opus-Openclaw-Distilled-GGUF</a> &mdash; text-generation</li>
+  <li><a href="https://huggingface.co/mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-GGUF">mradermacher/Medina-Qwen3.5-27B-OpenClaw-Uncensored-GGUF</a></li>
+  <li><a href="https://marketplace.digitalocean.com/apps/openclaw">OpenClaw</a> &mdash; Deploy your own personal AI assistant with OpenClaw on a DigitalOcean Droplet® server, a powerful open-source platform that runs entirely on your infrastructure. OpenClaw connects to the messaging...</li>
+  <li><a href="https://brandon.wang/2026/clawdbot">A sane but bull case on Clawdbot / OpenClaw</a></li>
+  <li><a href="https://www.star-history.com/blog/openclaw-surpasses-react-most-starred-software">OpenClaw surpasses React to become the most-starred software project on GitHub</a></li>
+  <li><a href="https://app.uniclaw.ai/arena?tab=costEffectiveness&amp;via=hn">StepFun 3.5 Flash is #1 cost-effective model for OpenClaw tasks (300 battles)</a></li>
+  <li><a href="https://twitter.com/steipete/status/2055346265869721905">OpenClaw Creator Spent $1.3M on OpenAI Tokens in 30 Days</a></li>
+  <li><a href="https://dev.to/rosgluk/agent-skills-vs-mcp-servers-decision-framework-3n04">Agent Skills vs MCP Servers: Decision Framework</a> &mdash; Agent Skills and MCP servers are often presented as competing ways to extend an AI agent. That...</li>
+  <li><a href="https://dev.to/moltednet/how-to-host-openclaw-for-multiple-clients-in-production-51oc">How to Host OpenClaw for Multiple Clients in Production</a> &mdash; The first OpenClaw deployment is usually straightforward. You provision a machine, configure one...</li>
+  <li><a href="https://dev.to/philip098/save-money-deploying-qwen-35-on-developer-cloud-38c8">Save Money Deploying Qwen 3.5 on Developer Cloud</a> &mdash; A student can run the next‑gen legal AI Qwen 3.5 on AMD’s cloud without spending a dime. Follow a simple, zero‑setup workflow and stay under free credit limits.</li>
+  <li><a href="https://medium.com/@aatreyaadvith/openclaw-vs-hermes-agent-which-ai-agent-fits-your-workflow-9a46fb535131?source=rss------openclaw-5">OpenClaw vs Hermes Agent: Which AI Agent Fits Your Workflow?</a> &mdash; AI agents are moving beyond simple chat.Continue reading on Medium »</li>
+  <li><a href="https://alternativeto.net/software/manus/about/">Manus</a> &mdash; AI agent bridges thoughts and actions, excelling in work and life tasks like personalized travel, stock analysis, insurance comparisons, and supplier sourcing, autonomously completing tasks and...</li>
+  <li><a href="https://alternativeto.net/software/meta-muse/about/">Meta Muse</a> &mdash; An approval-based AI agent that manages email and scheduling, books reservations, tracks spending and subscriptions, compares prices, and monitors health data. It can continue tasks such as trip...</li>
+</ul>
+  </div>
+</section>
+      
+      
+    </div>
+
+    <footer class="footer">
+  <div class="footer-divider"></div>
+  <div class="subscribe">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/openclaw-newsletter" method="post" target="_blank">
+    <input type="hidden" name="embed" value="1">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+  <p>
+    Generated with AI by the
+    <a href="https://github.com/openclaw/openclaw">OpenClaw</a> Newsletter Bot
+  </p>
+  <div class="footer-links">
+    <a href="../archive.html">Archive</a>
+    <a href="../rss.xml">RSS</a>
+    <a href="https://github.com/openclaw/openclaw">Star on GitHub</a>
+  </div>
+</footer>
+  </div>
+</body>
+</html>
